@@ -23,23 +23,32 @@ void main(void) {
     bool ir_break = false;
     bool ir = false;
     initLCD();
-    sensorState = PORTDbits.RD0; 
-    if (!sensorState){
-        ir_break = true; 
+    while(1){
+        sensorState = PORTDbits.RD0; 
+        if (!sensorState){
+            ir_break = true;  
+        }
+        else{
+            ir_break = false; 
+        }
+        if (sensorState && !lastState){ //ir starting (beg)
+            ir = true; 
+            I2C_Master_Start(); // Start condition
+            I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
+            I2C_Master_Write('3'); // Write key press data which shows up on Arduino's serial monitor
+            I2C_Master_Stop();
+        if (!sensorState && lastState){ //ir ending 
+            ir = false; 
+            I2C_Master_Start(); // Start condition
+            I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
+            I2C_Master_Write('4'); // Write key press data which shows up on Arduino's serial monitor
+            I2C_Master_Stop(); 
+        }    
+        lcd_clear();
+        printf("sensorState, %d", sensorState);
+        lcd_set_ddram_addr(LCD_LINE2_ADDR);    
+        printf("lastState, %d", lastState);
+        lastState = sensorState; 
     }
-    else{
-        ir_break = false; 
-    }
-    if (sensorState && !lastState){
-        ir = true; 
-    }
-    if (!sensorState && lastState){
-        ir = false; 
-    }    
-    lcd_clear();
-    printf("sensorState, %d", sensorState);
-    lcd_set_ddram_addr(LCD_LINE2_ADDR);    
-    printf("lastState, %d", lastState);
-    lastState = sensorState; 
     return;
 }

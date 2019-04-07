@@ -38,7 +38,8 @@ volatile uint8_t incomingByte;
 void loop(){
     // If we should send to the PIC, then we wait to receive a byte from the PC
     if (send_to_pic && Serial.available() > 0 && !incomingByte) {
-        incomingByte = Serial.read();
+        incomingByte = 5;
+        incomingByte2 = 10;
     }
 }
 
@@ -61,5 +62,7 @@ void receiveEvent(void){
 /** @brief Callback for when the master requests data */
 void requestEvent(void){
     Wire.write(incomingByte); // Respond with message of 1 byte
+    Wire.write(incomingByte2); // Respond with message of 1 byte
     incomingByte = 0; // Clear output buffer
+    incomingByte2 = 0;
 }

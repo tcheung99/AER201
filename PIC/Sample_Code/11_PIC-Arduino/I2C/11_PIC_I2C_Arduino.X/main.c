@@ -60,7 +60,9 @@ void main(void) {
     unsigned char mem[3]; // Initialize array to check for triple-A sequence
     unsigned char counter = 0; // Increments each time a byte is sent
     unsigned char keypress; // Stores the data corresponding to the last key press
-    unsigned char data; // Holds the data to be sent/received
+//    unsigned char data; // Holds the data to be sent/received
+//    unsigned int data[3]; // Holds the data to be sent/received
+    unsigned int data; // Holds the data to be sent/received
     bool send = true;
     while(1) {
         if(send){
@@ -93,12 +95,18 @@ void main(void) {
         }
         else{
             // Receive data from Arduino and display it on the LCD
-            I2C_Master_Start();
+//            I2C_Master_Start();
+            I2C_Master_RepeatedStart();
             I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
+            data = I2C_Master_Read(ACK); // Read one char only
+//            data[1] = I2C_Master_Read(ACK); // Read one char only
             data = I2C_Master_Read(NACK); // Read one char only
             I2C_Master_Stop();
             if(data){
-                putch(data);
+                lcd_clear();
+                printf("data, %d", data);
+//                lcd_set_ddram_addr(LCD_LINE2_ADDR);    
+//                printf("data[1], %d", data[1]);
             }
         }
     }

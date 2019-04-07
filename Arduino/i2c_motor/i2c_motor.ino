@@ -168,6 +168,16 @@ void loop(){
   if (send_to_pic) { //if sending to PIC, not moving, and the sending byte is not empty
     digitalWrite(A2, HIGH);
     Serial.println("keep send");
+    if (ir_seen){
+      tire_dist = ((tire_tick2 - tire_tick1)); //distance in mm  
+      Serial.println("tire_dist");
+      Serial.print("\t");
+      Serial.println(tire_dist);
+      if (tire_dist >200){
+        tire = true; //detected a tire 
+        Serial.println("tire detected");
+      }
+    }
     if (!action && !incomingByte) {
       incomingByte = avg_dist; 
       Serial.println(incomingByte);
@@ -203,6 +213,7 @@ void receiveEvent(int){
     prev_incomingByte =0;
     send_to_pic = false;
     stopp = 0;
+//    ir_seen = false;    
   }    
   if (x == '2'){
     loop_cnt=0;  
@@ -216,7 +227,24 @@ void receiveEvent(int){
     send_to_pic = false;
     cyl_seen = 0; 
 //    cyl_seen2 = 0; 
+//    ir_seen = false;
   }
+  if (x == '3'){
+//    action = true;
+    digitalWrite(A2, LOW);
+    send_to_pic = false;
+    ir_seen = false; 
+    tire_tick1 = encoder1Pos;       
+  }
+    if (x == '4'){
+//    action = true;
+    digitalWrite(A2, LOW);
+    send_to_pic = false;
+    ir_seen = true; 
+    tire_tick2 = encoder1Pos;       
+
+    }
+  
   if (x == '5'){
     action = true;
     digitalWrite(A2, LOW);
@@ -224,7 +252,8 @@ void receiveEvent(int){
 
     forward = false;      
     prev_incomingByte =0;
-  }
+  }  
+  
   if (x == '9'){
     action = false; //brake
     digitalWrite(A2, HIGH);  

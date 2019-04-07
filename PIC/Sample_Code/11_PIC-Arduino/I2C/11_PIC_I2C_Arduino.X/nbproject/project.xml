@@ -12,6 +12,25 @@
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../src/I2C</sourceRootElem>
+                <sourceRootElem>../../src/PIC18F4620</sourceRootElem>
+                <sourceRootElem>../../src/CharacterLCD</sourceRootElem>
+                <sourceRootElem>../../../../src/CharacterLCD</sourceRootElem>
+                <sourceRootElem>../../../../src/I2C</sourceRootElem>
+                <sourceRootElem>../../../../src/PIC18F4620</sourceRootElem>
+                <sourceRootElem>../../../08_SD/08_SD_Init/08_SD_Init.X</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
         </data>
     </configuration>
 </project>
