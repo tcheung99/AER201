@@ -668,16 +668,14 @@ void brake(){
     I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
     I2C_Master_Write('9'); // Write key press data which shows up on Arduino's serial monitor
     I2C_Master_Stop(); 
-                    lcd_clear(); 
-        printf("wtf");
-        I2C_Master_Start();
-        I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
-        avg_dist = I2C_Master_Read(NACK); // Read one char only
-        I2C_Master_Stop();
-        if(avg_dist){
-            
+    I2C_Master_Start();
+    I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
+    avg_dist = I2C_Master_Read(NACK); // Read one char only
+    I2C_Master_Stop();
+    if(avg_dist){
+
 //            while(1){
-            lcd_clear();
+        lcd_clear();
 //                if (dists[0] != 0 && dists[1] == -1){
 //                    dists[1] = data; 
 //                }
@@ -685,20 +683,15 @@ void brake(){
 //                    dists[0] = data;
 //                }
 
-            printf("%d",avg_dist); //puts character on LCD 
+        printf("%d",avg_dist); //puts character on LCD 
 //                lcd_set_ddram_addr(LCD_LINE2_ADDR);
 //                printf("Motor dist1 %d",dists[0]); 
 //                lcd_set_ddram_addr(LCD_LINE3_ADDR);
 //                printf("Motor dist2 %d",dists[1]);
-            __delay_ms(1000);  
+        __delay_ms(1000);  
 //            }
-        send = true; //return to PIC as sender
-        }
-
-//        else{
-//            send = false;
-//            break;
-//        }
+    send = true; //return to PIC as sender
+    }
 }
     
 void start(){

@@ -112,10 +112,10 @@ void setup(){
 }
 
 void loop(){
-  Serial.print("cylseen");
-  Serial.print(cyl_seen);
-  Serial.print("\t");
-  Serial.println(cyl_seen2);
+//  Serial.print("cylseen");
+//  Serial.print(cyl_seen);
+//  Serial.print("\t");
+//  Serial.println(cyl_seen2);
 
   if (!send_to_pic){
     digitalWrite(A2, LOW);
@@ -153,6 +153,13 @@ void loop(){
         Serial.print("\t");
         Serial.println("wtfwtfwtf");
         
+        set_speed();
+        drive(speed1, speed2);
+      }
+    }
+    if (action && !forward){
+      avg_dist = 0; 
+      while (avg_dist<dist_total){
         set_speed();
         drive(speed1, speed2);
       }
