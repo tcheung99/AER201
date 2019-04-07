@@ -1,6 +1,6 @@
 #include <Wire.h>
 
-//Motor setup
+///Motor setup
 const int transferr = A2; // This is our input pin
 
 const int wheel_d = 65;           // Wheel diameter (mm)
