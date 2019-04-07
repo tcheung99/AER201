@@ -5607,41 +5607,11 @@ int ultrasonic_main(){
         }
         if (sensed>2){
             break;
-        }
-# 339 "main.c"
-    }
-    while (~send){
-
-        I2C_Master_Start();
-        I2C_Master_Write(0b00010001);
-        avg_dist = I2C_Master_Read(1);
-        I2C_Master_Stop();
-        if(avg_dist){
-
-
-            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-
-
-
-
-
-
-
-            printf("%d",avg_dist);
-
-
-
-
-
-
-        send = 1;
-        }
-
-        else{
             send = 0;
-            break;
         }
+# 340 "main.c"
     }
+# 375 "main.c"
          { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
     printf("stepsadj %d", steps2_adj);
     _delay((unsigned long)((1000)*(10000000/4000.0)));
@@ -5664,7 +5634,7 @@ void sense_tires(int sensed){
 
                 }
             }
-# 411 "main.c"
+# 414 "main.c"
 }
 
 int number_deploy(int avg_dist, poles_detected){
@@ -5721,7 +5691,7 @@ int number_deploy(int avg_dist, poles_detected){
     }
     return (int) t_count;
 }
-# 479 "main.c"
+# 482 "main.c"
 void UI_main(int t_dep, int poles_detected){
     sens = 0;
 
@@ -5765,7 +5735,7 @@ void UI_main(int t_dep, int poles_detected){
         printf("3 - Date&Time ");
         }
     while(sens==0){
-# 530 "main.c"
+# 533 "main.c"
         if (send){
         if(key_was_pressed){
             pressed = 1;
@@ -5904,6 +5874,37 @@ void brake(){
     I2C_Master_Write(0b00010000);
     I2C_Master_Write('9');
     I2C_Master_Stop();
+                    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+        printf("wtf");
+        I2C_Master_Start();
+        I2C_Master_Write(0b00010001);
+        avg_dist = I2C_Master_Read(1);
+        I2C_Master_Stop();
+        if(avg_dist){
+
+
+            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+
+
+
+
+
+
+
+            printf("%d",avg_dist);
+
+
+
+
+            _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+        send = 1;
+        }
+
+
+
+
+
 }
 
 void start(){

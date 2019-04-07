@@ -327,6 +327,7 @@ int ultrasonic_main(){
         }        
         if (sensed>2){
             break;
+            send = false; 
         }
 //            int min_us_dist = min(a, 4);
 //    lcd_clear(); 
@@ -334,41 +335,43 @@ int ultrasonic_main(){
 //    __delay_ms(1000);
 //    
 //    int step2_offset = abs(min_us_dist - 14);
-//    int steps2_adj = steps2 + step2_offset;
+//    int steps_adj = steps2 + step2_offset;
 
     }
-    while (~send){ //gets data from arduino 
+//    while (~send){ //gets data from arduino 
         //Read Arduino's encoder data
-        I2C_Master_Start();
-        I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
-        avg_dist = I2C_Master_Read(NACK); // Read one char only
-        I2C_Master_Stop();
-        if(avg_dist){
-            
-//            while(1){
-            lcd_clear();
-//                if (dists[0] != 0 && dists[1] == -1){
-//                    dists[1] = data; 
-//                }
-//                if (dists[0] == 0){
-//                    dists[0] = data;
-//                }
-
-            printf("%d",avg_dist); //puts character on LCD 
-//                lcd_set_ddram_addr(LCD_LINE2_ADDR);
-//                printf("Motor dist1 %d",dists[0]); 
-//                lcd_set_ddram_addr(LCD_LINE3_ADDR);
-//                printf("Motor dist2 %d",dists[1]);
-//            __delay_ms(5000);  
-//            }
-        send = true; //return to PIC as sender
-        }
-
-        else{
-            send = false;
-            break;
-        }
-    }
+//                lcd_clear(); 
+//        printf("wtf");
+//        I2C_Master_Start();
+//        I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
+//        avg_dist = I2C_Master_Read(NACK); // Read one char only
+//        I2C_Master_Stop();
+//        if(avg_dist){
+//            
+////            while(1){
+//            lcd_clear();
+////                if (dists[0] != 0 && dists[1] == -1){
+////                    dists[1] = data; 
+////                }
+////                if (dists[0] == 0){
+////                    dists[0] = data;
+////                }
+//
+//            printf("%d",avg_dist); //puts character on LCD 
+////                lcd_set_ddram_addr(LCD_LINE2_ADDR);
+////                printf("Motor dist1 %d",dists[0]); 
+////                lcd_set_ddram_addr(LCD_LINE3_ADDR);
+////                printf("Motor dist2 %d",dists[1]);
+//            __delay_ms(1000);  
+////            }
+//        send = true; //return to PIC as sender
+//        }
+//
+//        else{
+//            send = false;
+//            break;
+//        }
+//    }
          lcd_clear(); 
     printf("stepsadj %d", steps2_adj);
     __delay_ms(1000);
@@ -665,6 +668,37 @@ void brake(){
     I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
     I2C_Master_Write('9'); // Write key press data which shows up on Arduino's serial monitor
     I2C_Master_Stop(); 
+                    lcd_clear(); 
+        printf("wtf");
+        I2C_Master_Start();
+        I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
+        avg_dist = I2C_Master_Read(NACK); // Read one char only
+        I2C_Master_Stop();
+        if(avg_dist){
+            
+//            while(1){
+            lcd_clear();
+//                if (dists[0] != 0 && dists[1] == -1){
+//                    dists[1] = data; 
+//                }
+//                if (dists[0] == 0){
+//                    dists[0] = data;
+//                }
+
+            printf("%d",avg_dist); //puts character on LCD 
+//                lcd_set_ddram_addr(LCD_LINE2_ADDR);
+//                printf("Motor dist1 %d",dists[0]); 
+//                lcd_set_ddram_addr(LCD_LINE3_ADDR);
+//                printf("Motor dist2 %d",dists[1]);
+            __delay_ms(1000);  
+//            }
+        send = true; //return to PIC as sender
+        }
+
+//        else{
+//            send = false;
+//            break;
+//        }
 }
     
 void start(){

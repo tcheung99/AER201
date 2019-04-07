@@ -172,14 +172,14 @@ void loop(){
   
 void requestEvent(void){
 //    prev_incomingByte = incomingByte;
-  if (action){
+//  if (action){
     incomingByte = avg_dist; 
     digitalWrite(A2, LOW);
     Wire.write(incomingByte); // Respond with message of 1 byte for sensor distance
     incomingByte = 0; // Clear output buffer
     avg_dist = 0; 
     send_to_pic = false;
-  } 
+//  } 
 }
 
 void receiveEvent(int){
