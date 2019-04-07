@@ -226,6 +226,10 @@ void receiveEvent(int){
     sense = false;
     send_to_pic = false;
     cyl_seen = 0; 
+    
+    speed1 = 255; 
+    speed2 = 255; 
+    
 //    cyl_seen2 = 0; 
 //    ir_seen = false;
   }
@@ -286,10 +290,25 @@ void set_speed() {
     Serial.println("Avgdist: ");
     Serial.println(avg_dist);
     
+//    float diff = ticks1/ticks2; /////////////////
+//    if (diff >1.2){ //ticks 1 is much greater than 2 ///////////////
+//       speed1 = speed1 - offset; 
+//       speed2 = speed2 + offset;  
+//    }
+//    if (diff <1.2){ //ticks 2 is much greater than 1 
+//        speed1 = speed1 + offset; 
+//        speed2 = speed2 - offset;  
+//    }
+//    if (diff == 1.2){
+//      speed1 = 255;
+//      speed2 = 255;  
+//    }    
+    
     int diff = abs(ticks1-ticks2); 
   //  int offset = abs(dist1-dist2); ;    
     int offset = 2;   
-  
+    
+                                               /////////////////
     if (diff != 0){
       if (ticks1>ticks2){
         speed1 = speed1 - offset; 
