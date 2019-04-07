@@ -1,0 +1,12 @@
+Oscillator Used:    Internal, 8 MHz
+Language:           C MPLAB XC8
+LCD:                Hitachi HD44780
+KEYPAD:             Not Used
+RTC:                Not Used
+Arduino:            Not Used
+A2D:                Not Used
+GLCD:               Not Used
+SD Card:            Not Used
+USB:                Not Used
+
+This code writes "Hello World! :)" to the character LCD.

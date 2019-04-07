@@ -1,0 +1,64 @@
+void ir_sensor(){
+//  cyl_seen = 0;
+  isObstacle = digitalRead(isObstaclePin);
+  isObstacle2 = digitalRead(isObstaclePin2);
+  if (isObstacle == LOW) { //A0
+    cyl_seen = 1; 
+    Serial.println("OBSTACLE!!, OBSTACLE!!");
+  }
+  if (isObstacle2 == LOW) { //A0
+brake();
+Serial.println("rbaek");
+  }  
+  if (cyl_seen==1){
+//    while ((isObstacle2 == HIGH)&&(cyl_seen == 1)){
+//    if (isObstacle2 == HIGH){
+    while ((isObstacle2 == HIGH)){
+      Serial.println("hep!");
+//      while(1){
+//      set_speed();
+//      speed1 = speed1/2;
+//      speed2 = speed2/2;
+      speed1 = 90;
+      speed2 = 90;
+//    if (speed1 <= 0){
+//      speed1 = 0;
+//    }    
+//    if (speed2 == 0){
+//      speed2 = 0;
+//    }
+//    else if ((speed1 == 0)||(speed2 == 0)){
+//    speed1 = speed1-100;
+//    speed2 = speed2-100; 
+//    }
+      drive(speed1,(speed2)); //drive slower 
+//    }
+          if ((isObstacle2 == LOW)){
+      break;}
+    }
+//    if
+//    brake();
+//  }
+    if ((isObstacle2 == LOW)){
+          Serial.println("FBAJERHKLAGSF!");
+
+      brake();
+    }
+  }
+    digitalWrite(LED, HIGH);
+//    Serial.println("OBSTACLE!!, OBSTACLE!!");
+//    brake();
+//      while (avg_dist<20){
+
+//      avg_dist = 0; 
+//      brake();
+      
+//  }
+//  } 
+  if (isObstacle == HIGH){
+//    Serial.println("clear");
+    digitalWrite(LED, LOW);
+    stopp=0;
+  }
+  
+}

@@ -1,0 +1,422 @@
+#include <Wire.h>
+
+//Motor setup
+const int transferr = A2; // This is our input pin
+
+const int wheel_d = 65;           // Wheel diameter (mm)
+const float wheel_c = PI * wheel_d; // Wheel circumference (mm)
+const int counts_per_rev = 1920;   // (8 pairs N-S) * (120:1 gearbox) * (2 falling/rising edges)
+const float count_to_dist = (wheel_c / counts_per_rev) ; // (1 tick = mm)
+const float random_coeff= 2.1; 
+
+//const float random_coeff= 2.1375; //accurate at 75cm
+//const float random_coeff= 2.1; //accurate at 50cm
+//const float random_coeff= 2.175; //accurate at 100cm
+//const float random_coeff= 2; //accurate at 400cm
+
+//y = -(0.175/3000)*x+ 2.17583333;
+
+const int pwm_l = 11 ;  
+const int mot_l_1 = 9 ;
+const int mot_l_2 = 10 ;
+
+const int pwm_r = 6 ;
+const int mot_r_1 = 7 ; 
+const int mot_r_2 = 8 ;
+
+const int encoder1PinA = 2;
+const int encoder1PinB = 4;
+
+const int encoder2PinA = 3; 
+const int encoder2PinB = 5;
+
+
+int LED = 13; // Use the onboard Uno LED
+int isObstaclePin = A0; // This is our input pin
+int isObstacle = HIGH; // HIGH MEANS NO OBSTACLE
+
+int isObstaclePin2 = A1; // This is our input pin
+int isObstacle2 = HIGH; // HIGH MEANS NO OBSTACLE
+
+//Variables
+
+volatile int cyl_seen = 0; 
+volatile int cyl_seen2 = 0; 
+ 
+long dist1;
+long dist2;
+//volatile long avg_dist; 
+volatile float avg_dist_float; 
+volatile int avg_dist; 
+long prev_avg_dist=0; 
+
+volatile unsigned long encoder1Pos = 0;
+volatile unsigned long encoder2Pos = 0;
+
+volatile int speed1; 
+volatile int speed2; 
+
+volatile bool forward = true; 
+volatile int stopp=0; 
+
+  bool sense = false;
+
+long dist_total = 0; 
+
+int currentSpeed = 0;
+long startTime = 0;
+
+//const int offset = 5;
+
+//I2C setup 
+volatile bool action = false ; 
+volatile bool delaygo = false ; 
+volatile bool send_to_pic = false;
+volatile uint8_t incomingByte; //unsigned integer of length 8 bits (1 byte) 
+volatile uint8_t prev_incomingByte;
+
+long loop_cnt=0;
+
+void setup(){
+  Wire.begin(8); // Join I2C bus with address 8 (slave address)
+  
+  // Register callback functions
+  Wire.onReceive(receiveEvent); // Called when this slave device receives a data transmission from master
+  Wire.onRequest(requestEvent); // Called when master requests data from this slave device  
+
+  //Motor pin assignments 
+  pinMode(pwm_l,OUTPUT) ;   
+  pinMode(pwm_r,OUTPUT) ;
+  pinMode(mot_l_1,OUTPUT) ;  
+  pinMode(mot_l_2,OUTPUT) ;
+  pinMode(mot_r_1,OUTPUT) ;  
+  pinMode(mot_r_2,OUTPUT) ;
+  
+  pinMode (encoder1PinA, INPUT);
+  pinMode (encoder1PinB, INPUT);
+  pinMode (encoder2PinA, INPUT);
+  pinMode (encoder2PinB, INPUT);   
+
+  pinMode(A2, OUTPUT);
+
+  pinMode(LED, OUTPUT);
+  pinMode(isObstaclePin, INPUT);
+  pinMode(isObstaclePin2, INPUT);
+
+  attachInterrupt(digitalPinToInterrupt(encoder1PinA), count1, RISING);
+  attachInterrupt(digitalPinToInterrupt(encoder2PinA), count2, RISING);
+  
+  startTime = millis();
+  // Open serial port to PC (hardware UART)
+  Serial.begin(9600);  
+}
+//how to drive the motors after having seen it 
+void loop(){
+  if (!send_to_pic){ //if not sending to pic
+    if (action&&!delaygo) {
+      Serial.println("WHAA");
+      ir_sensor();
+      if ((cyl_seen==0)&&(cyl_seen2==0)){
+        Serial.println("bruh");
+        set_speed();
+        drive(speed1, speed2);
+      }
+    }
+    if (action&&delaygo){
+      Serial.println("delaygo");
+      if (loop_cnt==100){
+        Serial.print("\t");
+        Serial.print("\t");
+        Serial.println("looping/waiting");
+        sense=true;
+      }
+      if (sense==true){ 
+        Serial.print("\t");
+        Serial.print("\t");
+        
+        Serial.println("normal");
+
+        ir_sensor();
+        if ((cyl_seen==0)&&(cyl_seen2==0)){
+          set_speed();
+          drive(speed1, speed2);
+        }
+      }
+      if (sense==false){ //going through loop without triggerring ir sensor 
+        Serial.print("\t");
+        Serial.print("\t");
+        Serial.println("wtfwtfwtf");
+        
+        set_speed();
+        drive(speed1, speed2);
+      }
+    }
+  }
+  if (send_to_pic) { //if sending to PIC, not moving(braking), and the sending byte is not empty
+    digitalWrite(A2, HIGH);
+    Serial.println("keep send");
+    if (!action && !incomingByte) {
+      incomingByte = avg_dist; 
+      Serial.println(incomingByte);
+    }
+  }
+  loop_cnt++;
+}
+  
+void requestEvent(void){ //what to send to pic 
+//  if (action){
+    incomingByte = avg_dist; 
+    Wire.write(incomingByte); // Respond with message of 1 byte for sensor distance
+    incomingByte = 0; // Clear output buffer
+    avg_dist = 0; //Reset pole-to-pole distance
+//    send_to_pic = false;
+//  } 
+}
+
+void receiveEvent(int){
+    static uint8_t buf[3] = {0};
+    static uint8_t counter = 0;
+    
+    uint8_t x = Wire.read(); // Receive byte
+    Serial.println((char)x); // Print to serial output as char (ASCII representation)
+    loop_cnt=0;
+    if (x == '1'){
+      action = true;
+      digitalWrite(A2, LOW);
+      forward = true; 
+      delaygo = false; 
+      prev_incomingByte =0;
+      send_to_pic = false;
+    }    
+    if (x == '2'){
+      action = true;
+      digitalWrite(A2, LOW);
+      stopp = 0;
+      forward = true; 
+      delaygo = true; 
+      prev_incomingByte =0;
+      sense = false;
+      send_to_pic = false; 
+    }
+    if (x == '5'){
+      action = true;
+      digitalWrite(A2, LOW);
+      send_to_pic = false;
+      forward = false;      
+      prev_incomingByte =0;
+    }
+    if (x == '9'){
+      action = false; //brake
+      digitalWrite(A2, HIGH);
+      send_to_pic = true;
+    }
+}
+
+void set_speed() { 
+//    ir_sensor();
+    if (stopp == 0){
+  //Constrain speed
+  speed1 = constrain(speed1, 0, 255);
+  speed2 = constrain(speed2, 0, 255);
+  
+  //Sample encoders 
+  volatile unsigned long ticks1 = encoder1Pos; 
+  volatile unsigned long ticks2 = encoder2Pos; 
+  Serial.print("Ticks: ");
+  Serial.print(ticks1);
+  Serial.print("\t");
+  Serial.println(ticks2);
+  
+  Serial.print("Dist: ");
+  Serial.print(dist1);
+  Serial.print("\t");
+  Serial.println(dist2);
+
+  avg_dist_float = float(((float((dist1 + dist2 ))/float(2)))/10); //avg distance in cm 
+  avg_dist = (int)(avg_dist_float + 0.5); //casting avg distance into an int and rounding 
+
+  Serial.println("Avgdist: ");
+//  Serial.print(avg_dist_float);
+//  Serial.print("\t");
+  Serial.println(avg_dist);
+  
+  int diff = abs(ticks1-ticks2); 
+//  int offset = abs(dist1-dist2); ;    
+  int offset = 2;   
+
+  if (diff != 0){
+    if (ticks1>ticks2){
+      speed1 = speed1 - offset; 
+      speed2 = speed2 + offset; 
+//      Serial.println("  Unveven: ");
+  
+    }
+    if (ticks2>ticks1){
+      speed1 = speed1 + offset; 
+      speed2 = speed2 - offset; 
+//      Serial.println("  Uneven ");
+  
+    }
+  }
+//  else if (ticks1==ticks1){
+  if (diff == 0){
+    speed1 = 255;
+    speed2 = 255;
+//    speed1 = 245;
+//    speed2 = 245;    
+//    speed1 = 180;
+//    speed2 = 180;
+//    Serial.println("  wtf ");
+  }
+
+//  if (forward == true){
+//  if ((speed1<20) && (speed2<20)){
+//  if ((speed1 && speed2)<25){
+      if (((speed1)<25)&&((speed2)<25)){
+
+    speed1 = 255;
+    speed2 = 255;
+//    speed1 = 245; 
+//    speed2 = 245; 
+//    speed1 = 180;
+//    speed2 = 180;
+  }
+
+  Serial.print("Speed: ");
+  Serial.print(speed1);
+  Serial.print("\t");
+  Serial.println(speed2);
+
+//  drive(speed1, speed2);
+
+
+//  }
+//  if (forward == false){
+//    
+//  }
+    }
+  digitalWrite(A2, LOW);
+
+}
+void drive(int speed1, int speed2){
+//    ir_sensor();
+
+  if (stopp==0){
+  if ((action)&&(forward==true)){      
+    digitalWrite(mot_l_1,LOW) ;    
+    digitalWrite(mot_l_2,HIGH) ;
+    
+    digitalWrite(mot_r_1,LOW) ;    
+    digitalWrite(mot_r_2,HIGH) ;
+
+    analogWrite(pwm_l,speed2) ;
+    analogWrite(pwm_r,speed1) ;
+  }
+  if ((action)&&(forward==false)){
+//  if ((action)&&(forward==false)){
+//    avg_dist = 0; 
+//    while (dist<4000){
+    digitalWrite(mot_l_1,HIGH) ;    
+    digitalWrite(mot_l_2,LOW) ;
+    
+    digitalWrite(mot_r_1,HIGH) ;    
+    digitalWrite(mot_r_2,LOW) ;
+
+    analogWrite(pwm_l,speed2) ;
+    analogWrite(pwm_r,speed1) ;
+  }
+}
+  if (!action){ //If action is false, brake
+    brake();
+  }
+//    digitalWrite(mot_l_1,LOW) ;    
+//    digitalWrite(mot_l_2,LOW) ;
+//    
+//    digitalWrite(mot_r_1,LOW) ;    
+//    digitalWrite(mot_r_2,LOW) ;
+    
+//    Serial.println("brake");
+//    avg_dist_float = (((dist1 + dist2 )/2)/1000); //avg distance is cm 
+//    avg_dist = (int)(avg_dist_float + 0.5); //casting avg distance into an int and rounding 
+//    //  avg_dist = (dist1 );
+//    Serial.print("Avgdist: ");
+//    Serial.print(avg_dist_float);
+//    Serial.print("\t");
+//    Serial.println(avg_dist);
+//  }
+//    Serial.print("loop");
+//  Serial.println(loop_cnt);
+//  dist1 = 100;
+//  dist2 = 23;
+//  avg_dist = 90;
+}
+
+void brake(){
+  stopp = 1; 
+  action = false;
+  digitalWrite(mot_l_1,LOW) ;    
+  digitalWrite(mot_l_2,LOW) ;
+  
+  digitalWrite(mot_r_1,LOW) ;    
+  digitalWrite(mot_r_2,LOW) ;
+  
+  analogWrite(pwm_l,0) ;
+  analogWrite(pwm_r,0) ;
+  
+  digitalWrite(A2, HIGH);
+  Serial.println("braking");
+
+//  delay(2000);
+    dist_total = dist_total+avg_dist; 
+      Serial.print("  AVG_DIST: ");
+  Serial.print(avg_dist);
+  Serial.print("\t");
+  Serial.print("  DIST_TOT ");
+  Serial.println(dist_total);
+        send_to_pic = true;
+
+//  avg_dist = 0; 
+}
+void ir_sensor(){
+  isObstacle = digitalRead(isObstaclePin);
+  isObstacle2 = digitalRead(isObstaclePin2);  
+  if (isObstacle == LOW) { 
+    cyl_seen = 1; 
+    Serial.println("OBSTACLE1");
+  }
+//  if (isObstacle2 == LOW) { 
+  if ((isObstacle2 == LOW)&&(cyl_seen==1)) { 
+    cyl_seen2 = 1; 
+    Serial.println("obstacle 2");
+
+//    brake();
+  }
+  if ((cyl_seen==1)&&(cyl_seen2==0)){
+    speed1 = 90;
+    speed2 = 90;      
+    drive(speed1,(speed2)); //drive slower  
+  }
+  if ((cyl_seen==1)&&(cyl_seen2==1)){
+    brake();
+    Serial.println("break");
+
+  }
+  if ((cyl_seen==1)&&(cyl_seen2==1)&&(isObstacle2 == HIGH)){
+    cyl_seen = 0; 
+    cyl_seen2 = 0; 
+    Serial.println("REST");
+  }
+}
+
+void count1() {
+  if (action){
+    encoder1Pos++;
+    dist1 = (encoder1Pos * count_to_dist * random_coeff); //distance in mm
+  }
+}
+void count2() {
+  if (action){
+    encoder2Pos++;
+    dist2 = (encoder2Pos * count_to_dist * random_coeff); //distance in mm
+  }
+}

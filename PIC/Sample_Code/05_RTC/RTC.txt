@@ -1,0 +1,17 @@
+Oscillator Used:    External, 10 MHz
+Language:           C MPLAB XC8
+LCD:                Hitachi HD44780
+KEYPAD:             Not Used
+RTC:                DS1307
+Arduino:            Not Used
+A2D:                Not Used
+GLCD:               Not Used
+SD Card:            Not Used
+USB:                Not Used
+
+This sample program demonstrates writing a date and time into the real-time 
+clock (RTC) chip, and reading back the values from it. Data is transferred via
+I2C.
+
+In the main.c file of this sample, instructions are given for how to verify the 
+time-keeping feature of the real-time clock.

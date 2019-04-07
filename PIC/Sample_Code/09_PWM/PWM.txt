@@ -1,0 +1,17 @@
+Oscillator Used:    Internal, 32 MHz (8 MHz with 4x PLL)
+Language:           C MPLAB XC8
+LCD:                Not Used
+KEYPAD:             Not Used
+RTC:                Not Used
+Arduino:            Not Used
+A2D:                Not Used
+GLCD:               Not Used
+SD Card:            Not Used
+USB:                Not Used
+
+The C program demonstrates usage of the PIC's PWM module by transmitting a PWM 
+signal on RC2. In the debug module, the brightness of RC2 can be seen varying 
+sinusoidally.
+
+The assembly program applies a PWM signal to RC2 with constant pulse width, 
+which simply makes the LED look dimmed.

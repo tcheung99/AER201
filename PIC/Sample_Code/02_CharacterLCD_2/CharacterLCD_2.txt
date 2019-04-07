@@ -1,0 +1,13 @@
+Oscillator Used:    External, 10 MHz
+Language:           C MPLAB XC8
+LCD:                Hitachi HD44780
+KEYPAD:             Not Used
+RTC:                Not Used
+Arduino:            Not Used
+A2D:                Not Used
+GLCD:               Not Used
+SD Card:            Not Used
+USB:                Not Used
+
+This program demonstrates the use of printf to print various data types, and
+also demonstrates display shifts and setting the cursor to a specific address.

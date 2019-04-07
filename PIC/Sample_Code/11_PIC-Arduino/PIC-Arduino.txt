@@ -1,0 +1,14 @@
+Oscillator Used:    External, 10 MHz
+Language:           C MPLAB XC8
+LCD:                Hitachi HD44780
+KEYPAD:             Not Used
+RTC:                Not Used
+Arduino:            Arduino Nano
+A2D:                Not Used
+GLCD:               Not Used
+SD Card:            Not Used
+USB:                Not Used
+
+These folders contain source code for both the PIC and the Arduino Nano that 
+allow them to communicate with each other by either I2C or UART. Communication
+is also possible via other methods such as SPI.

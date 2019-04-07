@@ -1,0 +1,505 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4620 ]
+[d frameptr 4065 ]
+"116 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\main.c
+[e E2903 . `uc
+ORIGIN_TOP_LEFT 0
+ORIGIN_TOP_RIGHT 1
+ORIGIN_BOTTOM_LEFT 2
+ORIGIN_BOTTOM_RIGHT 3
+]
+"97 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\GLCD_PIC.c
+[e E2909 . `uc
+MEMWRITE 0
+CMD 1
+]
+"325
+[e E2903 . `uc
+ORIGIN_TOP_LEFT 0
+ORIGIN_TOP_RIGHT 1
+ORIGIN_BOTTOM_LEFT 2
+ORIGIN_BOTTOM_RIGHT 3
+]
+"8 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"97 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\GLCD_PIC.c
+[v _glcdTransfer glcdTransfer `(v  1 e 1 0 ]
+"109
+[v _glcd_swreset glcd_swreset `(v  1 e 1 0 ]
+"120
+[v _glcd_slpout glcd_slpout `(v  1 e 1 0 ]
+"127
+[v _glcd_setmadctl glcd_setmadctl `(v  1 e 1 0 ]
+"136
+[v _glcd_noron glcd_noron `(v  1 e 1 0 ]
+"140
+[v _glcd_invoff glcd_invoff `(v  1 e 1 0 ]
+"144
+[v _glcd_invon glcd_invon `(v  1 e 1 0 ]
+"152
+[v _glcd_dispon glcd_dispon `(v  1 e 1 0 ]
+"156
+[v _glcd_ramwr glcd_ramwr `(v  1 e 1 0 ]
+"164
+[v _glcd_idmoff glcd_idmoff `(v  1 e 1 0 ]
+"172
+[v _glcdDrawRectangle glcdDrawRectangle `(v  1 e 1 0 ]
+"292
+[v _glcdDrawPixel glcdDrawPixel `(v  1 e 1 0 ]
+"305
+[v _glcdSetCOLMOD glcdSetCOLMOD `(v  1 e 1 0 ]
+"325
+[v _glcdSetOrigin glcdSetOrigin `(v  1 e 1 0 ]
+"358
+[v _initGLCD initGLCD `(v  1 e 1 0 ]
+"20 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"14 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\SPI_PIC.c
+[v _spiTransfer spiTransfer `(uc  1 e 1 0 ]
+"29
+[v _spiSend spiSend `(v  1 e 1 0 ]
+"37
+[v _spiInit spiInit `(v  1 e 1 0 ]
+[s S21 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"1241 D:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f4620.h
+[s S30 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S39 . 1 `S21 1 . 1 0 `S30 1 . 1 0 ]
+[v _LATDbits LATDbits `VES39  1 e 1 @3980 ]
+[s S524 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1854
+[s S533 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S542 . 1 `S524 1 . 1 0 `S533 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES542  1 e 1 @3988 ]
+[s S61 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"2076
+[s S70 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+[u S79 . 1 `S61 1 . 1 0 `S70 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES79  1 e 1 @3989 ]
+"4729
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+[s S496 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"4749
+[s S502 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S507 . 1 `S496 1 . 1 0 `S502 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES507  1 e 1 @4038 ]
+"4799
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S367 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"4875
+[s S370 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S373 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S382 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S387 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S392 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S397 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S402 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S405 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S408 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S413 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S419 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S424 . 1 `S367 1 . 1 0 `S370 1 . 1 0 `S373 1 . 1 0 `S382 1 . 1 0 `S387 1 . 1 0 `S392 1 . 1 0 `S397 1 . 1 0 `S402 1 . 1 0 `S405 1 . 1 0 `S408 1 . 1 0 `S413 1 . 1 0 `S419 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES424  1 e 1 @4039 ]
+"5027
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"7579
+[v _SSPIF SSPIF `VEb  1 e 0 @31987 ]
+"18 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\GLCD_PIC.c
+[v _GLCD_SIZE_HORZ GLCD_SIZE_HORZ `Cuc  1 e 1 0 ]
+"19
+[v _GLCD_SIZE_VERT GLCD_SIZE_VERT `Cuc  1 e 1 0 ]
+"21
+[v _BLACK BLACK `Cul  1 e 4 0 ]
+"23
+[v _WHITE WHITE `Cul  1 e 4 0 ]
+"24
+[v _RED RED `Cul  1 e 4 0 ]
+"25
+[v _ORANGE ORANGE `Cul  1 e 4 0 ]
+"26
+[v _YELLOW YELLOW `Cul  1 e 4 0 ]
+"27
+[v _GREEN GREEN `Cul  1 e 4 0 ]
+"28
+[v _BLUE BLUE `Cul  1 e 4 0 ]
+"29
+[v _INDIGO INDIGO `Cul  1 e 4 0 ]
+"30
+[v _VIOLET VIOLET `Cul  1 e 4 0 ]
+"36
+[v _INST_SWRESET INST_SWRESET `Cuc  1 s 1 INST_SWRESET ]
+"37
+[v _INST_SLPIN INST_SLPIN `Cuc  1 s 1 INST_SLPIN ]
+"38
+[v _INST_SLPOUT INST_SLPOUT `Cuc  1 s 1 INST_SLPOUT ]
+"39
+[v _INST_PTLON INST_PTLON `Cuc  1 s 1 INST_PTLON ]
+"40
+[v _INST_NORON INST_NORON `Cuc  1 s 1 INST_NORON ]
+"41
+[v _INST_INVOFF INST_INVOFF `Cuc  1 s 1 INST_INVOFF ]
+"42
+[v _INST_INVON INST_INVON `Cuc  1 s 1 INST_INVON ]
+"43
+[v _INST_GAMSET INST_GAMSET `Cuc  1 s 1 INST_GAMSET ]
+"44
+[v _INST_DISPOFF INST_DISPOFF `Cuc  1 s 1 INST_DISPOFF ]
+"45
+[v _INST_DISPON INST_DISPON `Cuc  1 s 1 INST_DISPON ]
+"46
+[v _INST_CASET INST_CASET `Cuc  1 s 1 INST_CASET ]
+"47
+[v _INST_RASET INST_RASET `Cuc  1 s 1 INST_RASET ]
+"48
+[v _INST_RAMWR INST_RAMWR `Cuc  1 s 1 INST_RAMWR ]
+"50
+[v _INST_TEOFF INST_TEOFF `Cuc  1 s 1 INST_TEOFF ]
+"52
+[v _INST_MADCTL INST_MADCTL `Cuc  1 s 1 INST_MADCTL ]
+"53
+[v _INST_IDMOFF INST_IDMOFF `Cuc  1 s 1 INST_IDMOFF ]
+"54
+[v _INST_IDMON INST_IDMON `Cuc  1 s 1 INST_IDMON ]
+"55
+[v _INST_COLMOD INST_COLMOD `Cuc  1 s 1 INST_COLMOD ]
+"56
+[v _INST_FRMCTR1 INST_FRMCTR1 `Cuc  1 s 1 INST_FRMCTR1 ]
+"57
+[v _INST_FRMCTR2 INST_FRMCTR2 `Cuc  1 s 1 INST_FRMCTR2 ]
+"58
+[v _INST_FRMCTR3 INST_FRMCTR3 `Cuc  1 s 1 INST_FRMCTR3 ]
+"59
+[v _INST_INVCTR INST_INVCTR `Cuc  1 s 1 INST_INVCTR ]
+"60
+[v _INST_PWCTR1 INST_PWCTR1 `Cuc  1 s 1 INST_PWCTR1 ]
+"61
+[v _INST_PWCTR2 INST_PWCTR2 `Cuc  1 s 1 INST_PWCTR2 ]
+"62
+[v _INST_PWCTR3 INST_PWCTR3 `Cuc  1 s 1 INST_PWCTR3 ]
+"63
+[v _INST_PWCTR4 INST_PWCTR4 `Cuc  1 s 1 INST_PWCTR4 ]
+"64
+[v _INST_PWCTR5 INST_PWCTR5 `Cuc  1 s 1 INST_PWCTR5 ]
+"65
+[v _INST_VMCTR1 INST_VMCTR1 `Cuc  1 s 1 INST_VMCTR1 ]
+[s S180 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 MH 1 0 :1:2 
+`uc 1 RGB 1 0 :1:3 
+`uc 1 ML 1 0 :1:4 
+`uc 1 MV 1 0 :1:5 
+`uc 1 MX 1 0 :1:6 
+`uc 1 MY 1 0 :1:7 
+]
+"94
+[u S189 . 1 `S180 1 . 1 0 `uc 1 reg 1 0 ]
+[v _MADCTLbits MADCTLbits `S189  1 s 1 MADCTLbits ]
+"20 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"32
+[v main@x x `uc  1 a 1 40 ]
+[v main@y y `uc  1 a 1 39 ]
+[v main@iteration iteration `uc  1 a 1 34 ]
+"130
+} 0
+"358 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\GLCD_PIC.c
+[v _initGLCD initGLCD `(v  1 e 1 0 ]
+{
+"454
+} 0
+"37 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\SPI_PIC.c
+[v _spiInit spiInit `(v  1 e 1 0 ]
+{
+[v spiInit@divider divider `uc  1 a 1 wreg ]
+[v spiInit@divider divider `uc  1 a 1 wreg ]
+[v spiInit@divider divider `uc  1 a 1 0 ]
+"64
+} 0
+"109 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\GLCD_PIC.c
+[v _glcd_swreset glcd_swreset `(v  1 e 1 0 ]
+{
+"112
+} 0
+"120
+[v _glcd_slpout glcd_slpout `(v  1 e 1 0 ]
+{
+"125
+} 0
+"136
+[v _glcd_noron glcd_noron `(v  1 e 1 0 ]
+{
+"138
+} 0
+"140
+[v _glcd_invoff glcd_invoff `(v  1 e 1 0 ]
+{
+"142
+} 0
+"164
+[v _glcd_idmoff glcd_idmoff `(v  1 e 1 0 ]
+{
+"166
+} 0
+"152
+[v _glcd_dispon glcd_dispon `(v  1 e 1 0 ]
+{
+"154
+} 0
+"305
+[v _glcdSetCOLMOD glcdSetCOLMOD `(v  1 e 1 0 ]
+{
+[v glcdSetCOLMOD@numBitsPerPixel numBitsPerPixel `uc  1 a 1 wreg ]
+"306
+[v glcdSetCOLMOD@rawData rawData `us  1 a 2 7 ]
+"305
+[v glcdSetCOLMOD@numBitsPerPixel numBitsPerPixel `uc  1 a 1 wreg ]
+[v glcdSetCOLMOD@numBitsPerPixel numBitsPerPixel `uc  1 a 1 6 ]
+"323
+} 0
+"144
+[v _glcd_invon glcd_invon `(v  1 e 1 0 ]
+{
+"146
+} 0
+"325
+[v _glcdSetOrigin glcdSetOrigin `(v  1 e 1 0 ]
+{
+[v glcdSetOrigin@corner corner `E2903  1 a 1 wreg ]
+[v glcdSetOrigin@corner corner `E2903  1 a 1 wreg ]
+[v glcdSetOrigin@corner corner `E2903  1 a 1 6 ]
+"356
+} 0
+"127
+[v _glcd_setmadctl glcd_setmadctl `(v  1 e 1 0 ]
+{
+"130
+} 0
+"292
+[v _glcdDrawPixel glcdDrawPixel `(v  1 e 1 0 ]
+{
+[v glcdDrawPixel@XS XS `uc  1 a 1 wreg ]
+[v glcdDrawPixel@XS XS `uc  1 a 1 wreg ]
+[v glcdDrawPixel@YS YS `uc  1 p 1 25 ]
+[v glcdDrawPixel@color color `ul  1 p 4 26 ]
+"295
+[v glcdDrawPixel@XS XS `uc  1 a 1 31 ]
+"303
+} 0
+"172
+[v _glcdDrawRectangle glcdDrawRectangle `(v  1 e 1 0 ]
+{
+"173
+[v glcdDrawRectangle@XS XS `uc  1 a 1 wreg ]
+"283
+[v glcdDrawRectangle@i i `us  1 a 2 19 ]
+"276
+[v glcdDrawRectangle@colorData colorData `[3]uc  1 a 3 21 ]
+"275
+[v glcdDrawRectangle@numLoops numLoops `us  1 a 2 17 ]
+"173
+[v glcdDrawRectangle@XS XS `uc  1 a 1 wreg ]
+"174
+[v glcdDrawRectangle@XE XE `uc  1 p 1 6 ]
+"175
+[v glcdDrawRectangle@YS YS `uc  1 p 1 7 ]
+"176
+[v glcdDrawRectangle@YE YE `uc  1 p 1 8 ]
+"177
+[v glcdDrawRectangle@color color `ul  1 p 4 9 ]
+"187
+[v glcdDrawRectangle@XS XS `uc  1 a 1 24 ]
+"290
+} 0
+"156
+[v _glcd_ramwr glcd_ramwr `(v  1 e 1 0 ]
+{
+"158
+} 0
+"97
+[v _glcdTransfer glcdTransfer `(v  1 e 1 0 ]
+{
+[v glcdTransfer@byte byte `uc  1 a 1 wreg ]
+[v glcdTransfer@byte byte `uc  1 a 1 wreg ]
+[v glcdTransfer@cmd cmd `E2909  1 p 1 3 ]
+[v glcdTransfer@byte byte `uc  1 a 1 5 ]
+"107
+} 0
+"29 D:\Users\Tyler\Documents\tyler\work\Prof Emami\Development Board Summer 2018\Development\samples\07_GLCD\07_GLCD.X\SPI_PIC.c
+[v _spiSend spiSend `(v  1 e 1 0 ]
+{
+[v spiSend@val val `uc  1 a 1 wreg ]
+[v spiSend@val val `uc  1 a 1 wreg ]
+[v spiSend@val val `uc  1 a 1 2 ]
+"31
+} 0
+"14
+[v _spiTransfer spiTransfer `(uc  1 e 1 0 ]
+{
+[v spiTransfer@byteToTransfer byteToTransfer `uc  1 a 1 wreg ]
+[v spiTransfer@byteToTransfer byteToTransfer `uc  1 a 1 wreg ]
+"18
+[v spiTransfer@byteToTransfer byteToTransfer `uc  1 a 1 1 ]
+"27
+} 0
+"15 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"8 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 13 ]
+[v ___awmod@counter counter `uc  1 a 1 12 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 8 ]
+[v ___awmod@divisor divisor `i  1 p 2 10 ]
+"35
+} 0
+"8 D:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"42
+} 0
