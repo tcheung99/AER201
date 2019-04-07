@@ -310,16 +310,20 @@ int ultrasonic_main(){
         int min_us_dist = min(a, 4);
         lcd_clear(); 
         printf("minimum %d", min_us_dist);
-        __delay_ms(1000);
-    if (min_us_dist<14){
-        step2_offset = 0;
-    }
-    else{
-    step2_offset = abs(min_us_dist - 14);
-    }
-    steps2_adj = steps2 + step2_offset;
+//        __delay_ms(1000);
+        if (min_us_dist<14){
+            step2_offset = 0;
+        }
+        if (min_us_dist>=14){
+        step2_offset = abs(min_us_dist - 14);
+        }
+        steps2_adj = steps2 + step2_offset;
         sensed++;
-        sense_tires(sensed);
+
+//        sense_tires(sensed);
+        }        
+        if (sensed>2){
+            break;
         }
 //            int min_us_dist = min(a, 4);
 //    lcd_clear(); 
@@ -699,6 +703,9 @@ void main(){
     TRISAbits.RA4 = 0;    
     PORTAbits.RA4 = LATAbits.LATA4;
 
+    bool act_done = false; 
+
+    
     Poles Pole[10];
 //    int Pole[10];
 //    for (i=0; i<10; i++){
@@ -711,6 +718,8 @@ void main(){
         UI_main( t_dep, poles_detected);
     }
     while (1){
+        PORTAbits.RA4 = LATAbits.LATA4;
+
 //        lcd_clear();
 //        printf("happen");
 //        __delay_ms(1000);
@@ -725,58 +734,32 @@ void main(){
             while (sens){
 //            if (sens){
 //                    __delay_ms(2000);
-                                        lcd_clear(); 
-
-                                        printf("waiting"); //stops here 
-
-//                    while (!PORTAbits.RA4); 
+                t_count = 5;  ///something absurd 
+                    lcd_clear(); 
+                    printf("waiting"); //stops here 
+                    //                    while (!PORTAbits.RA4); 
                     if (!PORTAbits.RA4){
-                                            lcd_clear(); 
-
-                    printf("more waiting"); //stops here 
+                        lcd_clear(); 
+                        printf("more waiting"); //stops here 
                     } 
                     if (PORTAbits.RA4){
-                    lcd_clear(); 
-                        printf("done wait");
-//                        continue;
-//                    }
-//            if (sens&&(PORTAbits.RA4)){
-                steps2_adj=ultrasonic_main();
+//                        brake();
                         lcd_clear(); 
-    printf("stepsadj %d", steps2_adj);
-    sens = 0;
+                        printf("done wait");
+                        steps2_adj=ultrasonic_main();
+                        lcd_clear(); 
+                        printf("stepsadj %d", steps2_adj);
+                        t_count = number_deploy(avg_dist, poles_detected); 
+                        sens = 0;
                     }
-//    __delay_ms(5000);
-
-//                I2C_Master_Start();
-//                I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
-//                read = I2C_Master_Read(NACK); // Read one char only
-//                I2C_Master_Stop();
-//                if (read!=1){
-                    
-//                    for (int i=0;i<4;i++){
-//                        sum[i] = 0 ;
-//                        a[i] =0 ;
-//                        sumf[i] = 0 ;
-//                
-//                        for (int k=0;k<6;k++){
-//                            dist_final[i][k] = 0; 
-//                        }
-//                    }                        
-//                    ultrasonic_main();
-//                }
-  
-//                __delay_ms(2000);
             }
-//        lcd_clear();
-//        printf("fksfdas");
-//        __delay_ms(1000);
             int pole_cl_dist = (avg_dist)-(prev_avg_dist); //centerline to centerline distance 
-            t_count = number_deploy(avg_dist, poles_detected); 
+//            t_count = number_deploy(avg_dist, poles_detected); 
 //            lcd_clear();
 //            printf("tcnt %d", t_count);
 //            printf("tdep %d", t_dep);
 //            __delay_ms(500);
+            act_done = false; 
             if (t_count<=2){ //check 
                 if (t_dep <8){
 //                    lcd_clear();
@@ -798,8 +781,9 @@ void main(){
                         t_dep++;
                     }
                 }
+                act_done = true; 
             }
-
+            if (act_done){
     //        for (int i=0; i<10;i++)
             Pole[poles_detected].dist_from_cl = pole_cl_dist;
             Pole[poles_detected].dist_from_start = avg_dist;
@@ -825,7 +809,9 @@ void main(){
                             dist_final[i][k] = 0; 
                         }
                     }   
-            __delay_ms(3000);   
+//            __delay_ms(3000);
+            sens = 1;
+            }
         }
         else{
             brake();
@@ -838,5 +824,6 @@ void main(){
             printf("backwards");
             __delay_ms(1000);
         }
+        t_count = 5;
     }
 }
