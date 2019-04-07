@@ -113,6 +113,8 @@ void setup(){
 
 void loop(){
   if (!send_to_pic){
+          digitalWrite(A2, LOW);
+
     // If we should send to the PIC, then we wait to receive a byte from the PC
     if (action&&!delaygo) {
         Serial.println("WHAA");
@@ -127,7 +129,7 @@ void loop(){
     if (action&&delaygo){
         Serial.println("fhaeishk");
 
-      if (loop_cnt==125){
+      if (loop_cnt==100){
         Serial.print("\t");
         Serial.print("\t");
         Serial.println("what the ");
@@ -144,8 +146,8 @@ void loop(){
                   if ((cyl_seen==0)&&(cyl_seen2==0)){
 
         set_speed();
-                  }
-                  }
+          }
+        }
       if (sense==false){
         Serial.print("\t");
         Serial.print("\t");
@@ -195,6 +197,7 @@ void requestEvent(void){
   if (action){
     incomingByte = avg_dist; 
       avg_dist = 0; 
+      digitalWrite(A2, LOW);
 
     Wire.write(incomingByte); // Respond with message of 1 byte for sensor distance
     incomingByte = 0; // Clear output buffer
@@ -211,15 +214,15 @@ void receiveEvent(int){
     loop_cnt=0;
     if (x == '1'){
       action = true;
-        digitalWrite(A2, LOW);
-
+      digitalWrite(A2, LOW);
       forward = true; 
       delaygo = false; 
       prev_incomingByte =0;
-            send_to_pic = false;
-
+      send_to_pic = false;
     }    
     if (x == '2'){
+          loop_cnt=0;
+
       action = true;
         digitalWrite(A2, LOW);
       stopp = 0;
@@ -227,9 +230,9 @@ void receiveEvent(int){
       delaygo = true; 
       prev_incomingByte =0;
       sense = false;
-            send_to_pic = false;
-
-      
+      send_to_pic = false;
+      cyl_seen = 0; 
+      cyl_seen2 = 0; 
     }
     if (x == '5'){
       action = true;
@@ -337,25 +340,30 @@ void drive(int speed1, int speed2){
 //    ir_sensor();
 
   if (stopp==0){
-  if ((action)&&(forward==true)){      
-    digitalWrite(mot_l_1,LOW) ;    
-    digitalWrite(mot_l_2,HIGH) ;
+  if ((action)&&(forward==true)){ 
+      digitalWrite(A2, LOW);
+         digitalWrite(mot_l_1,HIGH) ;    
+    digitalWrite(mot_l_2,LOW) ;
     
-    digitalWrite(mot_r_1,LOW) ;    
-    digitalWrite(mot_r_2,HIGH) ;
+    digitalWrite(mot_r_1,HIGH) ;    
+    digitalWrite(mot_r_2,LOW) ;
+    
+
 
     analogWrite(pwm_l,speed2) ;
     analogWrite(pwm_r,speed1) ;
   }
   if ((action)&&(forward==false)){
+      digitalWrite(A2, LOW);
+
 //  if ((action)&&(forward==false)){
 //    avg_dist = 0; 
 //    while (dist<4000){
-    digitalWrite(mot_l_1,HIGH) ;    
-    digitalWrite(mot_l_2,LOW) ;
+    digitalWrite(mot_l_1,LOW) ;    
+    digitalWrite(mot_l_2,HIGH) ;
     
-    digitalWrite(mot_r_1,HIGH) ;    
-    digitalWrite(mot_r_2,LOW) ;
+    digitalWrite(mot_r_1,LOW) ;    
+    digitalWrite(mot_r_2,HIGH) ;
 
     analogWrite(pwm_l,speed2) ;
     analogWrite(pwm_r,speed1) ;
@@ -415,17 +423,19 @@ void brake(){
 void ir_sensor(){
   isObstacle = digitalRead(isObstaclePin);
   isObstacle2 = digitalRead(isObstaclePin2);  
-  if (isObstacle == LOW) { 
+  if ((isObstacle == LOW)&&(cyl_seen==0)) { 
     cyl_seen = 1; 
     Serial.println("OBSTACLE!!, OBSTACLE!!");
   }
   if (isObstacle2 == LOW) { 
     cyl_seen2 = 1; 
+        Serial.println("OBSTACLE2");
+
 //    brake();
   }
   if ((cyl_seen==1)&&(cyl_seen2==0)){
-    speed1 = 90;
-    speed2 = 90;      
+    speed1 = 50;
+    speed2 = 50;      
     drive(speed1,(speed2)); //drive slower  
   }
   if ((cyl_seen==1)&&(cyl_seen2==1)){
