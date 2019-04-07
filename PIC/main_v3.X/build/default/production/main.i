@@ -5572,8 +5572,11 @@ int ultrasonic_main(){
     TRISBbits.RB0 = 0;
     LATBbits.LATB0 = 1;
 
+        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("or here");
  TRISB = 0b11110000;
-
+    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("break heree?");
     RBIF = 0;
  RBIE = 1;
 
@@ -5590,18 +5593,22 @@ int ultrasonic_main(){
         int min_us_dist = min(a, 4);
         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
         printf("minimum %d", min_us_dist);
-        _delay((unsigned long)((1000)*(10000000/4000.0)));
-    if (min_us_dist<14){
-        step2_offset = 0;
-    }
-    else{
-    step2_offset = abs(min_us_dist - 14);
-    }
-    steps2_adj = 110 + step2_offset;
-        sensed++;
-        sense_tires(sensed);
+
+        if (min_us_dist<14){
+            step2_offset = 0;
         }
-# 332 "main.c"
+        if (min_us_dist>=14){
+        step2_offset = abs(min_us_dist - 14);
+        }
+        steps2_adj = 110 + step2_offset;
+        sensed++;
+
+
+        }
+        if (sensed>2){
+            break;
+        }
+# 339 "main.c"
     }
     while (~send){
 
@@ -5657,7 +5664,7 @@ void sense_tires(int sensed){
 
                 }
             }
-# 404 "main.c"
+# 411 "main.c"
 }
 
 int number_deploy(int avg_dist, poles_detected){
@@ -5697,24 +5704,24 @@ int number_deploy(int avg_dist, poles_detected){
             }
         }
 
-    t_count = tires_t - tires_detected;
-    Pole[poles_detected].tires_deployed = t_count;
-    Pole[poles_detected].tires_final = tires_t;
-    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-    printf("det,%d, tcnt %d",tires_detected,t_count);
-    _delay((unsigned long)((1000)*(10000000/4000.0)));
+        t_count = tires_t - tires_detected;
+        Pole[poles_detected].tires_deployed = t_count;
+        Pole[poles_detected].tires_final = tires_t;
+        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+        printf("det,%d, tcnt %d",tires_detected,t_count);
+        _delay((unsigned long)((1000)*(10000000/4000.0)));
 
-    if (t_count<=2){
+        if (t_count<=2){
 
 
 
-        return (int) t_count;
-            break;
 
+        break;
+        }
     }
-    }
+    return (int) t_count;
 }
-# 472 "main.c"
+# 479 "main.c"
 void UI_main(int t_dep, int poles_detected){
     sens = 0;
 
@@ -5758,7 +5765,7 @@ void UI_main(int t_dep, int poles_detected){
         printf("3 - Date&Time ");
         }
     while(sens==0){
-# 523 "main.c"
+# 530 "main.c"
         if (send){
         if(key_was_pressed){
             pressed = 1;
@@ -5917,8 +5924,6 @@ void backwards(){
     I2C_Master_Stop();
 }
 
-
-
 void main(){
     int stack=1;
     int t_dep=0;
@@ -5938,6 +5943,9 @@ void main(){
     TRISAbits.RA4 = 0;
     PORTAbits.RA4 = LATAbits.LATA4;
 
+    _Bool act_done = 0;
+    _Bool arduino_stopped = 0;
+
     Poles Pole[10];
 
 
@@ -5950,6 +5958,8 @@ void main(){
         UI_main( t_dep, poles_detected);
     }
     while (1){
+        PORTAbits.RA4 = LATAbits.LATA4;
+
 
 
 
@@ -5964,38 +5974,37 @@ void main(){
             while (sens){
 
 
-                                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-
-                                        printf("waiting");
-
+                t_count = 5;
+                    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+                    printf("waiting");
 
                     if (!PORTAbits.RA4){
-                                            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-
-                    printf("more waiting");
+                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+                        printf("more waiting");
                     }
                     if (PORTAbits.RA4){
-                    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-                        printf("done wait");
 
-
-
-                steps2_adj=ultrasonic_main();
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-    printf("stepsadj %d", steps2_adj);
-    sens = 0;
+                        printf("done wait");
+                        arduino_stopped = 1;
                     }
-# 770 "main.c"
+                    if (arduino_stopped){
+                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+                        printf("dun break");
+                        steps2_adj=ultrasonic_main();
+                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+                        printf("stepsadj %d", steps2_adj);
+                        t_count = number_deploy(avg_dist, poles_detected);
+                        sens = 0;
+                    }
             }
-
-
-
             int pole_cl_dist = (avg_dist)-(prev_avg_dist);
-            t_count = number_deploy(avg_dist, poles_detected);
 
 
 
 
+
+            act_done = 0;
             if (t_count<=2){
                 if (t_dep <8){
 
@@ -6017,8 +6026,9 @@ void main(){
                         t_dep++;
                     }
                 }
+                act_done = 1;
             }
-
+            if (act_done){
 
             Pole[poles_detected].dist_from_cl = pole_cl_dist;
             Pole[poles_detected].dist_from_start = avg_dist;
@@ -6027,6 +6037,7 @@ void main(){
             poles_detected++;
 
             start();
+            arduino_stopped = 0;
 
 
 
@@ -6044,7 +6055,9 @@ void main(){
                             dist_final[i][k] = 0;
                         }
                     }
-            _delay((unsigned long)((3000)*(10000000/4000.0)));
+            _delay((unsigned long)((1000)*(10000000/4000.0)));
+            sens = 1;
+            }
         }
         else{
             brake();
@@ -6057,5 +6070,6 @@ void main(){
             printf("backwards");
             _delay((unsigned long)((1000)*(10000000/4000.0)));
         }
+        t_count = 5;
     }
 }

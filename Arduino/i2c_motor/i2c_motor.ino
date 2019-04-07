@@ -59,7 +59,7 @@ volatile int speed2;
 volatile bool forward = true; 
 volatile int stopp=0; 
 
-  bool sense = false;
+bool sense = false;
 
 long dist_total = 0; 
 
@@ -112,286 +112,213 @@ void setup(){
 }
 
 void loop(){
-  if (!send_to_pic){
-          digitalWrite(A2, LOW);
+  Serial.print("cylseen");
+  Serial.print(cyl_seen);
+  Serial.print("\t");
+  Serial.println(cyl_seen2);
 
-    // If we should send to the PIC, then we wait to receive a byte from the PC
+  if (!send_to_pic){
+    digitalWrite(A2, LOW);
     if (action&&!delaygo) {
-        Serial.println("WHAA");
-        ir_sensor();
-          if ((cyl_seen==0)&&(cyl_seen2==0)){
+      Serial.println("WHAA");
+      ir_sensor();
+      if ((cyl_seen==0)&&(cyl_seen2==0)){
 //          if ((cyl_seen2==0)){
         Serial.println("bruh");
-
         set_speed();
-    }
+        drive(speed1, speed2);
+      }
     }
     if (action&&delaygo){
-        Serial.println("fhaeishk");
-
-      if (loop_cnt==100){
+      Serial.println("delaygo");
+      if (loop_cnt==20){
         Serial.print("\t");
         Serial.print("\t");
         Serial.println("what the ");
-
         sense=true;
       }
       if (sense==true){
         Serial.print("\t");
         Serial.print("\t");
-        
         Serial.println("normal ");
 
         ir_sensor();
-                  if ((cyl_seen==0)&&(cyl_seen2==0)){
-
-        set_speed();
-          }
+        if ((cyl_seen==0)&&(cyl_seen2==0)){
+          set_speed();
+          drive(speed1, speed2);
         }
+      }
       if (sense==false){
         Serial.print("\t");
         Serial.print("\t");
         Serial.println("wtfwtfwtf");
         
-        digitalWrite(mot_l_1,LOW) ;    
-        digitalWrite(mot_l_2,HIGH) ;
-        
-        digitalWrite(mot_r_1,LOW) ;    
-        digitalWrite(mot_r_2,HIGH) ;
-        
-        analogWrite(pwm_l,180) ;
-        analogWrite(pwm_r,180) ;
-    
-//        for (int i=0; i<100; i++){
-//        set_speed();
-
-//        Serial.println("help");
-//
-//        }
-//        sense = true; 
+        set_speed();
+        drive(speed1, speed2);
       }
     }
-}
-    if (send_to_pic) { //if sending to PIC, not moving, and the sending byte is not empty
-          digitalWrite(A2, HIGH);
-        Serial.println("keep send");
+  }
+  if (send_to_pic) { //if sending to PIC, not moving, and the sending byte is not empty
+    digitalWrite(A2, HIGH);
+    Serial.println("keep send");
     if (!action && !incomingByte) {
-        incomingByte = avg_dist; 
-        Serial.println(incomingByte);
-
+      incomingByte = avg_dist; 
+      Serial.println(incomingByte);
 //        avg_dist = 0; //Reset the pole-to-pole distance 
     }
-    }
-    loop_cnt++;
-//  Serial.print("\t");
-//  Serial.print("\t");
-//  Serial.print("loop");
-//  Serial.println(loop_cnt);
-
+  }
+  loop_cnt++;
 }
-
-//void set_incomingByte
   
 void requestEvent(void){
 //    prev_incomingByte = incomingByte;
   if (action){
     incomingByte = avg_dist; 
-      avg_dist = 0; 
-      digitalWrite(A2, LOW);
-
+    digitalWrite(A2, LOW);
     Wire.write(incomingByte); // Respond with message of 1 byte for sensor distance
     incomingByte = 0; // Clear output buffer
+    avg_dist = 0; 
     send_to_pic = false;
   } 
 }
-/** @brief Callback for when the master transmits data */
+
 void receiveEvent(int){
-    static uint8_t buf[3] = {0};
-    static uint8_t counter = 0;
-    
-    uint8_t x = Wire.read(); // Receive byte
-    Serial.println((char)x); // Print to serial output as char (ASCII representation)
-    loop_cnt=0;
-    if (x == '1'){
-      action = true;
-      digitalWrite(A2, LOW);
-      forward = true; 
-      delaygo = false; 
-      prev_incomingByte =0;
-      send_to_pic = false;
-    }    
-    if (x == '2'){
-          loop_cnt=0;
+  static uint8_t counter = 0;
+  
+  uint8_t x = Wire.read(); // Receive byte
+  Serial.println((char)x); // Print to serial output as char (ASCII representation)
+  loop_cnt=0;
+  if (x == '1'){
+    action = true;
+    digitalWrite(A2, LOW);
+    forward = true; 
+    delaygo = false; 
+    prev_incomingByte =0;
+    send_to_pic = false;
+    stopp = 0;
+  }    
+  if (x == '2'){
+    loop_cnt=0;  
+    action = true;
+    digitalWrite(A2, LOW);
+    stopp = 0;
+    forward = true; 
+    delaygo = true; 
+    prev_incomingByte =0;
+    sense = false;
+    send_to_pic = false;
+    cyl_seen = 0; 
+//    cyl_seen2 = 0; 
+  }
+  if (x == '5'){
+    action = true;
+    digitalWrite(A2, LOW);
+    send_to_pic = false;
 
-      action = true;
-        digitalWrite(A2, LOW);
-      stopp = 0;
-      forward = true; 
-      delaygo = true; 
-      prev_incomingByte =0;
-      sense = false;
-      send_to_pic = false;
-      cyl_seen = 0; 
-      cyl_seen2 = 0; 
-    }
-    if (x == '5'){
-      action = true;
-        digitalWrite(A2, LOW);
-      send_to_pic = false;
-
-      forward = false;      
-      prev_incomingByte =0;
-    }
-    if (x == '9'){
-      action = false; //brake
-        digitalWrite(A2, HIGH);
-
-      send_to_pic = true;
-    }
+    forward = false;      
+    prev_incomingByte =0;
+  }
+  if (x == '9'){
+    action = false; //brake
+    digitalWrite(A2, HIGH);  
+    send_to_pic = true;
+  }
 }
 
 void set_speed() { 
-//    ir_sensor();
-    if (stopp == 0){
-  //Constrain speed
-  speed1 = constrain(speed1, 0, 255);
-  speed2 = constrain(speed2, 0, 255);
+  if (stopp == 0){
+    //Constrain speed
+    speed1 = constrain(speed1, 0, 255);
+    speed2 = constrain(speed2, 0, 255);
+    
+    //Sample encoders 
+    volatile unsigned long ticks1 = encoder1Pos; 
+    volatile unsigned long ticks2 = encoder2Pos; 
+    Serial.print("Ticks: ");
+    Serial.print(ticks1);
+    Serial.print("\t");
+    Serial.println(ticks2);
+    
+    Serial.print("Dist: ");
+    Serial.print(dist1);
+    Serial.print("\t");
+    Serial.println(dist2);
   
-  //Sample encoders 
-  volatile unsigned long ticks1 = encoder1Pos; 
-  volatile unsigned long ticks2 = encoder2Pos; 
-  Serial.print("Ticks: ");
-  Serial.print(ticks1);
-  Serial.print("\t");
-  Serial.println(ticks2);
+    avg_dist_float = float(((float((dist1 + dist2 ))/float(2)))/10); //avg distance in cm 
+    avg_dist = (int)(avg_dist_float + 0.5); //casting avg distance into an int and rounding 
   
-  Serial.print("Dist: ");
-  Serial.print(dist1);
-  Serial.print("\t");
-  Serial.println(dist2);
-
-  avg_dist_float = float(((float((dist1 + dist2 ))/float(2)))/10); //avg distance in cm 
-  avg_dist = (int)(avg_dist_float + 0.5); //casting avg distance into an int and rounding 
-
-  Serial.println("Avgdist: ");
-//  Serial.print(avg_dist_float);
-//  Serial.print("\t");
-  Serial.println(avg_dist);
+    Serial.println("Avgdist: ");
+    Serial.println(avg_dist);
+    
+    int diff = abs(ticks1-ticks2); 
+  //  int offset = abs(dist1-dist2); ;    
+    int offset = 2;   
   
-  int diff = abs(ticks1-ticks2); 
-//  int offset = abs(dist1-dist2); ;    
-  int offset = 2;   
-
-  if (diff != 0){
-    if (ticks1>ticks2){
-      speed1 = speed1 - offset; 
-      speed2 = speed2 + offset; 
-//      Serial.println("  Unveven: ");
-  
+    if (diff != 0){
+      if (ticks1>ticks2){
+        speed1 = speed1 - offset; 
+        speed2 = speed2 + offset;   
+      }
+      if (ticks2>ticks1){
+        speed1 = speed1 + offset; 
+        speed2 = speed2 - offset;   
+      }
     }
-    if (ticks2>ticks1){
-      speed1 = speed1 + offset; 
-      speed2 = speed2 - offset; 
-//      Serial.println("  Uneven ");
-  
+    if (diff == 0){
+      speed1 = 255;
+      speed2 = 255;
+  //    speed1 = 245;
+  //    speed2 = 245;    
+  //    speed1 = 180;
+  //    speed2 = 180;
+  //    Serial.println("  wtf ");
     }
-  }
-//  else if (ticks1==ticks1){
-  if (diff == 0){
-    speed1 = 255;
-    speed2 = 255;
-//    speed1 = 245;
-//    speed2 = 245;    
-//    speed1 = 180;
-//    speed2 = 180;
-//    Serial.println("  wtf ");
-  }
-
-//  if (forward == true){
-//  if ((speed1<20) && (speed2<20)){
-//  if ((speed1 && speed2)<25){
-      if (((speed1)<25)&&((speed2)<25)){
-
-    speed1 = 255;
-    speed2 = 255;
-//    speed1 = 245; 
-//    speed2 = 245; 
-//    speed1 = 180;
-//    speed2 = 180;
-  }
-
+    if (((speed1)<25)&&((speed2)<25)){
+      speed1 = 255;
+      speed2 = 255;
+  //    speed1 = 245; 
+  //    speed2 = 245; 
+  //    speed1 = 180;
+  //    speed2 = 180;
+    }
   Serial.print("Speed: ");
   Serial.print(speed1);
   Serial.print("\t");
   Serial.println(speed2);
-
-  drive(speed1, speed2);
-
-
-//  }
-//  if (forward == false){
-//    
-//  }
-    }
+//  drive(speed1, speed2);
+  }
   digitalWrite(A2, LOW);
-
 }
 void drive(int speed1, int speed2){
-//    ir_sensor();
-
   if (stopp==0){
-  if ((action)&&(forward==true)){ 
+    if ((action)&&(forward==true)){ 
       digitalWrite(A2, LOW);
-         digitalWrite(mot_l_1,HIGH) ;    
-    digitalWrite(mot_l_2,LOW) ;
-    
-    digitalWrite(mot_r_1,HIGH) ;    
-    digitalWrite(mot_r_2,LOW) ;
-    
-
-
-    analogWrite(pwm_l,speed2) ;
-    analogWrite(pwm_r,speed1) ;
-  }
-  if ((action)&&(forward==false)){
+      
+      digitalWrite(mot_l_1,HIGH) ;    
+      digitalWrite(mot_l_2,LOW) ;
+      
+      digitalWrite(mot_r_1,HIGH) ;    
+      digitalWrite(mot_r_2,LOW) ;
+      
+      analogWrite(pwm_l,speed2) ;
+      analogWrite(pwm_r,speed1) ;
+    }
+    if ((action)&&(forward==false)){
       digitalWrite(A2, LOW);
-
-//  if ((action)&&(forward==false)){
-//    avg_dist = 0; 
-//    while (dist<4000){
-    digitalWrite(mot_l_1,LOW) ;    
-    digitalWrite(mot_l_2,HIGH) ;
-    
-    digitalWrite(mot_r_1,LOW) ;    
-    digitalWrite(mot_r_2,HIGH) ;
-
-    analogWrite(pwm_l,speed2) ;
-    analogWrite(pwm_r,speed1) ;
+  
+      digitalWrite(mot_l_1,LOW) ;    
+      digitalWrite(mot_l_2,HIGH) ;
+      
+      digitalWrite(mot_r_1,LOW) ;    
+      digitalWrite(mot_r_2,HIGH) ;
+  
+      analogWrite(pwm_l,speed2) ;
+      analogWrite(pwm_r,speed1) ;
+    }
+    if (!action){ //If action is false, brake
+      brake();
+    }
   }
-}
-  if (!action){ //If action is false, brake
-    brake();
-  }
-//    digitalWrite(mot_l_1,LOW) ;    
-//    digitalWrite(mot_l_2,LOW) ;
-//    
-//    digitalWrite(mot_r_1,LOW) ;    
-//    digitalWrite(mot_r_2,LOW) ;
-    
-//    Serial.println("brake");
-//    avg_dist_float = (((dist1 + dist2 )/2)/1000); //avg distance is cm 
-//    avg_dist = (int)(avg_dist_float + 0.5); //casting avg distance into an int and rounding 
-//    //  avg_dist = (dist1 );
-//    Serial.print("Avgdist: ");
-//    Serial.print(avg_dist_float);
-//    Serial.print("\t");
-//    Serial.println(avg_dist);
-//  }
-//    Serial.print("loop");
-//  Serial.println(loop_cnt);
-//  dist1 = 100;
-//  dist2 = 23;
-//  avg_dist = 90;
 }
 
 void brake(){
@@ -409,14 +336,14 @@ void brake(){
   digitalWrite(A2, HIGH);
   Serial.println("braking");
 
-//  delay(2000);
-    dist_total = dist_total+avg_dist; 
-      Serial.print("  AVG_DIST: ");
+  dist_total = dist_total+avg_dist; 
+  
+  Serial.print("  AVG_DIST: ");
   Serial.print(avg_dist);
   Serial.print("\t");
   Serial.print("  DIST_TOT ");
   Serial.println(dist_total);
-        send_to_pic = true;
+  send_to_pic = true;
 
 //  avg_dist = 0; 
 }
@@ -429,53 +356,26 @@ void ir_sensor(){
   }
   if (isObstacle2 == LOW) { 
     cyl_seen2 = 1; 
-        Serial.println("OBSTACLE2");
-
-//    brake();
+    Serial.println("OBSTACLE2");
+  }  
+  if (isObstacle2 == HIGH) { 
+    cyl_seen2 = 0; 
   }
   if ((cyl_seen==1)&&(cyl_seen2==0)){
-    speed1 = 50;
-    speed2 = 50;      
+    speed1 = 80;
+    speed2 = 80;      
     drive(speed1,(speed2)); //drive slower  
   }
   if ((cyl_seen==1)&&(cyl_seen2==1)){
     brake();
-        Serial.println("break");
-
+    Serial.println("break");
   }
   if ((cyl_seen==1)&&(cyl_seen2==1)&&(isObstacle2 == HIGH)){
     cyl_seen = 0; 
     cyl_seen2 = 0; 
-            Serial.println("REST");
-
+    Serial.println("REST");
   }
 }
-//void ir_sensor(){
-//          Serial.println("ir");
-//
-//    isObstacle = digitalRead(isObstaclePin);
-//  if (isObstacle == LOW) {
-////    Serial.println("OBSTACLE!!, OBSTACLE!!");
-//    brake();
-////    for (int i=0; i<100; i++){
-////    digitalWrite(mot_l_1,HIGH) ;    
-////    digitalWrite(mot_l_2,LOW) ;
-////    
-////    digitalWrite(mot_r_1,HIGH) ;    
-////    digitalWrite(mot_r_2,LOW) ;
-////
-////    analogWrite(pwm_l,speed2) ;
-////    analogWrite(pwm_r,speed1) ;
-////    
-////    digitalWrite(LED, HIGH);
-////    }
-//  } 
-//  else {
-////    Serial.println("clear");
-//    digitalWrite(LED, LOW);
-//    stopp=0;
-//  }
-//}
 
 void count1() {
   if (action){

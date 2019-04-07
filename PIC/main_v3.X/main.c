@@ -288,15 +288,18 @@ int min(int *array, int size){
     return minimum;
 }
 
-int ultrasonic_main(){
+int ultrasonic_main(){ 
     TRISBbits.RB0 = 0;
     LATBbits.LATB0 = 1; //DISABLES KPD	
-	
+
+        lcd_clear(); 
+    printf("or here"); 	
 	TRISB = 0b11110000;                 //RB5,6,7 as Input PIN (ECHO)
- 
+    lcd_clear(); 
+    printf("break heree?");    
     RBIF = 0;                           //Clear PORTB On-Change Interrupt Flag
 	RBIE = 1;                           //Enable PORTB On-Change Interrupt
-    	
+ 	
     int sensed = 0;
     int min_us_dist=0;
     int steps2_adj=0;
@@ -444,22 +447,22 @@ int number_deploy(int avg_dist, poles_detected){
             }
         }
 
-    t_count = tires_t - tires_detected; //tires need to be deployed         
-    Pole[poles_detected].tires_deployed = t_count; 
-    Pole[poles_detected].tires_final = tires_t;
-    lcd_clear();
-    printf("det,%d, tcnt %d",tires_detected,t_count);
-    __delay_ms(1000);
-    
-    if (t_count<=2){
-//            lcd_clear();
-//    printf("dfads");
-//    __delay_ms(1000);
-        return (int) t_count;
-            break;
+        t_count = tires_t - tires_detected; //tires need to be deployed         
+        Pole[poles_detected].tires_deployed = t_count; 
+        Pole[poles_detected].tires_final = tires_t;
+        lcd_clear();
+        printf("det,%d, tcnt %d",tires_detected,t_count);
+        __delay_ms(1000);
 
+        if (t_count<=2){
+        //            lcd_clear();
+        //    printf("dfads");
+        //    __delay_ms(1000);
+        //        return (int) t_count;
+        break;
+        }
     }
-    }
+    return (int) t_count;
 }
 //void start_dc(){
 //    send=true;
@@ -682,8 +685,6 @@ void backwards(){
     I2C_Master_Stop(); 
 }
 
-
-
 void main(){
     int stack=1; 
     int t_dep=0;
@@ -704,7 +705,7 @@ void main(){
     PORTAbits.RA4 = LATAbits.LATA4;
 
     bool act_done = false; 
-
+    bool arduino_stopped = false; 
     
     Poles Pole[10];
 //    int Pole[10];
@@ -746,6 +747,11 @@ void main(){
 //                        brake();
                         lcd_clear(); 
                         printf("done wait");
+                        arduino_stopped = true; 
+                    }
+                    if (arduino_stopped){
+                        lcd_clear(); 
+                        printf("dun break");
                         steps2_adj=ultrasonic_main();
                         lcd_clear(); 
                         printf("stepsadj %d", steps2_adj);
@@ -792,6 +798,7 @@ void main(){
             poles_detected++;
     //        start_dc();  //start DC motors running again after deployment
             start();
+            arduino_stopped = false; 
             
     //            I2C_Master_Start(); // Start condition
     //    I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
@@ -809,7 +816,7 @@ void main(){
                             dist_final[i][k] = 0; 
                         }
                     }   
-//            __delay_ms(3000);
+            __delay_ms(1000);
             sens = 1;
             }
         }
