@@ -42,25 +42,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2992
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 2992: extern volatile unsigned char EECON2 __attribute__((address(0xFA7)));
 [v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
-[p mainexit ]
-"91 ./lcd.h
-[; ;./lcd.h: 91: void initLCD(void);
-[v _initLCD `(v ~T0 @X0 0 ef ]
-"2046 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 2046: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"88 ./lcd.h
-[; ;./lcd.h: 88: void lcdInst(char data);
-[v _lcdInst `(v ~T0 @X0 0 ef1`uc ]
-[v F2424 `(v ~T0 @X0 1 tf1`ul ]
-"183 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
-[v __delay `JF2424 ~T0 @X0 0 e ]
-[p i __delay ]
-"113 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"72 ./lcd.h
-[; ;./lcd.h: 72: extern const unsigned char LCD_LINE2_ADDR;
-[v _LCD_LINE2_ADDR `Cuc ~T0 @X0 0 e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -477,7 +458,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [p x FCMEN = OFF ]
 "16
-[p x IESO = ON ]
+[p x IESO = OFF ]
 "19
 [p x PWRT = OFF ]
 "20
@@ -497,7 +478,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31
 [p x MCLRE = ON ]
 "34
-[p x STVREN = ON ]
+[p x STVREN = OFF ]
 "35
 [p x LVP = OFF ]
 "36
@@ -538,256 +519,87 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "66
 [p x EBTRB = OFF ]
-"94 main.c
+"18 EEPROM.c
+[; ;EEPROM.c: 18: void ee_write_byte(unsigned char address, unsigned char *_data){
 [v _ee_write_byte `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
 [e :U _ee_write_byte ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [v __data `*uc ~T0 @X0 1 r2 ]
 [f ]
-"96
+"19
+[; ;EEPROM.c: 19:     EEDATA = *_data;
 [e = _EEDATA *U __data ]
-"97
+"20
+[; ;EEPROM.c: 20:     EEADR = address;
 [e = _EEADR _address ]
-"99
+"22
+[; ;EEPROM.c: 22:     EECON1bits.EEPGD = 0;
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"100
+"23
+[; ;EEPROM.c: 23:     EECON1bits.CFGS = 0;
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-"101
+"24
+[; ;EEPROM.c: 24:     EECON1bits.WREN = 1;
 [e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-"102
+"25
+[; ;EEPROM.c: 25:     INTCONbits.GIE = 0;
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"103
+"26
+[; ;EEPROM.c: 26:     EECON2 = 0x55;
 [e = _EECON2 -> -> 85 `i `uc ]
-"104
+"27
+[; ;EEPROM.c: 27:     EECON2 = 0x0AA;
 [e = _EECON2 -> -> 170 `i `uc ]
-"105
+"28
+[; ;EEPROM.c: 28:     EECON1bits.WR = 1;
 [e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-"116
-[; ;main.c: 116:     do {
+"39
+[; ;EEPROM.c: 39:     do {
 [e :U 275 ]
 {
-"117
-[; ;main.c: 117:       __asm(" clrwdt");
+"40
+[; ;EEPROM.c: 40:       __asm(" clrwdt");
 [; <"  clrwdt ;# ">
-"118
-[; ;main.c: 118:       } while(EECON1bits.WR);
+"41
+[; ;EEPROM.c: 41:       } while(EECON1bits.WR);
 }
 [e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 275  ]
 [e :U 274 ]
-"119
-[; ;main.c: 119:     EECON1bits.WREN = 0;
+"42
+[; ;EEPROM.c: 42:     EECON1bits.WREN = 0;
 [e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:     INTCONbits.GIE = 1;
+"43
+[; ;EEPROM.c: 43:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121: }
+"44
+[; ;EEPROM.c: 44: }
 [e :UE 272 ]
 }
-"123
-[; ;main.c: 123: void ee_read_byte(unsigned char address, unsigned char *_data){
+"46
+[; ;EEPROM.c: 46: void ee_read_byte(unsigned char address, unsigned char *_data){
 [v _ee_read_byte `(v ~T0 @X0 1 ef2`uc`*uc ]
 {
 [e :U _ee_read_byte ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [v __data `*uc ~T0 @X0 1 r2 ]
 [f ]
-"124
-[; ;main.c: 124:     EEADR = address;
+"47
+[; ;EEPROM.c: 47:     EEADR = address;
 [e = _EEADR _address ]
-"125
-[; ;main.c: 125:     EECON1bits.CFGS = 0;
+"48
+[; ;EEPROM.c: 48:     EECON1bits.CFGS = 0;
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-"126
-[; ;main.c: 126:     EECON1bits.EEPGD = 0;
+"49
+[; ;EEPROM.c: 49:     EECON1bits.EEPGD = 0;
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"127
-[; ;main.c: 127:     EECON1bits.RD = 1;
+"50
+[; ;EEPROM.c: 50:     EECON1bits.RD = 1;
 [e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-"128
-[; ;main.c: 128:     *_data = EEDATA;
+"51
+[; ;EEPROM.c: 51:     *_data = EEDATA;
 [e = *U __data _EEDATA ]
-"129
-[; ;main.c: 129: }
+"52
+[; ;EEPROM.c: 52: }
 [e :UE 276 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"144
-[; ;main.c: 144: void main(){
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"145
-[; ;main.c: 145:     char save_me = 'x';
-[v _save_me `uc ~T0 @X0 1 a ]
-[e = _save_me -> -> 120 `ui `uc ]
-"146
-[; ;main.c: 146:     char from_eeprom;
-[v _from_eeprom `uc ~T0 @X0 1 a ]
-"147
-[; ;main.c: 147:     int help = 65;
-[v _help `i ~T0 @X0 1 a ]
-[e = _help -> 65 `i ]
-"148
-[; ;main.c: 148:     initLCD();
-[e ( _initLCD ..  ]
-"149
-[; ;main.c: 149:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"152
-[; ;main.c: 152:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"153
-[; ;main.c: 153:     printf("EEPROM");
-[e ( _printf :s 1C ]
-"154
-[; ;main.c: 154:     ee_read_byte(0x00, &from_eeprom);
-[e ( _ee_read_byte (2 , -> -> 0 `i `uc -> &U _from_eeprom `*uc ]
-"155
-[; ;main.c: 155:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
-}
-"156
-[; ;main.c: 156:     printf("Char read from 0x00: %c", from_eeprom);
-[e ( _printf , (. :s 2C -> _from_eeprom `i ]
-"157
-[; ;main.c: 157:     _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"159
-[; ;main.c: 159:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"160
-[; ;main.c: 160:     printf("EEPROM");
-[e ( _printf :s 3C ]
-"161
-[; ;main.c: 161:     ee_write_byte(0x00, &save_me);
-[e ( _ee_write_byte (2 , -> -> 0 `i `uc -> &U _save_me `*uc ]
-"162
-[; ;main.c: 162:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
-}
-"163
-[; ;main.c: 163:     printf("Char written to 0x00: %c", save_me);
-[e ( _printf , (. :s 4C -> _save_me `i ]
-"165
-[; ;main.c: 165:     _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"167
-[; ;main.c: 167:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"168
-[; ;main.c: 168:     printf("EEPROM");
-[e ( _printf :s 5C ]
-"169
-[; ;main.c: 169:     ee_read_byte(0x00, &from_eeprom);
-[e ( _ee_read_byte (2 , -> -> 0 `i `uc -> &U _from_eeprom `*uc ]
-"170
-[; ;main.c: 170:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
-}
-"171
-[; ;main.c: 171:     printf("Char read from 0x00: %c", from_eeprom);
-[e ( _printf , (. :s 6C -> _from_eeprom `i ]
-"173
-[; ;main.c: 173:     _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"176
-[; ;main.c: 176:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"177
-[; ;main.c: 177:     printf("EEPROM");
-[e ( _printf :s 7C ]
-"178
-[; ;main.c: 178:     ee_read_byte(0x01, &from_eeprom);
-[e ( _ee_read_byte (2 , -> -> 1 `i `uc -> &U _from_eeprom `*uc ]
-"179
-[; ;main.c: 179:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
-}
-"180
-[; ;main.c: 180:     printf("Char read from 0x01: %c", from_eeprom);
-[e ( _printf , (. :s 8C -> _from_eeprom `i ]
-"182
-[; ;main.c: 182:     _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"184
-[; ;main.c: 184:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"185
-[; ;main.c: 185:     printf("EEPROM");
-[e ( _printf :s 9C ]
-"186
-[; ;main.c: 186:     ee_write_byte(0x01, &help);
-[e ( _ee_write_byte (2 , -> -> 1 `i `uc -> &U _help `*uc ]
-"187
-[; ;main.c: 187:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
-}
-"188
-[; ;main.c: 188:     printf("int written to 0x01: %d", help);
-[e ( _printf , (. :s 10C _help ]
-"190
-[; ;main.c: 190:     _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"192
-[; ;main.c: 192:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"193
-[; ;main.c: 193:     printf("EEPROM");
-[e ( _printf :s 11C ]
-"194
-[; ;main.c: 194:     ee_read_byte(0x01, &from_eeprom);
-[e ( _ee_read_byte (2 , -> -> 1 `i `uc -> &U _from_eeprom `*uc ]
-"195
-[; ;main.c: 195:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
-}
-"196
-[; ;main.c: 196:     printf("int read from 0x01: %d", from_eeprom);
-[e ( _printf , (. :s 12C -> _from_eeprom `i ]
-"198
-[; ;main.c: 198:     _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"199
-[; ;main.c: 199: }
-[e :UE 277 ]
-}
-[p f _printf 8913024 ]
-[a 10C 105 110 116 32 119 114 105 116 116 101 110 32 116 111 32 48 120 48 49 58 32 37 100 0 ]
-[a 12C 105 110 116 32 114 101 97 100 32 102 114 111 109 32 48 120 48 49 58 32 37 100 0 ]
-[a 8C 67 104 97 114 32 114 101 97 100 32 102 114 111 109 32 48 120 48 49 58 32 37 99 0 ]
-[a 4C 67 104 97 114 32 119 114 105 116 116 101 110 32 116 111 32 48 120 48 48 58 32 37 99 0 ]
-[a 2C 67 104 97 114 32 114 101 97 100 32 102 114 111 109 32 48 120 48 48 58 32 37 99 0 ]
-[a 6C 67 104 97 114 32 114 101 97 100 32 102 114 111 109 32 48 120 48 48 58 32 37 99 0 ]
-[a 1C 69 69 80 82 79 77 0 ]
-[a 3C 69 69 80 82 79 77 0 ]
-[a 5C 69 69 80 82 79 77 0 ]
-[a 7C 69 69 80 82 79 77 0 ]
-[a 9C 69 69 80 82 79 77 0 ]
-[a 11C 69 69 80 82 79 77 0 ]

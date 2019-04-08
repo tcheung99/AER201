@@ -5291,10 +5291,10 @@ double yn(int, double);
 # 95 "./actuators.h"
 void system_init (void);
 void full_drive (char direction,int stepper_no);
-void stepper(int stack);
+void stepper(int stack, int t_dep);
 void stepper2(char direction, int steps2_adj);
 void servo(void);
-void actuators_main (int stack, int step2_offset);
+void actuators_main (int stack, int step2_offset, int t_dep);
 void stepper2_back(char direction, int steps2_adj);
 # 8 "main.c" 2
 
@@ -6015,7 +6015,7 @@ void main(){
                 if (t_dep >= 8){
                     stack = 2;
                     for(int i=0; i<(t_count); i++){
-                        actuators_main(stack, steps2_adj);
+                        actuators_main(stack, steps2_adj, t_dep);
 
                         t_dep++;
                     }

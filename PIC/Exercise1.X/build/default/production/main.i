@@ -4625,26 +4625,91 @@ void lcd_shift_display(unsigned char numChars, lcd_direction_e direction);
 # 118 "./lcd.h"
 void putch(char data);
 # 76 "main.c" 2
-# 99 "main.c"
-void main(void) {
-        LATD = 0x00;
+# 91 "main.c"
+#pragma stack 0x300 0xff
+
+
+void ee_write_byte(unsigned char address, unsigned char *_data){
+
+    EEDATA = *_data;
+    EEADR = address;
+
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    EECON1bits.WREN = 1;
+    INTCONbits.GIE = 0;
+    EECON2 = 0x55;
+    EECON2 = 0x0AA;
+    EECON1bits.WR = 1;
+# 116 "main.c"
+    do {
+      __asm(" clrwdt");
+      } while(EECON1bits.WR);
+    EECON1bits.WREN = 0;
+    INTCONbits.GIE = 1;
+}
+
+void ee_read_byte(unsigned char address, unsigned char *_data){
+    EEADR = address;
+    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    *_data = EEDATA;
+}
+# 144 "main.c"
+void main(){
+    char save_me = 'x';
+    char from_eeprom;
+    int help = 65;
+    initLCD();
     TRISD = 0x00;
-            initLCD();
-# 141 "main.c"
-    TRISAbits.RA4 = 0;
 
 
-
-                    PORTAbits.RA4 = LATAbits.LATA4;
-
-    if (!PORTAbits.RA4){
     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-        printf("fuck");
-    }
-    if (PORTAbits.RA4){
-        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-        printf("hep");
+    printf("EEPROM");
+    ee_read_byte(0x00, &from_eeprom);
+    { lcdInst(0x80 | LCD_LINE2_ADDR);};
+    printf("Char read from 0x00: %c", from_eeprom);
+    _delay((unsigned long)((1000)*(10000000/4000.0)));
 
-           }
-# 171 "main.c"
+    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("EEPROM");
+    ee_write_byte(0x00, &save_me);
+    { lcdInst(0x80 | LCD_LINE2_ADDR);};
+    printf("Char written to 0x00: %c", save_me);
+
+    _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("EEPROM");
+    ee_read_byte(0x00, &from_eeprom);
+    { lcdInst(0x80 | LCD_LINE2_ADDR);};
+    printf("Char read from 0x00: %c", from_eeprom);
+
+    _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+
+    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("EEPROM");
+    ee_read_byte(0x01, &from_eeprom);
+    { lcdInst(0x80 | LCD_LINE2_ADDR);};
+    printf("Char read from 0x01: %c", from_eeprom);
+
+    _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("EEPROM");
+    ee_write_byte(0x01, &help);
+    { lcdInst(0x80 | LCD_LINE2_ADDR);};
+    printf("int written to 0x01: %d", help);
+
+    _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+    printf("EEPROM");
+    ee_read_byte(0x01, &from_eeprom);
+    { lcdInst(0x80 | LCD_LINE2_ADDR);};
+    printf("int read from 0x01: %d", from_eeprom);
+
+    _delay((unsigned long)((1000)*(10000000/4000.0)));
 }

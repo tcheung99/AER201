@@ -31,17 +31,17 @@
 ////define constants
 ////#define _XTAL_FREQ 200000000 //Crystal Frequency, used in delay
 //
-#define speed1 9 // Speed Range 10 to 1  10 = lowest , 1 = highest 
-#define speed2 4 // Speed Range 10 to 1  10 = lowest , 1 = highest 
-//1 is when it stops turning, 4 is when lights stop flickering, 5 10 is ok, 20 25 30 is finnicky and slow 
-#define steps1 14// how much step it will take (249 ~= 1 full rotation)
+//#define speed1 9 // Speed Range 10 to 1  10 = lowest , 1 = highest 
+//#define speed2 4 // Speed Range 10 to 1  10 = lowest , 1 = highest 
+////1 is when it stops turning, 4 is when lights stop flickering, 5 10 is ok, 20 25 30 is finnicky and slow 
+//#define steps1 14// how much step it will take (249 ~= 1 full rotation)
+////#define steps2 110 // how much step it will take (249 ~= 1 full rotation)
 //#define steps2 110 // how much step it will take (249 ~= 1 full rotation)
-#define steps2 110 // how much step it will take (249 ~= 1 full rotation)
-#define steps3 156 // how much step it will take (249 ~= 1 full rotation)
-#define clockwise 0 // clockwise direction macro
-#define anti_clockwise 1 // anti clockwise direction macro 
-
-#define steps_back 6
+//#define steps3 156 // how much step it will take (249 ~= 1 full rotation)
+//#define clockwise 0 // clockwise direction macro
+//#define anti_clockwise 1 // anti clockwise direction macro 
+//
+//#define steps_back 6
 
 //#define thrdist 25
 
@@ -94,9 +94,9 @@
 
 void system_init (void); // This function will initialise the ports.
 void full_drive (char direction,int stepper_no); // This function will drive the motor in full drive mode
-void stepper(int stack);
+void stepper(int stack, int t_dep);
 void stepper2(char direction, int steps2_adj);
 void servo(void);
-void actuators_main (int stack, int step2_offset);
+void actuators_main (int stack, int step2_offset, int t_dep);
 void stepper2_back(char direction, int steps2_adj);
 #endif

@@ -12,7 +12,7 @@ void actuators_main(int stack, int steps2_adj, int t_dep){
 //        lcd_clear();
 //        printf("Stepper start");  
         
-        stepper(stack);
+        stepper(stack, t_dep);
         stepper2(clockwise, steps2_adj);
                 stepper2_back(anti_clockwise, steps2_adj);
 

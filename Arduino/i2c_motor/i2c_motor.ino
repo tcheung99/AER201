@@ -206,6 +206,14 @@ sensorState2 = digitalRead(SENSORPIN2);
     }
   }
   loop_cnt++;
+  int currTime = millis();
+  int curr_opTime = currTime - startTime;  
+  
+  if ((curr_opTime/1000)>=180){
+    brake();
+  }  
+  Serial.print("time: ");
+  Serial.print(curr_opTime);
 }
   
 void requestEvent(void){
@@ -234,7 +242,7 @@ void receiveEvent(int){
     prev_incomingByte =0;
     send_to_pic = false;
     stopp = 0;
-      startTime = millis();
+    startTime = millis();
 
 //    ir_seen = false;    
   }    

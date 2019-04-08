@@ -809,7 +809,7 @@ void main(){
                 if (t_dep >= 8){
                     stack = 2;
                     for(int i=0; i<(t_count); i++){
-                        actuators_main(stack, steps2_adj); 
+                        actuators_main(stack, steps2_adj, t_dep); 
 //                        actuators_main(stack, 110); 
                         t_dep++;
                     }

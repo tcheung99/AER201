@@ -79,6 +79,126 @@
 //#include "timer.h"
 //int min(int *array, int size){
 //
+
+// read and write eeprom of PIC18F2550 (and 18F2455, 18F4455, 18F4550)
+// EEPROM size is 256 bytes
+// (c) Raphael Wimmer. Licensed under GNU GPL v2 or higher
+
+//#include <pic18fregs.h>
+//#include <stdio.h>
+//#include <usart.h>
+
+#pragma stack 0x300 0xff // set 64 byte stack at 0x300, needed by sdcc
+
+
+void ee_write_byte(unsigned char address, unsigned char *_data){
+
+    EEDATA = *_data;
+    EEADR = address;
+    // start write sequence as described in datasheet, page 91
+    EECON1bits.EEPGD = 0; //point to data memory--access data EEPROM memory 
+    EECON1bits.CFGS = 0; //access data EEPROM memory 
+    EECON1bits.WREN = 1; // enable writes to data EEPROM
+    INTCONbits.GIE = 0;  // disable interrupts
+    EECON2 = 0x55;
+    EECON2 = 0x0AA;
+    EECON1bits.WR = 1;   // start writing
+//    while(EECON1bits.WR){
+//        #asm 
+//        __asm
+//                
+//        nop 
+//        __endasm
+//        #endasm} //does nothing (like a delay?)
+//    if(EECON1bits.WRERR){
+//        printf("ERROR");
+//    }
+    do {
+      ClrWdt();
+      } while(EECON1bits.WR);   
+    EECON1bits.WREN = 0; //disable writing 
+    INTCONbits.GIE = 1;  // enable interrupts
+}
+
+void ee_read_byte(unsigned char address, unsigned char *_data){
+    EEADR = address;
+    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    *_data = EEDATA;
+}
+//
+//void initUsart()
+//{
+//    usart_open(    // Use USART library to initialise the hardware
+//            USART_TX_INT_OFF
+//            & USART_RX_INT_OFF
+//            & USART_BRGH_HIGH
+//            & USART_ASYNCH_MODE
+//            & USART_EIGHT_BIT,
+//            10                      // '10' = 115200 Baud with 20 MHz oscillator and BRGH=1
+//            );
+//    stdout = STREAM_USART;
+//}
+
+void main(){
+    char save_me = 'x';
+    char from_eeprom;
+    int help = 65; 
+    initLCD();
+    TRISD = 0x00;
+
+//    initUsart();
+    lcd_clear();
+    printf("EEPROM");
+    ee_read_byte(0x00, &from_eeprom);
+    lcd_set_ddram_addr(LCD_LINE2_ADDR);
+    printf("Char read from 0x00: %c", from_eeprom);
+    __delay_ms(1000);
+
+    lcd_clear();
+    printf("EEPROM");    
+    ee_write_byte(0x00, &save_me);
+    lcd_set_ddram_addr(LCD_LINE2_ADDR);
+    printf("Char written to 0x00: %c", save_me);
+//    __delay_ms(500);
+    __delay_ms(1000);
+
+    lcd_clear();
+    printf("EEPROM");    
+    ee_read_byte(0x00, &from_eeprom);
+    lcd_set_ddram_addr(LCD_LINE2_ADDR);
+    printf("Char read from 0x00: %c", from_eeprom);
+//    __delay_ms(500);
+    __delay_ms(1000);
+    
+    
+    lcd_clear();
+    printf("EEPROM");
+    ee_read_byte(0x01, &from_eeprom);
+    lcd_set_ddram_addr(LCD_LINE2_ADDR);
+    printf("Char read from 0x01: %c", from_eeprom);
+//    __delay_ms(500);
+    __delay_ms(1000);
+    
+    lcd_clear();
+    printf("EEPROM");    
+    ee_write_byte(0x01, &help);
+    lcd_set_ddram_addr(LCD_LINE2_ADDR);
+    printf("int written to 0x01: %d", help);
+//    __delay_ms(500);
+    __delay_ms(1000);
+
+    lcd_clear();
+    printf("EEPROM");    
+    ee_read_byte(0x01, &from_eeprom);
+    lcd_set_ddram_addr(LCD_LINE2_ADDR);
+    printf("int read from 0x01: %d", from_eeprom);
+//    __delay_ms(500);
+    __delay_ms(1000);
+}
+
+
 //    int minimum  = array[0];
 //    for (int i = 0; i<size; i++){
 //        if (minimum>=array[i]){
@@ -96,10 +216,12 @@
 
 
 
-void main(void) {
-        LATD = 0x00;
-    TRISD = 0x00;
-            initLCD();
+//void main(void) {
+//        LATD = 0x00;
+//    TRISD = 0x00;
+//            initLCD();
+            
+            
 
 //                lcd_clear(); 
 //        printf("garfsa");
@@ -138,21 +260,22 @@ void main(void) {
 //            __delay_ms(1000);
 //    TRISAbits.RA5 = 0;
 
-    TRISAbits.RA4 = 0;
-//        PORTAbits.RA4 = LATAbits.LATA4;
-//        PORTAbits.RA4 = LATAbits.LATA5;
-//                printf(PORTAbits.RA4)
-                    PORTAbits.RA4 = LATAbits.LATA4;
-
-    if (!PORTAbits.RA4){
-    lcd_clear(); 
-        printf("fuck");
-    }
-    if (PORTAbits.RA4){
-        lcd_clear(); 
-        printf("hep");
-//        __delay_ms(200);
-           } 
+////Comm
+//    TRISAbits.RA4 = 0;
+////        PORTAbits.RA4 = LATAbits.LATA4;
+////        PORTAbits.RA4 = LATAbits.LATA5;
+////                printf(PORTAbits.RA4)
+//                    PORTAbits.RA4 = LATAbits.LATA4;
+//
+//    if (!PORTAbits.RA4){
+//    lcd_clear(); 
+//        printf("fuck");
+//    }
+//    if (PORTAbits.RA4){
+//        lcd_clear(); 
+//        printf("hep");
+////        __delay_ms(200);
+//           } 
 
             
 //        if (PORTAbits.RA4 == 1){
@@ -168,7 +291,7 @@ void main(void) {
 //        while(PORTBbits.RB1){continue;}  
 //    }
 //    return; 
-}
+//}
 //interrupt or no interrupt -- interrupt allows your program to do other stuff, polling is simple but blocks program from doing anything else
 //RB1 will go high on keypad presses -- kind of counts up in binary 
 //
