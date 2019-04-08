@@ -1,11 +1,12 @@
 #include <Wire.h>
 
 #define SENSORPIN2 12
-#define SENSORPIN A3
+#define SENSORPIN 9
+//#define SENSORPIN A3
 
 ///Motor setup
 const int transferr = A2; // This is our input pin
-const int led = A3; 
+const int led = 13; 
 
 const int wheel_d = 65;           // Wheel diameter (mm)
 const float wheel_c = PI * wheel_d; // Wheel circumference (mm)
@@ -21,7 +22,8 @@ const float random_coeff= 2.1;
 //y = -(0.175/3000)*x+ 2.17583333;
 
 const int pwm_l = 11 ;  
-const int mot_l_1 = 9 ;
+//const int mot_l_1 = 9 ;
+const int mot_l_1 = A3 ;
 const int mot_l_2 = 10 ;
 
 const int pwm_r = 6 ;
@@ -34,12 +36,12 @@ const int encoder1PinB = 4;
 const int encoder2PinA = 3; 
 const int encoder2PinB = 5;
 volatile int ir_seen = 0; 
-volatile int tire1_tick_beg =0;
-volatile int tire2_tick_beg =0;
-volatile int tire1_tick_end =0;
-volatile int tire2_tick_end =0;
-volatile int tire2_dist=0;
-volatile int tire1_dist=0;
+volatile long tire1_tick_beg =0;
+volatile long tire2_tick_beg =0;
+volatile long tire1_tick_end =0;
+volatile long tire2_tick_end =0;
+volatile long tire2_dist=0;
+volatile long tire1_dist=0;
 
 int LED = 13; // Use the onboard Uno LED
 int isObstaclePin = A0; // This is our input pin
@@ -188,12 +190,15 @@ sensorState2 = digitalRead(SENSORPIN2);
       }
     }
     if (action && !forward){
-
       avg_dist = 0; 
       while (avg_dist<dist_total){
         set_speed();
         drive(speed1, speed2);
       }
+      int endTime = millis();
+      int opTime = endTime - startTime;       
+      Serial.print("opTime");
+      Serial.println(opTime);
     }
   }
   if (send_to_pic) { //if sending to PIC, not moving, and the sending byte is not empty
@@ -206,14 +211,15 @@ sensorState2 = digitalRead(SENSORPIN2);
     }
   }
   loop_cnt++;
-  int currTime = millis();
-  int curr_opTime = currTime - startTime;  
+  long currTime = millis();
+  long curr_opTime = currTime - startTime;  
   
   if ((curr_opTime/1000)>=180){
     brake();
+    Serial.print("NO TIMEEE");
   }  
-  Serial.print("time: ");
-  Serial.print(curr_opTime);
+  Serial.print("curr op time: ");
+  Serial.println(curr_opTime);
 }
   
 void requestEvent(void){
@@ -257,7 +263,10 @@ void receiveEvent(int){
     sense = false;
     send_to_pic = false;
 //    cyl_seen = 0; 
-    
+    tire1_tick_beg = 0;
+    tire2_tick_beg = 0; 
+    tire1_tick_end = 0;
+    tire2_tick_end = 0;
     speed1 = 200; 
     speed2 = 200; 
     
@@ -348,7 +357,7 @@ void set_speed() {
 //      speed1 = 255;
 //      speed2 = 255;
       speed1 = 200;
-      speed2 = 200;
+      speed2 = 220;
   //    speed1 = 180;
   //    speed2 = 180;
     }
@@ -360,6 +369,7 @@ void set_speed() {
   }
   digitalWrite(A2, LOW);
 }
+
 void drive(int speed1, int speed2){
   if (stopp==0){
     if ((action)&&(forward==true)){ 
@@ -375,8 +385,8 @@ void drive(int speed1, int speed2){
       analogWrite(pwm_r,speed1) ;
     }
     if ((action)&&(forward==false)){
-      avg_dist=0; 
-      while (avg_dist<dist_total){
+//      avg_dist=0; 
+//      while (avg_dist<dist_total){
       digitalWrite(A2, LOW);
   
       digitalWrite(mot_l_1,LOW) ;    
@@ -387,11 +397,7 @@ void drive(int speed1, int speed2){
   
       analogWrite(pwm_l,speed2) ;
       analogWrite(pwm_r,speed1) ;
-      }
-      int endTime = millis();
-      int opTime = endTime - startTime;       
-      Serial.print("opTime");
-      Serial.println(opTime);
+//      }
     }
     if (!action){ //If action is false, brake
       brake();
@@ -421,6 +427,13 @@ void brake(){
   Serial.print("\t");
   Serial.print("  DIST_TOT ");
   Serial.println(dist_total);
+
+  tire1_dist = tire1_tick_end - tire1_tick_beg;
+  tire2_dist = tire2_tick_end - tire2_tick_beg;
+  Serial.println("tire dist");    
+  Serial.println(tire1_dist);
+  Serial.println(tire2_dist);
+  
   send_to_pic = true;
 
 //  avg_dist = 0; 
@@ -442,8 +455,8 @@ void ir_sensor(){
     cyl_seen2 = 0; 
   }
   if ((cyl_seen==1)&&(cyl_seen2==0)){
-    speed1 = 50;
-    speed2 = 50;   
+    speed1 = 60;
+    speed2 = 80;   
     ir_bb();
     drive(speed1,(speed2)); //drive slower 
     Serial.println("driving constant ");
@@ -459,8 +472,8 @@ void ir_sensor(){
   tire2_tick_beg = 0; 
   tire1_tick_end = 0;
   tire2_tick_end = 0;
-  tire1_dist = tire1_tick_end - tire1_tick_beg;
-  tire2_dist = tire2_tick_end - tire2_tick_beg;
+//  tire1_dist = tire1_tick_end - tire1_tick_beg;
+//  tire2_dist = tire2_tick_end - tire2_tick_beg;
     Serial.println("REST");    
     Serial.println(tire1_dist);
     Serial.println(tire2_dist);
@@ -469,27 +482,59 @@ void ir_sensor(){
 
 void ir_bb(){
   sensorState = digitalRead(SENSORPIN);
+//  sensorState = analogRead(SENSORPIN);
   sensorState2 = digitalRead(SENSORPIN2);
-  if (sensorState && !lastState&&(tire1_tick_beg==0)) { //first start 
+  Serial.print("\t");
+  Serial.print("\t");
+  Serial.print("sensorstate:");
+  Serial.print("\t");
+  Serial.print(sensorState);
+
+  Serial.print("sensorstate2:");
+  Serial.print("\t");
+  Serial.println(sensorState2);
+  if (!sensorState && lastState&&(tire1_tick_beg==0)) { //first start 
     Serial.println("Unbroken1");
     tire1_tick_beg = encoder1Pos;
   }
-  if (sensorState2 && !lastState2&&(tire2_tick_beg==0)) {
+  if (!sensorState2 && lastState2&&(tire2_tick_beg==0)) {
     Serial.println("Unbroken2");
     tire2_tick_beg = encoder1Pos;
 
   }
-  if (!sensorState && lastState&&(tire1_tick_beg!=0)&&(tire1_tick_end==0)) { //first end 
+  if (sensorState && !lastState&&(tire1_tick_beg!=0)&&(tire1_tick_end==0)) { //first end 
   Serial.println("Broken");
       tire1_tick_end = encoder1Pos;       
   }
-  if (!sensorState2 && lastState2&&(tire2_tick_beg!=0)&&(tire2_tick_end==0)) {
+  if (sensorState2 && !lastState2&&(tire2_tick_beg!=0)&&(tire2_tick_end==0)) {
     Serial.println("Broken2");
     tire2_tick_end = encoder1Pos;
   }
+//  if (sensorState && !lastState&&(tire1_tick_beg==0)) { //first start 
+//    Serial.println("Unbroken1");
+//    tire1_tick_beg = encoder1Pos;
+//  }
+//  if (sensorState2 && !lastState2&&(tire2_tick_beg==0)) {
+//    Serial.println("Unbroken2");
+//    tire2_tick_beg = encoder1Pos;
+//
+//  }
+//  if (!sensorState && lastState&&(tire1_tick_beg!=0)&&(tire1_tick_end==0)) { //first end 
+//  Serial.println("Broken");
+//      tire1_tick_end = encoder1Pos;       
+//  }
+//  if (!sensorState2 && lastState2&&(tire2_tick_beg!=0)&&(tire2_tick_end==0)) {
+//    Serial.println("Broken2");
+//    tire2_tick_end = encoder1Pos;
+//  }
   lastState = sensorState;
   lastState2 = sensorState2;
-            Serial.print("Tire tick beg: ");
+    Serial.print("encoder: ");
+    Serial.println(encoder1Pos);
+    Serial.print("\t");
+    Serial.println(encoder2Pos);
+    
+    Serial.print("Tire tick beg: ");
     Serial.print(tire1_tick_beg);
     Serial.print("\t");
     Serial.println(tire2_tick_beg);

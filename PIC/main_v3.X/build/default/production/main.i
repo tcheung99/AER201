@@ -5949,6 +5949,10 @@ void main(){
 
 
     if (~sens){
+        TRISBbits.RB0 = 0;
+        LATBbits.LATB0 = 0;
+
+        TRISB = 0b11111111;
         UI_main( t_dep, poles_detected);
     }
     while (1){
@@ -5957,7 +5961,9 @@ void main(){
 
 
 
-        if ((poles_detected <10)&&((Pole[poles_detected].dist_from_start )<4000)){
+
+
+        if ((poles_detected <1)&&((Pole[poles_detected].dist_from_start )<4000)){
 
 
 
@@ -5978,6 +5984,7 @@ void main(){
                     }
                     if (PORTAbits.RA4){
 
+
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
                         printf("done wait");
                         arduino_stopped = 1;
@@ -5990,6 +5997,7 @@ void main(){
                         printf("stepsadj %d", steps2_adj);
                         t_count = number_deploy(avg_dist, poles_detected);
                         sens = 0;
+
                     }
             }
             int pole_cl_dist = (avg_dist)-(prev_avg_dist);
@@ -6025,6 +6033,7 @@ void main(){
             if (act_done){
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
+
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
             { lcdInst(0x80 | LCD_LINE2_ADDR);};
@@ -6056,11 +6065,18 @@ void main(){
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("poles done");
             _delay((unsigned long)((1000)*(10000000/4000.0)));
-            UI_main(t_dep, poles_detected);
+
+
+
+
+
             backwards();
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("backwards");
             _delay((unsigned long)((1000)*(10000000/4000.0)));
+            sens = 0;
+            send = 1;
+            break;
         }
         t_count = 5;
     }

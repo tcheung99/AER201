@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\trudi\AppData\Local\Temp\sa1g.o
+$C:\Users\trudi\AppData\Local\Temp\s5m8.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -1348,123 +1348,128 @@ F0 text19 CODE >539:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 870 text0 CODE >735:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 876 text0 CODE >745:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 880 text0 CODE >746:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-896 text0 CODE >749:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-8A0 text0 CODE >754:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-8F4 text0 CODE >765:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-8FE text0 CODE >766:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-916 text0 CODE >767:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-924 text0 CODE >769:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-928 text0 CODE >770:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-940 text0 CODE >771:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-94E text0 CODE >773:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-952 text0 CODE >775:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-96A text0 CODE >776:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-978 text0 CODE >777:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-97E text0 CODE >779:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-986 text0 CODE >780:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-99E text0 CODE >781:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-9AC text0 CODE >782:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-9B8 text0 CODE >783:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-9D0 text0 CODE >784:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-9E6 text0 CODE >785:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A02 text0 CODE >786:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A0A text0 CODE >762:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A12 text0 CODE >795:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A18 text0 CODE >796:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A28 text0 CODE >797:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A38 text0 CODE >800:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A40 text0 CODE >801:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A44 text0 CODE >803:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A50 text0 CODE >804:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A6C text0 CODE >806:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A72 text0 CODE >807:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A8A text0 CODE >809:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-A9A text0 CODE >810:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AA2 text0 CODE >811:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AAC text0 CODE >812:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AC8 text0 CODE >814:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-ACE text0 CODE >815:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AE6 text0 CODE >817:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AEA text0 CODE >818:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AEA text0 CODE >819:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-AF0 text0 CODE >820:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-B26 text0 CODE >821:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-B68 text0 CODE >822:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-B80 text0 CODE >823:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-BDE text0 CODE >824:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-BE4 text0 CODE >825:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C32 text0 CODE >826:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C4C text0 CODE >828:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C5C text0 CODE >829:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C62 text0 CODE >830:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C66 text0 CODE >831:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C6C text0 CODE >833:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-C84 text0 CODE >834:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-CA2 text0 CODE >835:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-CB8 text0 CODE >836:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-CD2 text0 CODE >837:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-CEC text0 CODE >838:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D06 text0 CODE >839:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D16 text0 CODE >840:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D2E text0 CODE >841:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D78 text0 CODE >842:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D7E text0 CODE >843:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D84 text0 CODE >844:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-D9E text0 CODE >845:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-DA8 text0 CODE >849:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-DAC text0 CODE >850:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-DC4 text0 CODE >851:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-DD2 text0 CODE >852:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-DEC text0 CODE >853:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-E00 text0 CODE >854:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-E04 text0 CODE >855:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-E1C text0 CODE >856:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-E2A text0 CODE >857:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-E44 text0 CODE >859:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
-3A3A cinit CODE >2565:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A3A cinit CODE >2567:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A3A cinit CODE >2570:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A3A cinit CODE >2699:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A3C cinit CODE >2700:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A3E cinit CODE >2701:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A40 cinit CODE >2702:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A42 cinit CODE >2703:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A44 cinit CODE >2704:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A46 cinit CODE >2705:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A4A cinit CODE >2706:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A4E cinit CODE >2707:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A4E cinit CODE >2708:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A50 cinit CODE >2709:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A54 cinit CODE >2710:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A56 cinit CODE >2711:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A58 cinit CODE >2712:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A5A cinit CODE >2716:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A5E cinit CODE >2717:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A60 cinit CODE >2718:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A60 cinit CODE >2719:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A62 cinit CODE >2720:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A64 cinit CODE >2721:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A66 cinit CODE >2724:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A6A cinit CODE >2725:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A6C cinit CODE >2726:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A6C cinit CODE >2727:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A6E cinit CODE >2728:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A70 cinit CODE >2729:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A72 cinit CODE >2732:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A74 cinit CODE >2733:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A76 cinit CODE >2736:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A7A cinit CODE >2737:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A7C cinit CODE >2738:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A7C cinit CODE >2739:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A7E cinit CODE >2740:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A80 cinit CODE >2741:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A82 cinit CODE >2747:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A82 cinit CODE >2749:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A84 cinit CODE >2750:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A86 cinit CODE >2752:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A88 cinit CODE >2753:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A8A cinit CODE >2754:C:\Users\trudi\AppData\Local\Temp\sa1g.
-3A8C cinit CODE >2755:C:\Users\trudi\AppData\Local\Temp\sa1g.
+882 text0 CODE >747:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+884 text0 CODE >749:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+886 text0 CODE >750:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+89C text0 CODE >753:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+8A6 text0 CODE >760:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+8F8 text0 CODE >771:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+902 text0 CODE >772:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+91A text0 CODE >773:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+928 text0 CODE >775:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+92C text0 CODE >776:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+944 text0 CODE >777:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+952 text0 CODE >779:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+956 text0 CODE >782:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+96E text0 CODE >783:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+97C text0 CODE >784:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+982 text0 CODE >786:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+98A text0 CODE >787:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+9A2 text0 CODE >788:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+9B0 text0 CODE >789:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+9BC text0 CODE >790:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+9D4 text0 CODE >791:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+9EA text0 CODE >792:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A06 text0 CODE >793:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A0E text0 CODE >768:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A16 text0 CODE >803:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A1C text0 CODE >804:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A2C text0 CODE >805:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A3C text0 CODE >808:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A44 text0 CODE >809:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A48 text0 CODE >811:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A54 text0 CODE >812:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A70 text0 CODE >814:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A76 text0 CODE >815:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A8E text0 CODE >817:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+A9E text0 CODE >818:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AA6 text0 CODE >819:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AB0 text0 CODE >820:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+ACC text0 CODE >822:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AD2 text0 CODE >823:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AEA text0 CODE >825:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AEE text0 CODE >826:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AEE text0 CODE >827:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+AF4 text0 CODE >828:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+B2A text0 CODE >829:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+B6C text0 CODE >831:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+B84 text0 CODE >832:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+BE2 text0 CODE >833:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+BE8 text0 CODE >834:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C36 text0 CODE >835:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C50 text0 CODE >837:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C60 text0 CODE >838:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C66 text0 CODE >839:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C6A text0 CODE >840:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C70 text0 CODE >842:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+C88 text0 CODE >843:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+CA6 text0 CODE >844:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+CBC text0 CODE >845:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+CD6 text0 CODE >846:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+CF0 text0 CODE >847:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+D0A text0 CODE >848:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+D1A text0 CODE >849:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+D32 text0 CODE >850:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+D7C text0 CODE >851:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+D82 text0 CODE >852:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+D88 text0 CODE >853:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DA2 text0 CODE >854:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DAC text0 CODE >858:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DB0 text0 CODE >859:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DC8 text0 CODE >860:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DD6 text0 CODE >861:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DF0 text0 CODE >867:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+DF4 text0 CODE >868:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+E0C text0 CODE >869:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+E1A text0 CODE >870:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+E34 text0 CODE >871:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+E3C text0 CODE >872:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+E40 text0 CODE >873:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+E44 text0 CODE >875:C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+3A3A cinit CODE >2565:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A3A cinit CODE >2567:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A3A cinit CODE >2570:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A3A cinit CODE >2699:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A3C cinit CODE >2700:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A3E cinit CODE >2701:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A40 cinit CODE >2702:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A42 cinit CODE >2703:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A44 cinit CODE >2704:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A46 cinit CODE >2705:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A4A cinit CODE >2706:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A4E cinit CODE >2707:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A4E cinit CODE >2708:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A50 cinit CODE >2709:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A54 cinit CODE >2710:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A56 cinit CODE >2711:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A58 cinit CODE >2712:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A5A cinit CODE >2716:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A5E cinit CODE >2717:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A60 cinit CODE >2718:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A60 cinit CODE >2719:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A62 cinit CODE >2720:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A64 cinit CODE >2721:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A66 cinit CODE >2724:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A6A cinit CODE >2725:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A6C cinit CODE >2726:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A6C cinit CODE >2727:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A6E cinit CODE >2728:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A70 cinit CODE >2729:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A72 cinit CODE >2732:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A74 cinit CODE >2733:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A76 cinit CODE >2736:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A7A cinit CODE >2737:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A7C cinit CODE >2738:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A7C cinit CODE >2739:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A7E cinit CODE >2740:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A80 cinit CODE >2741:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A82 cinit CODE >2747:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A82 cinit CODE >2749:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A84 cinit CODE >2750:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A86 cinit CODE >2752:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A88 cinit CODE >2753:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A8A cinit CODE >2754:C:\Users\trudi\AppData\Local\Temp\s5m8.
+3A8C cinit CODE >2755:C:\Users\trudi\AppData\Local\Temp\s5m8.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1490,7 +1495,7 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __size_of_lcdInst 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __size_of_stepper2 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\main_v3.X.production.o
-__mediumconst FD9C 0 MEDIUMCONST 0 mediumconst C:\Users\trudi\AppData\Local\Temp\sa1g.o
+__mediumconst FD9C 0 MEDIUMCONST 0 mediumconst C:\Users\trudi\AppData\Local\Temp\s5m8.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\main_v3.X.production.o
 isalpha@c 80 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
@@ -1512,7 +1517,7 @@ _LATE F8D 0 ABS 0 - dist/default/production\main_v3.X.production.o
 _Pole 200 0 BANK2 1 bssBANK2 dist/default/production\main_v3.X.production.o
 _RBIE 7F93 0 ABS 0 - dist/default/production\main_v3.X.production.o
 _RBIF 7F90 0 ABS 0 - dist/default/production\main_v3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\sa1g.o
+___sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s5m8.o
 _atoi 2B12 0 CODE 0 text37 dist/default/production\main_v3.X.production.o
 _data 5E 0 COMRAM 1 bssCOMRAM dist/default/production\main_v3.X.production.o
 _dbuf 280 0 BANK2 1 bssBANK2 dist/default/production\main_v3.X.production.o
@@ -1538,7 +1543,7 @@ min@i 89 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 pad@i 9B 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 pad@p 98 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 pad@w 9D 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
-start E 0 CODE 0 init C:\Users\trudi\AppData\Local\Temp\sa1g.o
+start E 0 CODE 0 init C:\Users\trudi\AppData\Local\Temp\s5m8.o
 ___aomod@counter 90 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 __size_of___aodiv 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __size_of___aomod 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
@@ -1572,11 +1577,11 @@ __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __size_of_actuators_main 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 stepper2_back@direction 103 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
 min@array 80 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\sa1g.o
-intlevel0 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sa1g.o
-intlevel1 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sa1g.o
-intlevel2 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sa1g.o
-intlevel3 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sa1g.o
+__accesstop 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s5m8.o
+intlevel0 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s5m8.o
+intlevel1 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s5m8.o
+intlevel2 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s5m8.o
+intlevel3 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s5m8.o
 _stepper2 30CE 0 CODE 0 text13 dist/default/production\main_v3.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\main_v3.X.production.o
 _avg_dist 44 0 COMRAM 1 bssCOMRAM dist/default/production\main_v3.X.production.o
@@ -1611,8 +1616,8 @@ _stepper2_back 35CA 0 CODE 0 text12 dist/default/production\main_v3.X.production
 _ADCON1 FC1 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __end_of_lcdInst 3ED2 0 CODE 0 text42 dist/default/production\main_v3.X.production.o
 ___awdiv@dividend 80 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\sa1g.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\sa1g.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s5m8.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s5m8.o
 __end_of_send_byte 3E9E 0 CODE 0 text43 dist/default/production\main_v3.X.production.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\main_v3.X.production.o
 _EECON1bits FA6 0 ABS 0 - dist/default/production\main_v3.X.production.o
@@ -1748,7 +1753,7 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production\main_v3.X.production.o
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\main_v3.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\main_v3.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\trudi\AppData\Local\Temp\sa1g.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\trudi\AppData\Local\Temp\s5m8.o
 ___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/production\main_v3.X.production.o
 ___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/production\main_v3.X.production.o
 ___xxtofl@val 1 0 COMRAM 1 cstackCOMRAM dist/default/production\main_v3.X.production.o
@@ -2040,7 +2045,7 @@ main@Pole 162 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\main_v3.X.production.o
 _strlen 3D70 0 CODE 0 text30 dist/default/production\main_v3.X.production.o
 main@stack 1B8 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
-main@t_dep 1C2 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
+main@t_dep 1C0 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\main_v3.X.production.o
 ___fldiv@new_exp 20 0 COMRAM 1 cstackCOMRAM dist/default/production\main_v3.X.production.o
 _LCD_LINE1_ADDR FDB0 0 MEDIUMCONST 0 mediumconst dist/default/production\main_v3.X.production.o
@@ -2049,8 +2054,8 @@ min@size 82 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 _dist_final 250 0 BANK2 1 bssBANK2 dist/default/production\main_v3.X.production.o
 number_deploy@tires_detected 104 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\main_v3.X.production.o
-stackhi F7F 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\sa1g.o
-stacklo 2A0 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\sa1g.o
+stackhi F7F 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s5m8.o
+stacklo 2A0 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s5m8.o
 UI_main@t_dep FB 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 send_nibble@data 81 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
 I2C_Master_Read@receivedByte 82 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.production.o
@@ -2120,7 +2125,7 @@ vfprintf@fmt E7 0 BANK0 1 cstackBANK0 dist/default/production\main_v3.X.producti
 i2___awdiv 3810 0 CODE 0 text56 dist/default/production\main_v3.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\main_v3.X.production.o
 main@i_1075 1B4 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
-main@i_1081 1C0 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
+main@i_1081 1C2 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
 _tires_deployed 54 0 COMRAM 1 bssCOMRAM dist/default/production\main_v3.X.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\main_v3.X.production.o
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\main_v3.X.production.o
@@ -2202,7 +2207,7 @@ __Ltext57 0 0 ABS 0 text57 dist/default/production\main_v3.X.production.o
 __Ltext58 0 0 ABS 0 text58 dist/default/production\main_v3.X.production.o
 __Ltext59 0 0 ABS 0 text59 dist/default/production\main_v3.X.production.o
 __end_of_LCD_LINE1_ADDR FDB1 0 MEDIUMCONST 0 mediumconst dist/default/production\main_v3.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\trudi\AppData\Local\Temp\sa1g.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\trudi\AppData\Local\Temp\s5m8.o
 __end_of_number_deploy 2394 0 CODE 0 text6 dist/default/production\main_v3.X.production.o
 number_deploy@tires_t 102 0 BANK1 1 cstackBANK1 dist/default/production\main_v3.X.production.o
 __end_of_LCD_LINE2_ADDR FDB4 0 MEDIUMCONST 0 mediumconst dist/default/production\main_v3.X.production.o

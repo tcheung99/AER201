@@ -111,10 +111,11 @@ void main(void) {
 //            lcd_clear();
 //            printf("data_g", data_g);            
             if(data[0]&&data[1]){
-//                lcd_clear();
+                lcd_clear();
                 printf("data[0], %d", data[0]);
                 lcd_set_ddram_addr(LCD_LINE2_ADDR);    
                 printf("data[1], %d", data[1]);
+                __delay_ms(1000);
             }
         }
     }

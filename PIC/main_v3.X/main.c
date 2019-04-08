@@ -743,15 +743,21 @@ void main(){
 //            actuators_main(1);
     
     if (~sens){
+        TRISBbits.RB0 = 0;
+        LATBbits.LATB0 = 0; //ENABLES KPD	//THIS DOESN'T WORK. WTF
+//        UI_main(t_dep, poles_detected);
+        TRISB = 0b11111111;                 //RB5,6,7 as Input PIN (ECHO)
         UI_main( t_dep, poles_detected);
     }
     while (1){
         PORTAbits.RA4 = LATAbits.LATA4;
-
+//        if (~sens){
+//            UI_main( t_dep, poles_detected);
+//        }
 //        lcd_clear();
 //        printf("happen");
 //        __delay_ms(1000);
-        if ((poles_detected <10)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
+        if ((poles_detected <1)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
 //            lcd_clear();
 //            printf("help");
 //            __delay_ms(1000);
@@ -772,6 +778,7 @@ void main(){
                     } 
                     if (PORTAbits.RA4){
 //                        brake();
+                        //check i2c for timer 
                         lcd_clear(); 
                         printf("done wait");
                         arduino_stopped = true; 
@@ -784,6 +791,7 @@ void main(){
                         printf("stepsadj %d", steps2_adj);
                         t_count = number_deploy(avg_dist, poles_detected); 
                         sens = 0;
+                        
                     }
             }
             int pole_cl_dist = (avg_dist)-(prev_avg_dist); //centerline to centerline distance 
@@ -819,6 +827,7 @@ void main(){
             if (act_done){
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
+            //implement EEPROM 
             lcd_clear();
             printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
             lcd_set_ddram_addr(LCD_LINE2_ADDR);
@@ -850,11 +859,18 @@ void main(){
             lcd_clear();
             printf("poles done");
             __delay_ms(1000);
-            UI_main(t_dep, poles_detected);
+//            TRISBbits.RB0 = 0;
+//            LATBbits.LATB0 = 0; //ENABLES KPD	            
+//            TRISB = 0b11111111;                 //RB5,6,7 as Input PIN (ECHO)
+//
+//            UI_main(t_dep, poles_detected);
             backwards();
             lcd_clear();
             printf("backwards");
             __delay_ms(1000);
+            sens = false;
+            send = true;
+            break;
         }
         t_count = 5;
     }

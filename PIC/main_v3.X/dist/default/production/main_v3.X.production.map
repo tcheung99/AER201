@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\main_v3.X.production.sym \
   --cmf=dist/default/production\main_v3.X.production.cmf -z -Q18F4620 \
-  -oC:\Users\trudi\AppData\Local\Temp\sa1g.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\trudi\AppData\Local\Temp\s5m8.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/main_v3.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=02A0h-0F7Fh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\trudi\AppData\Local\Temp\sa1g.o \
+  C:\Users\trudi\AppData\Local\Temp\s5m8.o \
   dist/default/production\main_v3.X.production.o 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\trudi\AppData\Local\Temp\sa1g.o
+C:\Users\trudi\AppData\Local\Temp\s5m8.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -1103,14 +1103,14 @@ main@act_done                   cstackBANK1  0001B6
 main@arduino_stopped            cstackBANK1  0001B7
 main@i                          cstackBANK1  0001B2
 main@i_1075                     cstackBANK1  0001B4
-main@i_1081                     cstackBANK1  0001C0
+main@i_1081                     cstackBANK1  0001C2
 main@k                          cstackBANK1  0001BC
 main@poles_detected             cstackBANK1  0001C4
 main@prev_avg_dist              cstackBANK1  0001C6
 main@stack                      cstackBANK1  0001B8
 main@steps2_adj                 cstackBANK1  0001BA
 main@t_count                    cstackBANK1  0001BE
-main@t_dep                      cstackBANK1  0001C2
+main@t_dep                      cstackBANK1  0001C0
 min@array                       cstackBANK0  000080
 min@i                           cstackBANK0  000089
 min@minimum                     cstackBANK0  000087
@@ -1198,12 +1198,12 @@ FUNCTION INFORMATION:
   k               2  188[BANK1 ] int 
   i               2  180[BANK1 ] int 
   i               2  178[BANK1 ] int 
-  i               2  192[BANK1 ] int 
+  i               2  194[BANK1 ] int 
   pole_cl_dist    2    0        int 
   Pole           80   98[BANK1 ] struct Poles[10]
   prev_avg_dis    4  198[BANK1 ] volatile long 
   poles_detect    2  196[BANK1 ] int 
-  t_dep           2  194[BANK1 ] int 
+  t_dep           2  192[BANK1 ] int 
   t_count         2  190[BANK1 ] int 
   steps2_adj      2  186[BANK1 ] int 
   stack           2  184[BANK1 ] int 

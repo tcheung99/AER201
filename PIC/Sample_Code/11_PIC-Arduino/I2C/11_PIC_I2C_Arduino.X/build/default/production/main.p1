@@ -36,12 +36,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68
 [; ;./I2C.h: 68: unsigned char I2C_Master_Read(unsigned char ackBit);
 [v _I2C_Master_Read `(uc ~T0 @X0 0 ef1`uc ]
-"113 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "88 ./lcd.h
 [; ;./lcd.h: 88: void lcdInst(char data);
 [v _lcdInst `(v ~T0 @X0 0 ef1`uc ]
-"72
+[v F2424 `(v ~T0 @X0 1 tf1`ul ]
+"183 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
+[v __delay `JF2424 ~T0 @X0 0 e ]
+[p i __delay ]
+"113 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"72 ./lcd.h
 [; ;./lcd.h: 72: extern const unsigned char LCD_LINE2_ADDR;
 [v _LCD_LINE2_ADDR `Cuc ~T0 @X0 0 e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
@@ -634,6 +638,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 113:             if(data[0]&&data[1]){
 [e $ ! && != *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> 0 `i != *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux -> 0 `i 276  ]
 {
+"114
+[; ;main.c: 114:                 { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+{
+[e ( _lcdInst (1 -> -> 1 `i `uc ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+}
 "115
 [; ;main.c: 115:                 printf("data[0], %d", data[0]);
 [e ( _printf , (. :s 1C *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
@@ -646,17 +656,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 117:                 printf("data[1], %d", data[1]);
 [e ( _printf , (. :s 2C *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ]
 "118
-[; ;main.c: 118:             }
+[; ;main.c: 118:                 _delay((unsigned long)((1000)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"119
+[; ;main.c: 119:             }
 }
 [e :U 276 ]
-"119
-[; ;main.c: 119:         }
+"120
+[; ;main.c: 120:         }
 }
 [e :U 273 ]
 [e $U 274  ]
 [e :U 275 ]
-"120
-[; ;main.c: 120:     }
+"121
+[; ;main.c: 121:     }
 [e :UE 272 ]
 }
 [p f _printf 8388736 ]

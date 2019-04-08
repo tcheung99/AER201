@@ -527,14 +527,14 @@ LCD_SHIFT_RIGHT 1
 "715
 [v _main main `(v  1 e 1 0 ]
 {
-"840
+"849
 [v main@k k `i  1 a 2 188 ]
-"811
+"819
 [v main@i_1075 i `i  1 a 2 180 ]
-"803
+"811
 [v main@i i `i  1 a 2 178 ]
-"836
-[v main@i_1081 i `i  1 a 2 192 ]
+"845
+[v main@i_1081 i `i  1 a 2 194 ]
 "737
 [v main@Pole Pole `[10]S642  1 a 80 98 ]
 "729
@@ -542,7 +542,7 @@ LCD_SHIFT_RIGHT 1
 "727
 [v main@poles_detected poles_detected `i  1 a 2 196 ]
 "717
-[v main@t_dep t_dep `i  1 a 2 194 ]
+[v main@t_dep t_dep `i  1 a 2 192 ]
 "718
 [v main@t_count t_count `i  1 a 2 190 ]
 "721
@@ -553,7 +553,7 @@ LCD_SHIFT_RIGHT 1
 [v main@arduino_stopped arduino_stopped `a  1 a 1 183 ]
 "734
 [v main@act_done act_done `a  1 a 1 182 ]
-"862
+"878
 } 0
 "291
 [v _ultrasonic_main ultrasonic_main `(i  1 e 2 0 ]

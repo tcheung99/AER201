@@ -4706,10 +4706,11 @@ void main(void) {
 
 
             if(data[0]&&data[1]){
-
+                { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
                 printf("data[0], %d", data[0]);
                 { lcdInst(0x80 | LCD_LINE2_ADDR);};
                 printf("data[1], %d", data[1]);
+                _delay((unsigned long)((1000)*(10000000/4000.0)));
             }
         }
     }
