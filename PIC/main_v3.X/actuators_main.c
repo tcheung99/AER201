@@ -1,6 +1,6 @@
 #include "actuators.h"
 
-void actuators_main(int stack, int steps2_adj){
+void actuators_main(int stack, int steps2_adj, int t_dep){
     int act_cnt = 0;
     system_init();
     initLCD();
@@ -45,7 +45,9 @@ void actuators_main(int stack, int steps2_adj){
 //        system_init();
 //        PWM_End(); 
 //        __delay_ms(200);
-        
+        if (t_dep%2!=0){ //odd numbers 
+            steps2_adj = steps2_adj+1;
+        }
         stepper2(anti_clockwise, steps2_adj);
                         LATA = 0b00000000;
         LATCbits.LATC0 = 0;
@@ -96,7 +98,7 @@ void system_init (void){
 void servoRotate0(int servo){ //0 Degree
     unsigned int i;
     if (servo==1){
-      for(i=0;i<40;i++)
+      for(i=0;i<30;i++)
           {
             RC1 = 1;
             RC2 = 1;
@@ -111,7 +113,7 @@ void servoRotate0(int servo){ //0 Degree
           }
     }
     if (servo==2){
-      for(i=0;i<40;i++)
+      for(i=0;i<30;i++)
         {
 //        RB7 = 1;
         RD1 = 1;
@@ -126,7 +128,7 @@ void servoRotate0(int servo){ //0 Degree
         }
     }
     if (servo==3){
-      for(i=0;i<40;i++)
+      for(i=0;i<30;i++)
         {
         RD0 = 1;
         __delay_us(2000);
@@ -141,7 +143,7 @@ void servoRotate180(int servo) //180 Degree
 {
   unsigned int i;
     if (servo==1){
-    for(i=0;i<40;i++)
+    for(i=0;i<30;i++)
         {
           RC1 = 1;
             RC2 = 1;
@@ -155,22 +157,22 @@ void servoRotate180(int servo) //180 Degree
         }
   }
   if (servo==2){
-    for(i=0;i<40;i++)
+    for(i=0;i<30;i++)
           {
 //    RB7 = 1; 
     RD1 = 1;
 //    RD0 = 1;
 
-    __delay_us(550); //left 
+    __delay_us(525); //left 
 //    RB7 = 0;
     RD1 = 0;
 //        RD0 = 0;
 
-    __delay_us(27050); //left
+    __delay_us(27075); //left
           }
   }
     if (servo==3){
-      for(i=0;i<40;i++)
+      for(i=0;i<30;i++)
         {
         RD0 = 1;
 
@@ -185,22 +187,27 @@ void servoRotate180(int servo) //180 Degree
 }
 void servo()
 {
-  TRISC = 0; // PORTB as Ouput Port
-  {
+  TRISB = 0; // PORTB as Ouput Port
+    TRISC = 0; // PORTB as Ouput Port
+    TRISD = 0; // PORTB as Ouput Port
+
+      TRISBbits.RB0 = 0;
+    LATBbits.LATB0 = 1; //DISABLES KPD	
+    {
 //    servoRotate0(1); //0 Degree
     servoRotate0(1); //0 Degree
 //    __delay_ms(2000);
 //    servoRotate90(); //90 Degree
 //    servoRotate180(1); //180 Degree
     servoRotate180(1); //180 Degree
-    __delay_ms(450);        
+    __delay_ms(400);        
     servoRotate0(1); //0 Degree
     
     servoRotate180(2); //180 Degree
     servoRotate0(2); //0 Degree
     servoRotate180(2); //180 Degree
     
-    __delay_ms(100);
+    __delay_ms(50);
         servoRotate0(3); //180 Degree
     servoRotate0(3); //0 Degree
     servoRotate180(3); //180 Degree
@@ -293,7 +300,7 @@ void servo()
 //  }
 //}
 
-void stepper(int stack){
+void stepper(int stack, int t_dep){
     int count_stepper = 0;
  
 //        while (1){
@@ -304,17 +311,35 @@ void stepper(int stack){
 //            printf("Step speed %d",speed); 
             
             if (stack == 1){
-                for(int i=0;i<steps1;i++){
-    //                full_drive(clockwise, 2); //ramp stepper , fwd 
-                    full_drive(clockwise, 1); //right stepper forwards A's
-    //                full_drive(anti_clockwise, 3); //left stepper forwards 
+                if (t_dep<=3){
+                    for(int i=0;i<steps1;i++){
+        //                full_drive(clockwise, 2); //ramp stepper , fwd 
+                        full_drive(clockwise, 1); //right stepper forwards A's
+        //                full_drive(anti_clockwise, 3); //left stepper forwards 
+                    }
+                }
+                if (t_dep>3){
+                    for(int i=0;i<steps1-1;i++){
+        //                full_drive(clockwise, 2); //ramp stepper , fwd 
+                        full_drive(clockwise, 1); //right stepper forwards A's
+        //                full_drive(anti_clockwise, 3); //left stepper forwards 
+                    }
                 }
             }
             if (stack == 2){
-                for(int i=0;i<steps1;i++){
-                    full_drive(clockwise, 3); //ramp stepper , fwd 
-//                    full_drive(clockwise, 1); //right stepper forwards A's
-//                    full_drive(anti_clockwise, 3); //left stepper forwards 
+                if ((t_dep-8)<=3){
+                    for(int i=0;i<steps1;i++){
+                        full_drive(clockwise, 3); //ramp stepper , fwd 
+    //                    full_drive(clockwise, 1); //right stepper forwards A's
+    //                    full_drive(anti_clockwise, 3); //left stepper forwards 
+                    }
+                }
+                if ((t_dep-8)>3){
+                    for(int i=0;i<steps1-1;i++){
+                        full_drive(clockwise, 3); //ramp stepper , fwd 
+    //                    full_drive(clockwise, 1); //right stepper forwards A's
+    //                    full_drive(anti_clockwise, 3); //left stepper forwards 
+                    }
                 }
             }
 //            printf("cnt is %d", count_stepper);

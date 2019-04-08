@@ -4441,60 +4441,96 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 4 "main.c" 2
 
 
+void servoRotate0(int servo){
+    unsigned int i;
+    if (servo==1){
+      for(i=0;i<30;i++)
+          {
+            RC1 = 1;
+            RC2 = 1;
+            _delay((unsigned long)((1100)*(10000000/4000000.0)));
+            RC2 = 0;
+            _delay((unsigned long)((300)*(10000000/4000000.0)));
+            RC1 = 0;
 
 
-void servoRotate0()
-{
-  unsigned int i;
-  for(i=0;i<50;i++)
-  {
+
+            _delay((unsigned long)((18600)*(10000000/4000000.0)));
+          }
+    }
+    if (servo==2){
+      for(i=0;i<30;i++)
+        {
+
+        RD1 = 1;
 
 
-    RD0 = 1;
+          _delay((unsigned long)((1000)*(10000000/4000000.0)));
 
-      _delay((unsigned long)((2000)*(10000000/4000000.0)));
-
-
-    RD0 = 0;
-
-      _delay((unsigned long)((11000)*(10000000/4000000.0)));
-  }
-}
-
-void servoRotate90()
-{
-  unsigned int i;
-  for(i=0;i<50;i++)
-  {
+        RD1 = 0;
 
 
-    RD0 = 1;
-    _delay((unsigned long)((1500)*(10000000/4000000.0)));
-
-
-    RD0 = 0;
-    _delay((unsigned long)((18500)*(10000000/4000000.0)));
-  }
-}
-
-void servoRotate180()
-{
-  unsigned int i;
-  for(i=0;i<50;i++)
-  {
-
-
-    RD0 = 1;
-
-    _delay((unsigned long)((2500)*(10000000/4000000.0)));
+          _delay((unsigned long)((19000)*(10000000/4000000.0)));
+        }
+    }
+    if (servo==3){
+      for(i=0;i<30;i++)
+        {
+        RD0 = 1;
+        _delay((unsigned long)((2000)*(10000000/4000000.0)));
 
 
         RD0 = 0;
-
-    _delay((unsigned long)((10500)*(10000000/4000000.0)));
-  }
+        _delay((unsigned long)((11000)*(10000000/4000000.0)));
+        }
+    }
 }
+void servoRotate180(int servo)
+{
+  unsigned int i;
+    if (servo==1){
+    for(i=0;i<30;i++)
+        {
+          RC1 = 1;
+            RC2 = 1;
+          _delay((unsigned long)((450)*(10000000/4000000.0)));
 
+          RC2 =0;
+          _delay((unsigned long)((2100)*(10000000/4000000.0)));
+
+          RC1 = 0;
+          _delay((unsigned long)((13550)*(10000000/4000000.0)));
+        }
+  }
+  if (servo==2){
+    for(i=0;i<30;i++)
+          {
+
+    RD1 = 1;
+
+
+    _delay((unsigned long)((525)*(10000000/4000000.0)));
+
+    RD1 = 0;
+
+
+    _delay((unsigned long)((27075)*(10000000/4000000.0)));
+          }
+  }
+    if (servo==3){
+      for(i=0;i<30;i++)
+        {
+        RD0 = 1;
+
+        _delay((unsigned long)((2500)*(10000000/4000000.0)));
+
+
+            RD0 = 0;
+
+        _delay((unsigned long)((10500)*(10000000/4000000.0)));
+        }
+    }
+}
 void main()
 {
   TRISB = 0;
@@ -4503,14 +4539,15 @@ void main()
 
       TRISBbits.RB0 = 0;
     LATBbits.LATB0 = 1;
+    {
 
-  {
-    servoRotate0();
-    _delay((unsigned long)((2000)*(10000000/4000.0)));
+    servoRotate0(1);
 
 
-    servoRotate180();
-        _delay((unsigned long)((2000)*(10000000/4000.0)));
 
+    servoRotate180(1);
+    _delay((unsigned long)((400)*(10000000/4000.0)));
+    servoRotate0(1);
+# 124 "main.c"
   }
 }

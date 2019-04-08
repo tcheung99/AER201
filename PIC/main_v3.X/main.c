@@ -801,50 +801,48 @@ void main(){
                                     brake();        
 
                     for(int i=0; i<(t_count); i++){
-//                        actuators_main(stack, steps2_adj); 
-                        actuators_main(stack, 110); 
+                        actuators_main(stack, steps2_adj, t_dep); 
+//                        actuators_main(stack, 110); 
                         t_dep++;
                     }
                 }
                 if (t_dep >= 8){
                     stack = 2;
                     for(int i=0; i<(t_count); i++){
-//                        actuators_main(stack, steps2_adj); 
-                        actuators_main(stack, 110); 
+                        actuators_main(stack, steps2_adj); 
+//                        actuators_main(stack, 110); 
                         t_dep++;
                     }
                 }
                 act_done = true; 
             }
             if (act_done){
-    //        for (int i=0; i<10;i++)
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
-
+            lcd_clear();
+            printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
+            lcd_set_ddram_addr(LCD_LINE2_ADDR);
+            printf("p[%d] fs : %d",poles_detected, Pole[poles_detected].dist_from_start);
+            __delay_ms(3000);
+            
             prev_avg_dist = avg_dist ; 
             poles_detected++;
-    //        start_dc();  //start DC motors running again after deployment
             start();
             arduino_stopped = false; 
             
-    //            I2C_Master_Start(); // Start condition
-    //    I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
-    //    I2C_Master_Write('1'); // Write key press data which shows up on Arduino's serial monitor
-    //    I2C_Master_Stop();
             lcd_clear();
             printf("avg dist %d", avg_dist);
             printf("poles d %d", poles_detected);
-                                for (int i=0;i<4;i++){
-                        sum[i] = 0 ;
-                        a[i] =0 ;
-                        sumf[i] = 0 ;
-                
-                        for (int k=0;k<6;k++){
-                            dist_final[i][k] = 0; 
-                        }
-                    }   
-            __delay_ms(1000);
-            sens = 1;
+            for (int i=0;i<4;i++){ //reset ultrasonic sensors 
+                sum[i] = 0 ;
+                a[i] =0 ;
+                sumf[i] = 0 ;
+                for (int k=0;k<6;k++){
+                    dist_final[i][k] = 0; 
+                    }
+                }   
+                __delay_ms(1000);
+                sens = 1;
             }
         }
         else{

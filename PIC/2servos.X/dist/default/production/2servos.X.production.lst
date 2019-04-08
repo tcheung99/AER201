@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Mon Apr 08 02:33:47 2019
+                                                                                               Mon Apr 08 06:30:52 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	18F4620
@@ -64,366 +64,622 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
     50  0000                     _TRISC	set	3988
     51  0000                     _TRISB	set	3987
     52  0000                     _RD0	set	31768
-    53                           
-    54                           ; #config settings
-    55  0000                     
-    56                           	psect	cinit
-    57  00FF32                     __pcinit:
-    58                           	opt callstack 0
-    59  00FF32                     start_initialization:
-    60                           	opt callstack 0
-    61  00FF32                     __initialization:
-    62                           	opt callstack 0
-    63  00FF32                     end_of_initialization:
-    64                           	opt callstack 0
-    65  00FF32                     __end_of__initialization:
-    66                           	opt callstack 0
-    67  00FF32  0100               	movlb	0
-    68  00FF34  EFDA  F07F         	goto	_main	;jump to C main() function
-    69                           
-    70                           	psect	cstackCOMRAM
-    71  000001                     __pcstackCOMRAM:
-    72                           	opt callstack 0
-    73  000001                     ??_servoRotate0:
-    74  000001                     ??_servoRotate180:
-    75  000001                     
-    76                           ; 1 bytes @ 0x0
-    77  000001                     	ds	1
-    78  000002                     servoRotate0@i:
+    53  0000                     _RD1	set	31769
+    54  0000                     _RC2	set	31762
+    55  0000                     _RC1	set	31761
+    56                           
+    57                           ; #config settings
+    58  0000                     
+    59                           	psect	cinit
+    60  00FDF8                     __pcinit:
+    61                           	opt callstack 0
+    62  00FDF8                     start_initialization:
+    63                           	opt callstack 0
+    64  00FDF8                     __initialization:
+    65                           	opt callstack 0
+    66  00FDF8                     end_of_initialization:
+    67                           	opt callstack 0
+    68  00FDF8                     __end_of__initialization:
+    69                           	opt callstack 0
+    70  00FDF8  0100               	movlb	0
+    71  00FDFA  EFFF  F07E         	goto	_main	;jump to C main() function
+    72                           
+    73                           	psect	cstackCOMRAM
+    74  000001                     __pcstackCOMRAM:
+    75                           	opt callstack 0
+    76  000001                     servoRotate0@servo:
+    77                           	opt callstack 0
+    78  000001                     servoRotate180@servo:
     79                           	opt callstack 0
-    80  000002                     servoRotate180@i:
-    81                           	opt callstack 0
-    82                           
-    83                           ; 2 bytes @ 0x1
-    84  000002                     	ds	2
-    85  000004                     ??_main:
-    86                           
-    87                           ; 1 bytes @ 0x3
-    88  000004                     	ds	2
-    89                           
-    90 ;;
-    91 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-    92 ;;
-    93 ;; *************** function _main *****************
-    94 ;; Defined at:
-    95 ;;		line 60 in file "main.c"
-    96 ;; Parameters:    Size  Location     Type
-    97 ;;		None
-    98 ;; Auto vars:     Size  Location     Type
-    99 ;;		None
-   100 ;; Return value:  Size  Location     Type
-   101 ;;                  1    wreg      void 
-   102 ;; Registers used:
-   103 ;;		wreg, status,2, status,0, cstack
-   104 ;; Tracked objects:
-   105 ;;		On entry : 0/0
-   106 ;;		On exit  : 0/0
-   107 ;;		Unchanged: 0/0
-   108 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+    80                           
+    81                           ; 2 bytes @ 0x0
+    82  000001                     	ds	2
+    83  000003                     ??_servoRotate0:
+    84  000003                     ??_servoRotate180:
+    85                           
+    86                           ; 1 bytes @ 0x2
+    87  000003                     	ds	1
+    88  000004                     servoRotate0@i:
+    89                           	opt callstack 0
+    90  000004                     servoRotate180@i:
+    91                           	opt callstack 0
+    92                           
+    93                           ; 2 bytes @ 0x3
+    94  000004                     	ds	2
+    95  000006                     ??_main:
+    96                           
+    97                           ; 1 bytes @ 0x5
+    98  000006                     	ds	2
+    99                           
+   100 ;;
+   101 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   102 ;;
+   103 ;; *************** function _main *****************
+   104 ;; Defined at:
+   105 ;;		line 96 in file "main.c"
+   106 ;; Parameters:    Size  Location     Type
+   107 ;;		None
+   108 ;; Auto vars:     Size  Location     Type
+   109 ;;		None
+   110 ;; Return value:  Size  Location     Type
+   111 ;;                  1    wreg      void 
+   112 ;; Registers used:
+   113 ;;		wreg, status,2, status,0, cstack
+   114 ;; Tracked objects:
+   115 ;;		On entry : 0/0
+   116 ;;		On exit  : 0/0
+   117 ;;		Unchanged: 0/0
+   118 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   109 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   119 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   110 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   120 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   111 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+   121 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   112 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   122 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   113 ;;Total ram usage:        2 bytes
-   114 ;; Hardware stack levels required when called:    1
-   115 ;; This function calls:
-   116 ;;		_servoRotate0
-   117 ;;		_servoRotate180
-   118 ;; This function is called by:
-   119 ;;		Startup code after reset
-   120 ;; This function uses a non-reentrant model
-   121 ;;
-   122                           
-   123                           	psect	text0
-   124  00FFB4                     __ptext0:
-   125                           	opt callstack 0
-   126  00FFB4                     _main:
-   127                           	opt callstack 30
-   128                           
-   129                           ;main.c: 62:   TRISB = 0;
-   130                           
-   131                           ;incstack = 0
-   132  00FFB4  0E00               	movlw	0
-   133  00FFB6  6E93               	movwf	3987,c	;volatile
-   134                           
-   135                           ;main.c: 63:     TRISC = 0;
-   136  00FFB8  0E00               	movlw	0
-   137  00FFBA  6E94               	movwf	3988,c	;volatile
+   123 ;;Total ram usage:        2 bytes
+   124 ;; Hardware stack levels required when called:    1
+   125 ;; This function calls:
+   126 ;;		_servoRotate0
+   127 ;;		_servoRotate180
+   128 ;; This function is called by:
+   129 ;;		Startup code after reset
+   130 ;; This function uses a non-reentrant model
+   131 ;;
+   132                           
+   133                           	psect	text0
+   134  00FDFE                     __ptext0:
+   135                           	opt callstack 0
+   136  00FDFE                     _main:
+   137                           	opt callstack 30
    138                           
-   139                           ;main.c: 64:     TRISD = 0;
-   140  00FFBC  0E00               	movlw	0
-   141  00FFBE  6E95               	movwf	3989,c	;volatile
-   142                           
-   143                           ;main.c: 66:       TRISBbits.RB0 = 0;
-   144  00FFC0  9093               	bcf	3987,0,c	;volatile
-   145                           
-   146                           ;main.c: 67:     LATBbits.LATB0 = 1;
-   147  00FFC2  808A               	bsf	3978,0,c	;volatile
+   139                           ;main.c: 98:   TRISB = 0;
+   140                           
+   141                           ;incstack = 0
+   142  00FDFE  0E00               	movlw	0
+   143  00FE00  6E93               	movwf	3987,c	;volatile
+   144                           
+   145                           ;main.c: 99:     TRISC = 0;
+   146  00FE02  0E00               	movlw	0
+   147  00FE04  6E94               	movwf	3988,c	;volatile
    148                           
-   149                           ;main.c: 69:   {;main.c: 70:     servoRotate0();
-   150  00FFC4  EC9C  F07F         	call	_servoRotate0	;wreg free
-   151                           
-   152                           ;main.c: 71:     _delay((unsigned long)((2000)*(10000000/4000.0)));
-   153  00FFC8  0E1A               	movlw	26
-   154  00FFCA  6E05               	movwf	(??_main+1)& (0+255),c
-   155  00FFCC  0E5E               	movlw	94
-   156  00FFCE  6E04               	movwf	??_main& (0+255),c
-   157  00FFD0  0E6E               	movlw	110
-   158  00FFD2                     u47:
-   159  00FFD2  2EE8               	decfsz	wreg,f,c
-   160  00FFD4  D7FE               	bra	u47
-   161  00FFD6  2E04               	decfsz	??_main& (0+255),f,c
-   162  00FFD8  D7FC               	bra	u47
-   163  00FFDA  2E05               	decfsz	(??_main+1)& (0+255),f,c
-   164  00FFDC  D7FA               	bra	u47
-   165  00FFDE  D000               	nop2	
-   166                           
-   167                           ;main.c: 74:     servoRotate180();
-   168  00FFE0  ECBB  F07F         	call	_servoRotate180	;wreg free
-   169                           
-   170                           ;main.c: 75:         _delay((unsigned long)((2000)*(10000000/4000.0)));
-   171  00FFE4  0E1A               	movlw	26
-   172  00FFE6  6E05               	movwf	(??_main+1)& (0+255),c
-   173  00FFE8  0E5E               	movlw	94
-   174  00FFEA  6E04               	movwf	??_main& (0+255),c
-   175  00FFEC  0E6E               	movlw	110
-   176  00FFEE                     u57:
-   177  00FFEE  2EE8               	decfsz	wreg,f,c
-   178  00FFF0  D7FE               	bra	u57
-   179  00FFF2  2E04               	decfsz	??_main& (0+255),f,c
-   180  00FFF4  D7FC               	bra	u57
-   181  00FFF6  2E05               	decfsz	(??_main+1)& (0+255),f,c
-   182  00FFF8  D7FA               	bra	u57
-   183  00FFFA  D000               	nop2	
-   184  00FFFC  EF00  F000         	goto	start
-   185  010000                     __end_of_main:
-   186                           	opt callstack 0
-   187                           
-   188 ;; *************** function _servoRotate180 *****************
-   189 ;; Defined at:
-   190 ;;		line 42 in file "main.c"
-   191 ;; Parameters:    Size  Location     Type
-   192 ;;		None
-   193 ;; Auto vars:     Size  Location     Type
-   194 ;;  i               2    1[COMRAM] unsigned int 
-   195 ;; Return value:  Size  Location     Type
-   196 ;;                  1    wreg      void 
-   197 ;; Registers used:
-   198 ;;		wreg, status,2, status,0
-   199 ;; Tracked objects:
-   200 ;;		On entry : 0/0
-   201 ;;		On exit  : 0/0
-   202 ;;		Unchanged: 0/0
-   203 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   149                           ;main.c: 100:     TRISD = 0;
+   150  00FE06  0E00               	movlw	0
+   151  00FE08  6E95               	movwf	3989,c	;volatile
+   152                           
+   153                           ;main.c: 102:       TRISBbits.RB0 = 0;
+   154  00FE0A  9093               	bcf	3987,0,c	;volatile
+   155                           
+   156                           ;main.c: 103:     LATBbits.LATB0 = 1;
+   157  00FE0C  808A               	bsf	3978,0,c	;volatile
+   158                           
+   159                           ;main.c: 104:     {;main.c: 106:     servoRotate0(1);
+   160  00FE0E  0E00               	movlw	0
+   161  00FE10  6E02               	movwf	servoRotate0@servo+1,c
+   162  00FE12  0E01               	movlw	1
+   163  00FE14  6E01               	movwf	servoRotate0@servo,c
+   164  00FE16  EC26  F07F         	call	_servoRotate0	;wreg free
+   165                           
+   166                           ;main.c: 110:     servoRotate180(1);
+   167  00FE1A  0E00               	movlw	0
+   168  00FE1C  6E02               	movwf	servoRotate180@servo+1,c
+   169  00FE1E  0E01               	movlw	1
+   170  00FE20  6E01               	movwf	servoRotate180@servo,c
+   171  00FE22  EC93  F07F         	call	_servoRotate180	;wreg free
+   172                           
+   173                           ;main.c: 111:     _delay((unsigned long)((400)*(10000000/4000.0)));
+   174  00FE26  0E06               	movlw	6
+   175  00FE28  6E07               	movwf	(??_main+1)& (0+255),c
+   176  00FE2A  0E13               	movlw	19
+   177  00FE2C  6E06               	movwf	??_main& (0+255),c
+   178  00FE2E  0EAE               	movlw	174
+   179  00FE30                     u257:
+   180  00FE30  2EE8               	decfsz	wreg,f,c
+   181  00FE32  D7FE               	bra	u257
+   182  00FE34  2E06               	decfsz	??_main& (0+255),f,c
+   183  00FE36  D7FC               	bra	u257
+   184  00FE38  2E07               	decfsz	(??_main+1)& (0+255),f,c
+   185  00FE3A  D7FA               	bra	u257
+   186                           
+   187                           ;main.c: 112:     servoRotate0(1);
+   188  00FE3C  0E00               	movlw	0
+   189  00FE3E  6E02               	movwf	servoRotate0@servo+1,c
+   190  00FE40  0E01               	movlw	1
+   191  00FE42  6E01               	movwf	servoRotate0@servo,c
+   192  00FE44  EC26  F07F         	call	_servoRotate0	;wreg free
+   193  00FE48  EF00  F000         	goto	start
+   194  00FE4C                     __end_of_main:
+   195                           	opt callstack 0
+   196                           
+   197 ;; *************** function _servoRotate180 *****************
+   198 ;; Defined at:
+   199 ;;		line 50 in file "main.c"
+   200 ;; Parameters:    Size  Location     Type
+   201 ;;  servo           2    0[COMRAM] int 
+   202 ;; Auto vars:     Size  Location     Type
+   203 ;;  i               2    3[COMRAM] unsigned int 
+   204 ;; Return value:  Size  Location     Type
+   205 ;;                  1    wreg      void 
+   206 ;; Registers used:
+   207 ;;		wreg, status,2, status,0
+   208 ;; Tracked objects:
+   209 ;;		On entry : 0/0
+   210 ;;		On exit  : 0/0
+   211 ;;		Unchanged: 0/0
+   212 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   204 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   213 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   205 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   214 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   206 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+   215 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   207 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+   216 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   208 ;;Total ram usage:        3 bytes
-   209 ;; Hardware stack levels used:    1
-   210 ;; This function calls:
-   211 ;;		Nothing
-   212 ;; This function is called by:
-   213 ;;		_main
-   214 ;; This function uses a non-reentrant model
-   215 ;;
-   216                           
-   217                           	psect	text1
-   218  00FF76                     __ptext1:
-   219                           	opt callstack 0
-   220  00FF76                     _servoRotate180:
-   221                           	opt callstack 30
-   222                           
-   223                           ;main.c: 44:   unsigned int i;;main.c: 45:   for(i=0;i<50;i++)
-   224                           
-   225                           ;incstack = 0
-   226  00FF76  0E00               	movlw	0
-   227  00FF78  6E03               	movwf	servoRotate180@i+1,c
-   228  00FF7A  0E00               	movlw	0
-   229  00FF7C  6E02               	movwf	servoRotate180@i,c
-   230  00FF7E                     l27:
+   217 ;;Total ram usage:        5 bytes
+   218 ;; Hardware stack levels used:    1
+   219 ;; This function calls:
+   220 ;;		Nothing
+   221 ;; This function is called by:
+   222 ;;		_main
+   223 ;; This function uses a non-reentrant model
+   224 ;;
+   225                           
+   226                           	psect	text1
+   227  00FF26                     __ptext1:
+   228                           	opt callstack 0
+   229  00FF26                     _servoRotate180:
+   230                           	opt callstack 30
    231                           
-   232                           ;main.c: 46:   {;main.c: 49:     RD0 = 1;
-   233  00FF7E  8083               	bsf	3971,0,c	;volatile
-   234                           
-   235                           ;main.c: 51:     _delay((unsigned long)((2500)*(10000000/4000000.0)));
-   236  00FF80  0E09               	movlw	9
-   237  00FF82  6E01               	movwf	??_servoRotate180& (0+255),c
-   238  00FF84  0E1C               	movlw	28
-   239  00FF86                     u67:
-   240  00FF86  2EE8               	decfsz	wreg,f,c
-   241  00FF88  D7FE               	bra	u67
-   242  00FF8A  2E01               	decfsz	??_servoRotate180& (0+255),f,c
-   243  00FF8C  D7FC               	bra	u67
-   244  00FF8E  D000               	nop2	
-   245                           
-   246                           ;main.c: 54:         RD0 = 0;
-   247  00FF90  9083               	bcf	3971,0,c	;volatile
-   248                           
-   249                           ;main.c: 56:     _delay((unsigned long)((10500)*(10000000/4000000.0)));
-   250  00FF92  0E23               	movlw	35
-   251  00FF94  6E01               	movwf	??_servoRotate180& (0+255),c
-   252  00FF96  0E16               	movlw	22
-   253  00FF98                     u77:
-   254  00FF98  2EE8               	decfsz	wreg,f,c
-   255  00FF9A  D7FE               	bra	u77
-   256  00FF9C  2E01               	decfsz	??_servoRotate180& (0+255),f,c
-   257  00FF9E  D7FC               	bra	u77
-   258                           
-   259                           ;main.c: 57:   }
-   260  00FFA0  4A02               	infsnz	servoRotate180@i,f,c
-   261  00FFA2  2A03               	incf	servoRotate180@i+1,f,c
-   262  00FFA4  5003               	movf	servoRotate180@i+1,w,c
-   263  00FFA6  E105               	bnz	u20
-   264  00FFA8  0E32               	movlw	50
-   265  00FFAA  5C02               	subwf	servoRotate180@i,w,c
-   266  00FFAC  B0D8               	btfsc	status,0,c
-   267  00FFAE  0012               	return	
-   268  00FFB0  D7E6               	goto	l27
-   269  00FFB2                     u20:
-   270  00FFB2  0012               	return		;funcret
-   271  00FFB4                     __end_of_servoRotate180:
-   272                           	opt callstack 0
+   232                           ;main.c: 50: void servoRotate180(int servo);main.c: 51: {;main.c: 52:   unsigned int i;;
+      +                          main.c: 53:     if (servo==1){
+   233                           
+   234                           ;incstack = 0
+   235  00FF26  0401               	decf	servoRotate180@servo,w,c
+   236  00FF28  1002               	iorwf	servoRotate180@servo+1,w,c
+   237  00FF2A  A4D8               	btfss	status,2,c
+   238  00FF2C  D024               	goto	u200
+   239                           
+   240                           ;main.c: 54:     for(i=0;i<30;i++)
+   241  00FF2E  0E00               	movlw	0
+   242  00FF30  6E05               	movwf	servoRotate180@i+1,c
+   243  00FF32  0E00               	movlw	0
+   244  00FF34  6E04               	movwf	servoRotate180@i,c
+   245  00FF36                     l36:
+   246                           
+   247                           ;main.c: 55:         {;main.c: 56:           RC1 = 1;
+   248  00FF36  8282               	bsf	3970,1,c	;volatile
+   249                           
+   250                           ;main.c: 57:             RC2 = 1;
+   251  00FF38  8482               	bsf	3970,2,c	;volatile
+   252                           
+   253                           ;main.c: 58:           _delay((unsigned long)((450)*(10000000/4000000.0)));
+   254  00FF3A  0EE1               	movlw	225
+   255  00FF3C                     u267:
+   256  00FF3C  D000               	nop2	
+   257  00FF3E  2EE8               	decfsz	wreg,f,c
+   258  00FF40  D7FD               	bra	u267
+   259                           
+   260                           ;main.c: 60:           RC2 =0;
+   261  00FF42  9482               	bcf	3970,2,c	;volatile
+   262                           
+   263                           ;main.c: 61:           _delay((unsigned long)((2100)*(10000000/4000000.0)));
+   264  00FF44  0E07               	movlw	7
+   265  00FF46  6E03               	movwf	??_servoRotate180& (0+255),c
+   266  00FF48  0ED0               	movlw	208
+   267  00FF4A                     u277:
+   268  00FF4A  2EE8               	decfsz	wreg,f,c
+   269  00FF4C  D7FE               	bra	u277
+   270  00FF4E  2E03               	decfsz	??_servoRotate180& (0+255),f,c
+   271  00FF50  D7FC               	bra	u277
+   272  00FF52  D000               	nop2	
    273                           
-   274 ;; *************** function _servoRotate0 *****************
-   275 ;; Defined at:
-   276 ;;		line 8 in file "main.c"
-   277 ;; Parameters:    Size  Location     Type
-   278 ;;		None
-   279 ;; Auto vars:     Size  Location     Type
-   280 ;;  i               2    1[COMRAM] unsigned int 
-   281 ;; Return value:  Size  Location     Type
-   282 ;;                  1    wreg      void 
-   283 ;; Registers used:
-   284 ;;		wreg, status,2, status,0
-   285 ;; Tracked objects:
-   286 ;;		On entry : 0/0
-   287 ;;		On exit  : 0/0
-   288 ;;		Unchanged: 0/0
-   289 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   274                           ;main.c: 63:           RC1 = 0;
+   275  00FF54  9282               	bcf	3970,1,c	;volatile
+   276                           
+   277                           ;main.c: 64:           _delay((unsigned long)((13550)*(10000000/4000000.0)));
+   278  00FF56  0E2C               	movlw	44
+   279  00FF58  6E03               	movwf	??_servoRotate180& (0+255),c
+   280  00FF5A  0EFD               	movlw	253
+   281  00FF5C                     u287:
+   282  00FF5C  2EE8               	decfsz	wreg,f,c
+   283  00FF5E  D7FE               	bra	u287
+   284  00FF60  2E03               	decfsz	??_servoRotate180& (0+255),f,c
+   285  00FF62  D7FC               	bra	u287
+   286  00FF64  D000               	nop2	
+   287                           
+   288                           ;main.c: 65:         }
+   289  00FF66  4A04               	infsnz	servoRotate180@i,f,c
+   290  00FF68  2A05               	incf	servoRotate180@i+1,f,c
+   291  00FF6A  5005               	movf	servoRotate180@i+1,w,c
+   292  00FF6C  E104               	bnz	u200
+   293  00FF6E  0E1E               	movlw	30
+   294  00FF70  5C04               	subwf	servoRotate180@i,w,c
+   295  00FF72  A0D8               	btfss	status,0,c
+   296  00FF74  D7E0               	goto	l36
+   297  00FF76                     u200:
+   298                           
+   299                           ;main.c: 67:   if (servo==2){
+   300  00FF76  0E02               	movlw	2
+   301  00FF78  1801               	xorwf	servoRotate180@servo,w,c
+   302  00FF7A  1002               	iorwf	servoRotate180@servo+1,w,c
+   303  00FF7C  A4D8               	btfss	status,2,c
+   304  00FF7E  D01C               	goto	u220
+   305                           
+   306                           ;main.c: 68:     for(i=0;i<30;i++)
+   307  00FF80  0E00               	movlw	0
+   308  00FF82  6E05               	movwf	servoRotate180@i+1,c
+   309  00FF84  0E00               	movlw	0
+   310  00FF86  6E04               	movwf	servoRotate180@i,c
+   311  00FF88                     l39:
+   312                           
+   313                           ;main.c: 69:           {;main.c: 71:     RD1 = 1;
+   314  00FF88  8283               	bsf	3971,1,c	;volatile
+   315                           
+   316                           ;main.c: 74:     _delay((unsigned long)((525)*(10000000/4000000.0)));
+   317  00FF8A  0EBB               	movlw	187
+   318  00FF8C                     u297:
+   319  00FF8C  D000               	nop2	
+   320  00FF8E  D000               	nop2	
+   321  00FF90  2EE8               	decfsz	wreg,f,c
+   322  00FF92  D7FC               	bra	u297
+   323  00FF94  D000               	nop2	
+   324  00FF96  F000               	nop	
+   325                           
+   326                           ;main.c: 76:     RD1 = 0;
+   327  00FF98  9283               	bcf	3971,1,c	;volatile
+   328                           
+   329                           ;main.c: 79:     _delay((unsigned long)((27075)*(10000000/4000000.0)));
+   330  00FF9A  0E58               	movlw	88
+   331  00FF9C  6E03               	movwf	??_servoRotate180& (0+255),c
+   332  00FF9E  0EE7               	movlw	231
+   333  00FFA0                     u307:
+   334  00FFA0  2EE8               	decfsz	wreg,f,c
+   335  00FFA2  D7FE               	bra	u307
+   336  00FFA4  2E03               	decfsz	??_servoRotate180& (0+255),f,c
+   337  00FFA6  D7FC               	bra	u307
+   338                           
+   339                           ;main.c: 80:           }
+   340  00FFA8  4A04               	infsnz	servoRotate180@i,f,c
+   341  00FFAA  2A05               	incf	servoRotate180@i+1,f,c
+   342  00FFAC  5005               	movf	servoRotate180@i+1,w,c
+   343  00FFAE  E104               	bnz	u220
+   344  00FFB0  0E1E               	movlw	30
+   345  00FFB2  5C04               	subwf	servoRotate180@i,w,c
+   346  00FFB4  A0D8               	btfss	status,0,c
+   347  00FFB6  D7E8               	goto	l39
+   348  00FFB8                     u220:
+   349                           
+   350                           ;main.c: 82:     if (servo==3){
+   351  00FFB8  0E03               	movlw	3
+   352  00FFBA  1801               	xorwf	servoRotate180@servo,w,c
+   353  00FFBC  1002               	iorwf	servoRotate180@servo+1,w,c
+   354  00FFBE  A4D8               	btfss	status,2,c
+   355  00FFC0  0012               	return	
+   356                           
+   357                           ;main.c: 83:       for(i=0;i<30;i++)
+   358  00FFC2  0E00               	movlw	0
+   359  00FFC4  6E05               	movwf	servoRotate180@i+1,c
+   360  00FFC6  0E00               	movlw	0
+   361  00FFC8  6E04               	movwf	servoRotate180@i,c
+   362  00FFCA                     l42:
+   363                           
+   364                           ;main.c: 84:         {;main.c: 85:         RD0 = 1;
+   365  00FFCA  8083               	bsf	3971,0,c	;volatile
+   366                           
+   367                           ;main.c: 87:         _delay((unsigned long)((2500)*(10000000/4000000.0)));
+   368  00FFCC  0E09               	movlw	9
+   369  00FFCE  6E03               	movwf	??_servoRotate180& (0+255),c
+   370  00FFD0  0E1C               	movlw	28
+   371  00FFD2                     u317:
+   372  00FFD2  2EE8               	decfsz	wreg,f,c
+   373  00FFD4  D7FE               	bra	u317
+   374  00FFD6  2E03               	decfsz	??_servoRotate180& (0+255),f,c
+   375  00FFD8  D7FC               	bra	u317
+   376  00FFDA  D000               	nop2	
+   377                           
+   378                           ;main.c: 90:             RD0 = 0;
+   379  00FFDC  9083               	bcf	3971,0,c	;volatile
+   380                           
+   381                           ;main.c: 92:         _delay((unsigned long)((10500)*(10000000/4000000.0)));
+   382  00FFDE  0E23               	movlw	35
+   383  00FFE0  6E03               	movwf	??_servoRotate180& (0+255),c
+   384  00FFE2  0E16               	movlw	22
+   385  00FFE4                     u327:
+   386  00FFE4  2EE8               	decfsz	wreg,f,c
+   387  00FFE6  D7FE               	bra	u327
+   388  00FFE8  2E03               	decfsz	??_servoRotate180& (0+255),f,c
+   389  00FFEA  D7FC               	bra	u327
+   390                           
+   391                           ;main.c: 93:         }
+   392  00FFEC  4A04               	infsnz	servoRotate180@i,f,c
+   393  00FFEE  2A05               	incf	servoRotate180@i+1,f,c
+   394  00FFF0  5005               	movf	servoRotate180@i+1,w,c
+   395  00FFF2  E105               	bnz	u240
+   396  00FFF4  0E1E               	movlw	30
+   397  00FFF6  5C04               	subwf	servoRotate180@i,w,c
+   398  00FFF8  B0D8               	btfsc	status,0,c
+   399  00FFFA  0012               	return	
+   400  00FFFC  D7E6               	goto	l42
+   401  00FFFE                     u240:
+   402  00FFFE  0012               	return		;funcret
+   403  010000                     __end_of_servoRotate180:
+   404                           	opt callstack 0
+   405                           
+   406 ;; *************** function _servoRotate0 *****************
+   407 ;; Defined at:
+   408 ;;		line 6 in file "main.c"
+   409 ;; Parameters:    Size  Location     Type
+   410 ;;  servo           2    0[COMRAM] int 
+   411 ;; Auto vars:     Size  Location     Type
+   412 ;;  i               2    3[COMRAM] unsigned int 
+   413 ;; Return value:  Size  Location     Type
+   414 ;;                  1    wreg      void 
+   415 ;; Registers used:
+   416 ;;		wreg, status,2, status,0
+   417 ;; Tracked objects:
+   418 ;;		On entry : 0/0
+   419 ;;		On exit  : 0/0
+   420 ;;		Unchanged: 0/0
+   421 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   290 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   422 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   291 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   423 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   292 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+   424 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   293 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+   425 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   294 ;;Total ram usage:        3 bytes
-   295 ;; Hardware stack levels used:    1
-   296 ;; This function calls:
-   297 ;;		Nothing
-   298 ;; This function is called by:
-   299 ;;		_main
-   300 ;; This function uses a non-reentrant model
-   301 ;;
-   302                           
-   303                           	psect	text2
-   304  00FF38                     __ptext2:
-   305                           	opt callstack 0
-   306  00FF38                     _servoRotate0:
-   307                           	opt callstack 30
-   308                           
-   309                           ;main.c: 10:   unsigned int i;;main.c: 11:   for(i=0;i<50;i++)
-   310                           
-   311                           ;incstack = 0
-   312  00FF38  0E00               	movlw	0
-   313  00FF3A  6E03               	movwf	servoRotate0@i+1,c
-   314  00FF3C  0E00               	movlw	0
-   315  00FF3E  6E02               	movwf	servoRotate0@i,c
-   316  00FF40                     l17:
-   317                           
-   318                           ;main.c: 12:   {;main.c: 15:     RD0 = 1;
-   319  00FF40  8083               	bsf	3971,0,c	;volatile
-   320                           
-   321                           ;main.c: 17:       _delay((unsigned long)((2000)*(10000000/4000000.0)));
-   322  00FF42  0E07               	movlw	7
-   323  00FF44  6E01               	movwf	??_servoRotate0& (0+255),c
-   324  00FF46  0E7D               	movlw	125
-   325  00FF48                     u87:
-   326  00FF48  2EE8               	decfsz	wreg,f,c
-   327  00FF4A  D7FE               	bra	u87
-   328  00FF4C  2E01               	decfsz	??_servoRotate0& (0+255),f,c
-   329  00FF4E  D7FC               	bra	u87
-   330  00FF50  F000               	nop	
-   331                           
-   332                           ;main.c: 20:     RD0 = 0;
-   333  00FF52  9083               	bcf	3971,0,c	;volatile
-   334                           
-   335                           ;main.c: 22:       _delay((unsigned long)((11000)*(10000000/4000000.0)));
-   336  00FF54  0E24               	movlw	36
-   337  00FF56  6E01               	movwf	??_servoRotate0& (0+255),c
-   338  00FF58  0EB6               	movlw	182
-   339  00FF5A                     u97:
-   340  00FF5A  2EE8               	decfsz	wreg,f,c
-   341  00FF5C  D7FE               	bra	u97
-   342  00FF5E  2E01               	decfsz	??_servoRotate0& (0+255),f,c
-   343  00FF60  D7FC               	bra	u97
-   344                           
-   345                           ;main.c: 23:   }
-   346  00FF62  4A02               	infsnz	servoRotate0@i,f,c
-   347  00FF64  2A03               	incf	servoRotate0@i+1,f,c
-   348  00FF66  5003               	movf	servoRotate0@i+1,w,c
-   349  00FF68  E105               	bnz	u10
-   350  00FF6A  0E32               	movlw	50
-   351  00FF6C  5C02               	subwf	servoRotate0@i,w,c
-   352  00FF6E  B0D8               	btfsc	status,0,c
-   353  00FF70  0012               	return	
-   354  00FF72  D7E6               	goto	l17
-   355  00FF74                     u10:
-   356  00FF74  0012               	return		;funcret
-   357  00FF76                     __end_of_servoRotate0:
-   358                           	opt callstack 0
-   359  0000                     
-   360                           	psect	rparam
-   361  0000                     tosu	equ	0xFFF
-   362                           tosh	equ	0xFFE
-   363                           tosl	equ	0xFFD
-   364                           stkptr	equ	0xFFC
-   365                           pclatu	equ	0xFFB
-   366                           pclath	equ	0xFFA
-   367                           pcl	equ	0xFF9
-   368                           tblptru	equ	0xFF8
-   369                           tblptrh	equ	0xFF7
-   370                           tblptrl	equ	0xFF6
-   371                           tablat	equ	0xFF5
-   372                           prodh	equ	0xFF4
-   373                           prodl	equ	0xFF3
-   374                           indf0	equ	0xFEF
-   375                           postinc0	equ	0xFEE
-   376                           postdec0	equ	0xFED
-   377                           preinc0	equ	0xFEC
-   378                           plusw0	equ	0xFEB
-   379                           fsr0h	equ	0xFEA
-   380                           fsr0l	equ	0xFE9
-   381                           wreg	equ	0xFE8
-   382                           indf1	equ	0xFE7
-   383                           postinc1	equ	0xFE6
-   384                           postdec1	equ	0xFE5
-   385                           preinc1	equ	0xFE4
-   386                           plusw1	equ	0xFE3
-   387                           fsr1h	equ	0xFE2
-   388                           fsr1l	equ	0xFE1
-   389                           bsr	equ	0xFE0
-   390                           indf2	equ	0xFDF
-   391                           postinc2	equ	0xFDE
-   392                           postdec2	equ	0xFDD
-   393                           preinc2	equ	0xFDC
-   394                           plusw2	equ	0xFDB
-   395                           fsr2h	equ	0xFDA
-   396                           fsr2l	equ	0xFD9
-   397                           status	equ	0xFD8
+   426 ;;Total ram usage:        5 bytes
+   427 ;; Hardware stack levels used:    1
+   428 ;; This function calls:
+   429 ;;		Nothing
+   430 ;; This function is called by:
+   431 ;;		_main
+   432 ;; This function uses a non-reentrant model
+   433 ;;
+   434                           
+   435                           	psect	text2
+   436  00FE4C                     __ptext2:
+   437                           	opt callstack 0
+   438  00FE4C                     _servoRotate0:
+   439                           	opt callstack 30
+   440                           
+   441                           ;main.c: 7:     unsigned int i;;main.c: 8:     if (servo==1){
+   442                           
+   443                           ;incstack = 0
+   444  00FE4C  0401               	decf	servoRotate0@servo,w,c
+   445  00FE4E  1002               	iorwf	servoRotate0@servo+1,w,c
+   446  00FE50  A4D8               	btfss	status,2,c
+   447  00FE52  D023               	goto	u140
+   448                           
+   449                           ;main.c: 9:       for(i=0;i<30;i++)
+   450  00FE54  0E00               	movlw	0
+   451  00FE56  6E05               	movwf	servoRotate0@i+1,c
+   452  00FE58  0E00               	movlw	0
+   453  00FE5A  6E04               	movwf	servoRotate0@i,c
+   454  00FE5C                     l24:
+   455                           
+   456                           ;main.c: 10:           {;main.c: 11:             RC1 = 1;
+   457  00FE5C  8282               	bsf	3970,1,c	;volatile
+   458                           
+   459                           ;main.c: 12:             RC2 = 1;
+   460  00FE5E  8482               	bsf	3970,2,c	;volatile
+   461                           
+   462                           ;main.c: 13:             _delay((unsigned long)((1100)*(10000000/4000000.0)));
+   463  00FE60  0E04               	movlw	4
+   464  00FE62  6E03               	movwf	??_servoRotate0& (0+255),c
+   465  00FE64  0E91               	movlw	145
+   466  00FE66                     u337:
+   467  00FE66  2EE8               	decfsz	wreg,f,c
+   468  00FE68  D7FE               	bra	u337
+   469  00FE6A  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   470  00FE6C  D7FC               	bra	u337
+   471  00FE6E  F000               	nop	
+   472                           
+   473                           ;main.c: 14:             RC2 = 0;
+   474  00FE70  9482               	bcf	3970,2,c	;volatile
+   475                           
+   476                           ;main.c: 15:             _delay((unsigned long)((300)*(10000000/4000000.0)));
+   477  00FE72  0EFA               	movlw	250
+   478  00FE74                     u347:
+   479  00FE74  2EE8               	decfsz	wreg,f,c
+   480  00FE76  D7FE               	bra	u347
+   481                           
+   482                           ;main.c: 16:             RC1 = 0;
+   483  00FE78  9282               	bcf	3970,1,c	;volatile
+   484                           
+   485                           ;main.c: 20:             _delay((unsigned long)((18600)*(10000000/4000000.0)));
+   486  00FE7A  0E3D               	movlw	61
+   487  00FE7C  6E03               	movwf	??_servoRotate0& (0+255),c
+   488  00FE7E  0E62               	movlw	98
+   489  00FE80                     u357:
+   490  00FE80  2EE8               	decfsz	wreg,f,c
+   491  00FE82  D7FE               	bra	u357
+   492  00FE84  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   493  00FE86  D7FC               	bra	u357
+   494  00FE88  D000               	nop2	
+   495                           
+   496                           ;main.c: 21:           }
+   497  00FE8A  4A04               	infsnz	servoRotate0@i,f,c
+   498  00FE8C  2A05               	incf	servoRotate0@i+1,f,c
+   499  00FE8E  5005               	movf	servoRotate0@i+1,w,c
+   500  00FE90  E104               	bnz	u140
+   501  00FE92  0E1E               	movlw	30
+   502  00FE94  5C04               	subwf	servoRotate0@i,w,c
+   503  00FE96  A0D8               	btfss	status,0,c
+   504  00FE98  D7E1               	goto	l24
+   505  00FE9A                     u140:
+   506                           
+   507                           ;main.c: 23:     if (servo==2){
+   508  00FE9A  0E02               	movlw	2
+   509  00FE9C  1801               	xorwf	servoRotate0@servo,w,c
+   510  00FE9E  1002               	iorwf	servoRotate0@servo+1,w,c
+   511  00FEA0  A4D8               	btfss	status,2,c
+   512  00FEA2  D01D               	goto	u160
+   513                           
+   514                           ;main.c: 24:       for(i=0;i<30;i++)
+   515  00FEA4  0E00               	movlw	0
+   516  00FEA6  6E05               	movwf	servoRotate0@i+1,c
+   517  00FEA8  0E00               	movlw	0
+   518  00FEAA  6E04               	movwf	servoRotate0@i,c
+   519  00FEAC                     l27:
+   520                           
+   521                           ;main.c: 25:         {;main.c: 27:         RD1 = 1;
+   522  00FEAC  8283               	bsf	3971,1,c	;volatile
+   523                           
+   524                           ;main.c: 30:           _delay((unsigned long)((1000)*(10000000/4000000.0)));
+   525  00FEAE  0E04               	movlw	4
+   526  00FEB0  6E03               	movwf	??_servoRotate0& (0+255),c
+   527  00FEB2  0E3E               	movlw	62
+   528  00FEB4                     u367:
+   529  00FEB4  2EE8               	decfsz	wreg,f,c
+   530  00FEB6  D7FE               	bra	u367
+   531  00FEB8  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   532  00FEBA  D7FC               	bra	u367
+   533                           
+   534                           ;main.c: 32:         RD1 = 0;
+   535  00FEBC  9283               	bcf	3971,1,c	;volatile
+   536                           
+   537                           ;main.c: 35:           _delay((unsigned long)((19000)*(10000000/4000000.0)));
+   538  00FEBE  0E3E               	movlw	62
+   539  00FEC0  6E03               	movwf	??_servoRotate0& (0+255),c
+   540  00FEC2  0EAF               	movlw	175
+   541  00FEC4                     u377:
+   542  00FEC4  2EE8               	decfsz	wreg,f,c
+   543  00FEC6  D7FE               	bra	u377
+   544  00FEC8  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   545  00FECA  D7FC               	bra	u377
+   546  00FECC  F000               	nop	
+   547                           
+   548                           ;main.c: 36:         }
+   549  00FECE  4A04               	infsnz	servoRotate0@i,f,c
+   550  00FED0  2A05               	incf	servoRotate0@i+1,f,c
+   551  00FED2  5005               	movf	servoRotate0@i+1,w,c
+   552  00FED4  E104               	bnz	u160
+   553  00FED6  0E1E               	movlw	30
+   554  00FED8  5C04               	subwf	servoRotate0@i,w,c
+   555  00FEDA  A0D8               	btfss	status,0,c
+   556  00FEDC  D7E7               	goto	l27
+   557  00FEDE                     u160:
+   558                           
+   559                           ;main.c: 38:     if (servo==3){
+   560  00FEDE  0E03               	movlw	3
+   561  00FEE0  1801               	xorwf	servoRotate0@servo,w,c
+   562  00FEE2  1002               	iorwf	servoRotate0@servo+1,w,c
+   563  00FEE4  A4D8               	btfss	status,2,c
+   564  00FEE6  0012               	return	
+   565                           
+   566                           ;main.c: 39:       for(i=0;i<30;i++)
+   567  00FEE8  0E00               	movlw	0
+   568  00FEEA  6E05               	movwf	servoRotate0@i+1,c
+   569  00FEEC  0E00               	movlw	0
+   570  00FEEE  6E04               	movwf	servoRotate0@i,c
+   571  00FEF0                     l30:
+   572                           
+   573                           ;main.c: 40:         {;main.c: 41:         RD0 = 1;
+   574  00FEF0  8083               	bsf	3971,0,c	;volatile
+   575                           
+   576                           ;main.c: 42:         _delay((unsigned long)((2000)*(10000000/4000000.0)));
+   577  00FEF2  0E07               	movlw	7
+   578  00FEF4  6E03               	movwf	??_servoRotate0& (0+255),c
+   579  00FEF6  0E7D               	movlw	125
+   580  00FEF8                     u387:
+   581  00FEF8  2EE8               	decfsz	wreg,f,c
+   582  00FEFA  D7FE               	bra	u387
+   583  00FEFC  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   584  00FEFE  D7FC               	bra	u387
+   585  00FF00  F000               	nop	
+   586                           
+   587                           ;main.c: 45:         RD0 = 0;
+   588  00FF02  9083               	bcf	3971,0,c	;volatile
+   589                           
+   590                           ;main.c: 46:         _delay((unsigned long)((11000)*(10000000/4000000.0)));
+   591  00FF04  0E24               	movlw	36
+   592  00FF06  6E03               	movwf	??_servoRotate0& (0+255),c
+   593  00FF08  0EB6               	movlw	182
+   594  00FF0A                     u397:
+   595  00FF0A  2EE8               	decfsz	wreg,f,c
+   596  00FF0C  D7FE               	bra	u397
+   597  00FF0E  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   598  00FF10  D7FC               	bra	u397
+   599                           
+   600                           ;main.c: 47:         }
+   601  00FF12  4A04               	infsnz	servoRotate0@i,f,c
+   602  00FF14  2A05               	incf	servoRotate0@i+1,f,c
+   603  00FF16  5005               	movf	servoRotate0@i+1,w,c
+   604  00FF18  E105               	bnz	u180
+   605  00FF1A  0E1E               	movlw	30
+   606  00FF1C  5C04               	subwf	servoRotate0@i,w,c
+   607  00FF1E  B0D8               	btfsc	status,0,c
+   608  00FF20  0012               	return	
+   609  00FF22  D7E6               	goto	l30
+   610  00FF24                     u180:
+   611  00FF24  0012               	return		;funcret
+   612  00FF26                     __end_of_servoRotate0:
+   613                           	opt callstack 0
+   614  0000                     
+   615                           	psect	rparam
+   616  0000                     tosu	equ	0xFFF
+   617                           tosh	equ	0xFFE
+   618                           tosl	equ	0xFFD
+   619                           stkptr	equ	0xFFC
+   620                           pclatu	equ	0xFFB
+   621                           pclath	equ	0xFFA
+   622                           pcl	equ	0xFF9
+   623                           tblptru	equ	0xFF8
+   624                           tblptrh	equ	0xFF7
+   625                           tblptrl	equ	0xFF6
+   626                           tablat	equ	0xFF5
+   627                           prodh	equ	0xFF4
+   628                           prodl	equ	0xFF3
+   629                           indf0	equ	0xFEF
+   630                           postinc0	equ	0xFEE
+   631                           postdec0	equ	0xFED
+   632                           preinc0	equ	0xFEC
+   633                           plusw0	equ	0xFEB
+   634                           fsr0h	equ	0xFEA
+   635                           fsr0l	equ	0xFE9
+   636                           wreg	equ	0xFE8
+   637                           indf1	equ	0xFE7
+   638                           postinc1	equ	0xFE6
+   639                           postdec1	equ	0xFE5
+   640                           preinc1	equ	0xFE4
+   641                           plusw1	equ	0xFE3
+   642                           fsr1h	equ	0xFE2
+   643                           fsr1l	equ	0xFE1
+   644                           bsr	equ	0xFE0
+   645                           indf2	equ	0xFDF
+   646                           postinc2	equ	0xFDE
+   647                           postdec2	equ	0xFDD
+   648                           preinc2	equ	0xFDC
+   649                           plusw2	equ	0xFDB
+   650                           fsr2h	equ	0xFDA
+   651                           fsr2l	equ	0xFD9
+   652                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -436,7 +692,7 @@ Data Sizes:
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM          127      5       5
+    COMRAM          127      7       7
     BANK0           128      0       0
     BANK1           256      0       0
     BANK2           256      0       0
@@ -532,16 +788,16 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 2     2      0      60
-                                              3 COMRAM     2     2      0
+ (0) _main                                                 2     2      0     636
+                                              5 COMRAM     2     2      0
                        _servoRotate0
                      _servoRotate180
  ---------------------------------------------------------------------------------
- (1) _servoRotate180                                       3     3      0      30
-                                              0 COMRAM     3     3      0
+ (1) _servoRotate180                                       5     3      2     280
+                                              0 COMRAM     5     3      2
  ---------------------------------------------------------------------------------
- (1) _servoRotate0                                         3     3      0      30
-                                              0 COMRAM     3     3      0
+ (1) _servoRotate0                                         5     3      2     356
+                                              0 COMRAM     5     3      2
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
  ---------------------------------------------------------------------------------
@@ -558,7 +814,7 @@ BITCOMRAM           7F      0       0       0        0.0%
 EEDATA             400      0       0       0        0.0%
 NULL                 0      0       0       0        0.0%
 CODE                 0      0       0       0        0.0%
-COMRAM              7F      5       5       1        3.9%
+COMRAM              7F      7       7       1        5.5%
 STACK                0      0       0       2        0.0%
 DATA                 0      0       0       3        0.0%
 BITBANK0            80      0       0       4        0.0%
@@ -600,17 +856,24 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Mon Apr 08 02:33:47 2019
+Symbol Table                                                                                   Mon Apr 08 06:30:52 2019
 
-                     l17 FF40                       l27 FF7E                       u10 FF74  
-                     u20 FFB2              __CFG_CPD$ON 000000                       u47 FFD2  
-                     u57 FFEE                       u67 FF86                       u77 FF98  
-                     u87 FF48                       u97 FF5A              __CFG_BORV$3 000000  
-          servoRotate0@i 0002             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+                     l30 FEF0                       l24 FE5C                       l42 FFCA  
+                     l27 FEAC                       l36 FF36                       l39 FF88  
+            __CFG_CPD$ON 000000      servoRotate180@servo 0001              __CFG_BORV$3 000000  
+          servoRotate0@i 0004             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
            __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000              __CFG_OSC$HS 000000  
-           __CFG_CPB$OFF 000000                      _RD0 007C18                      wreg 000FE8  
-           __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000                     _main FFB4  
-                   start 0000            __CFG_IESO$OFF 000000          servoRotate180@i 0002  
+           __CFG_CPB$OFF 000000                      _RC1 007C11                      _RC2 007C12  
+                    _RD0 007C18                      _RD1 007C19                      u200 FF76  
+                    u140 FE9A                      u220 FFB8                      u160 FEDE  
+                    u240 FFFE                      u307 FFA0                      u180 FF24  
+                    u317 FFD2                      u327 FFE4                      u337 FE66  
+                    u257 FE30                      u347 FE74                      u267 FF3C  
+                    u357 FE80                      u277 FF4A                      u367 FEB4  
+                    u287 FF5C                      u377 FEC4                      u297 FF8C  
+                    u387 FEF8                      u397 FF0A                      wreg 000FE8  
+           __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000                     _main FDFE  
+                   start 0000            __CFG_IESO$OFF 000000          servoRotate180@i 0004  
           __CFG_MCLRE$ON 000000             ___param_bank 000000                    ?_main 0001  
                   _TRISB 000F93                    _TRISC 000F94                    _TRISD 000F95  
           __CFG_PWRT$OFF 000000            __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000  
@@ -618,16 +881,17 @@ Symbol Table                                                                    
          __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000           __CFG_EBTR2$OFF 000000  
          __CFG_EBTR3$OFF 000000            __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000  
           __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000                    status 000FD8  
-       ??_servoRotate180 0001           __CFG_PBADEN$ON 000000          __initialization FF32  
-           __end_of_main 0000                   ??_main 0004            __activetblptr 000000  
+       ??_servoRotate180 0003           __CFG_PBADEN$ON 000000          __initialization FDF8  
+           __end_of_main FE4C                   ??_main 0006            __activetblptr 000000  
          __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000               __accesstop 0080  
-__end_of__initialization FF32            ___rparam_used 000001           __pcstackCOMRAM 0001  
-                __Hparam 0000                  __Lparam 0000                  __pcinit FF32  
-                __ramtop 1000                  __ptext0 FFB4                  __ptext1 FF76  
-                __ptext2 FF38     end_of_initialization FF32            ?_servoRotate0 0001  
-              _TRISBbits 000F93           ??_servoRotate0 0001  __size_of_servoRotate180 003E  
-    start_initialization FF32         __CFG_LPT1OSC$OFF 000000        __CFG_CCP2MX$PORTC 000000  
-   __end_of_servoRotate0 FF76                 _LATBbits 000F8A         __CFG_WDTPS$32768 000000  
-         _servoRotate180 FF76                 __Hrparam 0000                 __Lrparam 0000  
-     __CFG_BOREN$SBORDIS 000000   __end_of_servoRotate180 FFB4            __size_of_main 004C  
-        ?_servoRotate180 0001    __size_of_servoRotate0 003E             _servoRotate0 FF38  
+__end_of__initialization FDF8            ___rparam_used 000001           __pcstackCOMRAM 0001  
+      servoRotate0@servo 0001                  __Hparam 0000                  __Lparam 0000  
+                __pcinit FDF8                  __ramtop 1000                  __ptext0 FDFE  
+                __ptext1 FF26                  __ptext2 FE4C     end_of_initialization FDF8  
+          ?_servoRotate0 0001                _TRISBbits 000F93           ??_servoRotate0 0003  
+__size_of_servoRotate180 00DA      start_initialization FDF8         __CFG_LPT1OSC$OFF 000000  
+      __CFG_CCP2MX$PORTC 000000     __end_of_servoRotate0 FF26                 _LATBbits 000F8A  
+       __CFG_WDTPS$32768 000000           _servoRotate180 FF26                 __Hrparam 0000  
+               __Lrparam 0000       __CFG_BOREN$SBORDIS 000000   __end_of_servoRotate180 0000  
+          __size_of_main 004E          ?_servoRotate180 0001    __size_of_servoRotate0 00DA  
+           _servoRotate0 FE4C  

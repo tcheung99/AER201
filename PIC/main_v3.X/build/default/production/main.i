@@ -6007,50 +6007,48 @@ void main(){
                                     brake();
 
                     for(int i=0; i<(t_count); i++){
+                        actuators_main(stack, steps2_adj, t_dep);
 
-                        actuators_main(stack, 110);
                         t_dep++;
                     }
                 }
                 if (t_dep >= 8){
                     stack = 2;
                     for(int i=0; i<(t_count); i++){
+                        actuators_main(stack, steps2_adj);
 
-                        actuators_main(stack, 110);
                         t_dep++;
                     }
                 }
                 act_done = 1;
             }
             if (act_done){
-
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
+            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+            printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
+            { lcdInst(0x80 | LCD_LINE2_ADDR);};
+            printf("p[%d] fs : %d",poles_detected, Pole[poles_detected].dist_from_start);
+            _delay((unsigned long)((3000)*(10000000/4000.0)));
 
             prev_avg_dist = avg_dist ;
             poles_detected++;
-
             start();
             arduino_stopped = 0;
-
-
-
-
 
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("avg dist %d", avg_dist);
             printf("poles d %d", poles_detected);
-                                for (int i=0;i<4;i++){
-                        sum[i] = 0 ;
-                        a[i] =0 ;
-                        sumf[i] = 0 ;
-
-                        for (int k=0;k<6;k++){
-                            dist_final[i][k] = 0;
-                        }
+            for (int i=0;i<4;i++){
+                sum[i] = 0 ;
+                a[i] =0 ;
+                sumf[i] = 0 ;
+                for (int k=0;k<6;k++){
+                    dist_final[i][k] = 0;
                     }
-            _delay((unsigned long)((1000)*(10000000/4000.0)));
-            sens = 1;
+                }
+                _delay((unsigned long)((1000)*(10000000/4000.0)));
+                sens = 1;
             }
         }
         else{

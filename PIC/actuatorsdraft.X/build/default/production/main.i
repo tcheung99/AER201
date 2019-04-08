@@ -5499,7 +5499,7 @@ void servo()
     servoRotate0(2);
     servoRotate180(2);
 
-    _delay((unsigned long)((100)*(10000000/4000.0)));
+    _delay((unsigned long)((50)*(10000000/4000.0)));
         servoRotate0(3);
     servoRotate0(3);
     servoRotate180(3);

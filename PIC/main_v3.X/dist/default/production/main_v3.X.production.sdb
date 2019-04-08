@@ -506,16 +506,16 @@ LCD_SHIFT_RIGHT 1
 "715
 [v _main main `(v  1 e 1 0 ]
 {
-"842
+"840
 [v main@k k `i  1 a 2 188 ]
 "811
 [v main@i_1026 i `i  1 a 2 182 ]
 "803
 [v main@i i `i  1 a 2 180 ]
-"837
-[v main@i_1030 i `i  1 a 2 194 ]
+"836
+[v main@i_1032 i `i  1 a 2 194 ]
 "737
-[v main@Pole Pole `[10]S541  1 a 80 94 ]
+[v main@Pole Pole `[10]S541  1 a 80 98 ]
 "729
 [v main@prev_avg_dist prev_avg_dist `VEl  1 a 4 198 ]
 "727
@@ -532,19 +532,19 @@ LCD_SHIFT_RIGHT 1
 [v main@arduino_stopped arduino_stopped `a  1 a 1 185 ]
 "734
 [v main@act_done act_done `a  1 a 1 184 ]
-"864
+"862
 } 0
 "291
 [v _ultrasonic_main ultrasonic_main `(i  1 e 2 0 ]
 {
 "313
-[v ultrasonic_main@min_us_dist_918 min_us_dist `i  1 a 2 8 ]
+[v ultrasonic_main@min_us_dist_918 min_us_dist `i  1 a 2 10 ]
 "305
-[v ultrasonic_main@steps2_adj steps2_adj `i  1 a 2 6 ]
+[v ultrasonic_main@steps2_adj steps2_adj `i  1 a 2 8 ]
 "306
-[v ultrasonic_main@step2_offset step2_offset `i  1 a 2 4 ]
+[v ultrasonic_main@step2_offset step2_offset `i  1 a 2 6 ]
 "303
-[v ultrasonic_main@sensed sensed `i  1 a 2 2 ]
+[v ultrasonic_main@sensed sensed `i  1 a 2 4 ]
 "379
 } 0
 "190
@@ -578,14 +578,14 @@ LCD_SHIFT_RIGHT 1
 [v _number_deploy number_deploy `(i  1 e 2 0 ]
 {
 "419
-[v number_deploy@t_count t_count `i  1 a 2 4 ]
+[v number_deploy@t_count t_count `i  1 a 2 6 ]
 "418
-[v number_deploy@tires_detected tires_detected `i  1 a 2 2 ]
+[v number_deploy@tires_detected tires_detected `i  1 a 2 4 ]
 "417
-[v number_deploy@tires_t tires_t `i  1 a 2 0 ]
+[v number_deploy@tires_t tires_t `i  1 a 2 2 ]
 "416
-[v number_deploy@avg_dist avg_dist `i  1 p 2 121 ]
-[v number_deploy@poles_detected poles_detected `i  1 p 2 123 ]
+[v number_deploy@avg_dist avg_dist `i  1 p 2 123 ]
+[v number_deploy@poles_detected poles_detected `i  1 p 2 125 ]
 "469
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
@@ -615,10 +615,10 @@ LCD_SHIFT_RIGHT 1
 [v _actuators_main actuators_main `(v  1 e 1 0 ]
 {
 "4
-[v actuators_main@act_cnt act_cnt `i  1 a 2 18 ]
+[v actuators_main@act_cnt act_cnt `i  1 a 2 20 ]
 "3
-[v actuators_main@stack stack `i  1 p 2 12 ]
-[v actuators_main@steps2_adj steps2_adj `i  1 p 2 14 ]
+[v actuators_main@stack stack `i  1 p 2 14 ]
+[v actuators_main@steps2_adj steps2_adj `i  1 p 2 16 ]
 "70
 } 0
 "72
@@ -631,14 +631,14 @@ LCD_SHIFT_RIGHT 1
 {
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
 "453
-[v stepper2_back@i i `i  1 a 2 4 ]
+[v stepper2_back@i i `i  1 a 2 6 ]
 "446
-[v stepper2_back@count_stepper count_stepper `i  1 a 2 2 ]
+[v stepper2_back@count_stepper count_stepper `i  1 a 2 4 ]
 "428
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
-[v stepper2_back@steps2_adj steps2_adj `i  1 p 2 125 ]
+[v stepper2_back@steps2_adj steps2_adj `i  1 p 2 0 ]
 "446
-[v stepper2_back@direction direction `uc  1 a 1 1 ]
+[v stepper2_back@direction direction `uc  1 a 1 3 ]
 "463
 } 0
 "343
@@ -646,29 +646,29 @@ LCD_SHIFT_RIGHT 1
 {
 [v stepper2@direction direction `uc  1 a 1 wreg ]
 "381
-[v stepper2@i_388 i `i  1 a 2 7 ]
+[v stepper2@i_388 i `i  1 a 2 9 ]
 "369
-[v stepper2@i i `i  1 a 2 5 ]
+[v stepper2@i i `i  1 a 2 7 ]
 "361
-[v stepper2@count_stepper count_stepper `i  1 a 2 9 ]
+[v stepper2@count_stepper count_stepper `i  1 a 2 11 ]
 "343
 [v stepper2@direction direction `uc  1 a 1 wreg ]
-[v stepper2@steps2_adj steps2_adj `i  1 p 2 125 ]
+[v stepper2@steps2_adj steps2_adj `i  1 p 2 0 ]
 "361
-[v stepper2@direction direction `uc  1 a 1 11 ]
+[v stepper2@direction direction `uc  1 a 1 13 ]
 "390
 } 0
 "296
 [v _stepper stepper `(v  1 e 1 0 ]
 {
 "314
-[v stepper@i_380 i `i  1 a 2 4 ]
+[v stepper@i_380 i `i  1 a 2 6 ]
 "307
-[v stepper@i i `i  1 a 2 2 ]
+[v stepper@i i `i  1 a 2 4 ]
 "297
-[v stepper@count_stepper count_stepper `i  1 a 2 0 ]
+[v stepper@count_stepper count_stepper `i  1 a 2 2 ]
 "296
-[v stepper@stack stack `i  1 p 2 125 ]
+[v stepper@stack stack `i  1 p 2 0 ]
 "342
 } 0
 "477
@@ -676,8 +676,8 @@ LCD_SHIFT_RIGHT 1
 {
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@direction direction `uc  1 a 1 wreg ]
-[v full_drive@stepper_no stepper_no `i  1 p 2 121 ]
-[v full_drive@direction direction `uc  1 a 1 124 ]
+[v full_drive@stepper_no stepper_no `i  1 p 2 123 ]
+[v full_drive@direction direction `uc  1 a 1 126 ]
 "626
 } 0
 "186
@@ -716,15 +716,15 @@ LCD_SHIFT_RIGHT 1
 "515
 [v UI_main@tick tick `ul  1 a 4 85 ]
 "482
-[v UI_main@t_dep t_dep `i  1 p 2 121 ]
-[v UI_main@poles_detected poles_detected `i  1 p 2 123 ]
+[v UI_main@t_dep t_dep `i  1 p 2 123 ]
+[v UI_main@poles_detected poles_detected `i  1 p 2 125 ]
 "664
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.39v  1 a 2 119 ]
+[v printf@ap ap `[1]*.39v  1 a 2 121 ]
 "5
 [v printf@fmt fmt `*.25Cuc  1 p 2 109 ]
 "13
@@ -734,9 +734,9 @@ LCD_SHIFT_RIGHT 1
 {
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 107 ]
-[s S1035 _IO_FILE 0 ]
+[s S1037 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S1035  1 p 2 101 ]
+[v vfprintf@fp fp `*.2S1037  1 p 2 101 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 103 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 105 ]
 "1382
@@ -752,9 +752,9 @@ LCD_SHIFT_RIGHT 1
 [v vfpfcnvrt@done done `i  1 a 2 97 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 96 ]
-[s S1035 _IO_FILE 0 ]
+[s S1037 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S1035  1 p 2 70 ]
+[v vfpfcnvrt@fp fp `*.2S1037  1 p 2 70 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 72 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 74 ]
 "1365
@@ -769,9 +769,9 @@ LCD_SHIFT_RIGHT 1
 [v xtoa@i i `i  1 a 2 66 ]
 [v xtoa@w w `i  1 a 2 56 ]
 [v xtoa@p p `i  1 a 2 54 ]
-[s S1035 _IO_FILE 0 ]
+[s S1037 _IO_FILE 0 ]
 "623
-[v xtoa@fp fp `*.2S1035  1 p 2 31 ]
+[v xtoa@fp fp `*.2S1037  1 p 2 31 ]
 [v xtoa@d d `uo  1 p 8 33 ]
 [v xtoa@x x `uc  1 p 1 41 ]
 "665
@@ -810,9 +810,9 @@ LCD_SHIFT_RIGHT 1
 [v dtoa@s s `i  1 a 2 55 ]
 [v dtoa@w w `i  1 a 2 53 ]
 [v dtoa@p p `i  1 a 2 51 ]
-[s S1035 _IO_FILE 0 ]
+[s S1037 _IO_FILE 0 ]
 "274
-[v dtoa@fp fp `*.2S1035  1 p 2 31 ]
+[v dtoa@fp fp `*.2S1037  1 p 2 31 ]
 [v dtoa@d d `o  1 p 8 33 ]
 "315
 } 0
@@ -822,9 +822,9 @@ LCD_SHIFT_RIGHT 1
 "74
 [v pad@w w `i  1 a 2 29 ]
 [v pad@i i `i  1 a 2 27 ]
-[s S1035 _IO_FILE 0 ]
+[s S1037 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1035  1 p 2 20 ]
+[v pad@fp fp `*.2S1037  1 p 2 20 ]
 [v pad@buf buf `*.39uc  1 p 2 22 ]
 [v pad@p p `i  1 p 2 24 ]
 "95
@@ -847,16 +847,16 @@ LCD_SHIFT_RIGHT 1
 [v fputs@c c `uc  1 a 1 17 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 13 ]
-[s S1627 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1627  1 p 2 15 ]
+[s S1629 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1629  1 p 2 15 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[s S1627 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1627  1 p 2 6 ]
+[s S1629 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1629  1 p 2 6 ]
 "21
 } 0
 "102 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\lcd.c

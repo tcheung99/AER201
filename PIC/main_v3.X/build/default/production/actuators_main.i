@@ -5301,7 +5301,7 @@ void stepper2_back(char direction, int steps2_adj);
 # 1 "actuators_main.c" 2
 
 
-void actuators_main(int stack, int steps2_adj){
+void actuators_main(int stack, int steps2_adj, int t_dep){
     int act_cnt = 0;
     system_init();
     initLCD();
@@ -5346,7 +5346,9 @@ void actuators_main(int stack, int steps2_adj){
 
 
 
-
+        if (t_dep%2!=0){
+            steps2_adj = steps2_adj+1;
+        }
         stepper2(1, steps2_adj);
                         LATA = 0b00000000;
         LATCbits.LATC0 = 0;
@@ -5509,7 +5511,7 @@ void servo()
 
   }
 }
-# 296 "actuators_main.c"
+# 298 "actuators_main.c"
 void stepper(int stack){
     int count_stepper = 0;
 
@@ -5537,7 +5539,7 @@ void stepper(int stack){
 
             count_stepper++;
         }
-# 333 "actuators_main.c"
+# 335 "actuators_main.c"
         else{
 
 
@@ -5549,7 +5551,7 @@ void stepper(int stack){
 
 }
 void stepper2(char direction, int steps2_adj){
-# 361 "actuators_main.c"
+# 363 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5580,9 +5582,9 @@ void stepper2(char direction, int steps2_adj){
 
     }
 }
-# 428 "actuators_main.c"
+# 430 "actuators_main.c"
 void stepper2_back(char direction, int steps2_adj){
-# 446 "actuators_main.c"
+# 448 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5601,7 +5603,7 @@ void stepper2_back(char direction, int steps2_adj){
 
 
 }
-# 477 "actuators_main.c"
+# 479 "actuators_main.c"
 void full_drive (char direction, int stepper_no){
     if (stepper_no == 1){
         if (direction == 1){

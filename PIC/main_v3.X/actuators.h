@@ -41,7 +41,7 @@
 #define clockwise 0 // clockwise direction macro
 #define anti_clockwise 1 // anti clockwise direction macro 
 
-#define steps_back 5
+#define steps_back 6
 
 //#define thrdist 25
 

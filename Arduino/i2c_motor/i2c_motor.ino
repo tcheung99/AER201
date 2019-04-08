@@ -161,7 +161,7 @@ sensorState2 = digitalRead(SENSORPIN2);
     if (action&&delaygo){
   ir_bb();
       Serial.println("delaygo");
-      if (loop_cnt==50){
+      if (loop_cnt==20){
         Serial.print("\t");
         Serial.print("\t");
         Serial.println("what the ");
@@ -297,44 +297,45 @@ void set_speed() {
   
     Serial.println("Avgdist: ");
     Serial.println(avg_dist);
-    
-//    float ratio = ticks1/ticks2; /////////////////
-//    if (ratio >1.2){ //ticks 1 is much greater than 2 ///////////////
-//       speed1 = speed1 - offset; 
-//       speed2 = speed2 + offset;  
-//    }
-//    if (ratio <1.2){ //ticks 2 is much greater than 1 
-//        speed1 = speed1 + offset; 
-//        speed2 = speed2 - offset;  
-//    }
-//    if (ratio == 1.2){
-//      speed1 = 255;
-//      speed2 = 255;  
-//    }    
+    int offset = 2;   
+
+    float ratio = ticks1/ticks2; /////////////////
+    if (ratio >1.2){ //ticks 1 is much greater than 2 ///////////////
+       speed1 = speed1 - offset; 
+       speed2 = speed2 + offset;  
+    }
+    if (ratio <1.2){ //ticks 2 is much greater than 1 
+        speed1 = speed1 + offset; 
+        speed2 = speed2 - offset;  
+    }
+    if (ratio == 1.2){
+      speed1 = 200;
+      speed2 = 200;  
+    }    
     
     int diff = abs(ticks1-ticks2); 
   //  int offset = abs(dist1-dist2); ;    
-    int offset = 2;   
+//    int offset = 2;   
     
-    if (diff != 0){
-      if (ticks1>ticks2){
-        speed1 = speed1 - offset; 
-        speed2 = speed2 + offset;   
-      }
-      if (ticks2>ticks1){
-        speed1 = speed1 + offset; 
-        speed2 = speed2 - offset;   
-      }
-    }
-    if (diff == 0){
-//      speed1 = 255;
-//      speed2 = 255;
-      speed1 = 200;
-      speed2 = 200;    
-  //    speed1 = 180;
-  //    speed2 = 180;
-  //    Serial.println("  wtf ");
-    }
+//    if (diff != 0){
+//      if (ticks1>ticks2){
+//        speed1 = speed1 - offset; 
+//        speed2 = speed2 + offset;   
+//      }
+//      if (ticks2>ticks1){
+//        speed1 = speed1 + offset; 
+//        speed2 = speed2 - offset;   
+//      }
+//    }
+//    if (diff == 0){
+////      speed1 = 255;
+////      speed2 = 255;
+//      speed1 = 200;
+//      speed2 = 200;    
+//  //    speed1 = 180;
+//  //    speed2 = 180;
+//  //    Serial.println("  wtf ");
+//    }
     if (((speed1)<25)&&((speed2)<25)){
 //      speed1 = 255;
 //      speed2 = 255;
@@ -433,8 +434,8 @@ void ir_sensor(){
     cyl_seen2 = 0; 
   }
   if ((cyl_seen==1)&&(cyl_seen2==0)){
-    speed1 = 80;
-    speed2 = 80;   
+    speed1 = 50;
+    speed2 = 50;   
     ir_bb();
     drive(speed1,(speed2)); //drive slower 
     Serial.println("driving constant ");
@@ -452,8 +453,6 @@ void ir_sensor(){
   tire2_tick_end = 0;
   tire1_dist = tire1_tick_end - tire1_tick_beg;
   tire2_dist = tire2_tick_end - tire2_tick_beg;
-
-    
     Serial.println("REST");    
     Serial.println(tire1_dist);
     Serial.println(tire2_dist);

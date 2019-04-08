@@ -1080,8 +1080,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 448:     servoRotate180(2);
 [e ( _servoRotate180 (1 -> 2 `i ]
 "450
-[; ;main.c: 450:     _delay((unsigned long)((100)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+[; ;main.c: 450:     _delay((unsigned long)((50)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "451
 [; ;main.c: 451:         servoRotate0(3);
 [e ( _servoRotate0 (1 -> 3 `i ]
