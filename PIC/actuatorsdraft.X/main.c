@@ -40,7 +40,7 @@
 //define constants
 //#define _XTAL_FREQ 200000000 //Crystal Frequency, used in delay
 #define speed1 10 // Speed Range 10 to 1  10 = lowest , 1 = highest 
-#define speed2 6 // Speed Range 10 to 1  10 = lowest , 1 = highest 
+#define speed2 4 // Speed Range 10 to 1  10 = lowest , 1 = highest 
 //1 is when it stops turning, 4 is when lights stop flickering, 5 10 is ok, 20 25 30 is finnicky and slow 
 #define steps1 14// how much step it will take (249 ~= 1 full rotation)
 //#define steps2_adj 110 // how much step it will take (249 ~= 1 full rotation)
@@ -65,6 +65,7 @@ void stepper2(char direction, int steps2_adj);
 void stepper2_back(char direction);
 void servo(void);
 void servoRotate0(int servo); //0 Degree
+void servoRotate180(int servo); //0 Degree
 
 //void PWM_End();
 
@@ -359,10 +360,27 @@ void servoRotate0(int servo){ //0 Degree
     if (servo==2){
       for(i=0;i<40;i++)
         {
-          RC2 = 1;
-          __delay_us(449); //goes down to go lower 
-          RC2 = 0;
-          __delay_us(27300); //goes up to go lower 
+//        RB7 = 1;
+        RD1 = 1;
+//        RD0 = 1;
+
+          __delay_us(1000);
+//        RB7 = 0;
+        RD1 = 0;
+//        RD0 = 0;
+
+          __delay_us(19000);
+        }
+    }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+        __delay_us(2000);
+        //    RB7 = 0;
+        //    RD1 = 0;
+        RD0 = 0;
+        __delay_us(11000);
         }
     }
 }
@@ -386,12 +404,31 @@ void servoRotate180(int servo) //180 Degree
   if (servo==2){
     for(i=0;i<40;i++)
           {
-            RC2 = 1;
-            __delay_us(2200);
-            RC2 = 0;
-            __delay_us(17800);
+//    RB7 = 1; 
+    RD1 = 1;
+//    RD0 = 1;
+
+    __delay_us(550); //left 
+//    RB7 = 0;
+    RD1 = 0;
+//        RD0 = 0;
+
+    __delay_us(27050); //left
           }
   }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+
+        __delay_us(2500); //left 
+    //    RB7 = 0;
+    //    RD1 = 0;
+            RD0 = 0;
+
+        __delay_us(10500); //left
+        }
+    }
 }
 void servo()
 {
@@ -403,9 +440,18 @@ void servo()
 //    servoRotate90(); //90 Degree
 //    servoRotate180(1); //180 Degree
     servoRotate180(1); //180 Degree
-
-    __delay_ms(500);        
+    __delay_ms(450);        
     servoRotate0(1); //0 Degree
+    
+    servoRotate180(2); //180 Degree
+    servoRotate0(2); //0 Degree
+    servoRotate180(2); //180 Degree
+    
+    __delay_ms(100);
+        servoRotate0(3); //180 Degree
+    servoRotate0(3); //0 Degree
+    servoRotate180(3); //180 Degree
+
 
   }
 }

@@ -125,7 +125,7 @@ pinMode(SENSORPIN2, INPUT);
 digitalWrite(SENSORPIN, HIGH); // turn on the pullup
 digitalWrite(SENSORPIN2, HIGH); // turn on the pullup
 
-  startTime = millis();
+//  startTime = millis();
   // Open serial port to PC (hardware UART)
   Serial.begin(9600);  
 }
@@ -140,10 +140,7 @@ sensorState2 = digitalRead(SENSORPIN2);
 //  Serial.println("REST");    
 //  Serial.println(tire1_dist);
 //  Serial.println(tire2_dist);
-          Serial.print("Tire tick beg: ");
-    Serial.print(tire1_tick_beg);
-    Serial.print("\t");
-    Serial.println(tire2_tick_beg);
+
   ir_bb();
 
   if (!send_to_pic){
@@ -155,6 +152,8 @@ sensorState2 = digitalRead(SENSORPIN2);
       if ((cyl_seen==0)&&(cyl_seen2==0)){
 //          if ((cyl_seen2==0)){
         Serial.println("bruh");
+          ir_bb();
+
         set_speed();
         drive(speed1, speed2);
       }
@@ -162,7 +161,7 @@ sensorState2 = digitalRead(SENSORPIN2);
     if (action&&delaygo){
   ir_bb();
       Serial.println("delaygo");
-      if (loop_cnt==20){
+      if (loop_cnt==50){
         Serial.print("\t");
         Serial.print("\t");
         Serial.println("what the ");
@@ -235,6 +234,8 @@ void receiveEvent(int){
     prev_incomingByte =0;
     send_to_pic = false;
     stopp = 0;
+      startTime = millis();
+
 //    ir_seen = false;    
   }    
   if (x == '2'){
@@ -297,16 +298,16 @@ void set_speed() {
     Serial.println("Avgdist: ");
     Serial.println(avg_dist);
     
-//    float diff = ticks1/ticks2; /////////////////
-//    if (diff >1.2){ //ticks 1 is much greater than 2 ///////////////
+//    float ratio = ticks1/ticks2; /////////////////
+//    if (ratio >1.2){ //ticks 1 is much greater than 2 ///////////////
 //       speed1 = speed1 - offset; 
 //       speed2 = speed2 + offset;  
 //    }
-//    if (diff <1.2){ //ticks 2 is much greater than 1 
+//    if (ratio <1.2){ //ticks 2 is much greater than 1 
 //        speed1 = speed1 + offset; 
 //        speed2 = speed2 - offset;  
 //    }
-//    if (diff == 1.2){
+//    if (ratio == 1.2){
 //      speed1 = 255;
 //      speed2 = 255;  
 //    }    
@@ -328,8 +329,8 @@ void set_speed() {
     if (diff == 0){
 //      speed1 = 255;
 //      speed2 = 255;
-      speed1 = 225;
-      speed2 = 225;    
+      speed1 = 200;
+      speed2 = 200;    
   //    speed1 = 180;
   //    speed2 = 180;
   //    Serial.println("  wtf ");
@@ -337,8 +338,8 @@ void set_speed() {
     if (((speed1)<25)&&((speed2)<25)){
 //      speed1 = 255;
 //      speed2 = 255;
-      speed1 = 225;
-      speed2 = 225;
+      speed1 = 200;
+      speed2 = 200;
   //    speed1 = 180;
   //    speed2 = 180;
     }
@@ -365,6 +366,8 @@ void drive(int speed1, int speed2){
       analogWrite(pwm_r,speed1) ;
     }
     if ((action)&&(forward==false)){
+      avg_dist=0; 
+      while (avg_dist<dist_total){
       digitalWrite(A2, LOW);
   
       digitalWrite(mot_l_1,LOW) ;    
@@ -375,6 +378,11 @@ void drive(int speed1, int speed2){
   
       analogWrite(pwm_l,speed2) ;
       analogWrite(pwm_r,speed1) ;
+      }
+      int endTime = millis();
+      int opTime = endTime - startTime;       
+      Serial.print("opTime");
+      Serial.println(opTime);
     }
     if (!action){ //If action is false, brake
       brake();
@@ -464,20 +472,26 @@ void ir_bb(){
     tire2_tick_beg = encoder1Pos;
 
   }
-  if (!sensorState && lastState&&(tire1_tick_end==0)) { //first end 
+  if (!sensorState && lastState&&(tire1_tick_beg!=0)&&(tire1_tick_end==0)) { //first end 
   Serial.println("Broken");
       tire1_tick_end = encoder1Pos;       
   }
-  if (!sensorState2 && lastState2&&(tire2_tick_end==0)) {
+  if (!sensorState2 && lastState2&&(tire2_tick_beg!=0)&&(tire2_tick_end==0)) {
     Serial.println("Broken2");
     tire2_tick_end = encoder1Pos;
   }
   lastState = sensorState;
   lastState2 = sensorState2;
-        Serial.print("Tire tick: ");
+            Serial.print("Tire tick beg: ");
     Serial.print(tire1_tick_beg);
     Serial.print("\t");
     Serial.println(tire2_tick_beg);
+    
+        Serial.print("Tire tick end: ");
+    Serial.print(tire1_tick_end);
+    Serial.print("\t");
+    Serial.println(tire2_tick_end);
+    
 }
 
 void count1() {

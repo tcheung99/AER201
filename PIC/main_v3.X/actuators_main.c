@@ -93,15 +93,11 @@ void system_init (void){
     LATE = 0x00;
     
 }
-
-void servoRotate0() //0 Degree
-{
+void servoRotate0(int servo){ //0 Degree
     unsigned int i;
-//    if (servo==1){
-//      for(i=0;i<40;i++)
-      for(i=0;i<15;i++)
+    if (servo==1){
+      for(i=0;i<40;i++)
           {
-                    
             RC1 = 1;
             RC2 = 1;
             __delay_us(1100);
@@ -112,72 +108,190 @@ void servoRotate0() //0 Degree
 //            __delay_us(300);
               
             __delay_us(18600);
-          
-//            RC1 = 1;
-//            RC2 = 1;       
-//            __delay_us(1400);
-//            RC1 = 0;
-////            __delay_us(1150);
-//            __delay_us(800);
-//            RC2 = 0;   
-//            __delay_us(18600);
           }
-//    }
-//    if (servo==2){
-//      for(i=0;i<40;i++)
-//        {
-//          RC2 = 1;
-//          __delay_us(449); //goes down to go lower 
-//          RC2 = 0;
-//          __delay_us(27300); //goes up to go lower 
-//        }
-//    }
+    }
+    if (servo==2){
+      for(i=0;i<40;i++)
+        {
+//        RB7 = 1;
+        RD1 = 1;
+//        RD0 = 1;
+
+          __delay_us(1000);
+//        RB7 = 0;
+        RD1 = 0;
+//        RD0 = 0;
+
+          __delay_us(19000);
+        }
+    }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+        __delay_us(2000);
+        //    RB7 = 0;
+        //    RD1 = 0;
+        RD0 = 0;
+        __delay_us(11000);
+        }
+    }
 }
-void servoRotate180() //180 Degree
+void servoRotate180(int servo) //180 Degree
 {
   unsigned int i;
-//    if (servo==1){
-//    for(i=0;i<40;i++)
-for(i=0;i<15;i++){
-
+    if (servo==1){
+    for(i=0;i<40;i++)
         {
           RC1 = 1;
-          RC2 = 1;
-//          __delay_us(450); //goes down to go lower 
-          __delay_us(475); //goes down to go lower 
+            RC2 = 1;
+          __delay_us(450); //goes down to go lower old
+//          __delay_us(420); //goes down to go lower 
           RC2 =0;
-          __delay_us(2100);
+          __delay_us(2100); //old 
+//          __delay_us(2130); //old
           RC1 = 0;
-          __delay_us(13525);
+          __delay_us(13550);
         }
-//  }
-//  if (servo==2){
-//    for(i=0;i<40;i++)
-//          {
-//            RC2 = 1;
-//            __delay_us(2200);
-//            RC2 = 0;
-//            __delay_us(17800);
-//          }
-//  }
-}
+  }
+  if (servo==2){
+    for(i=0;i<40;i++)
+          {
+//    RB7 = 1; 
+    RD1 = 1;
+//    RD0 = 1;
+
+    __delay_us(550); //left 
+//    RB7 = 0;
+    RD1 = 0;
+//        RD0 = 0;
+
+    __delay_us(27050); //left
+          }
+  }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+
+        __delay_us(2500); //left 
+    //    RB7 = 0;
+    //    RD1 = 0;
+            RD0 = 0;
+
+        __delay_us(10500); //left
+        }
+    }
 }
 void servo()
 {
   TRISC = 0; // PORTB as Ouput Port
   {
 //    servoRotate0(1); //0 Degree
-    servoRotate0(); //0 Degree,l,L
+    servoRotate0(1); //0 Degree
 //    __delay_ms(2000);
 //    servoRotate90(); //90 Degree
 //    servoRotate180(1); //180 Degree
-    servoRotate180(); //180 Degree down 
+    servoRotate180(1); //180 Degree
+    __delay_ms(450);        
+    servoRotate0(1); //0 Degree
+    
+    servoRotate180(2); //180 Degree
+    servoRotate0(2); //0 Degree
+    servoRotate180(2); //180 Degree
+    
+    __delay_ms(100);
+        servoRotate0(3); //180 Degree
+    servoRotate0(3); //0 Degree
+    servoRotate180(3); //180 Degree
 
-    __delay_ms(500);        
-    servoRotate0(); //0 Degree
 
   }
 }
+//void servoRotate0() //0 Degree
+//{
+//    unsigned int i;
+////    if (servo==1){
+////      for(i=0;i<40;i++)
+//      for(i=0;i<15;i++)
+//          {
+//                    
+//            RC1 = 1;
+//            RC2 = 1;
+//            __delay_us(1100);
+//            RC2 = 0;
+//            __delay_us(300);
+//            RC1 = 0;
+////            __delay_us(1150);
+////            __delay_us(300);
+//              
+//            __delay_us(18600);
+//          
+////            RC1 = 1;
+////            RC2 = 1;       
+////            __delay_us(1400);
+////            RC1 = 0;
+//////            __delay_us(1150);
+////            __delay_us(800);
+////            RC2 = 0;   
+////            __delay_us(18600);
+//          }
+////    }
+////    if (servo==2){
+////      for(i=0;i<40;i++)
+////        {
+////          RC2 = 1;
+////          __delay_us(449); //goes down to go lower 
+////          RC2 = 0;
+////          __delay_us(27300); //goes up to go lower 
+////        }
+////    }
+//}
+//void servoRotate180() //180 Degree
+//{
+//  unsigned int i;
+////    if (servo==1){
+////    for(i=0;i<40;i++)
+//for(i=0;i<15;i++){
+//
+//        {
+//          RC1 = 1;
+//          RC2 = 1;
+////          __delay_us(450); //goes down to go lower 
+//          __delay_us(475); //goes down to go lower 
+//          RC2 =0;
+//          __delay_us(2100);
+//          RC1 = 0;
+//          __delay_us(13525);
+//        }
+////  }
+////  if (servo==2){
+////    for(i=0;i<40;i++)
+////          {
+////            RC2 = 1;
+////            __delay_us(2200);
+////            RC2 = 0;
+////            __delay_us(17800);
+////          }
+////  }
+//}
+//}
+//void servo()
+//{
+//  TRISC = 0; // PORTB as Ouput Port
+//  {
+////    servoRotate0(1); //0 Degree
+//    servoRotate0(); //0 Degree,l,L
+////    __delay_ms(2000);
+////    servoRotate90(); //90 Degree
+////    servoRotate180(1); //180 Degree
+//    servoRotate180(); //180 Degree down 
+//
+//    __delay_ms(500);        
+//    servoRotate0(); //0 Degree
+//
+//  }
+//}
 
 void stepper(int stack){
     int count_stepper = 0;

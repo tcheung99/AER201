@@ -5957,7 +5957,7 @@ void main(){
 
 
 
-        if ((poles_detected <10)&&(avg_dist<4000)){
+        if ((poles_detected <10)&&((Pole[poles_detected].dist_from_start )<4000)){
 
 
 
@@ -6024,8 +6024,8 @@ void main(){
             }
             if (act_done){
 
-            Pole[poles_detected].dist_from_cl = pole_cl_dist;
-            Pole[poles_detected].dist_from_start = avg_dist;
+            Pole[poles_detected].dist_from_cl = avg_dist;
+            Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
 
             prev_avg_dist = avg_dist ;
             poles_detected++;
@@ -6066,4 +6066,5 @@ void main(){
         }
         t_count = 5;
     }
+
 }

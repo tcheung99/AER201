@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\2servos.X.production.sym \
   --cmf=dist/default/production\2servos.X.production.cmf -z -Q18F4620 \
-  -oC:\Users\trudi\AppData\Local\Temp\sd0c.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\trudi\AppData\Local\Temp\s5d8.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/2servos.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=080h-0F7Fh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\trudi\AppData\Local\Temp\sd0c.o \
+  C:\Users\trudi\AppData\Local\Temp\s5d8.o \
   dist/default/production\2servos.X.production.o 
 
 Object code version is 3.11
@@ -39,26 +39,26 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\trudi\AppData\Local\Temp\sd0c.o
+C:\Users\trudi\AppData\Local\Temp\s5d8.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\2servos.X.production.o
-                text2                              FED6     FED6       90     7F6B       0
-                text1                              FF66     FF66       9A     7FB3       0
-                text0                              FE7C     FE7C       5A     7F3E       0
-                cstackCOMRAM                          1        1        7        1       1
-                cinit                              FE76     FE76        6     7F3B       0
+                text2                              FF38     FF38       3E     7F9C       0
+                text1                              FF76     FF76       3E     7FBB       0
+                text0                              FFB4     FFB4       4C     7FDA       0
+                cstackCOMRAM                          1        1        5        1       1
+                cinit                              FF32     FF32        6     7F99       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text2                              FED6     FED6       90         0
-                text1                              FF66     FF66       9A         0
-                text0                              FE7C     FE7C       5A         0
-                cinit                              FE76     FE76        6         0
+                text2                              FF38     FF38       3E         0
+                text1                              FF76     FF76       3E         0
+                text0                              FFB4     FFB4       4C         0
+                cinit                              FF32     FF32        6         0
 
         CLASS   CONST          
 
@@ -67,7 +67,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1        7         1
+                cstackCOMRAM                          1        1        5         1
 
         CLASS   ABS1           
 
@@ -124,11 +124,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000007  000008         1       1  COMRAM  
-                cinit                          00FE76  000006  00FE7C      7F3B       0  CODE    
-                text0                          00FE7C  00005A  00FED6      7F3E       0  CODE    
-                text2                          00FED6  000090  00FF66      7F6B       0  CODE    
-                text1                          00FF66  00009A  010000      7FB3       0  CODE    
+                cstackCOMRAM                   000001  000005  000006         1       1  COMRAM  
+                cinit                          00FF32  000006  00FF38      7F99       0  CODE    
+                text2                          00FF38  00003E  00FF76      7F9C       0  CODE    
+                text1                          00FF76  00003E  00FFB4      7FBB       0  CODE    
+                text0                          00FFB4  00004C  010000      7FDA       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -152,22 +152,25 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           000008-000F7F              F78
-        CODE             000004-00FE75             FE72
-        COMRAM           000008-00007F               78
-        CONST            000004-00FE75             FE72
+        BIGRAM           000006-000F7F              F7A
+        CODE             000004-00FF31             FF2E
+        COMRAM           000006-00007F               7A
+        CONST            000004-00FF31             FF2E
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001000-00FE75             EE76
+        MEDIUMCONST      001000-00FF31             EF32
         RAM              000080-000F7F              100
         SFR              000F80-000FFF               80
-        SMALLCONST       001000-00FE75              100
+        SMALLCONST       001000-00FF31              100
         STACK            000080-000F7F              F00
 
                                   Symbol Table
 
-_RC1                     (abs)        007C11
-_RC2                     (abs)        007C12
+_LATBbits                (abs)        000F8A
+_RD0                     (abs)        007C18
+_TRISB                   (abs)        000F93
+_TRISBbits               (abs)        000F93
 _TRISC                   (abs)        000F94
+_TRISD                   (abs)        000F95
 __CFG_BOREN$SBORDIS      (abs)        000000
 __CFG_BORV$3             (abs)        000000
 __CFG_CCP2MX$PORTC       (abs)        000000
@@ -261,7 +264,7 @@ __Hrparam                rparam       000000
 __Hsfr                   sfr          000000
 __Hsmallconst            smallconst   000000
 __Hspace_0               (abs)        30000E
-__Hspace_1               (abs)        000008
+__Hspace_1               (abs)        000006
 __Hspace_2               (abs)        000000
 __Hstack                 stack        000000
 __Hstruct                struct       000000
@@ -340,7 +343,7 @@ __Ltext0                 text0        000000
 __Ltext1                 text1        000000
 __Ltext2                 text2        000000
 __S0                     (abs)        30000E
-__S1                     (abs)        000008
+__S1                     (abs)        000006
 __S2                     (abs)        000000
 ___inthi_sp              stack        000000
 ___intlo_sp              stack        000000
@@ -349,45 +352,43 @@ ___rparam_used           (abs)        000001
 ___sp                    stack        000000
 __accesstop              (abs)        000080
 __activetblptr           (abs)        000000
-__end_of__initialization cinit        00FE76
-__end_of_main            text0        00FED6
-__end_of_servoRotate0    text2        00FF66
-__end_of_servoRotate180  text1        010000
-__initialization         cinit        00FE76
+__end_of__initialization cinit        00FF32
+__end_of_main            text0        010000
+__end_of_servoRotate0    text2        00FF76
+__end_of_servoRotate180  text1        00FFB4
+__initialization         cinit        00FF32
 __mediumconst            mediumconst  000000
-__pcinit                 cinit        00FE76
+__pcinit                 cinit        00FF32
 __pcstackCOMRAM          cstackCOMRAM 000001
-__ptext0                 text0        00FE7C
-__ptext1                 text1        00FF66
-__ptext2                 text2        00FED6
+__ptext0                 text0        00FFB4
+__ptext1                 text1        00FF76
+__ptext2                 text2        00FF38
 __ramtop                 ramtop       001000
 __size_of_main           (abs)        000000
 __size_of_servoRotate0   (abs)        000000
 __size_of_servoRotate180 (abs)        000000
 __smallconst             smallconst   000000
-_main                    text0        00FE7C
-_servoRotate0            text2        00FED6
-_servoRotate180          text1        00FF66
-end_of_initialization    cinit        00FE76
+_main                    text0        00FFB4
+_servoRotate0            text2        00FF38
+_servoRotate180          text1        00FF76
+end_of_initialization    cinit        00FF32
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
 intlevel3                text         000000
-servoRotate0@i           cstackCOMRAM 000004
-servoRotate0@servo       cstackCOMRAM 000001
-servoRotate180@i         cstackCOMRAM 000004
-servoRotate180@servo     cstackCOMRAM 000001
+servoRotate0@i           cstackCOMRAM 000002
+servoRotate180@i         cstackCOMRAM 000002
 stackhi                  (abs)        000F7F
 stacklo                  (abs)        000080
 start                    init         000000
-start_initialization     cinit        00FE76
+start_initialization     cinit        00FF32
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 80 in file "main.c"
+		line 60 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -417,11 +418,11 @@ Total ram usage:        2 bytes
 
  *************** function _servoRotate180 *****************
  Defined at:
-		line 53 in file "main.c"
+		line 42 in file "main.c"
  Parameters:    Size  Location     Type
-  servo           2    0[COMRAM] int 
+		None
  Auto vars:     Size  Location     Type
-  i               2    3[COMRAM] unsigned int 
+  i               2    1[COMRAM] unsigned int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -431,11 +432,11 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -446,11 +447,11 @@ Total ram usage:        5 bytes
 
  *************** function _servoRotate0 *****************
  Defined at:
-		line 21 in file "main.c"
+		line 8 in file "main.c"
  Parameters:    Size  Location     Type
-  servo           2    0[COMRAM] int 
+		None
  Auto vars:     Size  Location     Type
-  i               2    3[COMRAM] unsigned int 
+  i               2    1[COMRAM] unsigned int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -460,11 +461,11 @@ Total ram usage:        5 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -478,14 +479,14 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	FE76	0000	1
+		__initialization		CODE           	FF32	0000	1
 
 shared estimated size: 1
 
 main.c
-		_servoRotate0  		CODE           	FED6	0000	145
-		_main          		CODE           	FE7C	0000	91
-		_servoRotate180		CODE           	FF66	0000	155
+		_servoRotate0  		CODE           	FF38	0000	63
+		_main          		CODE           	FFB4	0000	77
+		_servoRotate180		CODE           	FF76	0000	63
 
-main.c estimated size: 391
+main.c estimated size: 203
 

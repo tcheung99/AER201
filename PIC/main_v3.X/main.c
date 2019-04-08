@@ -751,7 +751,7 @@ void main(){
 //        lcd_clear();
 //        printf("happen");
 //        __delay_ms(1000);
-        if ((poles_detected <10)&&(avg_dist<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
+        if ((poles_detected <10)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
 //            lcd_clear();
 //            printf("help");
 //            __delay_ms(1000);
@@ -818,8 +818,8 @@ void main(){
             }
             if (act_done){
     //        for (int i=0; i<10;i++)
-            Pole[poles_detected].dist_from_cl = pole_cl_dist;
-            Pole[poles_detected].dist_from_start = avg_dist;
+            Pole[poles_detected].dist_from_cl = avg_dist;
+            Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
 
             prev_avg_dist = avg_dist ; 
             poles_detected++;
@@ -860,4 +860,5 @@ void main(){
         }
         t_count = 5;
     }
+//    UI_main(t_dep, poles_detected);
 }

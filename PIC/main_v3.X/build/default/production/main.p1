@@ -2725,8 +2725,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 749:         PORTAbits.RA4 = LATAbits.LATA4;
 [e = . . _PORTAbits 0 4 . . _LATAbits 0 4 ]
 "754
-[; ;main.c: 754:         if ((poles_detected <10)&&(avg_dist<4000)){
-[e $ ! && < _poles_detected -> 10 `i < _avg_dist -> -> 4000 `i `l 388  ]
+[; ;main.c: 754:         if ((poles_detected <10)&&((Pole[poles_detected].dist_from_start )<4000)){
+[e $ ! && < _poles_detected -> 10 `i < . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 2 -> 4000 `i 388  ]
 {
 "762
 [; ;main.c: 762:             while (sens){
@@ -2917,11 +2917,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> _act_done `i -> 0 `i 406  ]
 {
 "821
-[; ;main.c: 821:             Pole[poles_detected].dist_from_cl = pole_cl_dist;
-[e = . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 3 _pole_cl_dist ]
+[; ;main.c: 821:             Pole[poles_detected].dist_from_cl = avg_dist;
+[e = . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 3 -> _avg_dist `i ]
 "822
-[; ;main.c: 822:             Pole[poles_detected].dist_from_start = avg_dist;
-[e = . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 2 -> _avg_dist `i ]
+[; ;main.c: 822:             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
+[e = . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 2 -> + _avg_dist _prev_avg_dist `i ]
 "824
 [; ;main.c: 824:             prev_avg_dist = avg_dist ;
 [e = _prev_avg_dist _avg_dist ]
@@ -3054,8 +3054,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 385 ]
 [e $U 386  ]
 [e :U 387 ]
-"863
-[; ;main.c: 863: }
+"864
+[; ;main.c: 864: }
 [e :UE 383 ]
 }
 [p f _printf 12615812 ]

@@ -5329,7 +5329,8 @@ void stepper2(char direction, int steps2_adj);
 void stepper2_back(char direction);
 void servo(void);
 void servoRotate0(int servo);
-# 91 "main.c"
+void servoRotate180(int servo);
+# 92 "main.c"
 void main(){
     system_init();
     initLCD();
@@ -5390,7 +5391,7 @@ void system_init (void){
     LATE = 0x00;
 
 }
-# 342 "main.c"
+# 343 "main.c"
 void servoRotate0(int servo){
     unsigned int i;
     if (servo==1){
@@ -5411,10 +5412,27 @@ void servoRotate0(int servo){
     if (servo==2){
       for(i=0;i<40;i++)
         {
-          RC2 = 1;
-          _delay((unsigned long)((449)*(10000000/4000000.0)));
-          RC2 = 0;
-          _delay((unsigned long)((27300)*(10000000/4000000.0)));
+
+        RD1 = 1;
+
+
+          _delay((unsigned long)((1000)*(10000000/4000000.0)));
+
+        RD1 = 0;
+
+
+          _delay((unsigned long)((19000)*(10000000/4000000.0)));
+        }
+    }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+        _delay((unsigned long)((2000)*(10000000/4000000.0)));
+
+
+        RD0 = 0;
+        _delay((unsigned long)((11000)*(10000000/4000000.0)));
         }
     }
 }
@@ -5438,12 +5456,31 @@ void servoRotate180(int servo)
   if (servo==2){
     for(i=0;i<40;i++)
           {
-            RC2 = 1;
-            _delay((unsigned long)((2200)*(10000000/4000000.0)));
-            RC2 = 0;
-            _delay((unsigned long)((17800)*(10000000/4000000.0)));
+
+    RD1 = 1;
+
+
+    _delay((unsigned long)((550)*(10000000/4000000.0)));
+
+    RD1 = 0;
+
+
+    _delay((unsigned long)((27050)*(10000000/4000000.0)));
           }
   }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+
+        _delay((unsigned long)((2500)*(10000000/4000000.0)));
+
+
+            RD0 = 0;
+
+        _delay((unsigned long)((10500)*(10000000/4000000.0)));
+        }
+    }
 }
 void servo()
 {
@@ -5455,9 +5492,18 @@ void servo()
 
 
     servoRotate180(1);
-
-    _delay((unsigned long)((500)*(10000000/4000.0)));
+    _delay((unsigned long)((450)*(10000000/4000.0)));
     servoRotate0(1);
+
+    servoRotate180(2);
+    servoRotate0(2);
+    servoRotate180(2);
+
+    _delay((unsigned long)((100)*(10000000/4000.0)));
+        servoRotate0(3);
+    servoRotate0(3);
+    servoRotate180(3);
+
 
   }
 }
@@ -5480,7 +5526,7 @@ void stepper(void){
             printf("cnt is %d", count_stepper);
             count_stepper++;
         }
-# 441 "main.c"
+# 487 "main.c"
         else{
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("steps done");
@@ -5498,7 +5544,7 @@ void stepper2(char direction, int steps2_adj){
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("step1");
             { lcdInst(0x80 | LCD_LINE2_ADDR);};
-            printf("Step speed %d",6);
+            printf("Step speed %d",4);
             if (direction == 0){
                 for(int i=0;i<steps2_adj;i++){
 
@@ -5524,16 +5570,16 @@ void stepper2(char direction, int steps2_adj){
 
     }
 }
-# 498 "main.c"
+# 544 "main.c"
 void stepper2_back(char direction){
-# 516 "main.c"
+# 562 "main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("step1");
             { lcdInst(0x80 | LCD_LINE2_ADDR);};
-            printf("Step speed %d",6);
+            printf("Step speed %d",4);
             for(int i=0;i<5;i++){
 
                 full_drive(direction, 2);
@@ -5545,7 +5591,7 @@ void stepper2_back(char direction){
 
 
 }
-# 547 "main.c"
+# 593 "main.c"
 void full_drive (char direction, int stepper_no){
     if (stepper_no == 1){
         if (direction == 1){
@@ -5579,54 +5625,54 @@ void full_drive (char direction, int stepper_no){
             LATEbits.LATE0 = 1;
             LATEbits.LATE1 = 0;
             LATEbits.LATE2 = 0;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 0;
             LATEbits.LATE0 = 1;
             LATEbits.LATE1 = 1;
             LATEbits.LATE2 = 0;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 0;
             LATEbits.LATE0 = 0;
             LATEbits.LATE1 = 1;
             LATEbits.LATE2 = 1;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 1;
             LATEbits.LATE0 = 0;
             LATEbits.LATE1 = 0;
             LATEbits.LATE2 = 1;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 1;
             LATEbits.LATE0 = 1;
             LATEbits.LATE1 = 0;
             LATEbits.LATE2 = 0;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
         }
         if (direction == 0){
             LATCbits.LATC0 = 1;
             LATEbits.LATE0 = 0;
             LATEbits.LATE1 = 0;
             LATEbits.LATE2 = 1;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 0;
             LATEbits.LATE0 = 0;
             LATEbits.LATE1 = 1;
             LATEbits.LATE2 = 1;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 0;
             LATEbits.LATE0 = 1;
             LATEbits.LATE1 = 1;
             LATEbits.LATE2 = 0;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 1;
             LATEbits.LATE0 = 1;
             LATEbits.LATE1 = 0;
             LATEbits.LATE2 = 0;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
             LATCbits.LATC0 = 1;
             LATEbits.LATE0 = 0;
             LATEbits.LATE1 = 0;
             LATEbits.LATE2 = 1;
-            _delay((unsigned long)((6)*(10000000/4000.0)));
+            _delay((unsigned long)((4)*(10000000/4000.0)));
         }
     }
     if (stepper_no == 3){

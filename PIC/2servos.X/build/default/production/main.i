@@ -4443,92 +4443,74 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+void servoRotate0()
+{
+  unsigned int i;
+  for(i=0;i<50;i++)
+  {
+
+
+    RD0 = 1;
+
+      _delay((unsigned long)((2000)*(10000000/4000000.0)));
+
+
+    RD0 = 0;
+
+      _delay((unsigned long)((11000)*(10000000/4000000.0)));
+  }
+}
+
 void servoRotate90()
 {
   unsigned int i;
   for(i=0;i<50;i++)
   {
-    RC1 = 1;
 
+
+    RD0 = 1;
     _delay((unsigned long)((1500)*(10000000/4000000.0)));
-    RC1 = 0;
 
+
+    RD0 = 0;
     _delay((unsigned long)((18500)*(10000000/4000000.0)));
   }
 }
-void servoRotate0(int servo)
-{
-    unsigned int i;
-    if (servo==1){
-      for(i=0;i<15;i++)
 
-
-          {
-            RC2 = 1;
-            RC1 = 1;
-
-
-            _delay((unsigned long)((1100)*(10000000/4000000.0)));
-            RC2 = 0;
-
-
-            _delay((unsigned long)((300)*(10000000/4000000.0)));
-            RC1 = 0;
-
-            _delay((unsigned long)((18600)*(10000000/4000000.0)));
-          }
-    }
-    if (servo==2){
-      for(i=0;i<40;i++)
-        {
-          RC2 = 1;
-          _delay((unsigned long)((449)*(10000000/4000000.0)));
-          RC2 = 0;
-          _delay((unsigned long)((27300)*(10000000/4000000.0)));
-        }
-    }
-}
-void servoRotate180(int servo)
+void servoRotate180()
 {
   unsigned int i;
-    if (servo==1){
-    for(i=0;i<15;i++)
-
-        {
-          RC2 = 1;
-          RC1 = 1;
-
-          _delay((unsigned long)((475)*(10000000/4000000.0)));
-          RC2 =0;
-          _delay((unsigned long)((2100)*(10000000/4000000.0)));
-          RC1 = 0;
-          _delay((unsigned long)((13525)*(10000000/4000000.0)));
-        }
-  }
-  if (servo==2){
-    for(i=0;i<40;i++)
-          {
-            RC2 = 1;
-            _delay((unsigned long)((2200)*(10000000/4000000.0)));
-            RC2 = 0;
-            _delay((unsigned long)((17800)*(10000000/4000000.0)));
-          }
-  }
-}
-void main()
-{
-  TRISC = 0;
+  for(i=0;i<50;i++)
   {
 
-    servoRotate0(1);
-    _delay((unsigned long)((2500)*(10000000/4000.0)));
+
+    RD0 = 1;
+
+    _delay((unsigned long)((2500)*(10000000/4000000.0)));
 
 
-    servoRotate180(1);
-        _delay((unsigned long)((500)*(10000000/4000.0)));
+        RD0 = 0;
 
-    servoRotate0(1);
+    _delay((unsigned long)((10500)*(10000000/4000000.0)));
+  }
+}
 
+void main()
+{
+  TRISB = 0;
+    TRISC = 0;
+    TRISD = 0;
+
+      TRISBbits.RB0 = 0;
+    LATBbits.LATB0 = 1;
+
+  {
+    servoRotate0();
+    _delay((unsigned long)((2000)*(10000000/4000.0)));
+
+
+    servoRotate180();
+        _delay((unsigned long)((2000)*(10000000/4000.0)));
 
   }
 }

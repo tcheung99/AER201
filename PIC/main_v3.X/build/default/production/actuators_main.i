@@ -5394,15 +5394,11 @@ void system_init (void){
     LATE = 0x00;
 
 }
-
-void servoRotate0()
-{
+void servoRotate0(int servo){
     unsigned int i;
-
-
-      for(i=0;i<15;i++)
+    if (servo==1){
+      for(i=0;i<40;i++)
           {
-
             RC1 = 1;
             RC2 = 1;
             _delay((unsigned long)((1100)*(10000000/4000000.0)));
@@ -5413,47 +5409,107 @@ void servoRotate0()
 
 
             _delay((unsigned long)((18600)*(10000000/4000000.0)));
-# 124 "actuators_main.c"
           }
-# 135 "actuators_main.c"
+    }
+    if (servo==2){
+      for(i=0;i<40;i++)
+        {
+
+        RD1 = 1;
+
+
+          _delay((unsigned long)((1000)*(10000000/4000000.0)));
+
+        RD1 = 0;
+
+
+          _delay((unsigned long)((19000)*(10000000/4000000.0)));
+        }
+    }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+        _delay((unsigned long)((2000)*(10000000/4000000.0)));
+
+
+        RD0 = 0;
+        _delay((unsigned long)((11000)*(10000000/4000000.0)));
+        }
+    }
 }
-void servoRotate180()
+void servoRotate180(int servo)
 {
   unsigned int i;
-
-
-for(i=0;i<15;i++){
-
+    if (servo==1){
+    for(i=0;i<40;i++)
         {
           RC1 = 1;
-          RC2 = 1;
+            RC2 = 1;
+          _delay((unsigned long)((450)*(10000000/4000000.0)));
 
-          _delay((unsigned long)((475)*(10000000/4000000.0)));
           RC2 =0;
           _delay((unsigned long)((2100)*(10000000/4000000.0)));
+
           RC1 = 0;
-          _delay((unsigned long)((13525)*(10000000/4000000.0)));
+          _delay((unsigned long)((13550)*(10000000/4000000.0)));
         }
-# 163 "actuators_main.c"
-}
+  }
+  if (servo==2){
+    for(i=0;i<40;i++)
+          {
+
+    RD1 = 1;
+
+
+    _delay((unsigned long)((550)*(10000000/4000000.0)));
+
+    RD1 = 0;
+
+
+    _delay((unsigned long)((27050)*(10000000/4000000.0)));
+          }
+  }
+    if (servo==3){
+      for(i=0;i<40;i++)
+        {
+        RD0 = 1;
+
+        _delay((unsigned long)((2500)*(10000000/4000000.0)));
+
+
+            RD0 = 0;
+
+        _delay((unsigned long)((10500)*(10000000/4000000.0)));
+        }
+    }
 }
 void servo()
 {
   TRISC = 0;
   {
 
-    servoRotate0();
+    servoRotate0(1);
 
 
 
-    servoRotate180();
+    servoRotate180(1);
+    _delay((unsigned long)((450)*(10000000/4000.0)));
+    servoRotate0(1);
 
-    _delay((unsigned long)((500)*(10000000/4000.0)));
-    servoRotate0();
+    servoRotate180(2);
+    servoRotate0(2);
+    servoRotate180(2);
+
+    _delay((unsigned long)((100)*(10000000/4000.0)));
+        servoRotate0(3);
+    servoRotate0(3);
+    servoRotate180(3);
+
 
   }
 }
-
+# 296 "actuators_main.c"
 void stepper(int stack){
     int count_stepper = 0;
 
@@ -5481,7 +5537,7 @@ void stepper(int stack){
 
             count_stepper++;
         }
-# 219 "actuators_main.c"
+# 333 "actuators_main.c"
         else{
 
 
@@ -5493,7 +5549,7 @@ void stepper(int stack){
 
 }
 void stepper2(char direction, int steps2_adj){
-# 247 "actuators_main.c"
+# 361 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5524,9 +5580,9 @@ void stepper2(char direction, int steps2_adj){
 
     }
 }
-# 314 "actuators_main.c"
+# 428 "actuators_main.c"
 void stepper2_back(char direction, int steps2_adj){
-# 332 "actuators_main.c"
+# 446 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5545,7 +5601,7 @@ void stepper2_back(char direction, int steps2_adj){
 
 
 }
-# 363 "actuators_main.c"
+# 477 "actuators_main.c"
 void full_drive (char direction, int stepper_no){
     if (stepper_no == 1){
         if (direction == 1){
