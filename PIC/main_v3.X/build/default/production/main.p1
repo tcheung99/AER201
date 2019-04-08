@@ -2546,417 +2546,408 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 670:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
 "671
-[; ;main.c: 671:                     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-{
-[e ( _lcdInst (1 -> -> 1 `i `uc ]
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-}
-"672
-[; ;main.c: 672:         printf("wtf");
-[e ( _printf :s 43C ]
-"673
-[; ;main.c: 673:         I2C_Master_Start();
+[; ;main.c: 671:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"674
-[; ;main.c: 674:         I2C_Master_Write(0b00010001);
+"672
+[; ;main.c: 672:     I2C_Master_Write(0b00010001);
 [e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
-"675
-[; ;main.c: 675:         avg_dist = I2C_Master_Read(1);
+"673
+[; ;main.c: 673:     avg_dist = I2C_Master_Read(1);
 [e = _avg_dist -> ( _I2C_Master_Read (1 -> -> 1 `i `uc `l ]
-"676
-[; ;main.c: 676:         I2C_Master_Stop();
+"674
+[; ;main.c: 674:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"677
-[; ;main.c: 677:         if(avg_dist){
+"675
+[; ;main.c: 675:     if(avg_dist){
 [e $ ! != _avg_dist -> -> 0 `i `l 380  ]
 {
-"680
-[; ;main.c: 680:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"678
+[; ;main.c: 678:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"688
-[; ;main.c: 688:             printf("%d",avg_dist);
-[e ( _printf , (. :s 44C _avg_dist ]
-"693
-[; ;main.c: 693:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+"686
+[; ;main.c: 686:         printf("%d",avg_dist);
+[e ( _printf , (. :s 43C _avg_dist ]
+"691
+[; ;main.c: 691:         _delay((unsigned long)((1000)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"695
-[; ;main.c: 695:         send = 1;
+"693
+[; ;main.c: 693:     send = 1;
 [e = _send -> -> 1 `i `a ]
-"696
-[; ;main.c: 696:         }
+"694
+[; ;main.c: 694:     }
 }
 [e :U 380 ]
-"702
-[; ;main.c: 702: }
+"695
+[; ;main.c: 695: }
 [e :UE 379 ]
 }
-"704
-[; ;main.c: 704: void start(){
+"697
+[; ;main.c: 697: void start(){
 [v _start `(v ~T0 @X0 1 ef ]
 {
 [e :U _start ]
 [f ]
-"705
-[; ;main.c: 705:     I2C_Master_Init(100000);
+"698
+[; ;main.c: 698:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"706
-[; ;main.c: 706:     I2C_Master_Start();
+"699
+[; ;main.c: 699:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"707
-[; ;main.c: 707:     I2C_Master_Write(0b00010000);
+"700
+[; ;main.c: 700:     I2C_Master_Write(0b00010000);
 [e ( _I2C_Master_Write (1 -> -> 16 `i `ui ]
-"708
-[; ;main.c: 708:     I2C_Master_Stop();
+"701
+[; ;main.c: 701:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"710
-[; ;main.c: 710:     I2C_Master_Start();
+"703
+[; ;main.c: 703:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"711
-[; ;main.c: 711:     I2C_Master_Write(0b00010000);
+"704
+[; ;main.c: 704:     I2C_Master_Write(0b00010000);
 [e ( _I2C_Master_Write (1 -> -> 16 `i `ui ]
-"712
-[; ;main.c: 712:     I2C_Master_Write('2');
+"705
+[; ;main.c: 705:     I2C_Master_Write('2');
 [e ( _I2C_Master_Write (1 -> 50 `ui ]
-"713
-[; ;main.c: 713:     I2C_Master_Stop();
+"706
+[; ;main.c: 706:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"714
-[; ;main.c: 714: }
+"707
+[; ;main.c: 707: }
 [e :UE 381 ]
 }
-"715
-[; ;main.c: 715: void backwards(){
+"708
+[; ;main.c: 708: void backwards(){
 [v _backwards `(v ~T0 @X0 1 ef ]
 {
 [e :U _backwards ]
 [f ]
-"716
-[; ;main.c: 716:     I2C_Master_Start();
+"709
+[; ;main.c: 709:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"717
-[; ;main.c: 717:     I2C_Master_Write(0b00010000);
+"710
+[; ;main.c: 710:     I2C_Master_Write(0b00010000);
 [e ( _I2C_Master_Write (1 -> -> 16 `i `ui ]
-"718
-[; ;main.c: 718:     I2C_Master_Write('5');
+"711
+[; ;main.c: 711:     I2C_Master_Write('5');
 [e ( _I2C_Master_Write (1 -> 53 `ui ]
-"719
-[; ;main.c: 719:     I2C_Master_Stop();
+"712
+[; ;main.c: 712:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"720
-[; ;main.c: 720: }
+"713
+[; ;main.c: 713: }
 [e :UE 382 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"722
-[; ;main.c: 722: void main(){
+"715
+[; ;main.c: 715: void main(){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"723
-[; ;main.c: 723:     int stack=1;
+"716
+[; ;main.c: 716:     int stack=1;
 [v _stack `i ~T0 @X0 1 a ]
 [e = _stack -> 1 `i ]
-"724
-[; ;main.c: 724:     int t_dep=0;
+"717
+[; ;main.c: 717:     int t_dep=0;
 [v _t_dep `i ~T0 @X0 1 a ]
 [e = _t_dep -> 0 `i ]
-"725
-[; ;main.c: 725:     int t_count;
+"718
+[; ;main.c: 718:     int t_count;
 [v _t_count `i ~T0 @X0 1 a ]
-"726
-[; ;main.c: 726:  TRISD = 0x00;
+"719
+[; ;main.c: 719:  TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"727
-[; ;main.c: 727:  GIE = 1;
+"720
+[; ;main.c: 720:  GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"728
-[; ;main.c: 728:      int steps2_adj =0;
+"721
+[; ;main.c: 721:      int steps2_adj =0;
 [v _steps2_adj `i ~T0 @X0 1 a ]
 [e = _steps2_adj -> 0 `i ]
-"729
-[; ;main.c: 729:     ADCON1=0x0F;
+"722
+[; ;main.c: 722:     ADCON1=0x0F;
 [e = _ADCON1 -> -> 15 `i `uc ]
-"731
-[; ;main.c: 731:  initLCD();
+"724
+[; ;main.c: 724:  initLCD();
 [e ( _initLCD ..  ]
-"733
-[; ;main.c: 733:  T1CON = 0x10;
+"726
+[; ;main.c: 726:  T1CON = 0x10;
 [e = _T1CON -> -> 16 `i `uc ]
-"734
-[; ;main.c: 734:     int poles_detected=0;
+"727
+[; ;main.c: 727:     int poles_detected=0;
 [v _poles_detected `i ~T0 @X0 1 a ]
 [e = _poles_detected -> 0 `i ]
-"735
-[; ;main.c: 735:     int read=0;
+"728
+[; ;main.c: 728:     int read=0;
 [v _read `i ~T0 @X0 1 a ]
 [e = _read -> 0 `i ]
-"736
-[; ;main.c: 736:     volatile long prev_avg_dist=0;
+"729
+[; ;main.c: 729:     volatile long prev_avg_dist=0;
 [v _prev_avg_dist `Vl ~T0 @X0 1 a ]
 [e = _prev_avg_dist -> -> 0 `i `l ]
-"738
-[; ;main.c: 738:     TRISAbits.RA4 = 0;
+"731
+[; ;main.c: 731:     TRISAbits.RA4 = 0;
 [e = . . _TRISAbits 1 4 -> -> 0 `i `uc ]
-"739
-[; ;main.c: 739:     PORTAbits.RA4 = LATAbits.LATA4;
+"732
+[; ;main.c: 732:     PORTAbits.RA4 = LATAbits.LATA4;
 [e = . . _PORTAbits 0 4 . . _LATAbits 0 4 ]
-"741
-[; ;main.c: 741:     _Bool act_done = 0;
+"734
+[; ;main.c: 734:     _Bool act_done = 0;
 [v _act_done `a ~T0 @X0 1 a ]
 [e = _act_done -> -> 0 `i `a ]
-"742
-[; ;main.c: 742:     _Bool arduino_stopped = 0;
+"735
+[; ;main.c: 735:     _Bool arduino_stopped = 0;
 [v _arduino_stopped `a ~T0 @X0 1 a ]
 [e = _arduino_stopped -> -> 0 `i `a ]
-"744
-[; ;main.c: 744:     Poles Pole[10];
+"737
+[; ;main.c: 737:     Poles Pole[10];
 [v _Pole `S273 ~T0 @X0 -> 10 `i a ]
-"752
-[; ;main.c: 752:     if (~sens){
+"745
+[; ;main.c: 745:     if (~sens){
 [e $ ! != ~ _sens -> 0 `i 384  ]
 {
-"753
-[; ;main.c: 753:         UI_main( t_dep, poles_detected);
+"746
+[; ;main.c: 746:         UI_main( t_dep, poles_detected);
 [e ( _UI_main (2 , _t_dep _poles_detected ]
-"754
-[; ;main.c: 754:     }
+"747
+[; ;main.c: 747:     }
 }
 [e :U 384 ]
-"755
-[; ;main.c: 755:     while (1){
+"748
+[; ;main.c: 748:     while (1){
 [e :U 386 ]
 {
-"756
-[; ;main.c: 756:         PORTAbits.RA4 = LATAbits.LATA4;
+"749
+[; ;main.c: 749:         PORTAbits.RA4 = LATAbits.LATA4;
 [e = . . _PORTAbits 0 4 . . _LATAbits 0 4 ]
-"761
-[; ;main.c: 761:         if ((poles_detected <10)&&(avg_dist<4000)){
+"754
+[; ;main.c: 754:         if ((poles_detected <10)&&(avg_dist<4000)){
 [e $ ! && < _poles_detected -> 10 `i < _avg_dist -> -> 4000 `i `l 388  ]
 {
-"769
-[; ;main.c: 769:             while (sens){
+"762
+[; ;main.c: 762:             while (sens){
 [e $U 389  ]
 [e :U 390 ]
 {
-"772
-[; ;main.c: 772:                 t_count = 5;
+"765
+[; ;main.c: 765:                 t_count = 5;
 [e = _t_count -> 5 `i ]
-"773
-[; ;main.c: 773:                     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"766
+[; ;main.c: 766:                     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"774
-[; ;main.c: 774:                     printf("waiting");
-[e ( _printf :s 45C ]
-"776
-[; ;main.c: 776:                     if (!PORTAbits.RA4){
+"767
+[; ;main.c: 767:                     printf("waiting");
+[e ( _printf :s 44C ]
+"769
+[; ;main.c: 769:                     if (!PORTAbits.RA4){
 [e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 392  ]
 {
-"777
-[; ;main.c: 777:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"770
+[; ;main.c: 770:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"778
-[; ;main.c: 778:                         printf("more waiting");
-[e ( _printf :s 46C ]
-"779
-[; ;main.c: 779:                     }
+"771
+[; ;main.c: 771:                         printf("more waiting");
+[e ( _printf :s 45C ]
+"772
+[; ;main.c: 772:                     }
 }
 [e :U 392 ]
-"780
-[; ;main.c: 780:                     if (PORTAbits.RA4){
+"773
+[; ;main.c: 773:                     if (PORTAbits.RA4){
 [e $ ! != -> . . _PORTAbits 0 4 `i -> 0 `i 393  ]
 {
-"782
-[; ;main.c: 782:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"775
+[; ;main.c: 775:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"783
-[; ;main.c: 783:                         printf("done wait");
-[e ( _printf :s 47C ]
-"784
-[; ;main.c: 784:                         arduino_stopped = 1;
+"776
+[; ;main.c: 776:                         printf("done wait");
+[e ( _printf :s 46C ]
+"777
+[; ;main.c: 777:                         arduino_stopped = 1;
 [e = _arduino_stopped -> -> 1 `i `a ]
-"785
-[; ;main.c: 785:                     }
+"778
+[; ;main.c: 778:                     }
 }
 [e :U 393 ]
-"786
-[; ;main.c: 786:                     if (arduino_stopped){
+"779
+[; ;main.c: 779:                     if (arduino_stopped){
 [e $ ! != -> _arduino_stopped `i -> 0 `i 394  ]
 {
-"787
-[; ;main.c: 787:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"780
+[; ;main.c: 780:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"788
-[; ;main.c: 788:                         printf("dun break");
-[e ( _printf :s 48C ]
-"789
-[; ;main.c: 789:                         steps2_adj=ultrasonic_main();
+"781
+[; ;main.c: 781:                         printf("dun break");
+[e ( _printf :s 47C ]
+"782
+[; ;main.c: 782:                         steps2_adj=ultrasonic_main();
 [e = _steps2_adj ( _ultrasonic_main ..  ]
-"790
-[; ;main.c: 790:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"783
+[; ;main.c: 783:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"791
-[; ;main.c: 791:                         printf("stepsadj %d", steps2_adj);
-[e ( _printf , (. :s 49C _steps2_adj ]
-"792
-[; ;main.c: 792:                         t_count = number_deploy(avg_dist, poles_detected);
+"784
+[; ;main.c: 784:                         printf("stepsadj %d", steps2_adj);
+[e ( _printf , (. :s 48C _steps2_adj ]
+"785
+[; ;main.c: 785:                         t_count = number_deploy(avg_dist, poles_detected);
 [e = _t_count ( _number_deploy (2 , -> _avg_dist `i _poles_detected ]
-"793
-[; ;main.c: 793:                         sens = 0;
+"786
+[; ;main.c: 786:                         sens = 0;
 [e = _sens -> 0 `i ]
-"794
-[; ;main.c: 794:                     }
+"787
+[; ;main.c: 787:                     }
 }
 [e :U 394 ]
-"795
-[; ;main.c: 795:             }
+"788
+[; ;main.c: 788:             }
 }
 [e :U 389 ]
-"769
-[; ;main.c: 769:             while (sens){
+"762
+[; ;main.c: 762:             while (sens){
 [e $ != _sens -> 0 `i 390  ]
 [e :U 391 ]
-"796
-[; ;main.c: 796:             int pole_cl_dist = (avg_dist)-(prev_avg_dist);
+"789
+[; ;main.c: 789:             int pole_cl_dist = (avg_dist)-(prev_avg_dist);
 [v _pole_cl_dist `i ~T0 @X0 1 a ]
 [e = _pole_cl_dist -> - _avg_dist _prev_avg_dist `i ]
-"802
-[; ;main.c: 802:             act_done = 0;
+"795
+[; ;main.c: 795:             act_done = 0;
 [e = _act_done -> -> 0 `i `a ]
-"803
-[; ;main.c: 803:             if (t_count<=2){
+"796
+[; ;main.c: 796:             if (t_count<=2){
 [e $ ! <= _t_count -> 2 `i 395  ]
 {
-"804
-[; ;main.c: 804:                 if (t_dep <8){
+"797
+[; ;main.c: 797:                 if (t_dep <8){
 [e $ ! < _t_dep -> 8 `i 396  ]
 {
-"807
-[; ;main.c: 807:                     stack = 1;
+"800
+[; ;main.c: 800:                     stack = 1;
 [e = _stack -> 1 `i ]
-"808
-[; ;main.c: 808:                                     brake();
+"801
+[; ;main.c: 801:                                     brake();
 [e ( _brake ..  ]
-"810
-[; ;main.c: 810:                     for(int i=0; i<(t_count); i++){
+"803
+[; ;main.c: 803:                     for(int i=0; i<(t_count); i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 400  ]
 [e :U 397 ]
 {
-"812
-[; ;main.c: 812:                         actuators_main(stack, 110);
+"805
+[; ;main.c: 805:                         actuators_main(stack, 110);
 [e ( _actuators_main (2 , _stack -> 110 `i ]
-"813
-[; ;main.c: 813:                         t_dep++;
+"806
+[; ;main.c: 806:                         t_dep++;
 [e ++ _t_dep -> 1 `i ]
-"814
-[; ;main.c: 814:                     }
+"807
+[; ;main.c: 807:                     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 400 ]
 [e $ < _i _t_count 397  ]
 [e :U 398 ]
 }
-"815
-[; ;main.c: 815:                 }
+"808
+[; ;main.c: 808:                 }
 }
 [e :U 396 ]
-"816
-[; ;main.c: 816:                 if (t_dep >= 8){
+"809
+[; ;main.c: 809:                 if (t_dep >= 8){
 [e $ ! >= _t_dep -> 8 `i 401  ]
 {
-"817
-[; ;main.c: 817:                     stack = 2;
+"810
+[; ;main.c: 810:                     stack = 2;
 [e = _stack -> 2 `i ]
-"818
-[; ;main.c: 818:                     for(int i=0; i<(t_count); i++){
+"811
+[; ;main.c: 811:                     for(int i=0; i<(t_count); i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 405  ]
 [e :U 402 ]
 {
-"820
-[; ;main.c: 820:                         actuators_main(stack, 110);
+"813
+[; ;main.c: 813:                         actuators_main(stack, 110);
 [e ( _actuators_main (2 , _stack -> 110 `i ]
-"821
-[; ;main.c: 821:                         t_dep++;
+"814
+[; ;main.c: 814:                         t_dep++;
 [e ++ _t_dep -> 1 `i ]
-"822
-[; ;main.c: 822:                     }
+"815
+[; ;main.c: 815:                     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 405 ]
 [e $ < _i _t_count 402  ]
 [e :U 403 ]
 }
-"823
-[; ;main.c: 823:                 }
+"816
+[; ;main.c: 816:                 }
 }
 [e :U 401 ]
-"824
-[; ;main.c: 824:                 act_done = 1;
+"817
+[; ;main.c: 817:                 act_done = 1;
 [e = _act_done -> -> 1 `i `a ]
-"825
-[; ;main.c: 825:             }
+"818
+[; ;main.c: 818:             }
 }
 [e :U 395 ]
-"826
-[; ;main.c: 826:             if (act_done){
+"819
+[; ;main.c: 819:             if (act_done){
 [e $ ! != -> _act_done `i -> 0 `i 406  ]
 {
-"828
-[; ;main.c: 828:             Pole[poles_detected].dist_from_cl = pole_cl_dist;
+"821
+[; ;main.c: 821:             Pole[poles_detected].dist_from_cl = pole_cl_dist;
 [e = . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 3 _pole_cl_dist ]
-"829
-[; ;main.c: 829:             Pole[poles_detected].dist_from_start = avg_dist;
+"822
+[; ;main.c: 822:             Pole[poles_detected].dist_from_start = avg_dist;
 [e = . *U + &U _Pole * -> -> _poles_detected `ui `ux -> -> # *U &U _Pole `ui `ux 2 -> _avg_dist `i ]
-"831
-[; ;main.c: 831:             prev_avg_dist = avg_dist ;
+"824
+[; ;main.c: 824:             prev_avg_dist = avg_dist ;
 [e = _prev_avg_dist _avg_dist ]
-"832
-[; ;main.c: 832:             poles_detected++;
+"825
+[; ;main.c: 825:             poles_detected++;
 [e ++ _poles_detected -> 1 `i ]
-"834
-[; ;main.c: 834:             start();
+"827
+[; ;main.c: 827:             start();
 [e ( _start ..  ]
-"835
-[; ;main.c: 835:             arduino_stopped = 0;
+"828
+[; ;main.c: 828:             arduino_stopped = 0;
 [e = _arduino_stopped -> -> 0 `i `a ]
-"841
-[; ;main.c: 841:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"834
+[; ;main.c: 834:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"842
-[; ;main.c: 842:             printf("avg dist %d", avg_dist);
-[e ( _printf , (. :s 50C _avg_dist ]
-"843
-[; ;main.c: 843:             printf("poles d %d", poles_detected);
-[e ( _printf , (. :s 51C _poles_detected ]
-"844
-[; ;main.c: 844:                                 for (int i=0;i<4;i++){
+"835
+[; ;main.c: 835:             printf("avg dist %d", avg_dist);
+[e ( _printf , (. :s 49C _avg_dist ]
+"836
+[; ;main.c: 836:             printf("poles d %d", poles_detected);
+[e ( _printf , (. :s 50C _poles_detected ]
+"837
+[; ;main.c: 837:                                 for (int i=0;i<4;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2964,17 +2955,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 408  ]
 [e :U 407 ]
 {
-"845
-[; ;main.c: 845:                         sum[i] = 0 ;
+"838
+[; ;main.c: 838:                         sum[i] = 0 ;
 [e = *U + &U _sum * -> -> _i `ui `ux -> -> # *U &U _sum `ui `ux -> 0 `i ]
-"846
-[; ;main.c: 846:                         a[i] =0 ;
+"839
+[; ;main.c: 839:                         a[i] =0 ;
 [e = *U + &U _a * -> -> _i `ui `ux -> -> # *U &U _a `ui `ux -> 0 `i ]
-"847
-[; ;main.c: 847:                         sumf[i] = 0 ;
+"840
+[; ;main.c: 840:                         sumf[i] = 0 ;
 [e = *U + &U _sumf * -> -> _i `ui `ux -> -> # *U &U _sumf `ui `ux -> -> 0 `i `a ]
-"849
-[; ;main.c: 849:                         for (int k=0;k<6;k++){
+"842
+[; ;main.c: 842:                         for (int k=0;k<6;k++){
 {
 [v _k `i ~T0 @X0 1 a ]
 [e = _k -> 0 `i ]
@@ -2982,89 +2973,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 411  ]
 [e :U 410 ]
 {
-"850
-[; ;main.c: 850:                             dist_final[i][k] = 0;
+"843
+[; ;main.c: 843:                             dist_final[i][k] = 0;
 [e = *U + &U *U + &U _dist_final * -> -> _i `ui `ux -> * -> # *U &U *U &U _dist_final `ui -> -> 6 `i `ui `ux * -> -> _k `ui `ux -> -> # *U &U *U + &U _dist_final * -> -> _i `ui `ux -> * -> # *U &U *U &U _dist_final `ui -> -> 6 `i `ui `ux `ui `ux -> 0 `i ]
-"851
-[; ;main.c: 851:                         }
+"844
+[; ;main.c: 844:                         }
 }
 [e ++ _k -> 1 `i ]
 [e $ < _k -> 6 `i 410  ]
 [e :U 411 ]
 }
-"852
-[; ;main.c: 852:                     }
+"845
+[; ;main.c: 845:                     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 4 `i 407  ]
 [e :U 408 ]
 }
-"853
-[; ;main.c: 853:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+"846
+[; ;main.c: 846:             _delay((unsigned long)((1000)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"854
-[; ;main.c: 854:             sens = 1;
+"847
+[; ;main.c: 847:             sens = 1;
 [e = _sens -> 1 `i ]
-"855
-[; ;main.c: 855:             }
+"848
+[; ;main.c: 848:             }
 }
 [e :U 406 ]
-"856
-[; ;main.c: 856:         }
+"849
+[; ;main.c: 849:         }
 }
 [e $U 413  ]
-"857
-[; ;main.c: 857:         else{
+"850
+[; ;main.c: 850:         else{
 [e :U 388 ]
 {
-"858
-[; ;main.c: 858:             brake();
+"851
+[; ;main.c: 851:             brake();
 [e ( _brake ..  ]
-"859
-[; ;main.c: 859:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"852
+[; ;main.c: 852:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"860
-[; ;main.c: 860:             printf("poles done");
-[e ( _printf :s 52C ]
-"861
-[; ;main.c: 861:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+"853
+[; ;main.c: 853:             printf("poles done");
+[e ( _printf :s 51C ]
+"854
+[; ;main.c: 854:             _delay((unsigned long)((1000)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"862
-[; ;main.c: 862:             UI_main(t_dep, poles_detected);
+"855
+[; ;main.c: 855:             UI_main(t_dep, poles_detected);
 [e ( _UI_main (2 , _t_dep _poles_detected ]
-"863
-[; ;main.c: 863:             backwards();
+"856
+[; ;main.c: 856:             backwards();
 [e ( _backwards ..  ]
-"864
-[; ;main.c: 864:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"857
+[; ;main.c: 857:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"865
-[; ;main.c: 865:             printf("backwards");
-[e ( _printf :s 53C ]
-"866
-[; ;main.c: 866:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+"858
+[; ;main.c: 858:             printf("backwards");
+[e ( _printf :s 52C ]
+"859
+[; ;main.c: 859:             _delay((unsigned long)((1000)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"867
-[; ;main.c: 867:         }
+"860
+[; ;main.c: 860:         }
 }
 [e :U 413 ]
-"868
-[; ;main.c: 868:         t_count = 5;
+"861
+[; ;main.c: 861:         t_count = 5;
 [e = _t_count -> 5 `i ]
-"869
-[; ;main.c: 869:     }
+"862
+[; ;main.c: 862:     }
 }
 [e :U 385 ]
 [e $U 386  ]
 [e :U 387 ]
-"870
-[; ;main.c: 870: }
+"863
+[; ;main.c: 863: }
 [e :UE 383 ]
 }
 [p f _printf 12615812 ]
@@ -3074,15 +3065,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 40C 37 48 50 120 47 37 48 50 120 47 37 48 50 120 0 ]
 [a 14C 49 32 45 32 83 116 97 114 116 0 ]
 [a 17C 49 32 45 32 83 116 97 114 116 0 ]
-[a 47C 100 111 110 101 32 119 97 105 116 0 ]
-[a 53C 98 97 99 107 119 97 114 100 115 0 ]
-[a 48C 100 117 110 32 98 114 101 97 107 0 ]
-[a 46C 109 111 114 101 32 119 97 105 116 105 110 103 0 ]
-[a 45C 119 97 105 116 105 110 103 0 ]
-[a 43C 119 116 102 0 ]
+[a 46C 100 111 110 101 32 119 97 105 116 0 ]
+[a 52C 98 97 99 107 119 97 114 100 115 0 ]
+[a 47C 100 117 110 32 98 114 101 97 107 0 ]
+[a 45C 109 111 114 101 32 119 97 105 116 105 110 103 0 ]
+[a 44C 119 97 105 116 105 110 103 0 ]
 [a 20C 77 97 99 104 105 110 101 32 73 110 32 85 115 101 0 ]
 [a 9C 111 114 32 104 101 114 101 0 ]
-[a 52C 112 111 108 101 115 32 100 111 110 101 0 ]
+[a 51C 112 111 108 101 115 32 100 111 110 101 0 ]
 [a 5C 68 105 115 116 51 61 37 100 44 65 118 103 61 37 100 0 ]
 [a 3C 68 105 115 116 50 61 37 100 44 65 118 103 61 37 100 0 ]
 [a 32C 68 105 115 116 84 111 83 116 97 114 116 58 37 100 0 ]
@@ -3091,17 +3081,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 35C 80 37 100 32 68 101 112 58 37 100 44 84 111 116 58 37 100 0 ]
 [a 33C 68 105 115 116 84 111 67 76 58 37 100 0 ]
 [a 37C 68 105 115 116 84 111 67 76 58 37 100 0 ]
-[a 50C 97 118 103 32 100 105 115 116 32 37 100 0 ]
+[a 49C 97 118 103 32 100 105 115 116 32 37 100 0 ]
 [a 13C 100 101 116 44 37 100 44 32 116 99 110 116 32 37 100 0 ]
 [a 11C 109 105 110 105 109 117 109 32 37 100 0 ]
 [a 12C 115 116 101 112 115 97 100 106 32 37 100 0 ]
-[a 49C 115 116 101 112 115 97 100 106 32 37 100 0 ]
-[a 51C 112 111 108 101 115 32 100 32 37 100 0 ]
+[a 48C 115 116 101 112 115 97 100 106 32 37 100 0 ]
+[a 50C 112 111 108 101 115 32 100 32 37 100 0 ]
 [a 28C 78 111 46 32 84 105 114 101 115 58 32 37 100 0 ]
 [a 29C 78 111 46 32 80 111 108 101 115 58 32 37 100 0 ]
 [a 23C 37 100 0 ]
 [a 26C 37 100 0 ]
-[a 44C 37 100 0 ]
+[a 43C 37 100 0 ]
 [a 8C 68 105 115 116 52 32 61 32 88 0 ]
 [a 6C 68 105 115 116 51 32 61 32 88 0 ]
 [a 4C 68 105 115 116 50 32 61 32 88 0 ]

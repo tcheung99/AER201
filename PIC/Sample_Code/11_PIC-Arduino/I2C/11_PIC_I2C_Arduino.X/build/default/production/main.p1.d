@@ -1,6 +1,5 @@
- build/default/production/main.d  \
- build/default/production/main.p1:  \
- main.c  \
-I2C.h  \
+build/default/production/main.p1:  \
+main.c  \
+configBits.h  \
 lcd.h  \
-./configBits.h 
+I2C.h 

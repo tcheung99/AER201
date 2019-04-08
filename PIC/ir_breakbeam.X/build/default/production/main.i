@@ -4734,32 +4734,55 @@ unsigned char I2C_Master_Read(unsigned char ackBit);
 
 
 void main(void) {
-    TRISD = 0b00000001;
-    LATD = 0b00000000;
+    TRISA = 0b00000001;
+
     int sensorState = 0;
     int lastState=0;
     _Bool ir_break = 0;
     _Bool ir = 0;
     initLCD();
-    sensorState = PORTDbits.RD0;
-    if (!sensorState){
+    while(1){
+        sensorState = PORTAbits.RA0;
+        if (!sensorState){
+            ir_break = 1;
+                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+
+                        printf("fk");
+            _delay((unsigned long)((1000)*(10000000/4000.0)));
+        }
+        if (sensorState){
+            ir_break = 0;
+                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+
+                        printf("lol");
+            _delay((unsigned long)((1000)*(10000000/4000.0)));
+        }
+        if (sensorState && !lastState){
+            ir = 1;
+            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+            printf("unbroken");
+            _delay((unsigned long)((1000)*(10000000/4000.0)));
 
 
-        ir_break = 1;
+
+
+        if (!sensorState && lastState){
+            ir = 0;
+            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+            printf("broken");
+            _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+
+
+
+
+        }
+
+
+
+
+        lastState = sensorState;
     }
-    else{
-        ir_break = 0;
+
     }
-    if (sensorState && !lastState){
-        ir = 1;
-    }
-    if (!sensorState && lastState){
-        ir = 0;
-    }
-    { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-    printf("sensorState, %d", sensorState);
-    { lcdInst(0x80 | LCD_LINE2_ADDR);};
-    printf("lastState, %d", lastState);
-    lastState = sensorState;
-    return;
 }

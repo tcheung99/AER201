@@ -143,11 +143,11 @@ LCD_SHIFT_RIGHT 1
 [v _UI_main UI_main `(v  1 e 1 0 ]
 "666
 [v _brake brake `(v  1 e 1 0 ]
-"704
+"697
 [v _start start `(v  1 e 1 0 ]
-"715
+"708
 [v _backwards backwards `(v  1 e 1 0 ]
-"722
+"715
 [v _main main `(v  1 e 1 0 ]
 "18 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X/RTC.h
 [v _time time `[7]uc  1 e 7 0 ]
@@ -503,38 +503,38 @@ LCD_SHIFT_RIGHT 1
 [v _sumf sumf `[4]a  1 e 4 0 ]
 "69
 [v _meas meas `VEi  1 e 2 0 ]
-"722
+"715
 [v _main main `(v  1 e 1 0 ]
 {
-"849
+"842
 [v main@k k `i  1 a 2 94 ]
-"818
-[v main@i_1019 i `i  1 a 2 88 ]
-"810
+"811
+[v main@i_1018 i `i  1 a 2 88 ]
+"803
 [v main@i i `i  1 a 2 86 ]
-"844
-[v main@i_1027 i `i  1 a 2 100 ]
-"796
+"837
+[v main@i_1026 i `i  1 a 2 100 ]
+"789
 [v main@pole_cl_dist pole_cl_dist `i  1 a 2 82 ]
-"744
+"737
 [v main@Pole Pole `[10]S537  1 a 80 0 ]
-"736
+"729
 [v main@prev_avg_dist prev_avg_dist `VEl  1 a 4 104 ]
-"734
+"727
 [v main@poles_detected poles_detected `i  1 a 2 102 ]
-"724
+"717
 [v main@t_dep t_dep `i  1 a 2 98 ]
-"725
+"718
 [v main@t_count t_count `i  1 a 2 96 ]
-"723
+"716
 [v main@stack stack `i  1 a 2 92 ]
-"728
+"721
 [v main@steps2_adj steps2_adj `i  1 a 2 84 ]
-"742
+"735
 [v main@arduino_stopped arduino_stopped `a  1 a 1 91 ]
-"741
+"734
 [v main@act_done act_done `a  1 a 1 90 ]
-"870
+"863
 } 0
 "291
 [v _ultrasonic_main ultrasonic_main `(i  1 e 2 0 ]
@@ -571,10 +571,10 @@ LCD_SHIFT_RIGHT 1
 [v min@size size `i  1 p 2 2 ]
 "289
 } 0
-"704
+"697
 [v _start start `(v  1 e 1 0 ]
 {
-"714
+"707
 } 0
 "416
 [v _number_deploy number_deploy `(i  1 e 2 0 ]
@@ -606,12 +606,12 @@ LCD_SHIFT_RIGHT 1
 "666 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _brake brake `(v  1 e 1 0 ]
 {
-"702
+"695
 } 0
-"715
+"708
 [v _backwards backwards `(v  1 e 1 0 ]
 {
-"720
+"713
 } 0
 "3 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\actuators_main.c
 [v _actuators_main actuators_main `(v  1 e 1 0 ]
@@ -732,9 +732,9 @@ LCD_SHIFT_RIGHT 1
 {
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 107 ]
-[s S1032 _IO_FILE 0 ]
+[s S1031 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S1032  1 p 2 101 ]
+[v vfprintf@fp fp `*.2S1031  1 p 2 101 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 103 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 105 ]
 "1382
@@ -750,9 +750,9 @@ LCD_SHIFT_RIGHT 1
 [v vfpfcnvrt@done done `i  1 a 2 97 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 96 ]
-[s S1032 _IO_FILE 0 ]
+[s S1031 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S1032  1 p 2 70 ]
+[v vfpfcnvrt@fp fp `*.2S1031  1 p 2 70 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 72 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 74 ]
 "1365
@@ -767,9 +767,9 @@ LCD_SHIFT_RIGHT 1
 [v xtoa@i i `i  1 a 2 66 ]
 [v xtoa@w w `i  1 a 2 56 ]
 [v xtoa@p p `i  1 a 2 54 ]
-[s S1032 _IO_FILE 0 ]
+[s S1031 _IO_FILE 0 ]
 "623
-[v xtoa@fp fp `*.2S1032  1 p 2 31 ]
+[v xtoa@fp fp `*.2S1031  1 p 2 31 ]
 [v xtoa@d d `uo  1 p 8 33 ]
 [v xtoa@x x `uc  1 p 1 41 ]
 "665
@@ -808,9 +808,9 @@ LCD_SHIFT_RIGHT 1
 [v dtoa@s s `i  1 a 2 55 ]
 [v dtoa@w w `i  1 a 2 53 ]
 [v dtoa@p p `i  1 a 2 51 ]
-[s S1032 _IO_FILE 0 ]
+[s S1031 _IO_FILE 0 ]
 "274
-[v dtoa@fp fp `*.2S1032  1 p 2 31 ]
+[v dtoa@fp fp `*.2S1031  1 p 2 31 ]
 [v dtoa@d d `o  1 p 8 33 ]
 "315
 } 0
@@ -820,9 +820,9 @@ LCD_SHIFT_RIGHT 1
 "74
 [v pad@w w `i  1 a 2 29 ]
 [v pad@i i `i  1 a 2 27 ]
-[s S1032 _IO_FILE 0 ]
+[s S1031 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1032  1 p 2 20 ]
+[v pad@fp fp `*.2S1031  1 p 2 20 ]
 [v pad@buf buf `*.39uc  1 p 2 22 ]
 [v pad@p p `i  1 p 2 24 ]
 "95
@@ -845,16 +845,16 @@ LCD_SHIFT_RIGHT 1
 [v fputs@c c `uc  1 a 1 17 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 13 ]
-[s S1624 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1624  1 p 2 15 ]
+[s S1623 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1623  1 p 2 15 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[s S1624 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1624  1 p 2 6 ]
+[s S1623 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1623  1 p 2 6 ]
 "21
 } 0
 "102 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\lcd.c

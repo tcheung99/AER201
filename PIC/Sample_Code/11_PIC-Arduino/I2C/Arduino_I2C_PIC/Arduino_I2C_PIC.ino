@@ -35,12 +35,14 @@ void setup(){
 
 volatile bool send_to_pic = false;
 volatile uint8_t incomingByte;
+volatile uint8_t incomingByte2;
+
 void loop(){
     // If we should send to the PIC, then we wait to receive a byte from the PC
-    if (send_to_pic && Serial.available() > 0 && !incomingByte) {
+//    if (send_to_pic && Serial.available() > 0 && !incomingByte) {
         incomingByte = 5;
         incomingByte2 = 10;
-    }
+//    }
 }
 
 /** @brief Callback for when the master transmits data */

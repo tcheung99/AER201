@@ -1,37 +1,50 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"2046 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 2046: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"1216
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 1216: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"1380 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 1380: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "91 ./lcd.h
 [; ;./lcd.h: 91: void initLCD(void);
 [v _initLCD `(v ~T0 @X0 0 ef ]
-"541 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 541:     struct {
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"551
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 551:     struct {
-[s S28 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S28 . PSP0 PSP1 PSP2 PSP3 PSP4 PSP5 PSP6 PSP7 ]
-"561
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 561:     struct {
-[s S29 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S29 . . P1B P1C P1D ]
-"567
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 567:     struct {
-[s S30 :7 `uc 1 :1 `uc 1 ]
-[n S30 . . SS2 ]
-"540
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 540: typedef union {
-[u S26 `S27 1 `S28 1 `S29 1 `S30 1 ]
-[n S26 . . . . . ]
-"572
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 572: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
-[v _PORTDbits `VS26 ~T0 @X0 0 e@3971 ]
+"58 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 58:     struct {
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 68:     struct {
+[s S8 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . . T0CKI AN4 ]
+"73
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 73:     struct {
+[s S9 :5 `uc 1 :1 `uc 1 ]
+[n S9 . . SS ]
+"77
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 77:     struct {
+[s S10 :5 `uc 1 :1 `uc 1 ]
+[n S10 . . NOT_SS ]
+"81
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 81:     struct {
+[s S11 :5 `uc 1 :1 `uc 1 ]
+[n S11 . . nSS ]
+"85
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 85:     struct {
+[s S12 :5 `uc 1 :1 `uc 1 ]
+[n S12 . . LVDIN ]
+"89
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 89:     struct {
+[s S13 :5 `uc 1 :1 `uc 1 ]
+[n S13 . . HLVDIN ]
+"93
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 93:     struct {
+[s S14 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
+[n S14 . ULPWUIN . RJPU ]
+"57
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 57: typedef union {
+[u S6 `S7 1 `S8 1 `S9 1 `S10 1 `S11 1 `S12 1 `S13 1 `S14 1 ]
+[n S6 . . . . . . . . . ]
+"99
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 99: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
+[v _PORTAbits `VS6 ~T0 @X0 0 e@3968 ]
 "88 ./lcd.h
 [; ;./lcd.h: 88: void lcdInst(char data);
 [v _lcdInst `(v ~T0 @X0 0 ef1`uc ]
@@ -41,9 +54,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p i __delay ]
 "113 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"72 ./lcd.h
-[; ;./lcd.h: 72: extern const unsigned char LCD_LINE2_ADDR;
-[v _LCD_LINE2_ADDR `Cuc ~T0 @X0 0 e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -537,11 +547,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "19
-[; ;main.c: 19:     TRISD = 0b00000001;
-[e = _TRISD -> -> 1 `i `uc ]
-"20
-[; ;main.c: 20:     LATD = 0b00000000;
-[e = _LATD -> -> 0 `i `uc ]
+[; ;main.c: 19:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
 "21
 [; ;main.c: 21:     int sensorState = 0;
 [v _sensorState `i ~T0 @X0 1 a ]
@@ -562,79 +569,119 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 25:     initLCD();
 [e ( _initLCD ..  ]
 "26
-[; ;main.c: 26:     sensorState = PORTDbits.RD0;
-[e = _sensorState -> . . _PORTDbits 0 0 `i ]
-"27
-[; ;main.c: 27:     if (!sensorState){
-[e $ ! ! != _sensorState -> 0 `i 274  ]
-{
-"30
-[; ;main.c: 30:         ir_break = 1;
-[e = _ir_break -> -> 1 `i `a ]
-"31
-[; ;main.c: 31:     }
-}
-[e $U 275  ]
-"32
-[; ;main.c: 32:     else{
-[e :U 274 ]
-{
-"33
-[; ;main.c: 33:         ir_break = 0;
-[e = _ir_break -> -> 0 `i `a ]
-"34
-[; ;main.c: 34:     }
-}
+[; ;main.c: 26:     while(1){
 [e :U 275 ]
-"35
-[; ;main.c: 35:     if (sensorState && !lastState){
-[e $ ! && != _sensorState -> 0 `i ! != _lastState -> 0 `i 276  ]
 {
-"36
-[; ;main.c: 36:         ir = 1;
-[e = _ir -> -> 1 `i `a ]
-"37
-[; ;main.c: 37:     }
-}
-[e :U 276 ]
-"38
-[; ;main.c: 38:     if (!sensorState && lastState){
-[e $ ! && ! != _sensorState -> 0 `i != _lastState -> 0 `i 277  ]
+"27
+[; ;main.c: 27:         sensorState = PORTAbits.RA0;
+[e = _sensorState -> . . _PORTAbits 0 0 `i ]
+"28
+[; ;main.c: 28:         if (!sensorState){
+[e $ ! ! != _sensorState -> 0 `i 277  ]
 {
-"39
-[; ;main.c: 39:         ir = 0;
-[e = _ir -> -> 0 `i `a ]
-"40
-[; ;main.c: 40:     }
-}
-[e :U 277 ]
-"41
-[; ;main.c: 41:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+"29
+[; ;main.c: 29:             ir_break = 1;
+[e = _ir_break -> -> 1 `i `a ]
+"30
+[; ;main.c: 30:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
 {
 [e ( _lcdInst (1 -> -> 1 `i `uc ]
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 }
-"42
-[; ;main.c: 42:     printf("sensorState, %d", sensorState);
-[e ( _printf , (. :s 1C _sensorState ]
-"43
-[; ;main.c: 43:     { lcdInst(0x80 | LCD_LINE2_ADDR);};
-{
-[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE2_ADDR `i `uc ]
+"32
+[; ;main.c: 32:                         printf("fk");
+[e ( _printf :s 1C ]
+"33
+[; ;main.c: 33:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"34
+[; ;main.c: 34:         }
 }
+[e :U 277 ]
+"35
+[; ;main.c: 35:         if (sensorState){
+[e $ ! != _sensorState -> 0 `i 278  ]
+{
+"36
+[; ;main.c: 36:             ir_break = 0;
+[e = _ir_break -> -> 0 `i `a ]
+"37
+[; ;main.c: 37:                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+{
+[e ( _lcdInst (1 -> -> 1 `i `uc ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+}
+"39
+[; ;main.c: 39:                         printf("lol");
+[e ( _printf :s 2C ]
+"40
+[; ;main.c: 40:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"41
+[; ;main.c: 41:         }
+}
+[e :U 278 ]
+"42
+[; ;main.c: 42:         if (sensorState && !lastState){
+[e $ ! && != _sensorState -> 0 `i ! != _lastState -> 0 `i 279  ]
+{
+"43
+[; ;main.c: 43:             ir = 1;
+[e = _ir -> -> 1 `i `a ]
 "44
-[; ;main.c: 44:     printf("lastState, %d", lastState);
-[e ( _printf , (. :s 2C _lastState ]
+[; ;main.c: 44:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+{
+[e ( _lcdInst (1 -> -> 1 `i `uc ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+}
 "45
-[; ;main.c: 45:     lastState = sensorState;
-[e = _lastState _sensorState ]
+[; ;main.c: 45:             printf("unbroken");
+[e ( _printf :s 3C ]
 "46
-[; ;main.c: 46:     return;
-[e $UE 273  ]
-"47
-[; ;main.c: 47: }
+[; ;main.c: 46:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"51
+[; ;main.c: 51:         if (!sensorState && lastState){
+[e $ ! && ! != _sensorState -> 0 `i != _lastState -> 0 `i 280  ]
+{
+"52
+[; ;main.c: 52:             ir = 0;
+[e = _ir -> -> 0 `i `a ]
+"53
+[; ;main.c: 53:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+{
+[e ( _lcdInst (1 -> -> 1 `i `uc ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+}
+"54
+[; ;main.c: 54:             printf("broken");
+[e ( _printf :s 4C ]
+"55
+[; ;main.c: 55:             _delay((unsigned long)((1000)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"61
+[; ;main.c: 61:         }
+}
+[e :U 280 ]
+"66
+[; ;main.c: 66:         lastState = sensorState;
+[e = _lastState _sensorState ]
+"67
+[; ;main.c: 67:     }
+}
+[e :U 279 ]
+"69
+[; ;main.c: 69:     }
+}
+[e :U 274 ]
+[e $U 275  ]
+[e :U 276 ]
+"70
+[; ;main.c: 70: }
 [e :UE 273 ]
 }
-[p f _printf 8388736 ]
-[a 2C 108 97 115 116 83 116 97 116 101 44 32 37 100 0 ]
-[a 1C 115 101 110 115 111 114 83 116 97 116 101 44 32 37 100 0 ]
+[p f _printf 8388608 ]
+[a 3C 117 110 98 114 111 107 101 110 0 ]
+[a 4C 98 114 111 107 101 110 0 ]
+[a 2C 108 111 108 0 ]
+[a 1C 102 107 0 ]

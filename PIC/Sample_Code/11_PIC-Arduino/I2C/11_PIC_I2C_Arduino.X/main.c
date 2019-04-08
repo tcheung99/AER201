@@ -60,11 +60,12 @@ void main(void) {
     unsigned char mem[3]; // Initialize array to check for triple-A sequence
     unsigned char counter = 0; // Increments each time a byte is sent
     unsigned char keypress; // Stores the data corresponding to the last key press
-//    unsigned char data; // Holds the data to be sent/received
-//    unsigned int data[3]; // Holds the data to be sent/received
-    unsigned int data; // Holds the data to be sent/received
+    unsigned char dataa; // Holds the data to be sent/received
+    int data[3]; // Holds the data to be sent/received
+    unsigned int data_g; // Holds the data to be sent/received
     bool send = true;
     while(1) {
+        /*
         if(send){
             while (PORTBbits.RB1 == 0){
                 continue;
@@ -76,17 +77,17 @@ void main(void) {
                 continue;
             }
             
-            data = keys[keypress];
+            dataa = keys[keypress];
             
             I2C_Master_Start(); // Start condition
             I2C_Master_Write(0b00010000); // 7-bit Arduino slave address + write
-            I2C_Master_Write(data); // Write key press data
+            I2C_Master_Write(dataa); // Write key press data
             I2C_Master_Stop();
 
             // Check for a triple-A sequence. If this sequence occurs, switch 
             // the PIC to receiver mode. To switch back to transmitter mode,
             // reset the PIC
-            mem[counter] = data;
+            mem[counter] = dataa;
             counter++;
             counter = (counter == 3) ? 0 : counter;
             if((mem[0] == 'A') && (mem[1] == 'A') && (mem[2] == 'A')){
@@ -94,20 +95,27 @@ void main(void) {
             }
         }
         else{
+         * */
             // Receive data from Arduino and display it on the LCD
 //            I2C_Master_Start();
             I2C_Master_RepeatedStart();
             I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
-            data = I2C_Master_Read(ACK); // Read one char only
-//            data[1] = I2C_Master_Read(ACK); // Read one char only
-            data = I2C_Master_Read(NACK); // Read one char only
+            data[0] = I2C_Master_Read(ACK); // Read one char only
+            data[1] = I2C_Master_Read(NACK); // Read one char only
+//            data[2] = I2C_Master_Read(NACK); // Read one char only
+            data_g = data[0]; 
+            data_g = (data_g<<8)||(data[1]); 
+//            data = (data<<8)||(data[1]); 
+
             I2C_Master_Stop();
-            if(data){
-                lcd_clear();
-                printf("data, %d", data);
-//                lcd_set_ddram_addr(LCD_LINE2_ADDR);    
-//                printf("data[1], %d", data[1]);
+//            lcd_clear();
+//            printf("data_g", data_g);            
+            if(data[0]&&data[1]){
+//                lcd_clear();
+                printf("data[0], %d", data[0]);
+                lcd_set_ddram_addr(LCD_LINE2_ADDR);    
+                printf("data[1], %d", data[1]);
             }
         }
     }
-}
+//}

@@ -1,7 +1,11 @@
 #include <Wire.h>
 
+#define SENSORPIN2 12
+#define SENSORPIN A3
+
 ///Motor setup
 const int transferr = A2; // This is our input pin
+const int led = A3; 
 
 const int wheel_d = 65;           // Wheel diameter (mm)
 const float wheel_c = PI * wheel_d; // Wheel circumference (mm)
@@ -29,7 +33,13 @@ const int encoder1PinB = 4;
 
 const int encoder2PinA = 3; 
 const int encoder2PinB = 5;
-
+volatile int ir_seen = 0; 
+volatile int tire1_tick_beg =0;
+volatile int tire2_tick_beg =0;
+volatile int tire1_tick_end =0;
+volatile int tire2_tick_end =0;
+volatile int tire2_dist=0;
+volatile int tire1_dist=0;
 
 int LED = 13; // Use the onboard Uno LED
 int isObstaclePin = A0; // This is our input pin
@@ -43,6 +53,9 @@ int isObstacle2 = HIGH; // HIGH MEANS NO OBSTACLE
 volatile int cyl_seen = 0; 
 volatile int cyl_seen2 = 0; 
  
+volatile int sensorState = 0, lastState=0; // variable for reading the pushbutton status
+volatile int sensorState2 = 0, lastState2=0; // variable for reading the pushbutton status
+
 long dist1;
 long dist2;
 //volatile long avg_dist; 
@@ -98,6 +111,7 @@ void setup(){
   pinMode (encoder2PinB, INPUT);   
 
   pinMode(A2, OUTPUT);
+  pinMode(led, OUTPUT);
 
   pinMode(LED, OUTPUT);
   pinMode(isObstaclePin, INPUT);
@@ -106,6 +120,11 @@ void setup(){
   attachInterrupt(digitalPinToInterrupt(encoder1PinA), count1, RISING);
   attachInterrupt(digitalPinToInterrupt(encoder2PinA), count2, RISING);
   
+pinMode(SENSORPIN, INPUT);
+pinMode(SENSORPIN2, INPUT);
+digitalWrite(SENSORPIN, HIGH); // turn on the pullup
+digitalWrite(SENSORPIN2, HIGH); // turn on the pullup
+
   startTime = millis();
   // Open serial port to PC (hardware UART)
   Serial.begin(9600);  
@@ -116,12 +135,14 @@ void loop(){
 //  Serial.print(cyl_seen);
 //  Serial.print("\t");
 //  Serial.println(cyl_seen2);
-
+sensorState = digitalRead(SENSORPIN);
+sensorState2 = digitalRead(SENSORPIN2);
   if (!send_to_pic){
     digitalWrite(A2, LOW);
     if (action&&!delaygo) {
       Serial.println("WHAA");
       ir_sensor();
+  ir_bb();
       if ((cyl_seen==0)&&(cyl_seen2==0)){
 //          if ((cyl_seen2==0)){
         Serial.println("bruh");
@@ -130,6 +151,7 @@ void loop(){
       }
     }
     if (action&&delaygo){
+  ir_bb();
       Serial.println("delaygo");
       if (loop_cnt==20){
         Serial.print("\t");
@@ -158,6 +180,7 @@ void loop(){
       }
     }
     if (action && !forward){
+
       avg_dist = 0; 
       while (avg_dist<dist_total){
         set_speed();
@@ -168,16 +191,6 @@ void loop(){
   if (send_to_pic) { //if sending to PIC, not moving, and the sending byte is not empty
     digitalWrite(A2, HIGH);
     Serial.println("keep send");
-    if (ir_seen){
-      tire_dist = ((tire_tick2 - tire_tick1)); //distance in mm  
-      Serial.println("tire_dist");
-      Serial.print("\t");
-      Serial.println(tire_dist);
-      if (tire_dist >200){
-        tire = true; //detected a tire 
-        Serial.println("tire detected");
-      }
-    }
     if (!action && !incomingByte) {
       incomingByte = avg_dist; 
       Serial.println(incomingByte);
@@ -225,29 +238,14 @@ void receiveEvent(int){
     prev_incomingByte =0;
     sense = false;
     send_to_pic = false;
-    cyl_seen = 0; 
+//    cyl_seen = 0; 
     
-    speed1 = 255; 
-    speed2 = 255; 
+    speed1 = 200; 
+    speed2 = 200; 
     
 //    cyl_seen2 = 0; 
 //    ir_seen = false;
   }
-  if (x == '3'){
-//    action = true;
-    digitalWrite(A2, LOW);
-    send_to_pic = false;
-    ir_seen = false; 
-    tire_tick1 = encoder1Pos;       
-  }
-    if (x == '4'){
-//    action = true;
-    digitalWrite(A2, LOW);
-    send_to_pic = false;
-    ir_seen = true; 
-    tire_tick2 = encoder1Pos;       
-
-    }
   
   if (x == '5'){
     action = true;
@@ -308,7 +306,6 @@ void set_speed() {
   //  int offset = abs(dist1-dist2); ;    
     int offset = 2;   
     
-                                               /////////////////
     if (diff != 0){
       if (ticks1>ticks2){
         speed1 = speed1 - offset; 
@@ -410,6 +407,7 @@ void ir_sensor(){
     Serial.println("OBSTACLE!!, OBSTACLE!!");
   }
   if (isObstacle2 == LOW) { 
+    analogWrite(led , 255); 
     cyl_seen2 = 1; 
     Serial.println("OBSTACLE2");
   }  
@@ -418,7 +416,8 @@ void ir_sensor(){
   }
   if ((cyl_seen==1)&&(cyl_seen2==0)){
     speed1 = 80;
-    speed2 = 80;      
+    speed2 = 80;   
+  ir_bb();
     drive(speed1,(speed2)); //drive slower  
   }
   if ((cyl_seen==1)&&(cyl_seen2==1)){
@@ -428,8 +427,41 @@ void ir_sensor(){
   if ((cyl_seen==1)&&(cyl_seen2==1)&&(isObstacle2 == HIGH)){
     cyl_seen = 0; 
     cyl_seen2 = 0; 
-    Serial.println("REST");
+  tire1_tick_beg = 0;
+  tire2_tick_beg = 0; 
+  tire1_tick_end = 0;
+  tire2_tick_end = 0;
+  tire1_dist = tire1_tick_end - tire1_tick_beg;
+  tire2_dist = tire2_tick_end - tire2_tick_beg;
+  
+    Serial.println("REST");    
+  Serial.println(tire1_dist);
+    Serial.println(tire2_dist);
   }
+}
+
+void ir_bb(){
+  sensorState = digitalRead(SENSORPIN);
+  sensorState2 = digitalRead(SENSORPIN2);
+  if (sensorState && !lastState&&(tire1_tick_beg==0)) { //first start 
+    Serial.println("Unbroken1");
+    tire1_tick_beg = encoder1Pos;
+  }
+  if (sensorState2 && !lastState2&&(tire2_tick_beg==0)) {
+    Serial.println("Unbroken2");
+    tire2_tick_beg = encoder1Pos;
+
+  }
+  if (!sensorState && lastState&&(tire1_tick_end==0)) { //first end 
+  Serial.println("Broken");
+      tire1_tick_end = encoder1Pos;       
+  }
+  if (!sensorState2 && lastState2&&(tire2_tick_end==0)) {
+    Serial.println("Broken2");
+    tire2_tick_end = encoder1Pos;
+  }
+  lastState = sensorState;
+  lastState2 = sensorState2;
 }
 
 void count1() {
