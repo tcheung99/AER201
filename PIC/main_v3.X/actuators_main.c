@@ -119,12 +119,12 @@ void servoRotate0(int servo){ //0 Degree
         RD1 = 1;
 //        RD0 = 1;
 
-          __delay_us(1000);
+          __delay_us(1250);
 //        RB7 = 0;
         RD1 = 0;
 //        RD0 = 0;
 
-          __delay_us(19000);
+          __delay_us(16950);
         }
     }
     if (servo==3){
@@ -163,12 +163,14 @@ void servoRotate180(int servo) //180 Degree
     RD1 = 1;
 //    RD0 = 1;
 
-    __delay_us(525); //left 
+//    __delay_us(525); //left 
+    __delay_us(950); //left 
 //    RB7 = 0;
     RD1 = 0;
 //        RD0 = 0;
 
-    __delay_us(27075); //left
+    __delay_us(26650); //left
+//    __delay_us(27000); //left
           }
   }
     if (servo==3){
@@ -208,13 +210,134 @@ void servo()
     servoRotate180(2); //180 Degree
     
     __delay_ms(50);
-        servoRotate0(3); //180 Degree
+    servoRotate180(3); //180 Degree
     servoRotate0(3); //0 Degree
     servoRotate180(3); //180 Degree
 
 
   }
 }
+
+//void servoRotate0(int servo){ //0 Degree
+//    unsigned int i;
+//    if (servo==1){
+//      for(i=0;i<30;i++)
+//          {
+//            RC1 = 1;
+//            RC2 = 1;
+//            __delay_us(1100);
+//            RC2 = 0;
+//            __delay_us(300);
+//            RC1 = 0;
+////            __delay_us(1150);
+////            __delay_us(300);
+//              
+//            __delay_us(18600);
+//          }
+//    }
+//    if (servo==2){
+//      for(i=0;i<30;i++)
+//        {
+////        RB7 = 1;
+//        RD1 = 1;
+////        RD0 = 1;
+//
+//          __delay_us(1000);
+////        RB7 = 0;
+//        RD1 = 0;
+////        RD0 = 0;
+//
+//          __delay_us(19000);
+//        }
+//    }
+//    if (servo==3){
+//      for(i=0;i<30;i++)
+//        {
+//        RD0 = 1;
+//        __delay_us(2000);
+//        //    RB7 = 0;
+//        //    RD1 = 0;
+//        RD0 = 0;
+//        __delay_us(11000);
+//        }
+//    }
+//}
+//void servoRotate180(int servo) //180 Degree
+//{
+//  unsigned int i;
+//    if (servo==1){
+//    for(i=0;i<30;i++)
+//        {
+//          RC1 = 1;
+//            RC2 = 1;
+//          __delay_us(450); //goes down to go lower old
+////          __delay_us(420); //goes down to go lower 
+//          RC2 =0;
+//          __delay_us(2100); //old 
+////          __delay_us(2130); //old
+//          RC1 = 0;
+//          __delay_us(13550);
+//        }
+//  }
+//  if (servo==2){
+//    for(i=0;i<30;i++)
+//          {
+////    RB7 = 1; 
+//    RD1 = 1;
+////    RD0 = 1;
+//
+//    __delay_us(525); //left 
+////    RB7 = 0;
+//    RD1 = 0;
+////        RD0 = 0;
+//
+//    __delay_us(27075); //left
+//          }
+//  }
+//    if (servo==3){
+//      for(i=0;i<30;i++)
+//        {
+//        RD0 = 1;
+//
+//        __delay_us(2500); //left 
+//    //    RB7 = 0;
+//    //    RD1 = 0;
+//            RD0 = 0;
+//
+//        __delay_us(10500); //left
+//        }
+//    }
+//}
+//void servo()
+//{
+//  TRISB = 0; // PORTB as Ouput Port
+//    TRISC = 0; // PORTB as Ouput Port
+//    TRISD = 0; // PORTB as Ouput Port
+//
+//      TRISBbits.RB0 = 0;
+//    LATBbits.LATB0 = 1; //DISABLES KPD	
+//    {
+////    servoRotate0(1); //0 Degree
+//    servoRotate0(1); //0 Degree
+////    __delay_ms(2000);
+////    servoRotate90(); //90 Degree
+////    servoRotate180(1); //180 Degree
+//    servoRotate180(1); //180 Degree
+//    __delay_ms(400);        
+//    servoRotate0(1); //0 Degree
+//    
+//    servoRotate180(2); //180 Degree
+//    servoRotate0(2); //0 Degree
+//    servoRotate180(2); //180 Degree
+//    
+//    __delay_ms(50);
+//        servoRotate0(3); //180 Degree
+//    servoRotate180(3); //0 Degree
+//    servoRotate0(3); //180 Degree
+//
+//
+//  }
+//}
 //void servoRotate0() //0 Degree
 //{
 //    unsigned int i;

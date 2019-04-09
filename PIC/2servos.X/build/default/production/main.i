@@ -4465,12 +4465,12 @@ void servoRotate0(int servo){
         RD1 = 1;
 
 
-          _delay((unsigned long)((1000)*(10000000/4000000.0)));
+          _delay((unsigned long)((1250)*(10000000/4000000.0)));
 
         RD1 = 0;
 
 
-          _delay((unsigned long)((19000)*(10000000/4000000.0)));
+          _delay((unsigned long)((16950)*(10000000/4000000.0)));
         }
     }
     if (servo==3){
@@ -4509,12 +4509,14 @@ void servoRotate180(int servo)
     RD1 = 1;
 
 
-    _delay((unsigned long)((525)*(10000000/4000000.0)));
+
+    _delay((unsigned long)((950)*(10000000/4000000.0)));
 
     RD1 = 0;
 
 
-    _delay((unsigned long)((27075)*(10000000/4000000.0)));
+    _delay((unsigned long)((26650)*(10000000/4000000.0)));
+
           }
   }
     if (servo==3){
@@ -4548,6 +4550,16 @@ void main()
     servoRotate180(1);
     _delay((unsigned long)((400)*(10000000/4000.0)));
     servoRotate0(1);
-# 124 "main.c"
+
+    servoRotate180(2);
+    servoRotate0(2);
+    servoRotate180(2);
+
+    _delay((unsigned long)((50)*(10000000/4000.0)));
+    servoRotate180(3);
+    servoRotate0(3);
+    servoRotate180(3);
+
+
   }
 }

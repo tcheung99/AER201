@@ -144,7 +144,11 @@ sensorState2 = digitalRead(SENSORPIN2);
 //  Serial.println(tire2_dist);
 
   ir_bb();
-
+  Serial.print("  AVG_DIST: ");
+  Serial.print(avg_dist);
+  Serial.print("\t");
+  Serial.print("  DIST_TOT ");
+  Serial.println(dist_total);
   if (!send_to_pic){
     digitalWrite(A2, LOW);
     if (action&&!delaygo) {
@@ -454,9 +458,9 @@ void ir_sensor(){
     analogWrite(led , 0); 
     cyl_seen2 = 0; 
   }
-  if ((cyl_seen==1)&&(cyl_seen2==0)){
-    speed1 = 60;
-    speed2 = 80;   
+  if ((cyl_seen==1)&&(cyl_seen2==0)){ //veers left so adjust
+    speed1 = 80;
+    speed2 = 100;   
     ir_bb();
     drive(speed1,(speed2)); //drive slower 
     Serial.println("driving constant ");
@@ -527,8 +531,8 @@ void ir_bb(){
 //    Serial.println("Broken2");
 //    tire2_tick_end = encoder1Pos;
 //  }
-  lastState = sensorState;
-  lastState2 = sensorState2;
+    lastState = sensorState;
+    lastState2 = sensorState2;
     Serial.print("encoder: ");
     Serial.println(encoder1Pos);
     Serial.print("\t");
@@ -539,7 +543,7 @@ void ir_bb(){
     Serial.print("\t");
     Serial.println(tire2_tick_beg);
     
-        Serial.print("Tire tick end: ");
+    Serial.print("Tire tick end: ");
     Serial.print(tire1_tick_end);
     Serial.print("\t");
     Serial.println(tire2_tick_end);

@@ -31,7 +31,7 @@
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
 "50
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"96
+"98
 [v _main main `(v  1 e 1 0 ]
 [s S77 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
@@ -89,10 +89,10 @@
 [v _RD0 RD0 `VEb  1 e 0 @31768 ]
 "7854
 [v _RD1 RD1 `VEb  1 e 0 @31769 ]
-"96 C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+"98 C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"125
+"127
 } 0
 "50
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
@@ -101,7 +101,7 @@
 [v servoRotate180@i i `ui  1 a 2 3 ]
 "50
 [v servoRotate180@servo servo `i  1 p 2 0 ]
-"95
+"97
 } 0
 "6
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]

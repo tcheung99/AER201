@@ -532,6 +532,8 @@ void UI_main(int t_dep, int poles_detected){
 //            }
         if (send){
         if(key_was_pressed){
+//            lcd_clear();           
+//            printf("bubb");
             pressed = 1;
             key_was_pressed = false; // Clear the flag
             unsigned char keypress = (PORTB & 0xF0) >> 4; //right shift
@@ -718,7 +720,7 @@ void main(){
     int t_count; 
 	TRISD = 0x00;                       // LCD Pins as Output
 	GIE = 1;                            //Global Interrupt Enable
-	    int steps2_adj =0;
+    int steps2_adj =0;
     ADCON1=0x0F;                        // Set all A/D ports to digital (pg. 222)
 
 	initLCD();
@@ -757,7 +759,7 @@ void main(){
 //        lcd_clear();
 //        printf("happen");
 //        __delay_ms(1000);
-        if ((poles_detected <1)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
+        if ((poles_detected <2)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
 //            lcd_clear();
 //            printf("help");
 //            __delay_ms(1000);

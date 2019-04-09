@@ -11,15 +11,15 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\trudi\AppData\Local\Temp\s9is.o
+$C:\Users\trudi\AppData\Local\Temp\sdk0.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production\2servos.X.production.o
-cinit CODE 0 FDF8 FDF8 6 1
-text0 CODE 0 FDFE FDFE 4E 1
-text1 CODE 0 FF26 FF26 DA 1
-text2 CODE 0 FE4C FE4C DA 1
+cinit CODE 0 FD9C FD9C 6 1
+text0 CODE 0 FDA2 FDA2 A6 1
+text1 CODE 0 FF22 FF22 DE 1
+text2 CODE 0 FE48 FE48 DA 1
 cstackCOMRAM COMRAM 1 1 1 7 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -39,10 +39,10 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST 4-FDF7 1
+CONST 4-FD9B 1
 STACK 80-F7F 1
-SMALLCONST 1000-FDF7 1
-CODE 4-FDF7 1
+SMALLCONST 1000-FD9B 1
+CODE 4-FD9B 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -52,7 +52,7 @@ BANK15 F00-F7F 1
 BIGRAM 8-F7F 1
 COMRAM 8-7F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 1000-FDF7 1
+MEDIUMCONST 1000-FD9B 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -67,75 +67,82 @@ MEDIUMCONST 1000-FDF7 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\2servos.X.production.o
-FE4C text2 CODE >6:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE4C text2 CODE >8:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE54 text2 CODE >9:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE5C text2 CODE >11:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE5E text2 CODE >12:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE60 text2 CODE >13:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE70 text2 CODE >14:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE72 text2 CODE >15:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE78 text2 CODE >16:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE7A text2 CODE >20:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE8A text2 CODE >21:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE9A text2 CODE >23:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEA4 text2 CODE >24:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEAC text2 CODE >27:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEAE text2 CODE >30:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEBC text2 CODE >32:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEBE text2 CODE >35:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FECE text2 CODE >36:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEDE text2 CODE >38:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEE8 text2 CODE >39:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEF0 text2 CODE >41:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FEF2 text2 CODE >42:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF02 text2 CODE >45:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF04 text2 CODE >46:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF12 text2 CODE >47:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF24 text2 CODE >49:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF26 text1 CODE >50:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF26 text1 CODE >53:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF2E text1 CODE >54:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF36 text1 CODE >56:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF38 text1 CODE >57:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF3A text1 CODE >58:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF42 text1 CODE >60:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF44 text1 CODE >61:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF54 text1 CODE >63:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF56 text1 CODE >64:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF66 text1 CODE >65:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF76 text1 CODE >67:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF80 text1 CODE >68:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF88 text1 CODE >71:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF8A text1 CODE >74:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF98 text1 CODE >76:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FF9A text1 CODE >79:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFA8 text1 CODE >80:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFB8 text1 CODE >82:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFC2 text1 CODE >83:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFCA text1 CODE >85:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFCC text1 CODE >87:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFDC text1 CODE >90:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFDE text1 CODE >92:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFEC text1 CODE >93:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FFFE text1 CODE >95:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FDFE text0 CODE >96:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FDFE text0 CODE >98:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE02 text0 CODE >99:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE06 text0 CODE >100:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE0A text0 CODE >102:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE0C text0 CODE >103:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE0E text0 CODE >106:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE1A text0 CODE >110:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE26 text0 CODE >111:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE3C text0 CODE >112:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FE48 text0 CODE >125:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
-FDF8 cinit CODE >474:C:\Users\trudi\AppData\Local\Temp\s9is.
-FDF8 cinit CODE >476:C:\Users\trudi\AppData\Local\Temp\s9is.
-FDF8 cinit CODE >479:C:\Users\trudi\AppData\Local\Temp\s9is.
-FDF8 cinit CODE >485:C:\Users\trudi\AppData\Local\Temp\s9is.
-FDF8 cinit CODE >487:C:\Users\trudi\AppData\Local\Temp\s9is.
-FDFA cinit CODE >488:C:\Users\trudi\AppData\Local\Temp\s9is.
+FE48 text2 CODE >6:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE48 text2 CODE >8:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE50 text2 CODE >9:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE58 text2 CODE >11:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE5A text2 CODE >12:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE5C text2 CODE >13:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE6C text2 CODE >14:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE6E text2 CODE >15:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE74 text2 CODE >16:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE76 text2 CODE >20:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE86 text2 CODE >21:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE96 text2 CODE >23:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEA0 text2 CODE >24:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEA8 text2 CODE >27:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEAA text2 CODE >30:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEBA text2 CODE >32:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEBC text2 CODE >35:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FECA text2 CODE >36:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEDA text2 CODE >38:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEE4 text2 CODE >39:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEEC text2 CODE >41:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEEE text2 CODE >42:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FEFE text2 CODE >45:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF00 text2 CODE >46:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF0E text2 CODE >47:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF20 text2 CODE >49:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF22 text1 CODE >50:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF22 text1 CODE >53:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF2A text1 CODE >54:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF32 text1 CODE >56:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF34 text1 CODE >57:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF36 text1 CODE >58:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF3E text1 CODE >60:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF40 text1 CODE >61:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF50 text1 CODE >63:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF52 text1 CODE >64:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF62 text1 CODE >65:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF72 text1 CODE >67:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF7C text1 CODE >68:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF84 text1 CODE >71:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF86 text1 CODE >75:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF96 text1 CODE >77:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FF98 text1 CODE >80:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFA8 text1 CODE >82:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFB8 text1 CODE >84:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFC2 text1 CODE >85:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFCA text1 CODE >87:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFCC text1 CODE >89:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFDC text1 CODE >92:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFDE text1 CODE >94:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFEC text1 CODE >95:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FFFE text1 CODE >97:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDA2 text0 CODE >98:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDA2 text0 CODE >100:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDA6 text0 CODE >101:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDAA text0 CODE >102:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDAE text0 CODE >104:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDB0 text0 CODE >105:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDB2 text0 CODE >108:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDBE text0 CODE >112:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDCA text0 CODE >113:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDE0 text0 CODE >114:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDEC text0 CODE >116:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FDF8 text0 CODE >117:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE04 text0 CODE >118:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE10 text0 CODE >120:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE20 text0 CODE >121:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE2C text0 CODE >122:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE38 text0 CODE >123:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FE44 text0 CODE >127:C:\Users\trudi\Desktop\GitHub\AER201\PIC\2servos.X\main.c
+FD9C cinit CODE >474:C:\Users\trudi\AppData\Local\Temp\sdk0.
+FD9C cinit CODE >476:C:\Users\trudi\AppData\Local\Temp\sdk0.
+FD9C cinit CODE >479:C:\Users\trudi\AppData\Local\Temp\sdk0.
+FD9C cinit CODE >485:C:\Users\trudi\AppData\Local\Temp\sdk0.
+FD9C cinit CODE >487:C:\Users\trudi\AppData\Local\Temp\sdk0.
+FD9E cinit CODE >488:C:\Users\trudi\AppData\Local\Temp\sdk0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -154,21 +161,21 @@ __Hspace_1 8 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\2servos.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\trudi\AppData\Local\Temp\s9is.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\trudi\AppData\Local\Temp\sdk0.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\2servos.X.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\2servos.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s9is.o
-_main FDFE 0 CODE 0 text0 dist/default/production\2servos.X.production.o
-start 0 0 CODE 0 init C:\Users\trudi\AppData\Local\Temp\s9is.o
+___sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\sdk0.o
+_main FDA2 0 CODE 0 text0 dist/default/production\2servos.X.production.o
+start 0 0 CODE 0 init C:\Users\trudi\AppData\Local\Temp\sdk0.o
 __size_of_main 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\2servos.X.production.o
-_servoRotate0 FE4C 0 CODE 0 text2 dist/default/production\2servos.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s9is.o
-intlevel0 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9is.o
-intlevel1 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9is.o
-intlevel2 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9is.o
-intlevel3 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9is.o
+_servoRotate0 FE48 0 CODE 0 text2 dist/default/production\2servos.X.production.o
+__accesstop 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\sdk0.o
+intlevel0 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sdk0.o
+intlevel1 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sdk0.o
+intlevel2 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sdk0.o
+intlevel3 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\sdk0.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\2servos.X.production.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
@@ -177,19 +184,19 @@ __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\2servos.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\2servos.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s9is.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s9is.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\sdk0.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\sdk0.o
 __size_of_servoRotate0 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\2servos.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\2servos.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\2servos.X.production.o
 __size_of_servoRotate180 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\2servos.X.production.o
-__end_of_servoRotate0 FF26 0 CODE 0 text2 dist/default/production\2servos.X.production.o
+__end_of_servoRotate0 FF22 0 CODE 0 text2 dist/default/production\2servos.X.production.o
 servoRotate0@servo 1 0 COMRAM 1 cstackCOMRAM dist/default/production\2servos.X.production.o
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\2servos.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
-start_initialization FDF8 0 CODE 0 cinit dist/default/production\2servos.X.production.o
+start_initialization FD9C 0 CODE 0 cinit dist/default/production\2servos.X.production.o
 __CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\2servos.X.production.o
 _TRISBbits F93 0 ABS 0 - dist/default/production\2servos.X.production.o
@@ -224,7 +231,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\2servos.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\2servos.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\2servos.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\2servos.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\trudi\AppData\Local\Temp\s9is.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\trudi\AppData\Local\Temp\sdk0.o
 servoRotate180@i 4 0 COMRAM 1 cstackCOMRAM dist/default/production\2servos.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\2servos.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\2servos.X.production.o
@@ -301,19 +308,19 @@ __CFG_CPD$ON 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 _LATBbits F8A 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\2servos.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\2servos.X.production.o
-stackhi F7F 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s9is.o
-stacklo 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s9is.o
+stackhi F7F 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\sdk0.o
+stacklo 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\sdk0.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\2servos.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\2servos.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\2servos.X.production.o
 servoRotate180@servo 1 0 COMRAM 1 cstackCOMRAM dist/default/production\2servos.X.production.o
-_servoRotate180 FF26 0 CODE 0 text1 dist/default/production\2servos.X.production.o
+_servoRotate180 FF22 0 CODE 0 text1 dist/default/production\2servos.X.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\2servos.X.production.o
-end_of_initialization FDF8 0 CODE 0 cinit dist/default/production\2servos.X.production.o
+end_of_initialization FD9C 0 CODE 0 cinit dist/default/production\2servos.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\2servos.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production\2servos.X.production.o
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\2servos.X.production.o
@@ -321,12 +328,12 @@ __CFG_OSC$HS 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\2servos.X.production.o
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production\2servos.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\2servos.X.production.o
-__pcinit FDF8 0 CODE 0 cinit dist/default/production\2servos.X.production.o
-__ptext0 FDFE 0 CODE 0 text0 dist/default/production\2servos.X.production.o
-__ptext1 FF26 0 CODE 0 text1 dist/default/production\2servos.X.production.o
-__ptext2 FE4C 0 CODE 0 text2 dist/default/production\2servos.X.production.o
+__pcinit FD9C 0 CODE 0 cinit dist/default/production\2servos.X.production.o
+__ptext0 FDA2 0 CODE 0 text0 dist/default/production\2servos.X.production.o
+__ptext1 FF22 0 CODE 0 text1 dist/default/production\2servos.X.production.o
+__ptext2 FE48 0 CODE 0 text2 dist/default/production\2servos.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\2servos.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\trudi\AppData\Local\Temp\s9is.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\trudi\AppData\Local\Temp\sdk0.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\2servos.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\2servos.X.production.o
 __end_of_servoRotate180 10000 0 CODE 0 text1 dist/default/production\2servos.X.production.o
@@ -334,7 +341,7 @@ __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\2servos.X.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\2servos.X.production.o
-__end_of__initialization FDF8 0 CODE 0 cinit dist/default/production\2servos.X.production.o
+__end_of__initialization FD9C 0 CODE 0 cinit dist/default/production\2servos.X.production.o
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
@@ -347,7 +354,7 @@ __Lclrtext 0 0 ABS 0 clrtext dist/default/production\2servos.X.production.o
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\2servos.X.production.o
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\2servos.X.production.o
-__end_of_main FE4C 0 CODE 0 text0 dist/default/production\2servos.X.production.o
+__end_of_main FE48 0 CODE 0 text0 dist/default/production\2servos.X.production.o
 _TRISB F93 0 ABS 0 - dist/default/production\2servos.X.production.o
 _TRISC F94 0 ABS 0 - dist/default/production\2servos.X.production.o
 _TRISD F95 0 ABS 0 - dist/default/production\2servos.X.production.o
@@ -364,7 +371,7 @@ __Lsfr 0 0 ABS 0 sfr dist/default/production\2servos.X.production.o
 __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\2servos.X.production.o
-__initialization FDF8 0 CODE 0 cinit dist/default/production\2servos.X.production.o
+__initialization FD9C 0 CODE 0 cinit dist/default/production\2servos.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\2servos.X.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\2servos.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\2servos.X.production.o
@@ -394,11 +401,11 @@ __Hintcode 0 0 CODE 0 intcode dist/default/production\2servos.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 FDF8 FDF8 6 1
+cinit 0 FD9C FD9C 6 1
 idloc 0 200000 200000 8 1
-text0 0 FDFE FDFE 4E 1
-text1 0 FF26 FF26 DA 1
-text2 0 FE4C FE4C DA 1
+text0 0 FDA2 FDA2 A6 1
+text1 0 FF22 FF22 DE 1
+text2 0 FE48 FE48 DA 1
 cstackCOMRAM 1 1 1 7 1
 reset_vec 0 0 0 4 1
 config 0 300000 300000 E 1

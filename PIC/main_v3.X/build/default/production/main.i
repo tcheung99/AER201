@@ -5738,6 +5738,8 @@ void UI_main(int t_dep, int poles_detected){
 # 533 "main.c"
         if (send){
         if(key_was_pressed){
+
+
             pressed = 1;
             key_was_pressed = 0;
             unsigned char keypress = (PORTB & 0xF0) >> 4;
@@ -5924,7 +5926,7 @@ void main(){
     int t_count;
  TRISD = 0x00;
  GIE = 1;
-     int steps2_adj =0;
+    int steps2_adj =0;
     ADCON1=0x0F;
 
  initLCD();
@@ -5963,7 +5965,7 @@ void main(){
 
 
 
-        if ((poles_detected <1)&&((Pole[poles_detected].dist_from_start )<4000)){
+        if ((poles_detected <2)&&((Pole[poles_detected].dist_from_start )<4000)){
 
 
 
