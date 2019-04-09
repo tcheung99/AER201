@@ -4444,7 +4444,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 void servoRotate0(int servo){
     unsigned int i;
     if (servo==1){
-      for(i=0;i<30;i++)
+      for(i=0;i<300;i++)
           {
             RC1 = 1;
             RC2 = 1;
@@ -4489,7 +4489,7 @@ void servoRotate180(int servo)
 {
   unsigned int i;
     if (servo==1){
-    for(i=0;i<30;i++)
+    for(i=0;i<300;i++)
         {
           RC1 = 1;
             RC2 = 1;

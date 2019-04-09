@@ -205,9 +205,9 @@ void servo()
     __delay_ms(400);        
     servoRotate0(1); //0 Degree
     
-    servoRotate180(2); //180 Degree
-    servoRotate0(2); //0 Degree
-    servoRotate180(2); //180 Degree
+//    servoRotate180(2); //180 Degree
+//    servoRotate0(2); //0 Degree
+//    servoRotate180(2); //180 Degree
     
     __delay_ms(50);
     servoRotate180(3); //180 Degree

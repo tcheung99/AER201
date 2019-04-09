@@ -115,6 +115,8 @@ void main(void) {
                 printf("data[0], %d", data[0]);
                 lcd_set_ddram_addr(LCD_LINE2_ADDR);    
                 printf("data[1], %d", data[1]);
+                lcd_set_ddram_addr(LCD_LINE3_ADDR);    
+                printf("data_g, %d", data_g);
                 __delay_ms(1000);
             }
         }

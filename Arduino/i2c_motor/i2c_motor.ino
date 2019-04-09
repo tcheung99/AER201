@@ -36,6 +36,7 @@ const int encoder1PinB = 4;
 const int encoder2PinA = 3; 
 const int encoder2PinB = 5;
 volatile int ir_seen = 0; 
+volatile int tire_detected = 0;
 volatile long tire1_tick_beg =0;
 volatile long tire2_tick_beg =0;
 volatile long tire1_tick_end =0;
@@ -73,6 +74,7 @@ volatile int speed2;
 
 volatile bool forward = true; 
 volatile int stopp=0; 
+volatile int time_up=0; 
 
 bool sense = false;
 
@@ -87,7 +89,8 @@ long startTime = 0;
 volatile bool action = false ; 
 volatile bool delaygo = false ; 
 volatile bool send_to_pic = false;
-volatile uint8_t incomingByte; //unsigned integer of length 8 bits (1 byte) 
+//volatile uint8_t incomingByte; //unsigned integer of length 8 bits (1 byte) 
+volatile uint8_t incomingByte[3]; //unsigned integer of length 8 bits (1 byte) 
 volatile uint8_t prev_incomingByte;
 
 long loop_cnt=0;
@@ -122,10 +125,10 @@ void setup(){
   attachInterrupt(digitalPinToInterrupt(encoder1PinA), count1, RISING);
   attachInterrupt(digitalPinToInterrupt(encoder2PinA), count2, RISING);
   
-pinMode(SENSORPIN, INPUT);
-pinMode(SENSORPIN2, INPUT);
-digitalWrite(SENSORPIN, HIGH); // turn on the pullup
-digitalWrite(SENSORPIN2, HIGH); // turn on the pullup
+  pinMode(SENSORPIN, INPUT);
+  pinMode(SENSORPIN2, INPUT);
+  digitalWrite(SENSORPIN, HIGH); // turn on the pullup
+  digitalWrite(SENSORPIN2, HIGH); // turn on the pullup
 
 //  startTime = millis();
   // Open serial port to PC (hardware UART)
@@ -154,7 +157,7 @@ sensorState2 = digitalRead(SENSORPIN2);
     if (action&&!delaygo) {
       Serial.println("WHAA");
       ir_sensor();
-  ir_bb();
+      ir_bb();
       if ((cyl_seen==0)&&(cyl_seen2==0)){
 //          if ((cyl_seen2==0)){
         Serial.println("bruh");
@@ -165,9 +168,10 @@ sensorState2 = digitalRead(SENSORPIN2);
       }
     }
     if (action&&delaygo){
-  ir_bb();
+      ir_bb();
       Serial.println("delaygo");
-      if (loop_cnt==20){
+//      if (loop_cnt==10){
+      if (loop_cnt==2){
         Serial.print("\t");
         Serial.print("\t");
         Serial.println("what the ");
@@ -209,8 +213,8 @@ sensorState2 = digitalRead(SENSORPIN2);
     digitalWrite(A2, HIGH);
     Serial.println("keep send");
     if (!action && !incomingByte) {
-      incomingByte = avg_dist; 
-      Serial.println(incomingByte);
+      incomingByte[0] = avg_dist; 
+      Serial.println(incomingByte[0]);
 //        avg_dist = 0; //Reset the pole-to-pole distance 
     }
   }
@@ -221,20 +225,31 @@ sensorState2 = digitalRead(SENSORPIN2);
   if ((curr_opTime/1000)>=180){
     brake();
     Serial.print("NO TIMEEE");
+    time_up = 1; 
   }  
   Serial.print("curr op time: ");
   Serial.println(curr_opTime);
 }
   
 void requestEvent(void){
+  incomingByte[0] = avg_dist;
+  incomingByte[1] = tire_detected;
+  incomingByte[2] = time_up;
+
+  digitalWrite(A2, LOW);
+  for (int i=0;i<3;i++){
+    Wire.write(incomingByte[i]); // Respond with message of 1 byte
+    incomingByte[i] = 0; // Clear output buffer
+  }
+  
 //    prev_incomingByte = incomingByte;
 //  if (action){
-    incomingByte = avg_dist; 
-    digitalWrite(A2, LOW);
-    Wire.write(incomingByte); // Respond with message of 1 byte for sensor distance
-    incomingByte = 0; // Clear output buffer
-    avg_dist = 0; 
-    send_to_pic = false;
+//    incomingByte = avg_dist; 
+//    digitalWrite(A2, LOW);
+//    Wire.write(incomingByte); // Respond with message of 1 byte for sensor distance
+//    incomingByte = 0; // Clear output buffer
+//    avg_dist = 0; 
+//    send_to_pic = false;
 //  } 
 }
 
@@ -271,6 +286,7 @@ void receiveEvent(int){
     tire2_tick_beg = 0; 
     tire1_tick_end = 0;
     tire2_tick_end = 0;
+    tire_detected = 0;
     speed1 = 200; 
     speed2 = 200; 
     
@@ -320,48 +336,52 @@ void set_speed() {
     Serial.println(avg_dist);
     int offset = 2;   
 
-    float ratio = ticks1/ticks2; /////////////////
-    if (ratio >1.2){ //ticks 1 is much greater than 2 ///////////////
-       speed1 = speed1 - offset; 
-       speed2 = speed2 + offset;  
-    }
-    if (ratio <1.2){ //ticks 2 is much greater than 1 
-        speed1 = speed1 + offset; 
-        speed2 = speed2 - offset;  
-    }
-    if (ratio == 1.2){
-      speed1 = 200;
-      speed2 = 200;  
-    }    
+//    float ratio = ticks1/ticks2; /////////////////
+//    if (ratio >1.2){ //ticks 1 is much greater than 2 ///////////////
+//       speed1 = speed1 - offset; 
+//       speed2 = speed2 + offset;  
+//    }
+//    if (ratio <1.2){ //ticks 2 is much greater than 1 
+//        speed1 = speed1 + offset; 
+//        speed2 = speed2 - offset;  
+//    }
+//    if (ratio == 1.2){
+////      speed1 = 150;
+////      speed2 = 170;  
+//      speed1 = 160;
+//      speed2 = 180;
+//    }    
     
     int diff = abs(ticks1-ticks2); 
   //  int offset = abs(dist1-dist2); ;    
 //    int offset = 2;   
     
-//    if (diff != 0){
-//      if (ticks1>ticks2){
-//        speed1 = speed1 - offset; 
-//        speed2 = speed2 + offset;   
-//      }
-//      if (ticks2>ticks1){
-//        speed1 = speed1 + offset; 
-//        speed2 = speed2 - offset;   
-//      }
-//    }
-//    if (diff == 0){
-////      speed1 = 255;
-////      speed2 = 255;
-//      speed1 = 200;
-//      speed2 = 200;    
-//  //    speed1 = 180;
-//  //    speed2 = 180;
-//  //    Serial.println("  wtf ");
-//    }
-    if (((speed1)<25)&&((speed2)<25)){
+    if (diff != 0){
+      if (ticks1>ticks2){
+        speed1 = speed1 - offset; 
+        speed2 = speed2 + offset;   
+      }
+      if (ticks2>ticks1){
+        speed1 = speed1 + offset; 
+        speed2 = speed2 - offset;   
+      }
+    }
+    if (diff == 0){
 //      speed1 = 255;
 //      speed2 = 255;
-      speed1 = 200;
-      speed2 = 220;
+      speed1 = 160;
+      speed2 = 180;    
+  //    speed1 = 180;
+  //    speed2 = 180;
+  //    Serial.println("  wtf ");
+    }
+    if (((speed1)<25)&&((speed2)<25)){
+//            speed1 = 150;
+//      speed2 = 170; 
+//      speed1 = 255;
+//      speed2 = 255;
+      speed1 = 160;
+      speed2 = 180;
   //    speed1 = 180;
   //    speed2 = 180;
     }
@@ -437,6 +457,8 @@ void brake(){
   Serial.println("tire dist");    
   Serial.println(tire1_dist);
   Serial.println(tire2_dist);
+
+  tire_detected = detect_tire();
   
   send_to_pic = true;
 
@@ -447,20 +469,32 @@ void ir_sensor(){
   isObstacle2 = digitalRead(isObstaclePin2);  
   if ((isObstacle == LOW)&&(cyl_seen==0)) { 
     cyl_seen = 1; 
+        Serial.print("\t");
+        Serial.print("\t");
+
     Serial.println("OBSTACLE!!, OBSTACLE!!");
   }
   if (isObstacle2 == LOW) { 
     analogWrite(led , 255); 
     cyl_seen2 = 1; 
+        Serial.print("\t");
+        Serial.print("\t");
     Serial.println("OBSTACLE2");
   }  
   if (isObstacle2 == HIGH) { 
     analogWrite(led , 0); 
     cyl_seen2 = 0; 
+//    brake();
   }
   if ((cyl_seen==1)&&(cyl_seen2==0)){ //veers left so adjust
-    speed1 = 80;
-    speed2 = 100;   
+//        speed1 = 70;
+//    speed2 = 75;         
+    speed2 = 75;
+    speed1 = 80;  
+//    speed1 = 80;
+//    speed2 = 85;   
+//    speed1 = 95;
+//    speed2 = 95; //right one
     ir_bb();
     drive(speed1,(speed2)); //drive slower 
     Serial.println("driving constant ");
@@ -500,11 +534,17 @@ void ir_bb(){
   if (!sensorState && lastState&&(tire1_tick_beg==0)) { //first start 
     Serial.println("Unbroken1");
     tire1_tick_beg = encoder1Pos;
+        speed2 = 75;
+    speed1 = 80;  
+        drive(speed1,(speed2)); //drive slower 
+
   }
   if (!sensorState2 && lastState2&&(tire2_tick_beg==0)) {
     Serial.println("Unbroken2");
     tire2_tick_beg = encoder1Pos;
-
+        speed2 = 75;
+    speed1 = 80;  
+        drive(speed1,(speed2)); //drive slower 
   }
   if (sensorState && !lastState&&(tire1_tick_beg!=0)&&(tire1_tick_end==0)) { //first end 
   Serial.println("Broken");
@@ -548,6 +588,23 @@ void ir_bb(){
     Serial.print("\t");
     Serial.println(tire2_tick_end);
     
+}
+
+int detect_tire(){
+  int tire_detected = 0;
+  if (tire2_dist<200){ //detected a pole (bottom)
+    tire_detected = 0;
+  }
+  if (tire2_dist>200){ //detected a tire (bottom)
+    tire_detected++;
+  }
+  if (tire1_dist<200){ //detected a pole (top)
+    tire_detected = tire_detected;
+  }
+  if (tire1_dist>200){ //detected a tire (top) 
+    tire_detected++;
+  }
+  return tire_detected;
 }
 
 void count1() {

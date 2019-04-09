@@ -48,6 +48,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72 ./lcd.h
 [; ;./lcd.h: 72: extern const unsigned char LCD_LINE2_ADDR;
 [v _LCD_LINE2_ADDR `Cuc ~T0 @X0 0 e ]
+"73
+[; ;./lcd.h: 73: extern const unsigned char LCD_LINE3_ADDR;
+[v _LCD_LINE3_ADDR `Cuc ~T0 @X0 0 e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -656,22 +659,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 117:                 printf("data[1], %d", data[1]);
 [e ( _printf , (. :s 2C *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ]
 "118
-[; ;main.c: 118:                 _delay((unsigned long)((1000)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+[; ;main.c: 118:                 { lcdInst(0x80 | LCD_LINE3_ADDR);};
+{
+[e ( _lcdInst (1 -> | -> 128 `i -> _LCD_LINE3_ADDR `i `uc ]
+}
 "119
-[; ;main.c: 119:             }
+[; ;main.c: 119:                 printf("data_g, %d", data_g);
+[e ( _printf , (. :s 3C _data_g ]
+"120
+[; ;main.c: 120:                 _delay((unsigned long)((1000)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"121
+[; ;main.c: 121:             }
 }
 [e :U 276 ]
-"120
-[; ;main.c: 120:         }
+"122
+[; ;main.c: 122:         }
 }
 [e :U 273 ]
 [e $U 274  ]
 [e :U 275 ]
-"121
-[; ;main.c: 121:     }
+"123
+[; ;main.c: 123:     }
 [e :UE 272 ]
 }
 [p f _printf 8388736 ]
+[a 3C 100 97 116 97 95 103 44 32 37 100 0 ]
 [a 2C 100 97 116 97 91 49 93 44 32 37 100 0 ]
 [a 1C 100 97 116 97 91 48 93 44 32 37 100 0 ]

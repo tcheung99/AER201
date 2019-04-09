@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Tue Apr 09 00:03:06 2019
+                                                                                               Tue Apr 09 01:04:55 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	18F4620
@@ -315,7 +315,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    290  00FF26  A4D8               	btfss	status,2,c
    291  00FF28  D024               	goto	u200
    292                           
-   293                           ;main.c: 54:     for(i=0;i<30;i++)
+   293                           ;main.c: 54:     for(i=0;i<300;i++)
    294  00FF2A  0E00               	movlw	0
    295  00FF2C  6E05               	movwf	servoRotate180@i+1,c
    296  00FF2E  0E00               	movlw	0
@@ -366,10 +366,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    341                           ;main.c: 65:         }
    342  00FF62  4A04               	infsnz	servoRotate180@i,f,c
    343  00FF64  2A05               	incf	servoRotate180@i+1,f,c
-   344  00FF66  5005               	movf	servoRotate180@i+1,w,c
-   345  00FF68  E104               	bnz	u200
-   346  00FF6A  0E1E               	movlw	30
-   347  00FF6C  5C04               	subwf	servoRotate180@i,w,c
+   344  00FF66  0E2C               	movlw	44
+   345  00FF68  5C04               	subwf	servoRotate180@i,w,c
+   346  00FF6A  0E01               	movlw	1
+   347  00FF6C  5805               	subwfb	servoRotate180@i+1,w,c
    348  00FF6E  A0D8               	btfss	status,0,c
    349  00FF70  D7E0               	goto	l36
    350  00FF72                     u200:
@@ -531,7 +531,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    501  00FE4C  A4D8               	btfss	status,2,c
    502  00FE4E  D023               	goto	u140
    503                           
-   504                           ;main.c: 9:       for(i=0;i<30;i++)
+   504                           ;main.c: 9:       for(i=0;i<300;i++)
    505  00FE50  0E00               	movlw	0
    506  00FE52  6E05               	movwf	servoRotate0@i+1,c
    507  00FE54  0E00               	movlw	0
@@ -581,10 +581,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    551                           ;main.c: 21:           }
    552  00FE86  4A04               	infsnz	servoRotate0@i,f,c
    553  00FE88  2A05               	incf	servoRotate0@i+1,f,c
-   554  00FE8A  5005               	movf	servoRotate0@i+1,w,c
-   555  00FE8C  E104               	bnz	u140
-   556  00FE8E  0E1E               	movlw	30
-   557  00FE90  5C04               	subwf	servoRotate0@i,w,c
+   554  00FE8A  0E2C               	movlw	44
+   555  00FE8C  5C04               	subwf	servoRotate0@i,w,c
+   556  00FE8E  0E01               	movlw	1
+   557  00FE90  5805               	subwfb	servoRotate0@i+1,w,c
    558  00FE92  A0D8               	btfss	status,0,c
    559  00FE94  D7E1               	goto	l24
    560  00FE96                     u140:
@@ -911,7 +911,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Tue Apr 09 00:03:06 2019
+Symbol Table                                                                                   Tue Apr 09 01:04:55 2019
 
                      l30 FEEC                       l24 FE58                       l42 FFCA  
                      l27 FEA8                       l36 FF32                       l39 FF84  

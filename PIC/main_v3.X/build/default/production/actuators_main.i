@@ -5420,12 +5420,12 @@ void servoRotate0(int servo){
         RD1 = 1;
 
 
-          _delay((unsigned long)((1000)*(10000000/4000000.0)));
+          _delay((unsigned long)((1250)*(10000000/4000000.0)));
 
         RD1 = 0;
 
 
-          _delay((unsigned long)((19000)*(10000000/4000000.0)));
+          _delay((unsigned long)((16950)*(10000000/4000000.0)));
         }
     }
     if (servo==3){
@@ -5464,12 +5464,14 @@ void servoRotate180(int servo)
     RD1 = 1;
 
 
-    _delay((unsigned long)((525)*(10000000/4000000.0)));
+
+    _delay((unsigned long)((950)*(10000000/4000000.0)));
 
     RD1 = 0;
 
 
-    _delay((unsigned long)((27075)*(10000000/4000000.0)));
+    _delay((unsigned long)((26650)*(10000000/4000000.0)));
+
           }
   }
     if (servo==3){
@@ -5504,19 +5506,19 @@ void servo()
     _delay((unsigned long)((400)*(10000000/4000.0)));
     servoRotate0(1);
 
-    servoRotate180(2);
-    servoRotate0(2);
-    servoRotate180(2);
+
+
+
 
     _delay((unsigned long)((50)*(10000000/4000.0)));
-        servoRotate0(3);
+    servoRotate180(3);
     servoRotate0(3);
     servoRotate180(3);
 
 
   }
 }
-# 303 "actuators_main.c"
+# 426 "actuators_main.c"
 void stepper(int stack, int t_dep){
     int count_stepper = 0;
 
@@ -5562,7 +5564,7 @@ void stepper(int stack, int t_dep){
 
             count_stepper++;
         }
-# 358 "actuators_main.c"
+# 481 "actuators_main.c"
         else{
 
 
@@ -5574,7 +5576,7 @@ void stepper(int stack, int t_dep){
 
 }
 void stepper2(char direction, int steps2_adj){
-# 386 "actuators_main.c"
+# 509 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5605,9 +5607,9 @@ void stepper2(char direction, int steps2_adj){
 
     }
 }
-# 453 "actuators_main.c"
+# 576 "actuators_main.c"
 void stepper2_back(char direction, int steps2_adj){
-# 471 "actuators_main.c"
+# 594 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5626,7 +5628,7 @@ void stepper2_back(char direction, int steps2_adj){
 
 
 }
-# 502 "actuators_main.c"
+# 625 "actuators_main.c"
 void full_drive (char direction, int stepper_no){
     if (stepper_no == 1){
         if (direction == 1){

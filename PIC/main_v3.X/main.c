@@ -413,9 +413,9 @@ void sense_tires(int sensed){
 
 }
 
-int number_deploy(int avg_dist, poles_detected){
+int number_deploy(int avg_dist, int poles_detected, int tires_detected){
     int tires_t=0;
-    int tires_detected=0;
+//    int tires_detected=0;
     int t_count = 0; 
     
 //	while (DC motors off){
@@ -434,21 +434,21 @@ int number_deploy(int avg_dist, poles_detected){
 			tires_t = 2;
 		}    
             
-		if ((a[0]>=2 && a[0] <= 15)){
-//            sensl_1 = true;  //lower sensor is high 
-            if ((a[1]>=2 && a[1] <= 15)){
-//                sensl_2 = true; // 
-                tires_detected = 1;
-            }
-            else{
-                tires_detected = 0;
-            }
-        }
-        if ((tires_detected==1)){
-            if((a[2]>=2 && a[2] <= 15)&&(a[3] >=2 && a[3]<= 15)){
-                tires_detected++;
-            }
-        }
+//		if ((a[0]>=2 && a[0] <= 15)){
+////            sensl_1 = true;  //lower sensor is high 
+//            if ((a[1]>=2 && a[1] <= 15)){
+////                sensl_2 = true; // 
+//                tires_detected = 1;
+//            }
+//            else{
+//                tires_detected = 0;
+//            }
+//        }
+//        if ((tires_detected==1)){
+//            if((a[2]>=2 && a[2] <= 15)&&(a[3] >=2 && a[3]<= 15)){
+//                tires_detected++;
+//            }
+//        }
 
         t_count = tires_t - tires_detected; //tires need to be deployed         
         Pole[poles_detected].tires_deployed = t_count; 
@@ -729,7 +729,8 @@ void main(){
     int poles_detected=0;
     int read=0;
     volatile long prev_avg_dist=0; 
-
+    volatile int data[3]; // Holds the data to be sent/received
+    unsigned int data_g; // Holds the data to be sent/received
     TRISAbits.RA4 = 0;    
     PORTAbits.RA4 = LATAbits.LATA4;
 
@@ -781,6 +782,21 @@ void main(){
                     if (PORTAbits.RA4){
 //                        brake();
                         //check i2c for timer 
+                        I2C_Master_RepeatedStart();
+                        I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
+                        data[0] = I2C_Master_Read(ACK); // Read one char only
+                        data[1] = I2C_Master_Read(ACK); // Read one char only
+                        data[2] = I2C_Master_Read(NACK); // Read one char only
+                        //            data[2] = I2C_Master_Read(NACK); // Read one char only
+                        data_g = data[0]; 
+                        data_g = (data_g<<8)||(data[1]); 
+                        data_g = (data_g<<8)||(data[2]); 
+                        I2C_Master_Stop();                       
+                        int t_det = data[1]; 
+                        if (data[2]==1){
+                            brake();
+                            break;
+                        }
                         lcd_clear(); 
                         printf("done wait");
                         arduino_stopped = true; 
@@ -791,9 +807,8 @@ void main(){
                         steps2_adj=ultrasonic_main();
                         lcd_clear(); 
                         printf("stepsadj %d", steps2_adj);
-                        t_count = number_deploy(avg_dist, poles_detected); 
+                        t_count = number_deploy(avg_dist, poles_detected,t_det); 
                         sens = 0;
-                        
                     }
             }
             int pole_cl_dist = (avg_dist)-(prev_avg_dist); //centerline to centerline distance 
@@ -808,7 +823,7 @@ void main(){
 //                    lcd_clear();
 //                    printf("bruh");
                     stack = 1;
-                                    brake();        
+                    brake();        
 
                     for(int i=0; i<(t_count); i++){
                         actuators_main(stack, steps2_adj, t_dep); 

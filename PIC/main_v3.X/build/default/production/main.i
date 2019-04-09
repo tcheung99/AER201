@@ -5935,7 +5935,8 @@ void main(){
     int poles_detected=0;
     int read=0;
     volatile long prev_avg_dist=0;
-
+    volatile int data[3];
+    unsigned int data_g;
     TRISAbits.RA4 = 0;
     PORTAbits.RA4 = LATAbits.LATA4;
 
@@ -5985,6 +5986,21 @@ void main(){
                         printf("more waiting");
                     }
                     if (PORTAbits.RA4){
+
+
+                        I2C_Master_RepeatedStart();
+                        I2C_Master_Write(0b00010001);
+                        data[0] = I2C_Master_Read(0);
+                        data[1] = I2C_Master_Read(0);
+                        data[2] = I2C_Master_Read(1);
+
+                        data_g = data[0];
+                        data_g = (data_g<<8)||(data[1]);
+                        data_g = (data_g<<8)||(data[2]);
+                        I2C_Master_Stop();
+
+
+
 
 
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};

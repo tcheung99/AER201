@@ -16,15 +16,15 @@ LCD_SHIFT_RIGHT 1
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
 "142
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"188
+"190
 [v _servo servo `(v  1 e 1 0 ]
-"303
+"426
 [v _stepper stepper `(v  1 e 1 0 ]
-"368
+"491
 [v _stepper2 stepper2 `(v  1 e 1 0 ]
-"453
+"576
 [v _stepper2_back stepper2_back `(v  1 e 1 0 ]
-"502
+"625
 [v _full_drive full_drive `(v  1 e 1 0 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
@@ -107,6 +107,8 @@ LCD_SHIFT_RIGHT 1
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 "55
 [v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"60
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
 "65
 [v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
 "70
@@ -357,7 +359,7 @@ LCD_SHIFT_RIGHT 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2268
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-[s S1088 . 1 `uc 1 RD 1 0 :1:0 
+[s S1094 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -367,11 +369,11 @@ LCD_SHIFT_RIGHT 1
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "2947
-[s S1097 . 1 `uc 1 . 1 0 :6:0 
+[s S1103 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S1100 . 1 `S1088 1 . 1 0 `S1097 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1100  1 e 1 @4006 ]
+[u S1106 . 1 `S1094 1 . 1 0 `S1103 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1106  1 e 1 @4006 ]
 "2992
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "2999
@@ -527,39 +529,45 @@ LCD_SHIFT_RIGHT 1
 "717
 [v _main main `(v  1 e 1 0 ]
 {
-"851
-[v main@k k `i  1 a 2 188 ]
-"821
-[v main@i_1075 i `i  1 a 2 180 ]
-"813
+"867
+[v main@k k `i  1 a 2 192 ]
+"837
+[v main@i_1081 i `i  1 a 2 180 ]
+"829
 [v main@i i `i  1 a 2 178 ]
-"847
-[v main@i_1081 i `i  1 a 2 194 ]
-"739
+"863
+[v main@i_1087 i `i  1 a 2 198 ]
+"815
+[v main@pole_cl_dist pole_cl_dist `i  1 a 2 96 ]
+"740
 [v main@Pole Pole `[10]S642  1 a 80 98 ]
+"732
+[v main@data data `VE[3]i  1 a 6 202 ]
 "731
-[v main@prev_avg_dist prev_avg_dist `VEl  1 a 4 198 ]
+[v main@prev_avg_dist prev_avg_dist `VEl  1 a 4 208 ]
 "729
-[v main@poles_detected poles_detected `i  1 a 2 196 ]
+[v main@poles_detected poles_detected `i  1 a 2 200 ]
 "719
-[v main@t_dep t_dep `i  1 a 2 192 ]
+[v main@t_dep t_dep `i  1 a 2 196 ]
 "720
-[v main@t_count t_count `i  1 a 2 190 ]
+[v main@t_count t_count `i  1 a 2 194 ]
 "723
-[v main@steps2_adj steps2_adj `i  1 a 2 186 ]
+[v main@steps2_adj steps2_adj `i  1 a 2 190 ]
+"733
+[v main@data_g data_g `ui  1 a 2 188 ]
 "718
-[v main@stack stack `i  1 a 2 184 ]
+[v main@stack stack `i  1 a 2 186 ]
+"738
+[v main@arduino_stopped arduino_stopped `a  1 a 1 185 ]
 "737
-[v main@arduino_stopped arduino_stopped `a  1 a 1 183 ]
-"736
-[v main@act_done act_done `a  1 a 1 182 ]
-"880
+[v main@act_done act_done `a  1 a 1 184 ]
+"896
 } 0
 "291
 [v _ultrasonic_main ultrasonic_main `(i  1 e 2 0 ]
 {
 "313
-[v ultrasonic_main@min_us_dist_967 min_us_dist `i  1 a 2 10 ]
+[v ultrasonic_main@min_us_dist_968 min_us_dist `i  1 a 2 10 ]
 "305
 [v ultrasonic_main@steps2_adj steps2_adj `i  1 a 2 8 ]
 "306
@@ -648,69 +656,69 @@ LCD_SHIFT_RIGHT 1
 {
 "97
 } 0
-"453
+"576
 [v _stepper2_back stepper2_back `(v  1 e 1 0 ]
 {
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
-"478
+"601
 [v stepper2_back@i i `i  1 a 2 6 ]
-"471
+"594
 [v stepper2_back@count_stepper count_stepper `i  1 a 2 4 ]
-"453
+"576
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
 [v stepper2_back@steps2_adj steps2_adj `i  1 p 2 0 ]
-"471
+"594
 [v stepper2_back@direction direction `uc  1 a 1 3 ]
-"488
+"611
 } 0
-"368
+"491
 [v _stepper2 stepper2 `(v  1 e 1 0 ]
 {
 [v stepper2@direction direction `uc  1 a 1 wreg ]
-"406
+"529
 [v stepper2@i_489 i `i  1 a 2 9 ]
-"394
+"517
 [v stepper2@i i `i  1 a 2 7 ]
-"386
+"509
 [v stepper2@count_stepper count_stepper `i  1 a 2 11 ]
-"368
+"491
 [v stepper2@direction direction `uc  1 a 1 wreg ]
 [v stepper2@steps2_adj steps2_adj `i  1 p 2 0 ]
-"386
+"509
 [v stepper2@direction direction `uc  1 a 1 13 ]
-"415
+"538
 } 0
-"303
+"426
 [v _stepper stepper `(v  1 e 1 0 ]
 {
-"338
+"461
 [v stepper@i_481 i `i  1 a 2 16 ]
-"331
+"454
 [v stepper@i_480 i `i  1 a 2 14 ]
-"322
+"445
 [v stepper@i_479 i `i  1 a 2 12 ]
-"315
+"438
 [v stepper@i i `i  1 a 2 10 ]
-"304
+"427
 [v stepper@count_stepper count_stepper `i  1 a 2 8 ]
-"303
+"426
 [v stepper@stack stack `i  1 p 2 0 ]
 [v stepper@t_dep t_dep `i  1 p 2 2 ]
-"367
+"490
 } 0
-"502
+"625
 [v _full_drive full_drive `(v  1 e 1 0 ]
 {
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@stepper_no stepper_no `i  1 p 2 123 ]
 [v full_drive@direction direction `uc  1 a 1 126 ]
-"651
+"774
 } 0
-"188
+"190
 [v _servo servo `(v  1 e 1 0 ]
 {
-"217
+"219
 } 0
 "142
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
@@ -719,7 +727,7 @@ LCD_SHIFT_RIGHT 1
 [v servoRotate180@i i `ui  1 a 2 3 ]
 "142
 [v servoRotate180@servo servo `i  1 p 2 0 ]
-"187
+"189
 } 0
 "98
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
@@ -761,9 +769,9 @@ LCD_SHIFT_RIGHT 1
 {
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 107 ]
-[s S1158 _IO_FILE 0 ]
+[s S1164 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S1158  1 p 2 101 ]
+[v vfprintf@fp fp `*.2S1164  1 p 2 101 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 103 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 105 ]
 "1382
@@ -779,9 +787,9 @@ LCD_SHIFT_RIGHT 1
 [v vfpfcnvrt@done done `i  1 a 2 97 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 96 ]
-[s S1158 _IO_FILE 0 ]
+[s S1164 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S1158  1 p 2 70 ]
+[v vfpfcnvrt@fp fp `*.2S1164  1 p 2 70 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 72 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 74 ]
 "1365
@@ -796,9 +804,9 @@ LCD_SHIFT_RIGHT 1
 [v xtoa@i i `i  1 a 2 66 ]
 [v xtoa@w w `i  1 a 2 56 ]
 [v xtoa@p p `i  1 a 2 54 ]
-[s S1158 _IO_FILE 0 ]
+[s S1164 _IO_FILE 0 ]
 "623
-[v xtoa@fp fp `*.2S1158  1 p 2 31 ]
+[v xtoa@fp fp `*.2S1164  1 p 2 31 ]
 [v xtoa@d d `uo  1 p 8 33 ]
 [v xtoa@x x `uc  1 p 1 41 ]
 "665
@@ -837,9 +845,9 @@ LCD_SHIFT_RIGHT 1
 [v dtoa@s s `i  1 a 2 55 ]
 [v dtoa@w w `i  1 a 2 53 ]
 [v dtoa@p p `i  1 a 2 51 ]
-[s S1158 _IO_FILE 0 ]
+[s S1164 _IO_FILE 0 ]
 "274
-[v dtoa@fp fp `*.2S1158  1 p 2 31 ]
+[v dtoa@fp fp `*.2S1164  1 p 2 31 ]
 [v dtoa@d d `o  1 p 8 33 ]
 "315
 } 0
@@ -849,9 +857,9 @@ LCD_SHIFT_RIGHT 1
 "74
 [v pad@w w `i  1 a 2 29 ]
 [v pad@i i `i  1 a 2 27 ]
-[s S1158 _IO_FILE 0 ]
+[s S1164 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1158  1 p 2 20 ]
+[v pad@fp fp `*.2S1164  1 p 2 20 ]
 [v pad@buf buf `*.39uc  1 p 2 22 ]
 [v pad@p p `i  1 p 2 24 ]
 "95
@@ -874,16 +882,16 @@ LCD_SHIFT_RIGHT 1
 [v fputs@c c `uc  1 a 1 17 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 13 ]
-[s S1750 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1750  1 p 2 15 ]
+[s S1756 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1756  1 p 2 15 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[s S1750 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1750  1 p 2 6 ]
+[s S1756 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1756  1 p 2 6 ]
 "21
 } 0
 "102 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\lcd.c
@@ -1031,11 +1039,6 @@ LCD_SHIFT_RIGHT 1
 [v I2C_Master_Read@ackBit ackBit `uc  1 a 1 1 ]
 "91
 } 0
-"21
-[v _I2C_Master_Wait I2C_Master_Wait `T(v  1 s 1 I2C_Master_Wait ]
-{
-"29
-} 0
 "32
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 {
@@ -1053,6 +1056,16 @@ LCD_SHIFT_RIGHT 1
 [v ___lldiv@dividend dividend `ul  1 p 4 0 ]
 [v ___lldiv@divisor divisor `ul  1 p 4 4 ]
 "30
+} 0
+"60 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\I2C.c
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
+{
+"63
+} 0
+"21
+[v _I2C_Master_Wait I2C_Master_Wait `T(v  1 s 1 I2C_Master_Wait ]
+{
+"29
 } 0
 "71 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
