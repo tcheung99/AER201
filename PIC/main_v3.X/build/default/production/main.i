@@ -5337,6 +5337,8 @@ _Bool send = 1;
 int tires_deployed;
 int poles_detected;
 
+int opTime=0;
+
 volatile long avg_dist;
 
 void start();
@@ -5373,7 +5375,7 @@ void __attribute__((picinterrupt(("")))) ISR(){
             INT1IF = 0;
         }
     }
-# 97 "main.c"
+# 99 "main.c"
 }
 
 void echo(){
@@ -5597,8 +5599,11 @@ int ultrasonic_main(){
         if (min_us_dist<14){
             step2_offset = 0;
         }
-        if (min_us_dist>=14){
+        if ((min_us_dist>=14)&&(min_us_dist<=26)){
         step2_offset = abs(min_us_dist - 14);
+        }
+        if (min_us_dist>26){
+            step2_offset = 10;
         }
         steps2_adj = 110 + step2_offset;
         sensed++;
@@ -5609,9 +5614,9 @@ int ultrasonic_main(){
             break;
             send = 0;
         }
-# 340 "main.c"
+# 345 "main.c"
     }
-# 375 "main.c"
+# 380 "main.c"
          { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
     printf("stepsadj %d", steps2_adj);
     _delay((unsigned long)((1000)*(10000000/4000.0)));
@@ -5634,12 +5639,12 @@ void sense_tires(int sensed){
 
                 }
             }
-# 414 "main.c"
+# 419 "main.c"
 }
 
-int number_deploy(int avg_dist, poles_detected){
+int number_deploy(int avg_dist, int poles_detected, int tires_detected){
     int tires_t=0;
-    int tires_detected=0;
+
     int t_count = 0;
 
 
@@ -5657,23 +5662,7 @@ int number_deploy(int avg_dist, poles_detected){
   if (poles_detected == 0){
    tires_t = 2;
   }
-
-  if ((a[0]>=2 && a[0] <= 15)){
-
-            if ((a[1]>=2 && a[1] <= 15)){
-
-                tires_detected = 1;
-            }
-            else{
-                tires_detected = 0;
-            }
-        }
-        if ((tires_detected==1)){
-            if((a[2]>=2 && a[2] <= 15)&&(a[3] >=2 && a[3]<= 15)){
-                tires_detected++;
-            }
-        }
-
+# 458 "main.c"
         t_count = tires_t - tires_detected;
         Pole[poles_detected].tires_deployed = t_count;
         Pole[poles_detected].tires_final = tires_t;
@@ -5691,7 +5680,7 @@ int number_deploy(int avg_dist, poles_detected){
     }
     return (int) t_count;
 }
-# 482 "main.c"
+# 487 "main.c"
 void UI_main(int t_dep, int poles_detected){
     sens = 0;
 
@@ -5735,7 +5724,7 @@ void UI_main(int t_dep, int poles_detected){
         printf("3 - Date&Time ");
         }
     while(sens==0){
-# 533 "main.c"
+# 538 "main.c"
         if (send){
         if(key_was_pressed){
 
@@ -5780,7 +5769,7 @@ void UI_main(int t_dep, int poles_detected){
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
                         printf("Op Time:");
                         { lcdInst(0x80 | LCD_LINE2_ADDR);};
-                        printf("%d", cnt);
+                        printf("%d", opTime);
                         { lcdInst(0x80 | LCD_LINE4_ADDR);};
                         printf("    0-Menu   #>");
                     }
@@ -5935,13 +5924,14 @@ void main(){
     int poles_detected=0;
     int read=0;
     volatile long prev_avg_dist=0;
-    volatile int data[3];
+    volatile int data[4];
     unsigned int data_g;
     TRISAbits.RA4 = 0;
     PORTAbits.RA4 = LATAbits.LATA4;
 
     _Bool act_done = 0;
     _Bool arduino_stopped = 0;
+    volatile int t_det = 0;
 
     Poles Pole[10];
 
@@ -5992,17 +5982,20 @@ void main(){
                         I2C_Master_Write(0b00010001);
                         data[0] = I2C_Master_Read(0);
                         data[1] = I2C_Master_Read(0);
-                        data[2] = I2C_Master_Read(1);
+                        data[2] = I2C_Master_Read(0);
+                        data[3] = I2C_Master_Read(1);
 
                         data_g = data[0];
                         data_g = (data_g<<8)||(data[1]);
                         data_g = (data_g<<8)||(data[2]);
+                        data_g = (data_g<<8)||(data[3]);
                         I2C_Master_Stop();
-
-
-
-
-
+                        t_det = data[1];
+                        opTime = data[3];
+                        if (data[2]==1){
+                            brake();
+                            break;
+                        }
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
                         printf("done wait");
                         arduino_stopped = 1;
@@ -6013,9 +6006,8 @@ void main(){
                         steps2_adj=ultrasonic_main();
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
                         printf("stepsadj %d", steps2_adj);
-                        t_count = number_deploy(avg_dist, poles_detected);
+                        t_count = number_deploy(avg_dist, poles_detected,t_det);
                         sens = 0;
-
                     }
             }
             int pole_cl_dist = (avg_dist)-(prev_avg_dist);
@@ -6030,7 +6022,7 @@ void main(){
 
 
                     stack = 1;
-                                    brake();
+                    brake();
 
                     for(int i=0; i<(t_count); i++){
                         actuators_main(stack, steps2_adj, t_dep);
@@ -6052,11 +6044,22 @@ void main(){
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
 
+
+
+
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
             { lcdInst(0x80 | LCD_LINE2_ADDR);};
             printf("p[%d] fs : %d",poles_detected, Pole[poles_detected].dist_from_start);
-            _delay((unsigned long)((3000)*(10000000/4000.0)));
+            { lcdInst(0x80 | LCD_LINE3_ADDR);};
+            printf("p[%d],tdep : %d",poles_detected, Pole[poles_detected].tires_deployed);
+            { lcdInst(0x80 | LCD_LINE4_ADDR);};
+            printf("p[%d] tcnt : %d",poles_detected, Pole[poles_detected].tires_final);
+
+
+            _delay((unsigned long)((2000)*(10000000/4000.0)));
+
+
 
             prev_avg_dist = avg_dist ;
             poles_detected++;

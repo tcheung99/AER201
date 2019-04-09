@@ -1,5 +1,4 @@
-              /*
- * File:   main.c
+/* File:   main.c
  * Author: TrudieC
  *
  * Created on March 8, 2019, 12:39 AM

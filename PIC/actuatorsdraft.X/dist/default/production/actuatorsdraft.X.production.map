@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\actuatorsdraft.X.production.sym \
   --cmf=dist/default/production\actuatorsdraft.X.production.cmf -z \
-  -Q18F4620 -oC:\Users\trudi\AppData\Local\Temp\si5o.2 \
+  -Q18F4620 -oC:\Users\trudi\AppData\Local\Temp\s9hg.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/actuatorsdraft.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0ABh-0F7Fh -pstack=STACK -ACODE=00h-0FFFFh \
@@ -27,7 +27,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\trudi\AppData\Local\Temp\si5o.o \
+  C:\Users\trudi\AppData\Local\Temp\s9hg.o \
   dist/default/production\actuatorsdraft.X.production.o 
 
 Object code version is 3.11
@@ -40,7 +40,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\trudi\AppData\Local\Temp\si5o.o
+C:\Users\trudi\AppData\Local\Temp\s9hg.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -701,7 +701,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 92 in file "main.c"
+		line 91 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -737,7 +737,7 @@ Total ram usage:        2 bytes
 
  *************** function _system_init *****************
  Defined at:
-		line 133 in file "main.c"
+		line 132 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -766,7 +766,7 @@ Total ram usage:        0 bytes
 
  *************** function _stepper2_back *****************
  Defined at:
-		line 544 in file "main.c"
+		line 543 in file "main.c"
  Parameters:    Size  Location     Type
   direction       1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -800,7 +800,7 @@ Total ram usage:        6 bytes
 
  *************** function _stepper2 *****************
  Defined at:
-		line 497 in file "main.c"
+		line 496 in file "main.c"
  Parameters:    Size  Location     Type
   direction       1    wreg     unsigned char 
   steps2_adj      2   99[COMRAM] int 
@@ -836,7 +836,7 @@ Total ram usage:       14 bytes
 
  *************** function _stepper *****************
  Defined at:
-		line 459 in file "main.c"
+		line 458 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1291,7 +1291,7 @@ Total ram usage:       26 bytes
 
  *************** function _full_drive *****************
  Defined at:
-		line 593 in file "main.c"
+		line 592 in file "main.c"
  Parameters:    Size  Location     Type
   direction       1    wreg     unsigned char 
   stepper_no      2    0[COMRAM] int 
@@ -1323,7 +1323,7 @@ Total ram usage:        4 bytes
 
  *************** function _servo *****************
  Defined at:
-		line 433 in file "main.c"
+		line 432 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1354,7 +1354,7 @@ Total ram usage:        2 bytes
 
  *************** function _servoRotate180 *****************
  Defined at:
-		line 387 in file "main.c"
+		line 386 in file "main.c"
  Parameters:    Size  Location     Type
   servo           2    0[COMRAM] int 
  Auto vars:     Size  Location     Type
@@ -1383,7 +1383,7 @@ Total ram usage:        5 bytes
 
  *************** function _servoRotate0 *****************
  Defined at:
-		line 343 in file "main.c"
+		line 342 in file "main.c"
  Parameters:    Size  Location     Type
   servo           2    0[COMRAM] int 
  Auto vars:     Size  Location     Type

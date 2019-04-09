@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 12 "main.c"
+# 11 "main.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4380,7 +4380,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 12 "main.c" 2
+# 11 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
@@ -4518,10 +4518,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "main.c" 2
+# 12 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 14 "main.c" 2
+# 13 "main.c" 2
 
 # 1 "./configBits.h" 1
 # 14 "./configBits.h"
@@ -4578,7 +4578,7 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config EBTRB = OFF
-# 15 "main.c" 2
+# 14 "main.c" 2
 
 # 1 "./lcd.h" 1
 # 68 "./lcd.h"
@@ -4624,7 +4624,7 @@ void lcd_shift_cursor(unsigned char numChars, lcd_direction_e direction);
 void lcd_shift_display(unsigned char numChars, lcd_direction_e direction);
 # 118 "./lcd.h"
 void putch(char data);
-# 16 "main.c" 2
+# 15 "main.c" 2
 
 # 1 "./RTC.h" 1
 # 15 "./RTC.h"
@@ -4694,7 +4694,7 @@ void initTime(unsigned char s, unsigned char m, unsigned char h,unsigned char w,
 void loadRTC();
 void getRTC(void);
 void printRTC(void);
-# 17 "main.c" 2
+# 16 "main.c" 2
 
 # 1 "./I2C.h" 1
 # 38 "./I2C.h"
@@ -4722,7 +4722,7 @@ void I2C_Master_Stop(void);
 void I2C_Master_Write(unsigned byteToWrite);
 # 68 "./I2C.h"
 unsigned char I2C_Master_Read(unsigned char ackBit);
-# 18 "main.c" 2
+# 17 "main.c" 2
 
 # 1 "./timer.h" 1
 
@@ -4835,7 +4835,7 @@ typedef uint32_t uint_fast32_t;
 
 void TIMER_INIT( void );
 void timer_main( void );
-# 19 "main.c" 2
+# 18 "main.c" 2
 
 
 
@@ -5312,8 +5312,8 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 22 "main.c" 2
-# 53 "main.c"
+# 21 "main.c" 2
+# 52 "main.c"
 int act_cnt = 0;
 
 
@@ -5330,7 +5330,7 @@ void stepper2_back(char direction);
 void servo(void);
 void servoRotate0(int servo);
 void servoRotate180(int servo);
-# 92 "main.c"
+# 91 "main.c"
 void main(){
     system_init();
     initLCD();
@@ -5391,7 +5391,7 @@ void system_init (void){
     LATE = 0x00;
 
 }
-# 343 "main.c"
+# 342 "main.c"
 void servoRotate0(int servo){
     unsigned int i;
     if (servo==1){
@@ -5526,7 +5526,7 @@ void stepper(void){
             printf("cnt is %d", count_stepper);
             count_stepper++;
         }
-# 487 "main.c"
+# 486 "main.c"
         else{
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("steps done");
@@ -5570,9 +5570,9 @@ void stepper2(char direction, int steps2_adj){
 
     }
 }
-# 544 "main.c"
+# 543 "main.c"
 void stepper2_back(char direction){
-# 562 "main.c"
+# 561 "main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5591,7 +5591,7 @@ void stepper2_back(char direction){
 
 
 }
-# 593 "main.c"
+# 592 "main.c"
 void full_drive (char direction, int stepper_no){
     if (stepper_no == 1){
         if (direction == 1){

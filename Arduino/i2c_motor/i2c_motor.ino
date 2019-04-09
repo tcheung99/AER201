@@ -75,7 +75,7 @@ volatile int speed2;
 volatile bool forward = true; 
 volatile int stopp=0; 
 volatile int time_up=0; 
-
+volatile int opTime=0;
 bool sense = false;
 
 long dist_total = 0; 
@@ -90,7 +90,8 @@ volatile bool action = false ;
 volatile bool delaygo = false ; 
 volatile bool send_to_pic = false;
 //volatile uint8_t incomingByte; //unsigned integer of length 8 bits (1 byte) 
-volatile uint8_t incomingByte[3]; //unsigned integer of length 8 bits (1 byte) 
+//volatile uint8_t incomingByte[3]; //unsigned integer of length 8 bits (1 byte) 
+volatile uint8_t incomingByte[4]; //unsigned integer of length 8 bits (1 byte) 
 volatile uint8_t prev_incomingByte;
 
 long loop_cnt=0;
@@ -223,6 +224,7 @@ sensorState2 = digitalRead(SENSORPIN2);
   long curr_opTime = currTime - startTime;  
   
   if ((curr_opTime/1000)>=180){
+    int opTime = curr_opTime;
     brake();
     Serial.print("NO TIMEEE");
     time_up = 1; 
@@ -235,9 +237,10 @@ void requestEvent(void){
   incomingByte[0] = avg_dist;
   incomingByte[1] = tire_detected;
   incomingByte[2] = time_up;
+  incomingByte[3] = opTime;
 
   digitalWrite(A2, LOW);
-  for (int i=0;i<3;i++){
+  for (int i=0;i<4;i++){
     Wire.write(incomingByte[i]); // Respond with message of 1 byte
     incomingByte[i] = 0; // Clear output buffer
   }

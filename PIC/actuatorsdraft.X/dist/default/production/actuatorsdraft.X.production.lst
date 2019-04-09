@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Mon Apr 08 05:51:06 2019
+                                                                                               Tue Apr 09 06:40:11 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	18F4620
@@ -625,7 +625,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    611 ;;
    612 ;; *************** function _main *****************
    613 ;; Defined at:
-   614 ;;		line 92 in file "main.c"
+   614 ;;		line 91 in file "main.c"
    615 ;; Parameters:    Size  Location     Type
    616 ;;		None
    617 ;; Auto vars:     Size  Location     Type
@@ -670,15 +670,15 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    651  001A68                     _main:
    652                           	opt callstack 19
    653                           
-   654                           ;main.c: 93:     system_init();
+   654                           ;main.c: 92:     system_init();
    655                           
    656                           ;incstack = 0
    657  001A68  ECA2  F010         	call	_system_init	;wreg free
    658                           
-   659                           ;main.c: 94:     initLCD();
+   659                           ;main.c: 93:     initLCD();
    660  001A6C  EC0F  F010         	call	_initLCD	;wreg free
    661                           
-   662                           ;main.c: 98:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+   662                           ;main.c: 97:     { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
    663  001A70  0E01               	movlw	1
    664  001A72  EC23  F011         	call	_lcdInst
    665  001A76  0E11               	movlw	17
@@ -691,7 +691,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    672  001A82  D7FC               	bra	u1597
    673  001A84  D000               	nop2	
    674                           
-   675                           ;main.c: 99:     printf("cnt is %d",act_cnt);
+   675                           ;main.c: 98:     printf("cnt is %d",act_cnt);
    676  001A86  0E46               	movlw	low STR_1
    677  001A88  6E5C               	movwf	printf@fmt,c
    678  001A8A  0E10               	movlw	high STR_1
@@ -700,7 +700,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    681  001A92  C07F  F05F         	movff	_act_cnt+1,?_printf+3
    682  001A96  ECF6  F010         	call	_printf	;wreg free
    683                           
-   684                           ;main.c: 100:     _delay((unsigned long)((200)*(10000000/4000.0)));
+   684                           ;main.c: 99:     _delay((unsigned long)((200)*(10000000/4000.0)));
    685  001A9A  0E03               	movlw	3
    686  001A9C  6E73               	movwf	(??_main+1)& (0+255),c
    687  001A9E  0E8A               	movlw	138
@@ -714,13 +714,13 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    695  001AAC  2E73               	decfsz	(??_main+1)& (0+255),f,c
    696  001AAE  D7FA               	bra	u1607
    697                           
-   698                           ;main.c: 102:     if (act_cnt==0){
+   698                           ;main.c: 101:     if (act_cnt==0){
    699  001AB0  507E               	movf	_act_cnt,w,c
    700  001AB2  107F               	iorwf	_act_cnt+1,w,c
    701  001AB4  A4D8               	btfss	status,2,c
    702  001AB6  EF00  F000         	goto	start
    703                           
-   704                           ;main.c: 103:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+   704                           ;main.c: 102:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
    705  001ABA  0E01               	movlw	1
    706  001ABC  EC23  F011         	call	_lcdInst
    707  001AC0  0E11               	movlw	17
@@ -733,23 +733,23 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    714  001ACC  D7FC               	bra	u1617
    715  001ACE  D000               	nop2	
    716                           
-   717                           ;main.c: 104:         printf("Stepper start");
+   717                           ;main.c: 103:         printf("Stepper start");
    718  001AD0  0E15               	movlw	low STR_2
    719  001AD2  6E5C               	movwf	printf@fmt,c
    720  001AD4  0E10               	movlw	high STR_2
    721  001AD6  6E5D               	movwf	printf@fmt+1,c
    722  001AD8  ECF6  F010         	call	_printf	;wreg free
    723                           
-   724                           ;main.c: 106:         stepper();
+   724                           ;main.c: 105:         stepper();
    725  001ADC  EC93  F00E         	call	_stepper	;wreg free
    726                           
-   727                           ;main.c: 107:         steps2_adj = 110 + 2;
+   727                           ;main.c: 106:         steps2_adj = 110 + 2;
    728  001AE0  0E00               	movlw	0
    729  001AE2  6E7D               	movwf	_steps2_adj+1,c
    730  001AE4  0E70               	movlw	112
    731  001AE6  6E7C               	movwf	_steps2_adj,c
    732                           
-   733                           ;main.c: 108:         stepper2(0, steps2_adj);
+   733                           ;main.c: 107:         stepper2(0, steps2_adj);
    734  001AE8  0E00               	movlw	0
    735  001AEA  6E65               	movwf	stepper2@steps2_adj+1,c
    736  001AEC  0E70               	movlw	112
@@ -757,11 +757,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    738  001AF0  0E00               	movlw	0
    739  001AF2  ECAF  F00C         	call	_stepper2
    740                           
-   741                           ;main.c: 109:         stepper2_back(1);
+   741                           ;main.c: 108:         stepper2_back(1);
    742  001AF6  0E01               	movlw	1
    743  001AF8  EC94  F00F         	call	_stepper2_back
    744                           
-   745                           ;main.c: 111:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+   745                           ;main.c: 110:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
    746  001AFC  0E01               	movlw	1
    747  001AFE  EC23  F011         	call	_lcdInst
    748  001B02  0E11               	movlw	17
@@ -774,17 +774,17 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    755  001B0E  D7FC               	bra	u1627
    756  001B10  D000               	nop2	
    757                           
-   758                           ;main.c: 112:         printf("Stepper done");
+   758                           ;main.c: 111:         printf("Stepper done");
    759  001B12  0E23               	movlw	low STR_3
    760  001B14  6E5C               	movwf	printf@fmt,c
    761  001B16  0E10               	movlw	high STR_3
    762  001B18  6E5D               	movwf	printf@fmt+1,c
    763  001B1A  ECF6  F010         	call	_printf	;wreg free
    764                           
-   765                           ;main.c: 114:         servo();
+   765                           ;main.c: 113:         servo();
    766  001B1E  ECFD  F00E         	call	_servo	;wreg free
    767                           
-   768                           ;main.c: 116:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+   768                           ;main.c: 115:         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
    769  001B22  0E01               	movlw	1
    770  001B24  EC23  F011         	call	_lcdInst
    771  001B28  0E11               	movlw	17
@@ -797,14 +797,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    778  001B34  D7FC               	bra	u1637
    779  001B36  D000               	nop2	
    780                           
-   781                           ;main.c: 117:         printf("Servo done");
+   781                           ;main.c: 116:         printf("Servo done");
    782  001B38  0E30               	movlw	low STR_4
    783  001B3A  6E5C               	movwf	printf@fmt,c
    784  001B3C  0E10               	movlw	high STR_4
    785  001B3E  6E5D               	movwf	printf@fmt+1,c
    786  001B40  ECF6  F010         	call	_printf	;wreg free
    787                           
-   788                           ;main.c: 121:         _delay((unsigned long)((200)*(10000000/4000.0)));
+   788                           ;main.c: 120:         _delay((unsigned long)((200)*(10000000/4000.0)));
    789  001B44  0E03               	movlw	3
    790  001B46  6E73               	movwf	(??_main+1)& (0+255),c
    791  001B48  0E8A               	movlw	138
@@ -818,7 +818,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    799  001B56  2E73               	decfsz	(??_main+1)& (0+255),f,c
    800  001B58  D7FA               	bra	u1647
    801                           
-   802                           ;main.c: 123:         stepper2(1, steps2_adj);
+   802                           ;main.c: 122:         stepper2(1, steps2_adj);
    803  001B5A  0E00               	movlw	0
    804  001B5C  6E65               	movwf	stepper2@steps2_adj+1,c
    805  001B5E  0E70               	movlw	112
@@ -826,7 +826,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    807  001B62  0E01               	movlw	1
    808  001B64  ECAF  F00C         	call	_stepper2
    809                           
-   810                           ;main.c: 124:         act_cnt++;
+   810                           ;main.c: 123:         act_cnt++;
    811  001B68  4A7E               	infsnz	_act_cnt,f,c
    812  001B6A  2A7F               	incf	_act_cnt+1,f,c
    813  001B6C  EF00  F000         	goto	start
@@ -835,7 +835,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    816                           
    817 ;; *************** function _system_init *****************
    818 ;; Defined at:
-   819 ;;		line 133 in file "main.c"
+   819 ;;		line 132 in file "main.c"
    820 ;; Parameters:    Size  Location     Type
    821 ;;		None
    822 ;; Auto vars:     Size  Location     Type
@@ -873,49 +873,49 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    849  002144                     _system_init:
    850                           	opt callstack 30
    851                           
-   852                           ;main.c: 134:     TRISB = 0x00;
+   852                           ;main.c: 133:     TRISB = 0x00;
    853                           
    854                           ;incstack = 0
    855  002144  0E00               	movlw	0
    856  002146  6E93               	movwf	3987,c	;volatile
    857                           
-   858                           ;main.c: 136:     LATB = 0x0F;
+   858                           ;main.c: 135:     LATB = 0x0F;
    859  002148  0E0F               	movlw	15
    860  00214A  6E8A               	movwf	3978,c	;volatile
    861                           
-   862                           ;main.c: 137:     TRISA = 0x00;
+   862                           ;main.c: 136:     TRISA = 0x00;
    863  00214C  0E00               	movlw	0
    864  00214E  6E92               	movwf	3986,c	;volatile
    865                           
-   866                           ;main.c: 138:     LATA = 0x00;
+   866                           ;main.c: 137:     LATA = 0x00;
    867  002150  0E00               	movlw	0
    868  002152  6E89               	movwf	3977,c	;volatile
    869                           
-   870                           ;main.c: 141:     LATD = 0x00;
+   870                           ;main.c: 140:     LATD = 0x00;
    871  002154  0E00               	movlw	0
    872  002156  6E8C               	movwf	3980,c	;volatile
    873                           
-   874                           ;main.c: 142:     TRISD = 0x00;
+   874                           ;main.c: 141:     TRISD = 0x00;
    875  002158  0E00               	movlw	0
    876  00215A  6E95               	movwf	3989,c	;volatile
    877                           
-   878                           ;main.c: 144:     ADCON1 = 0b00001111;
+   878                           ;main.c: 143:     ADCON1 = 0b00001111;
    879  00215C  0E0F               	movlw	15
    880  00215E  6EC1               	movwf	4033,c	;volatile
    881                           
-   882                           ;main.c: 146:     TRISC = 0x00;
+   882                           ;main.c: 145:     TRISC = 0x00;
    883  002160  0E00               	movlw	0
    884  002162  6E94               	movwf	3988,c	;volatile
    885                           
-   886                           ;main.c: 147:     LATC = 0x00;
+   886                           ;main.c: 146:     LATC = 0x00;
    887  002164  0E00               	movlw	0
    888  002166  6E8B               	movwf	3979,c	;volatile
    889                           
-   890                           ;main.c: 148:     TRISE = 0x00;
+   890                           ;main.c: 147:     TRISE = 0x00;
    891  002168  0E00               	movlw	0
    892  00216A  6E96               	movwf	3990,c	;volatile
    893                           
-   894                           ;main.c: 149:     LATE = 0x00;
+   894                           ;main.c: 148:     LATE = 0x00;
    895  00216C  0E00               	movlw	0
    896  00216E  6E8D               	movwf	3981,c	;volatile
    897  002170  0012               	return		;funcret
@@ -924,7 +924,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    900                           
    901 ;; *************** function _stepper2_back *****************
    902 ;; Defined at:
-   903 ;;		line 544 in file "main.c"
+   903 ;;		line 543 in file "main.c"
    904 ;; Parameters:    Size  Location     Type
    905 ;;  direction       1    wreg     unsigned char 
    906 ;; Auto vars:     Size  Location     Type
@@ -971,16 +971,16 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    942                           ;stepper2_back@direction stored from wreg
    943  001F28  6E65               	movwf	stepper2_back@direction,c
    944                           
-   945                           ;main.c: 562:     int count_stepper = 0;
+   945                           ;main.c: 561:     int count_stepper = 0;
    946  001F2A  0E00               	movlw	0
    947  001F2C  6E67               	movwf	stepper2_back@count_stepper+1,c
    948  001F2E  0E00               	movlw	0
    949  001F30  6E66               	movwf	stepper2_back@count_stepper,c
    950                           
-   951                           ;main.c: 565:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
+   951                           ;main.c: 564:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
       +                          );};
    952                           
-   953                           ;main.c: 564:         if (count_stepper<1){
+   953                           ;main.c: 563:         if (count_stepper<1){
    954  001F32  0E01               	movlw	1
    955  001F34  EC23  F011         	call	_lcdInst
    956  001F38  0E11               	movlw	17
@@ -993,7 +993,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    963  001F44  D7FC               	bra	u1657
    964  001F46  D000               	nop2	
    965                           
-   966                           ;main.c: 566:             printf("step1");
+   966                           ;main.c: 565:             printf("step1");
    967  001F48  0E50               	movlw	low STR_5
    968  001F4A  6E5C               	movwf	printf@fmt,c
    969  001F4C  0E10               	movlw	high STR_5
@@ -1002,7 +1002,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    972  001F54  0EC0               	movlw	192
    973  001F56  EC23  F011         	call	_lcdInst
    974                           
-   975                           ;main.c: 568:             printf("Step speed %d",4);
+   975                           ;main.c: 567:             printf("Step speed %d",4);
    976  001F5A  0E07               	movlw	low STR_6
    977  001F5C  6E5C               	movwf	printf@fmt,c
    978  001F5E  0E10               	movlw	high STR_6
@@ -1013,14 +1013,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    983  001F68  6E5E               	movwf	?_printf+2,c
    984  001F6A  ECF6  F010         	call	_printf	;wreg free
    985                           
-   986                           ;main.c: 569:             for(int i=0;i<5;i++){
+   986                           ;main.c: 568:             for(int i=0;i<5;i++){
    987  001F6E  0E00               	movlw	0
    988  001F70  6E69               	movwf	stepper2_back@i+1,c
    989  001F72  0E00               	movlw	0
    990  001F74  6E68               	movwf	stepper2_back@i,c
    991  001F76                     l2584:
    992                           
-   993                           ;main.c: 571:                 full_drive(direction, 2);
+   993                           ;main.c: 570:                 full_drive(direction, 2);
    994  001F76  0E00               	movlw	0
    995  001F78  6E02               	movwf	full_drive@stepper_no+1,c
    996  001F7A  0E02               	movlw	2
@@ -1028,7 +1028,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    998  001F7E  5065               	movf	stepper2_back@direction,w,c
    999  001F80  EC2C  F008         	call	_full_drive
   1000                           
-  1001                           ;main.c: 573:             }
+  1001                           ;main.c: 572:             }
   1002  001F84  4A68               	infsnz	stepper2_back@i,f,c
   1003  001F86  2A69               	incf	stepper2_back@i+1,f,c
   1004  001F88  BE69               	btfsc	stepper2_back@i+1,7,c
@@ -1041,7 +1041,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1011  001F96  D7EF               	goto	l2584
   1012  001F98                     u1550:
   1013                           
-  1014                           ;main.c: 574:             printf("cnt is %d", count_stepper);
+  1014                           ;main.c: 573:             printf("cnt is %d", count_stepper);
   1015  001F98  0E46               	movlw	low STR_1
   1016  001F9A  6E5C               	movwf	printf@fmt,c
   1017  001F9C  0E10               	movlw	high STR_1
@@ -1050,7 +1050,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1020  001FA4  C067  F05F         	movff	stepper2_back@count_stepper+1,?_printf+3
   1021  001FA8  ECF6  F010         	call	_printf	;wreg free
   1022                           
-  1023                           ;main.c: 575:             count_stepper++;
+  1023                           ;main.c: 574:             count_stepper++;
   1024  001FAC  4A66               	infsnz	stepper2_back@count_stepper,f,c
   1025  001FAE  2A67               	incf	stepper2_back@count_stepper+1,f,c
   1026  001FB0  0012               	return		;funcret
@@ -1059,7 +1059,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1029                           
   1030 ;; *************** function _stepper2 *****************
   1031 ;; Defined at:
-  1032 ;;		line 497 in file "main.c"
+  1032 ;;		line 496 in file "main.c"
   1033 ;; Parameters:    Size  Location     Type
   1034 ;;  direction       1    wreg     unsigned char 
   1035 ;;  steps2_adj      2   99[COMRAM] int 
@@ -1108,14 +1108,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1073                           ;stepper2@direction stored from wreg
   1074  00195E  6E71               	movwf	stepper2@direction,c
   1075                           
-  1076                           ;main.c: 498:     int count_stepper = 0;
+  1076                           ;main.c: 497:     int count_stepper = 0;
   1077  001960  0E00               	movlw	0
   1078  001962  6E70               	movwf	stepper2@count_stepper+1,c
   1079  001964  0E00               	movlw	0
   1080  001966  6E6F               	movwf	stepper2@count_stepper,c
   1081  001968                     l2524:
   1082                           
-  1083                           ;main.c: 500:         if (count_stepper<1){
+  1083                           ;main.c: 499:         if (count_stepper<1){
   1084  001968  BE70               	btfsc	stepper2@count_stepper+1,7,c
   1085  00196A  D005               	goto	u1500
   1086  00196C  5070               	movf	stepper2@count_stepper+1,w,c
@@ -1126,7 +1126,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1091  001974  0012               	return	
   1092  001976                     u1500:
   1093                           
-  1094                           ;main.c: 501:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
+  1094                           ;main.c: 500:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
       +                          );};
   1095  001976  0E01               	movlw	1
   1096  001978  EC23  F011         	call	_lcdInst
@@ -1140,7 +1140,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1104  001988  D7FC               	bra	u1667
   1105  00198A  D000               	nop2	
   1106                           
-  1107                           ;main.c: 502:             printf("step1");
+  1107                           ;main.c: 501:             printf("step1");
   1108  00198C  0E50               	movlw	low STR_5
   1109  00198E  6E5C               	movwf	printf@fmt,c
   1110  001990  0E10               	movlw	high STR_5
@@ -1149,7 +1149,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1113  001998  0EC0               	movlw	192
   1114  00199A  EC23  F011         	call	_lcdInst
   1115                           
-  1116                           ;main.c: 504:             printf("Step speed %d",4);
+  1116                           ;main.c: 503:             printf("Step speed %d",4);
   1117  00199E  0E07               	movlw	low STR_6
   1118  0019A0  6E5C               	movwf	printf@fmt,c
   1119  0019A2  0E10               	movlw	high STR_6
@@ -1160,12 +1160,12 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1124  0019AC  6E5E               	movwf	?_printf+2,c
   1125  0019AE  ECF6  F010         	call	_printf	;wreg free
   1126                           
-  1127                           ;main.c: 505:             if (direction == 0){
+  1127                           ;main.c: 504:             if (direction == 0){
   1128  0019B2  5071               	movf	stepper2@direction,w,c
   1129  0019B4  A4D8               	btfss	status,2,c
   1130  0019B6  D024               	goto	l2550
   1131                           
-  1132                           ;main.c: 506:                 for(int i=0;i<steps2_adj;i++){
+  1132                           ;main.c: 505:                 for(int i=0;i<steps2_adj;i++){
   1133  0019B8  0E00               	movlw	0
   1134  0019BA  6E6C               	movwf	stepper2@i+1,c
   1135  0019BC  0E00               	movlw	0
@@ -1173,7 +1173,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1137  0019C0  D009               	goto	l2544
   1138  0019C2                     l2540:
   1139                           
-  1140                           ;main.c: 508:                 full_drive(direction, 2);
+  1140                           ;main.c: 507:                 full_drive(direction, 2);
   1141  0019C2  0E00               	movlw	0
   1142  0019C4  6E02               	movwf	full_drive@stepper_no+1,c
   1143  0019C6  0E02               	movlw	2
@@ -1181,7 +1181,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1145  0019CA  5071               	movf	stepper2@direction,w,c
   1146  0019CC  EC2C  F008         	call	_full_drive
   1147                           
-  1148                           ;main.c: 510:             }
+  1148                           ;main.c: 509:             }
   1149  0019D0  4A6B               	infsnz	stepper2@i,f,c
   1150  0019D2  2A6C               	incf	stepper2@i+1,f,c
   1151  0019D4                     l2544:
@@ -1196,7 +1196,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1160  0019E4  A0D8               	btfss	status,0,c
   1161  0019E6  D7ED               	goto	l2540
   1162                           
-  1163                           ;main.c: 511:             printf("cnt is %d", count_stepper);
+  1163                           ;main.c: 510:             printf("cnt is %d", count_stepper);
   1164  0019E8  0E46               	movlw	low STR_1
   1165  0019EA  6E5C               	movwf	printf@fmt,c
   1166  0019EC  0E10               	movlw	high STR_1
@@ -1205,17 +1205,17 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1169  0019F4  C070  F05F         	movff	stepper2@count_stepper+1,?_printf+3
   1170  0019F8  ECF6  F010         	call	_printf	;wreg free
   1171                           
-  1172                           ;main.c: 512:             count_stepper++;
+  1172                           ;main.c: 511:             count_stepper++;
   1173  0019FC  4A6F               	infsnz	stepper2@count_stepper,f,c
   1174  0019FE  2A70               	incf	stepper2@count_stepper+1,f,c
   1175  001A00                     l2550:
   1176                           
-  1177                           ;main.c: 514:             if (direction == 1){
+  1177                           ;main.c: 513:             if (direction == 1){
   1178  001A00  0471               	decf	stepper2@direction,w,c
   1179  001A02  A4D8               	btfss	status,2,c
   1180  001A04  D7B1               	goto	l2524
   1181                           
-  1182                           ;main.c: 515:                 for(int i=0;i<steps2_adj-(5);i++){
+  1182                           ;main.c: 514:                 for(int i=0;i<steps2_adj-(5);i++){
   1183  001A06  0E00               	movlw	0
   1184  001A08  6E6E               	movwf	stepper2@i_229+1,c
   1185  001A0A  0E00               	movlw	0
@@ -1223,7 +1223,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1187  001A0E  D009               	goto	l2558
   1188  001A10                     l2554:
   1189                           
-  1190                           ;main.c: 517:                     full_drive(direction, 2);
+  1190                           ;main.c: 516:                     full_drive(direction, 2);
   1191  001A10  0E00               	movlw	0
   1192  001A12  6E02               	movwf	full_drive@stepper_no+1,c
   1193  001A14  0E02               	movlw	2
@@ -1231,7 +1231,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1195  001A18  5071               	movf	stepper2@direction,w,c
   1196  001A1A  EC2C  F008         	call	_full_drive
   1197                           
-  1198                           ;main.c: 519:                 }
+  1198                           ;main.c: 518:                 }
   1199  001A1E  4A6D               	infsnz	stepper2@i_229,f,c
   1200  001A20  2A6E               	incf	stepper2@i_229+1,f,c
   1201  001A22                     l2558:
@@ -1256,7 +1256,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1220  001A4A  A0D8               	btfss	status,0,c
   1221  001A4C  D7E1               	goto	l2554
   1222                           
-  1223                           ;main.c: 520:                 printf("cnt is %d", count_stepper);
+  1223                           ;main.c: 519:                 printf("cnt is %d", count_stepper);
   1224  001A4E  0E46               	movlw	low STR_1
   1225  001A50  6E5C               	movwf	printf@fmt,c
   1226  001A52  0E10               	movlw	high STR_1
@@ -1265,7 +1265,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1229  001A5A  C070  F05F         	movff	stepper2@count_stepper+1,?_printf+3
   1230  001A5E  ECF6  F010         	call	_printf	;wreg free
   1231                           
-  1232                           ;main.c: 521:                 count_stepper++;
+  1232                           ;main.c: 520:                 count_stepper++;
   1233  001A62  4A6F               	infsnz	stepper2@count_stepper,f,c
   1234  001A64  2A70               	incf	stepper2@count_stepper+1,f,c
   1235  001A66  D780               	goto	l2524
@@ -1274,7 +1274,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1238                           
   1239 ;; *************** function _stepper *****************
   1240 ;; Defined at:
-  1241 ;;		line 459 in file "main.c"
+  1241 ;;		line 458 in file "main.c"
   1242 ;; Parameters:    Size  Location     Type
   1243 ;;		None
   1244 ;; Auto vars:     Size  Location     Type
@@ -1316,7 +1316,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1275  001D26                     _stepper:
   1276                           	opt callstack 19
   1277                           
-  1278                           ;main.c: 460:     int count_stepper = 0;
+  1278                           ;main.c: 459:     int count_stepper = 0;
   1279                           
   1280                           ;incstack = 0
   1281  001D26  0E00               	movlw	0
@@ -1325,7 +1325,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1284  001D2C  6E67               	movwf	stepper@count_stepper,c
   1285  001D2E                     l2484:
   1286                           
-  1287                           ;main.c: 463:         if (count_stepper<1){
+  1287                           ;main.c: 462:         if (count_stepper<1){
   1288  001D2E  BE68               	btfsc	stepper@count_stepper+1,7,c
   1289  001D30  D005               	goto	u1480
   1290  001D32  5068               	movf	stepper@count_stepper+1,w,c
@@ -1335,7 +1335,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1294  001D3A  D040               	goto	l2512
   1295  001D3C                     u1480:
   1296                           
-  1297                           ;main.c: 464:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
+  1297                           ;main.c: 463:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
       +                          );};
   1298  001D3C  0E01               	movlw	1
   1299  001D3E  EC23  F011         	call	_lcdInst
@@ -1349,7 +1349,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1307  001D4E  D7FC               	bra	u1677
   1308  001D50  D000               	nop2	
   1309                           
-  1310                           ;main.c: 465:             printf("step1");
+  1310                           ;main.c: 464:             printf("step1");
   1311  001D52  0E50               	movlw	low STR_5
   1312  001D54  6E5C               	movwf	printf@fmt,c
   1313  001D56  0E10               	movlw	high STR_5
@@ -1358,7 +1358,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1316  001D5E  0EC0               	movlw	192
   1317  001D60  EC23  F011         	call	_lcdInst
   1318                           
-  1319                           ;main.c: 467:             printf("Step speed %d",10);
+  1319                           ;main.c: 466:             printf("Step speed %d",10);
   1320  001D64  0E07               	movlw	low STR_6
   1321  001D66  6E5C               	movwf	printf@fmt,c
   1322  001D68  0E10               	movlw	high STR_6
@@ -1369,14 +1369,14 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1327  001D72  6E5E               	movwf	?_printf+2,c
   1328  001D74  ECF6  F010         	call	_printf	;wreg free
   1329                           
-  1330                           ;main.c: 469:             for(int i=0;i<14 +7;i++){
+  1330                           ;main.c: 468:             for(int i=0;i<14 +7;i++){
   1331  001D78  0E00               	movlw	0
   1332  001D7A  6E66               	movwf	stepper@i+1,c
   1333  001D7C  0E00               	movlw	0
   1334  001D7E  6E65               	movwf	stepper@i,c
   1335  001D80                     l2502:
   1336                           
-  1337                           ;main.c: 471:                 full_drive(0, 1);
+  1337                           ;main.c: 470:                 full_drive(0, 1);
   1338  001D80  0E00               	movlw	0
   1339  001D82  6E02               	movwf	full_drive@stepper_no+1,c
   1340  001D84  0E01               	movlw	1
@@ -1384,7 +1384,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1342  001D88  0E00               	movlw	0
   1343  001D8A  EC2C  F008         	call	_full_drive
   1344                           
-  1345                           ;main.c: 473:             }
+  1345                           ;main.c: 472:             }
   1346  001D8E  4A65               	infsnz	stepper@i,f,c
   1347  001D90  2A66               	incf	stepper@i+1,f,c
   1348  001D92  BE66               	btfsc	stepper@i+1,7,c
@@ -1397,7 +1397,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1355  001DA0  D7EF               	goto	l2502
   1356  001DA2                     u1490:
   1357                           
-  1358                           ;main.c: 474:             printf("cnt is %d", count_stepper);
+  1358                           ;main.c: 473:             printf("cnt is %d", count_stepper);
   1359  001DA2  0E46               	movlw	low STR_1
   1360  001DA4  6E5C               	movwf	printf@fmt,c
   1361  001DA6  0E10               	movlw	high STR_1
@@ -1406,15 +1406,15 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1364  001DAE  C068  F05F         	movff	stepper@count_stepper+1,?_printf+3
   1365  001DB2  ECF6  F010         	call	_printf	;wreg free
   1366                           
-  1367                           ;main.c: 475:             count_stepper++;
+  1367                           ;main.c: 474:             count_stepper++;
   1368  001DB6  4A67               	infsnz	stepper@count_stepper,f,c
   1369  001DB8  2A68               	incf	stepper@count_stepper+1,f,c
   1370                           
-  1371                           ;main.c: 476:         }
+  1371                           ;main.c: 475:         }
   1372  001DBA  D7B9               	goto	l2484
   1373  001DBC                     l2512:
   1374                           
-  1375                           ;main.c: 488:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
+  1375                           ;main.c: 487:             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0))
       +                          );};
   1376  001DBC  0E01               	movlw	1
   1377  001DBE  EC23  F011         	call	_lcdInst
@@ -1428,7 +1428,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1385  001DCE  D7FC               	bra	u1687
   1386  001DD0  D000               	nop2	
   1387                           
-  1388                           ;main.c: 489:             printf("steps done");
+  1388                           ;main.c: 488:             printf("steps done");
   1389  001DD2  0E3B               	movlw	low STR_8
   1390  001DD4  6E5C               	movwf	printf@fmt,c
   1391  001DD6  0E10               	movlw	high STR_8
@@ -1437,7 +1437,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1394  001DDE  0EC0               	movlw	192
   1395  001DE0  EC23  F011         	call	_lcdInst
   1396                           
-  1397                           ;main.c: 491:             printf("cnt is %d", count_stepper);
+  1397                           ;main.c: 490:             printf("cnt is %d", count_stepper);
   1398  001DE4  0E46               	movlw	low STR_1
   1399  001DE6  6E5C               	movwf	printf@fmt,c
   1400  001DE8  0E10               	movlw	high STR_1
@@ -1446,7 +1446,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   1403  001DF0  C068  F05F         	movff	stepper@count_stepper+1,?_printf+3
   1404  001DF4  ECF6  F010         	call	_printf	;wreg free
   1405                           
-  1406                           ;main.c: 492:             break;
+  1406                           ;main.c: 491:             break;
   1407  001DF8  0012               	return		;funcret
   1408  001DFA                     __end_of_stepper:
   1409                           	opt callstack 0
@@ -3199,7 +3199,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3026                           
   3027 ;; *************** function _full_drive *****************
   3028 ;; Defined at:
-  3029 ;;		line 593 in file "main.c"
+  3029 ;;		line 592 in file "main.c"
   3030 ;; Parameters:    Size  Location     Type
   3031 ;;  direction       1    wreg     unsigned char 
   3032 ;;  stepper_no      2    0[COMRAM] int 
@@ -3244,22 +3244,22 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3066                           ;full_drive@direction stored from wreg
   3067  001058  6E04               	movwf	full_drive@direction,c
   3068                           
-  3069                           ;main.c: 594:     if (stepper_no == 1){
+  3069                           ;main.c: 593:     if (stepper_no == 1){
   3070  00105A  0401               	decf	full_drive@stepper_no,w,c
   3071  00105C  1002               	iorwf	full_drive@stepper_no+1,w,c
   3072  00105E  A4D8               	btfss	status,2,c
   3073  001060  D06A               	goto	l2306
   3074                           
-  3075                           ;main.c: 595:         if (direction == 1){
+  3075                           ;main.c: 594:         if (direction == 1){
   3076  001062  0404               	decf	full_drive@direction,w,c
   3077  001064  A4D8               	btfss	status,2,c
   3078  001066  D032               	goto	l2290
   3079                           
-  3080                           ;main.c: 596:             LATA = 0b00000011;
+  3080                           ;main.c: 595:             LATA = 0b00000011;
   3081  001068  0E03               	movlw	3
   3082  00106A  6E89               	movwf	3977,c	;volatile
   3083                           
-  3084                           ;main.c: 597:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3084                           ;main.c: 596:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3085  00106C  0E21               	movlw	33
   3086  00106E  6E03               	movwf	??_full_drive& (0+255),c
   3087  001070  0E76               	movlw	118
@@ -3270,11 +3270,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3092  001078  D7FC               	bra	u1697
   3093  00107A  D000               	nop2	
   3094                           
-  3095                           ;main.c: 598:             LATA = 0b00000110;
+  3095                           ;main.c: 597:             LATA = 0b00000110;
   3096  00107C  0E06               	movlw	6
   3097  00107E  6E89               	movwf	3977,c	;volatile
   3098                           
-  3099                           ;main.c: 599:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3099                           ;main.c: 598:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3100  001080  0E21               	movlw	33
   3101  001082  6E03               	movwf	??_full_drive& (0+255),c
   3102  001084  0E76               	movlw	118
@@ -3285,11 +3285,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3107  00108C  D7FC               	bra	u1707
   3108  00108E  D000               	nop2	
   3109                           
-  3110                           ;main.c: 600:             LATA = 0b00001100;
+  3110                           ;main.c: 599:             LATA = 0b00001100;
   3111  001090  0E0C               	movlw	12
   3112  001092  6E89               	movwf	3977,c	;volatile
   3113                           
-  3114                           ;main.c: 601:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3114                           ;main.c: 600:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3115  001094  0E21               	movlw	33
   3116  001096  6E03               	movwf	??_full_drive& (0+255),c
   3117  001098  0E76               	movlw	118
@@ -3300,11 +3300,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3122  0010A0  D7FC               	bra	u1717
   3123  0010A2  D000               	nop2	
   3124                           
-  3125                           ;main.c: 602:             LATA = 0b00001001;
+  3125                           ;main.c: 601:             LATA = 0b00001001;
   3126  0010A4  0E09               	movlw	9
   3127  0010A6  6E89               	movwf	3977,c	;volatile
   3128                           
-  3129                           ;main.c: 603:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3129                           ;main.c: 602:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3130  0010A8  0E21               	movlw	33
   3131  0010AA  6E03               	movwf	??_full_drive& (0+255),c
   3132  0010AC  0E76               	movlw	118
@@ -3315,11 +3315,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3137  0010B4  D7FC               	bra	u1727
   3138  0010B6  D000               	nop2	
   3139                           
-  3140                           ;main.c: 604:             LATA = 0b00000011;
+  3140                           ;main.c: 603:             LATA = 0b00000011;
   3141  0010B8  0E03               	movlw	3
   3142  0010BA  6E89               	movwf	3977,c	;volatile
   3143                           
-  3144                           ;main.c: 605:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3144                           ;main.c: 604:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3145  0010BC  0E21               	movlw	33
   3146  0010BE  6E03               	movwf	??_full_drive& (0+255),c
   3147  0010C0  0E76               	movlw	118
@@ -3331,16 +3331,16 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3153  0010CA  D000               	nop2	
   3154  0010CC                     l2290:
   3155                           
-  3156                           ;main.c: 607:         if (direction == 0){
+  3156                           ;main.c: 606:         if (direction == 0){
   3157  0010CC  5004               	movf	full_drive@direction,w,c
   3158  0010CE  A4D8               	btfss	status,2,c
   3159  0010D0  D032               	goto	l2306
   3160                           
-  3161                           ;main.c: 608:             LATA = 0b00001001;
+  3161                           ;main.c: 607:             LATA = 0b00001001;
   3162  0010D2  0E09               	movlw	9
   3163  0010D4  6E89               	movwf	3977,c	;volatile
   3164                           
-  3165                           ;main.c: 609:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3165                           ;main.c: 608:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3166  0010D6  0E21               	movlw	33
   3167  0010D8  6E03               	movwf	??_full_drive& (0+255),c
   3168  0010DA  0E76               	movlw	118
@@ -3351,11 +3351,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3173  0010E2  D7FC               	bra	u1747
   3174  0010E4  D000               	nop2	
   3175                           
-  3176                           ;main.c: 610:             LATA = 0b00001100;
+  3176                           ;main.c: 609:             LATA = 0b00001100;
   3177  0010E6  0E0C               	movlw	12
   3178  0010E8  6E89               	movwf	3977,c	;volatile
   3179                           
-  3180                           ;main.c: 611:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3180                           ;main.c: 610:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3181  0010EA  0E21               	movlw	33
   3182  0010EC  6E03               	movwf	??_full_drive& (0+255),c
   3183  0010EE  0E76               	movlw	118
@@ -3366,11 +3366,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3188  0010F6  D7FC               	bra	u1757
   3189  0010F8  D000               	nop2	
   3190                           
-  3191                           ;main.c: 612:             LATA = 0b00000110;
+  3191                           ;main.c: 611:             LATA = 0b00000110;
   3192  0010FA  0E06               	movlw	6
   3193  0010FC  6E89               	movwf	3977,c	;volatile
   3194                           
-  3195                           ;main.c: 613:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3195                           ;main.c: 612:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3196  0010FE  0E21               	movlw	33
   3197  001100  6E03               	movwf	??_full_drive& (0+255),c
   3198  001102  0E76               	movlw	118
@@ -3381,11 +3381,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3203  00110A  D7FC               	bra	u1767
   3204  00110C  D000               	nop2	
   3205                           
-  3206                           ;main.c: 614:             LATA = 0b00000011;
+  3206                           ;main.c: 613:             LATA = 0b00000011;
   3207  00110E  0E03               	movlw	3
   3208  001110  6E89               	movwf	3977,c	;volatile
   3209                           
-  3210                           ;main.c: 615:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3210                           ;main.c: 614:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3211  001112  0E21               	movlw	33
   3212  001114  6E03               	movwf	??_full_drive& (0+255),c
   3213  001116  0E76               	movlw	118
@@ -3396,11 +3396,11 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3218  00111E  D7FC               	bra	u1777
   3219  001120  D000               	nop2	
   3220                           
-  3221                           ;main.c: 616:             LATA = 0b00001001;
+  3221                           ;main.c: 615:             LATA = 0b00001001;
   3222  001122  0E09               	movlw	9
   3223  001124  6E89               	movwf	3977,c	;volatile
   3224                           
-  3225                           ;main.c: 617:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3225                           ;main.c: 616:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3226  001126  0E21               	movlw	33
   3227  001128  6E03               	movwf	??_full_drive& (0+255),c
   3228  00112A  0E76               	movlw	118
@@ -3412,31 +3412,31 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3234  001134  D000               	nop2	
   3235  001136                     l2306:
   3236                           
-  3237                           ;main.c: 620:     if (stepper_no == 2){
+  3237                           ;main.c: 619:     if (stepper_no == 2){
   3238  001136  0E02               	movlw	2
   3239  001138  1801               	xorwf	full_drive@stepper_no,w,c
   3240  00113A  1002               	iorwf	full_drive@stepper_no+1,w,c
   3241  00113C  A4D8               	btfss	status,2,c
   3242  00113E  D074               	goto	l2384
   3243                           
-  3244                           ;main.c: 621:         if (direction == 1){
+  3244                           ;main.c: 620:         if (direction == 1){
   3245  001140  0404               	decf	full_drive@direction,w,c
   3246  001142  A4D8               	btfss	status,2,c
   3247  001144  D037               	goto	l2346
   3248                           
-  3249                           ;main.c: 622:             LATCbits.LATC0 = 1;
+  3249                           ;main.c: 621:             LATCbits.LATC0 = 1;
   3250  001146  808B               	bsf	3979,0,c	;volatile
   3251                           
-  3252                           ;main.c: 623:             LATEbits.LATE0 = 1;
+  3252                           ;main.c: 622:             LATEbits.LATE0 = 1;
   3253  001148  808D               	bsf	3981,0,c	;volatile
   3254                           
-  3255                           ;main.c: 624:             LATEbits.LATE1 = 0;
+  3255                           ;main.c: 623:             LATEbits.LATE1 = 0;
   3256  00114A  928D               	bcf	3981,1,c	;volatile
   3257                           
-  3258                           ;main.c: 625:             LATEbits.LATE2 = 0;
+  3258                           ;main.c: 624:             LATEbits.LATE2 = 0;
   3259  00114C  948D               	bcf	3981,2,c	;volatile
   3260                           
-  3261                           ;main.c: 626:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3261                           ;main.c: 625:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3262  00114E  0E0D               	movlw	13
   3263  001150  6E03               	movwf	??_full_drive& (0+255),c
   3264  001152  0EFC               	movlw	252
@@ -3446,19 +3446,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3268  001158  2E03               	decfsz	??_full_drive& (0+255),f,c
   3269  00115A  D7FC               	bra	u1797
   3270                           
-  3271                           ;main.c: 627:             LATCbits.LATC0 = 0;
+  3271                           ;main.c: 626:             LATCbits.LATC0 = 0;
   3272  00115C  908B               	bcf	3979,0,c	;volatile
   3273                           
-  3274                           ;main.c: 628:             LATEbits.LATE0 = 1;
+  3274                           ;main.c: 627:             LATEbits.LATE0 = 1;
   3275  00115E  808D               	bsf	3981,0,c	;volatile
   3276                           
-  3277                           ;main.c: 629:             LATEbits.LATE1 = 1;
+  3277                           ;main.c: 628:             LATEbits.LATE1 = 1;
   3278  001160  828D               	bsf	3981,1,c	;volatile
   3279                           
-  3280                           ;main.c: 630:             LATEbits.LATE2 = 0;
+  3280                           ;main.c: 629:             LATEbits.LATE2 = 0;
   3281  001162  948D               	bcf	3981,2,c	;volatile
   3282                           
-  3283                           ;main.c: 631:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3283                           ;main.c: 630:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3284  001164  0E0D               	movlw	13
   3285  001166  6E03               	movwf	??_full_drive& (0+255),c
   3286  001168  0EFC               	movlw	252
@@ -3468,19 +3468,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3290  00116E  2E03               	decfsz	??_full_drive& (0+255),f,c
   3291  001170  D7FC               	bra	u1807
   3292                           
-  3293                           ;main.c: 632:             LATCbits.LATC0 = 0;
+  3293                           ;main.c: 631:             LATCbits.LATC0 = 0;
   3294  001172  908B               	bcf	3979,0,c	;volatile
   3295                           
-  3296                           ;main.c: 633:             LATEbits.LATE0 = 0;
+  3296                           ;main.c: 632:             LATEbits.LATE0 = 0;
   3297  001174  908D               	bcf	3981,0,c	;volatile
   3298                           
-  3299                           ;main.c: 634:             LATEbits.LATE1 = 1;
+  3299                           ;main.c: 633:             LATEbits.LATE1 = 1;
   3300  001176  828D               	bsf	3981,1,c	;volatile
   3301                           
-  3302                           ;main.c: 635:             LATEbits.LATE2 = 1;
+  3302                           ;main.c: 634:             LATEbits.LATE2 = 1;
   3303  001178  848D               	bsf	3981,2,c	;volatile
   3304                           
-  3305                           ;main.c: 636:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3305                           ;main.c: 635:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3306  00117A  0E0D               	movlw	13
   3307  00117C  6E03               	movwf	??_full_drive& (0+255),c
   3308  00117E  0EFC               	movlw	252
@@ -3490,19 +3490,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3312  001184  2E03               	decfsz	??_full_drive& (0+255),f,c
   3313  001186  D7FC               	bra	u1817
   3314                           
-  3315                           ;main.c: 637:             LATCbits.LATC0 = 1;
+  3315                           ;main.c: 636:             LATCbits.LATC0 = 1;
   3316  001188  808B               	bsf	3979,0,c	;volatile
   3317                           
-  3318                           ;main.c: 638:             LATEbits.LATE0 = 0;
+  3318                           ;main.c: 637:             LATEbits.LATE0 = 0;
   3319  00118A  908D               	bcf	3981,0,c	;volatile
   3320                           
-  3321                           ;main.c: 639:             LATEbits.LATE1 = 0;
+  3321                           ;main.c: 638:             LATEbits.LATE1 = 0;
   3322  00118C  928D               	bcf	3981,1,c	;volatile
   3323                           
-  3324                           ;main.c: 640:             LATEbits.LATE2 = 1;
+  3324                           ;main.c: 639:             LATEbits.LATE2 = 1;
   3325  00118E  848D               	bsf	3981,2,c	;volatile
   3326                           
-  3327                           ;main.c: 641:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3327                           ;main.c: 640:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3328  001190  0E0D               	movlw	13
   3329  001192  6E03               	movwf	??_full_drive& (0+255),c
   3330  001194  0EFC               	movlw	252
@@ -3512,19 +3512,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3334  00119A  2E03               	decfsz	??_full_drive& (0+255),f,c
   3335  00119C  D7FC               	bra	u1827
   3336                           
-  3337                           ;main.c: 642:             LATCbits.LATC0 = 1;
+  3337                           ;main.c: 641:             LATCbits.LATC0 = 1;
   3338  00119E  808B               	bsf	3979,0,c	;volatile
   3339                           
-  3340                           ;main.c: 643:             LATEbits.LATE0 = 1;
+  3340                           ;main.c: 642:             LATEbits.LATE0 = 1;
   3341  0011A0  808D               	bsf	3981,0,c	;volatile
   3342                           
-  3343                           ;main.c: 644:             LATEbits.LATE1 = 0;
+  3343                           ;main.c: 643:             LATEbits.LATE1 = 0;
   3344  0011A2  928D               	bcf	3981,1,c	;volatile
   3345                           
-  3346                           ;main.c: 645:             LATEbits.LATE2 = 0;
+  3346                           ;main.c: 644:             LATEbits.LATE2 = 0;
   3347  0011A4  948D               	bcf	3981,2,c	;volatile
   3348                           
-  3349                           ;main.c: 646:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3349                           ;main.c: 645:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3350  0011A6  0E0D               	movlw	13
   3351  0011A8  6E03               	movwf	??_full_drive& (0+255),c
   3352  0011AA  0EFC               	movlw	252
@@ -3535,24 +3535,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3357  0011B2  D7FC               	bra	u1837
   3358  0011B4                     l2346:
   3359                           
-  3360                           ;main.c: 648:         if (direction == 0){
+  3360                           ;main.c: 647:         if (direction == 0){
   3361  0011B4  5004               	movf	full_drive@direction,w,c
   3362  0011B6  A4D8               	btfss	status,2,c
   3363  0011B8  D037               	goto	l2384
   3364                           
-  3365                           ;main.c: 649:             LATCbits.LATC0 = 1;
+  3365                           ;main.c: 648:             LATCbits.LATC0 = 1;
   3366  0011BA  808B               	bsf	3979,0,c	;volatile
   3367                           
-  3368                           ;main.c: 650:             LATEbits.LATE0 = 0;
+  3368                           ;main.c: 649:             LATEbits.LATE0 = 0;
   3369  0011BC  908D               	bcf	3981,0,c	;volatile
   3370                           
-  3371                           ;main.c: 651:             LATEbits.LATE1 = 0;
+  3371                           ;main.c: 650:             LATEbits.LATE1 = 0;
   3372  0011BE  928D               	bcf	3981,1,c	;volatile
   3373                           
-  3374                           ;main.c: 652:             LATEbits.LATE2 = 1;
+  3374                           ;main.c: 651:             LATEbits.LATE2 = 1;
   3375  0011C0  848D               	bsf	3981,2,c	;volatile
   3376                           
-  3377                           ;main.c: 653:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3377                           ;main.c: 652:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3378  0011C2  0E0D               	movlw	13
   3379  0011C4  6E03               	movwf	??_full_drive& (0+255),c
   3380  0011C6  0EFC               	movlw	252
@@ -3562,19 +3562,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3384  0011CC  2E03               	decfsz	??_full_drive& (0+255),f,c
   3385  0011CE  D7FC               	bra	u1847
   3386                           
-  3387                           ;main.c: 654:             LATCbits.LATC0 = 0;
+  3387                           ;main.c: 653:             LATCbits.LATC0 = 0;
   3388  0011D0  908B               	bcf	3979,0,c	;volatile
   3389                           
-  3390                           ;main.c: 655:             LATEbits.LATE0 = 0;
+  3390                           ;main.c: 654:             LATEbits.LATE0 = 0;
   3391  0011D2  908D               	bcf	3981,0,c	;volatile
   3392                           
-  3393                           ;main.c: 656:             LATEbits.LATE1 = 1;
+  3393                           ;main.c: 655:             LATEbits.LATE1 = 1;
   3394  0011D4  828D               	bsf	3981,1,c	;volatile
   3395                           
-  3396                           ;main.c: 657:             LATEbits.LATE2 = 1;
+  3396                           ;main.c: 656:             LATEbits.LATE2 = 1;
   3397  0011D6  848D               	bsf	3981,2,c	;volatile
   3398                           
-  3399                           ;main.c: 658:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3399                           ;main.c: 657:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3400  0011D8  0E0D               	movlw	13
   3401  0011DA  6E03               	movwf	??_full_drive& (0+255),c
   3402  0011DC  0EFC               	movlw	252
@@ -3584,19 +3584,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3406  0011E2  2E03               	decfsz	??_full_drive& (0+255),f,c
   3407  0011E4  D7FC               	bra	u1857
   3408                           
-  3409                           ;main.c: 659:             LATCbits.LATC0 = 0;
+  3409                           ;main.c: 658:             LATCbits.LATC0 = 0;
   3410  0011E6  908B               	bcf	3979,0,c	;volatile
   3411                           
-  3412                           ;main.c: 660:             LATEbits.LATE0 = 1;
+  3412                           ;main.c: 659:             LATEbits.LATE0 = 1;
   3413  0011E8  808D               	bsf	3981,0,c	;volatile
   3414                           
-  3415                           ;main.c: 661:             LATEbits.LATE1 = 1;
+  3415                           ;main.c: 660:             LATEbits.LATE1 = 1;
   3416  0011EA  828D               	bsf	3981,1,c	;volatile
   3417                           
-  3418                           ;main.c: 662:             LATEbits.LATE2 = 0;
+  3418                           ;main.c: 661:             LATEbits.LATE2 = 0;
   3419  0011EC  948D               	bcf	3981,2,c	;volatile
   3420                           
-  3421                           ;main.c: 663:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3421                           ;main.c: 662:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3422  0011EE  0E0D               	movlw	13
   3423  0011F0  6E03               	movwf	??_full_drive& (0+255),c
   3424  0011F2  0EFC               	movlw	252
@@ -3606,19 +3606,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3428  0011F8  2E03               	decfsz	??_full_drive& (0+255),f,c
   3429  0011FA  D7FC               	bra	u1867
   3430                           
-  3431                           ;main.c: 664:             LATCbits.LATC0 = 1;
+  3431                           ;main.c: 663:             LATCbits.LATC0 = 1;
   3432  0011FC  808B               	bsf	3979,0,c	;volatile
   3433                           
-  3434                           ;main.c: 665:             LATEbits.LATE0 = 1;
+  3434                           ;main.c: 664:             LATEbits.LATE0 = 1;
   3435  0011FE  808D               	bsf	3981,0,c	;volatile
   3436                           
-  3437                           ;main.c: 666:             LATEbits.LATE1 = 0;
+  3437                           ;main.c: 665:             LATEbits.LATE1 = 0;
   3438  001200  928D               	bcf	3981,1,c	;volatile
   3439                           
-  3440                           ;main.c: 667:             LATEbits.LATE2 = 0;
+  3440                           ;main.c: 666:             LATEbits.LATE2 = 0;
   3441  001202  948D               	bcf	3981,2,c	;volatile
   3442                           
-  3443                           ;main.c: 668:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3443                           ;main.c: 667:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3444  001204  0E0D               	movlw	13
   3445  001206  6E03               	movwf	??_full_drive& (0+255),c
   3446  001208  0EFC               	movlw	252
@@ -3628,19 +3628,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3450  00120E  2E03               	decfsz	??_full_drive& (0+255),f,c
   3451  001210  D7FC               	bra	u1877
   3452                           
-  3453                           ;main.c: 669:             LATCbits.LATC0 = 1;
+  3453                           ;main.c: 668:             LATCbits.LATC0 = 1;
   3454  001212  808B               	bsf	3979,0,c	;volatile
   3455                           
-  3456                           ;main.c: 670:             LATEbits.LATE0 = 0;
+  3456                           ;main.c: 669:             LATEbits.LATE0 = 0;
   3457  001214  908D               	bcf	3981,0,c	;volatile
   3458                           
-  3459                           ;main.c: 671:             LATEbits.LATE1 = 0;
+  3459                           ;main.c: 670:             LATEbits.LATE1 = 0;
   3460  001216  928D               	bcf	3981,1,c	;volatile
   3461                           
-  3462                           ;main.c: 672:             LATEbits.LATE2 = 1;
+  3462                           ;main.c: 671:             LATEbits.LATE2 = 1;
   3463  001218  848D               	bsf	3981,2,c	;volatile
   3464                           
-  3465                           ;main.c: 673:             _delay((unsigned long)((4)*(10000000/4000.0)));
+  3465                           ;main.c: 672:             _delay((unsigned long)((4)*(10000000/4000.0)));
   3466  00121A  0E0D               	movlw	13
   3467  00121C  6E03               	movwf	??_full_drive& (0+255),c
   3468  00121E  0EFC               	movlw	252
@@ -3651,31 +3651,31 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3473  001226  D7FC               	bra	u1887
   3474  001228                     l2384:
   3475                           
-  3476                           ;main.c: 676:     if (stepper_no == 3){
+  3476                           ;main.c: 675:     if (stepper_no == 3){
   3477  001228  0E03               	movlw	3
   3478  00122A  1801               	xorwf	full_drive@stepper_no,w,c
   3479  00122C  1002               	iorwf	full_drive@stepper_no+1,w,c
   3480  00122E  A4D8               	btfss	status,2,c
   3481  001230  0012               	return	
   3482                           
-  3483                           ;main.c: 677:         if (direction == 0){
+  3483                           ;main.c: 676:         if (direction == 0){
   3484  001232  5004               	movf	full_drive@direction,w,c
   3485  001234  A4D8               	btfss	status,2,c
   3486  001236  D03C               	goto	l2424
   3487                           
-  3488                           ;main.c: 678:             LATCbits.LATC5 = 1;
+  3488                           ;main.c: 677:             LATCbits.LATC5 = 1;
   3489  001238  8A8B               	bsf	3979,5,c	;volatile
   3490                           
-  3491                           ;main.c: 679:             LATCbits.LATC6 = 0;
+  3491                           ;main.c: 678:             LATCbits.LATC6 = 0;
   3492  00123A  9C8B               	bcf	3979,6,c	;volatile
   3493                           
-  3494                           ;main.c: 680:             LATCbits.LATC7 = 0;
+  3494                           ;main.c: 679:             LATCbits.LATC7 = 0;
   3495  00123C  9E8B               	bcf	3979,7,c	;volatile
   3496                           
-  3497                           ;main.c: 681:             LATAbits.LATA5 = 1;
+  3497                           ;main.c: 680:             LATAbits.LATA5 = 1;
   3498  00123E  8A89               	bsf	3977,5,c	;volatile
   3499                           
-  3500                           ;main.c: 682:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3500                           ;main.c: 681:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3501  001240  0E21               	movlw	33
   3502  001242  6E03               	movwf	??_full_drive& (0+255),c
   3503  001244  0E76               	movlw	118
@@ -3686,19 +3686,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3508  00124C  D7FC               	bra	u1897
   3509  00124E  D000               	nop2	
   3510                           
-  3511                           ;main.c: 683:             LATCbits.LATC5 = 1;
+  3511                           ;main.c: 682:             LATCbits.LATC5 = 1;
   3512  001250  8A8B               	bsf	3979,5,c	;volatile
   3513                           
-  3514                           ;main.c: 684:             LATCbits.LATC6 = 1;
+  3514                           ;main.c: 683:             LATCbits.LATC6 = 1;
   3515  001252  8C8B               	bsf	3979,6,c	;volatile
   3516                           
-  3517                           ;main.c: 685:             LATCbits.LATC7 = 0;
+  3517                           ;main.c: 684:             LATCbits.LATC7 = 0;
   3518  001254  9E8B               	bcf	3979,7,c	;volatile
   3519                           
-  3520                           ;main.c: 686:             LATAbits.LATA5 = 0;
+  3520                           ;main.c: 685:             LATAbits.LATA5 = 0;
   3521  001256  9A89               	bcf	3977,5,c	;volatile
   3522                           
-  3523                           ;main.c: 687:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3523                           ;main.c: 686:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3524  001258  0E21               	movlw	33
   3525  00125A  6E03               	movwf	??_full_drive& (0+255),c
   3526  00125C  0E76               	movlw	118
@@ -3709,19 +3709,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3531  001264  D7FC               	bra	u1907
   3532  001266  D000               	nop2	
   3533                           
-  3534                           ;main.c: 688:             LATCbits.LATC5 = 0;
+  3534                           ;main.c: 687:             LATCbits.LATC5 = 0;
   3535  001268  9A8B               	bcf	3979,5,c	;volatile
   3536                           
-  3537                           ;main.c: 689:             LATCbits.LATC6 = 1;
+  3537                           ;main.c: 688:             LATCbits.LATC6 = 1;
   3538  00126A  8C8B               	bsf	3979,6,c	;volatile
   3539                           
-  3540                           ;main.c: 690:             LATCbits.LATC7 = 1;
+  3540                           ;main.c: 689:             LATCbits.LATC7 = 1;
   3541  00126C  8E8B               	bsf	3979,7,c	;volatile
   3542                           
-  3543                           ;main.c: 691:             LATAbits.LATA5 = 0;
+  3543                           ;main.c: 690:             LATAbits.LATA5 = 0;
   3544  00126E  9A89               	bcf	3977,5,c	;volatile
   3545                           
-  3546                           ;main.c: 692:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3546                           ;main.c: 691:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3547  001270  0E21               	movlw	33
   3548  001272  6E03               	movwf	??_full_drive& (0+255),c
   3549  001274  0E76               	movlw	118
@@ -3732,19 +3732,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3554  00127C  D7FC               	bra	u1917
   3555  00127E  D000               	nop2	
   3556                           
-  3557                           ;main.c: 693:             LATCbits.LATC5 = 0;
+  3557                           ;main.c: 692:             LATCbits.LATC5 = 0;
   3558  001280  9A8B               	bcf	3979,5,c	;volatile
   3559                           
-  3560                           ;main.c: 694:             LATCbits.LATC6 = 0;
+  3560                           ;main.c: 693:             LATCbits.LATC6 = 0;
   3561  001282  9C8B               	bcf	3979,6,c	;volatile
   3562                           
-  3563                           ;main.c: 695:             LATCbits.LATC7 = 1;
+  3563                           ;main.c: 694:             LATCbits.LATC7 = 1;
   3564  001284  8E8B               	bsf	3979,7,c	;volatile
   3565                           
-  3566                           ;main.c: 696:             LATAbits.LATA5 = 1;
+  3566                           ;main.c: 695:             LATAbits.LATA5 = 1;
   3567  001286  8A89               	bsf	3977,5,c	;volatile
   3568                           
-  3569                           ;main.c: 697:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3569                           ;main.c: 696:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3570  001288  0E21               	movlw	33
   3571  00128A  6E03               	movwf	??_full_drive& (0+255),c
   3572  00128C  0E76               	movlw	118
@@ -3755,19 +3755,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3577  001294  D7FC               	bra	u1927
   3578  001296  D000               	nop2	
   3579                           
-  3580                           ;main.c: 698:             LATCbits.LATC5 = 1;
+  3580                           ;main.c: 697:             LATCbits.LATC5 = 1;
   3581  001298  8A8B               	bsf	3979,5,c	;volatile
   3582                           
-  3583                           ;main.c: 699:             LATCbits.LATC6 = 0;
+  3583                           ;main.c: 698:             LATCbits.LATC6 = 0;
   3584  00129A  9C8B               	bcf	3979,6,c	;volatile
   3585                           
-  3586                           ;main.c: 700:             LATCbits.LATC7 = 0;
+  3586                           ;main.c: 699:             LATCbits.LATC7 = 0;
   3587  00129C  9E8B               	bcf	3979,7,c	;volatile
   3588                           
-  3589                           ;main.c: 701:             LATAbits.LATA5 = 1;
+  3589                           ;main.c: 700:             LATAbits.LATA5 = 1;
   3590  00129E  8A89               	bsf	3977,5,c	;volatile
   3591                           
-  3592                           ;main.c: 702:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3592                           ;main.c: 701:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3593  0012A0  0E21               	movlw	33
   3594  0012A2  6E03               	movwf	??_full_drive& (0+255),c
   3595  0012A4  0E76               	movlw	118
@@ -3779,24 +3779,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3601  0012AE  D000               	nop2	
   3602  0012B0                     l2424:
   3603                           
-  3604                           ;main.c: 704:         if (direction == 1){
+  3604                           ;main.c: 703:         if (direction == 1){
   3605  0012B0  0404               	decf	full_drive@direction,w,c
   3606  0012B2  A4D8               	btfss	status,2,c
   3607  0012B4  0012               	return	
   3608                           
-  3609                           ;main.c: 705:             LATCbits.LATC5 = 1;
+  3609                           ;main.c: 704:             LATCbits.LATC5 = 1;
   3610  0012B6  8A8B               	bsf	3979,5,c	;volatile
   3611                           
-  3612                           ;main.c: 706:             LATCbits.LATC6 = 1;
+  3612                           ;main.c: 705:             LATCbits.LATC6 = 1;
   3613  0012B8  8C8B               	bsf	3979,6,c	;volatile
   3614                           
-  3615                           ;main.c: 707:             LATCbits.LATC7 = 0;
+  3615                           ;main.c: 706:             LATCbits.LATC7 = 0;
   3616  0012BA  9E8B               	bcf	3979,7,c	;volatile
   3617                           
-  3618                           ;main.c: 708:             LATAbits.LATA5 = 0;
+  3618                           ;main.c: 707:             LATAbits.LATA5 = 0;
   3619  0012BC  9A89               	bcf	3977,5,c	;volatile
   3620                           
-  3621                           ;main.c: 709:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3621                           ;main.c: 708:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3622  0012BE  0E21               	movlw	33
   3623  0012C0  6E03               	movwf	??_full_drive& (0+255),c
   3624  0012C2  0E76               	movlw	118
@@ -3807,19 +3807,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3629  0012CA  D7FC               	bra	u1947
   3630  0012CC  D000               	nop2	
   3631                           
-  3632                           ;main.c: 710:             LATCbits.LATC5 = 0;
+  3632                           ;main.c: 709:             LATCbits.LATC5 = 0;
   3633  0012CE  9A8B               	bcf	3979,5,c	;volatile
   3634                           
-  3635                           ;main.c: 711:             LATCbits.LATC6 = 1;
+  3635                           ;main.c: 710:             LATCbits.LATC6 = 1;
   3636  0012D0  8C8B               	bsf	3979,6,c	;volatile
   3637                           
-  3638                           ;main.c: 712:             LATCbits.LATC7 = 1;
+  3638                           ;main.c: 711:             LATCbits.LATC7 = 1;
   3639  0012D2  8E8B               	bsf	3979,7,c	;volatile
   3640                           
-  3641                           ;main.c: 713:             LATAbits.LATA5 = 0;
+  3641                           ;main.c: 712:             LATAbits.LATA5 = 0;
   3642  0012D4  9A89               	bcf	3977,5,c	;volatile
   3643                           
-  3644                           ;main.c: 714:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3644                           ;main.c: 713:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3645  0012D6  0E21               	movlw	33
   3646  0012D8  6E03               	movwf	??_full_drive& (0+255),c
   3647  0012DA  0E76               	movlw	118
@@ -3830,19 +3830,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3652  0012E2  D7FC               	bra	u1957
   3653  0012E4  D000               	nop2	
   3654                           
-  3655                           ;main.c: 715:             LATCbits.LATC5 = 0;
+  3655                           ;main.c: 714:             LATCbits.LATC5 = 0;
   3656  0012E6  9A8B               	bcf	3979,5,c	;volatile
   3657                           
-  3658                           ;main.c: 716:             LATCbits.LATC6 = 0;
+  3658                           ;main.c: 715:             LATCbits.LATC6 = 0;
   3659  0012E8  9C8B               	bcf	3979,6,c	;volatile
   3660                           
-  3661                           ;main.c: 717:             LATCbits.LATC7 = 1;
+  3661                           ;main.c: 716:             LATCbits.LATC7 = 1;
   3662  0012EA  8E8B               	bsf	3979,7,c	;volatile
   3663                           
-  3664                           ;main.c: 718:             LATAbits.LATA5 = 1;
+  3664                           ;main.c: 717:             LATAbits.LATA5 = 1;
   3665  0012EC  8A89               	bsf	3977,5,c	;volatile
   3666                           
-  3667                           ;main.c: 719:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3667                           ;main.c: 718:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3668  0012EE  0E21               	movlw	33
   3669  0012F0  6E03               	movwf	??_full_drive& (0+255),c
   3670  0012F2  0E76               	movlw	118
@@ -3853,19 +3853,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3675  0012FA  D7FC               	bra	u1967
   3676  0012FC  D000               	nop2	
   3677                           
-  3678                           ;main.c: 720:             LATCbits.LATC5 = 1;
+  3678                           ;main.c: 719:             LATCbits.LATC5 = 1;
   3679  0012FE  8A8B               	bsf	3979,5,c	;volatile
   3680                           
-  3681                           ;main.c: 721:             LATCbits.LATC6 = 0;
+  3681                           ;main.c: 720:             LATCbits.LATC6 = 0;
   3682  001300  9C8B               	bcf	3979,6,c	;volatile
   3683                           
-  3684                           ;main.c: 722:             LATCbits.LATC7 = 0;
+  3684                           ;main.c: 721:             LATCbits.LATC7 = 0;
   3685  001302  9E8B               	bcf	3979,7,c	;volatile
   3686                           
-  3687                           ;main.c: 723:             LATAbits.LATA5 = 1;
+  3687                           ;main.c: 722:             LATAbits.LATA5 = 1;
   3688  001304  8A89               	bsf	3977,5,c	;volatile
   3689                           
-  3690                           ;main.c: 724:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3690                           ;main.c: 723:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3691  001306  0E21               	movlw	33
   3692  001308  6E03               	movwf	??_full_drive& (0+255),c
   3693  00130A  0E76               	movlw	118
@@ -3876,19 +3876,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3698  001312  D7FC               	bra	u1977
   3699  001314  D000               	nop2	
   3700                           
-  3701                           ;main.c: 725:             LATCbits.LATC5 = 1;
+  3701                           ;main.c: 724:             LATCbits.LATC5 = 1;
   3702  001316  8A8B               	bsf	3979,5,c	;volatile
   3703                           
-  3704                           ;main.c: 726:             LATCbits.LATC6 = 1;
+  3704                           ;main.c: 725:             LATCbits.LATC6 = 1;
   3705  001318  8C8B               	bsf	3979,6,c	;volatile
   3706                           
-  3707                           ;main.c: 727:             LATCbits.LATC7 = 0;
+  3707                           ;main.c: 726:             LATCbits.LATC7 = 0;
   3708  00131A  9E8B               	bcf	3979,7,c	;volatile
   3709                           
-  3710                           ;main.c: 728:             LATAbits.LATA5 = 0;
+  3710                           ;main.c: 727:             LATAbits.LATA5 = 0;
   3711  00131C  9A89               	bcf	3977,5,c	;volatile
   3712                           
-  3713                           ;main.c: 729:             _delay((unsigned long)((10)*(10000000/4000.0)));
+  3713                           ;main.c: 728:             _delay((unsigned long)((10)*(10000000/4000.0)));
   3714  00131E  0E21               	movlw	33
   3715  001320  6E03               	movwf	??_full_drive& (0+255),c
   3716  001322  0E76               	movlw	118
@@ -3904,7 +3904,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3726                           
   3727 ;; *************** function _servo *****************
   3728 ;; Defined at:
-  3729 ;;		line 433 in file "main.c"
+  3729 ;;		line 432 in file "main.c"
   3730 ;; Parameters:    Size  Location     Type
   3731 ;;		None
   3732 ;; Auto vars:     Size  Location     Type
@@ -3944,27 +3944,27 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3761  001DFA                     _servo:
   3762                           	opt callstack 29
   3763                           
-  3764                           ;main.c: 435:   TRISC = 0;
+  3764                           ;main.c: 434:   TRISC = 0;
   3765                           
   3766                           ;incstack = 0
   3767  001DFA  0E00               	movlw	0
   3768  001DFC  6E94               	movwf	3988,c	;volatile
   3769                           
-  3770                           ;main.c: 436:   {;main.c: 438:     servoRotate0(1);
+  3770                           ;main.c: 435:   {;main.c: 437:     servoRotate0(1);
   3771  001DFE  0E00               	movlw	0
   3772  001E00  6E02               	movwf	servoRotate0@servo+1,c
   3773  001E02  0E01               	movlw	1
   3774  001E04  6E01               	movwf	servoRotate0@servo,c
   3775  001E06  EC26  F00E         	call	_servoRotate0	;wreg free
   3776                           
-  3777                           ;main.c: 442:     servoRotate180(1);
+  3777                           ;main.c: 441:     servoRotate180(1);
   3778  001E0A  0E00               	movlw	0
   3779  001E0C  6E02               	movwf	servoRotate180@servo+1,c
   3780  001E0E  0E01               	movlw	1
   3781  001E10  6E01               	movwf	servoRotate180@servo,c
   3782  001E12  ECB8  F00D         	call	_servoRotate180	;wreg free
   3783                           
-  3784                           ;main.c: 443:     _delay((unsigned long)((450)*(10000000/4000.0)));
+  3784                           ;main.c: 442:     _delay((unsigned long)((450)*(10000000/4000.0)));
   3785  001E16  0E06               	movlw	6
   3786  001E18  6E07               	movwf	(??_servo+1)& (0+255),c
   3787  001E1A  0EB6               	movlw	182
@@ -3978,35 +3978,35 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3795  001E28  2E07               	decfsz	(??_servo+1)& (0+255),f,c
   3796  001E2A  D7FA               	bra	u1997
   3797                           
-  3798                           ;main.c: 444:     servoRotate0(1);
+  3798                           ;main.c: 443:     servoRotate0(1);
   3799  001E2C  0E00               	movlw	0
   3800  001E2E  6E02               	movwf	servoRotate0@servo+1,c
   3801  001E30  0E01               	movlw	1
   3802  001E32  6E01               	movwf	servoRotate0@servo,c
   3803  001E34  EC26  F00E         	call	_servoRotate0	;wreg free
   3804                           
-  3805                           ;main.c: 446:     servoRotate180(2);
+  3805                           ;main.c: 445:     servoRotate180(2);
   3806  001E38  0E00               	movlw	0
   3807  001E3A  6E02               	movwf	servoRotate180@servo+1,c
   3808  001E3C  0E02               	movlw	2
   3809  001E3E  6E01               	movwf	servoRotate180@servo,c
   3810  001E40  ECB8  F00D         	call	_servoRotate180	;wreg free
   3811                           
-  3812                           ;main.c: 447:     servoRotate0(2);
+  3812                           ;main.c: 446:     servoRotate0(2);
   3813  001E44  0E00               	movlw	0
   3814  001E46  6E02               	movwf	servoRotate0@servo+1,c
   3815  001E48  0E02               	movlw	2
   3816  001E4A  6E01               	movwf	servoRotate0@servo,c
   3817  001E4C  EC26  F00E         	call	_servoRotate0	;wreg free
   3818                           
-  3819                           ;main.c: 448:     servoRotate180(2);
+  3819                           ;main.c: 447:     servoRotate180(2);
   3820  001E50  0E00               	movlw	0
   3821  001E52  6E02               	movwf	servoRotate180@servo+1,c
   3822  001E54  0E02               	movlw	2
   3823  001E56  6E01               	movwf	servoRotate180@servo,c
   3824  001E58  ECB8  F00D         	call	_servoRotate180	;wreg free
   3825                           
-  3826                           ;main.c: 450:     _delay((unsigned long)((50)*(10000000/4000.0)));
+  3826                           ;main.c: 449:     _delay((unsigned long)((50)*(10000000/4000.0)));
   3827  001E5C  0EA3               	movlw	163
   3828  001E5E  6E06               	movwf	??_servo& (0+255),c
   3829  001E60  0E55               	movlw	85
@@ -4017,21 +4017,21 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3834  001E68  D7FC               	bra	u2007
   3835  001E6A  F000               	nop	
   3836                           
-  3837                           ;main.c: 451:         servoRotate0(3);
+  3837                           ;main.c: 450:         servoRotate0(3);
   3838  001E6C  0E00               	movlw	0
   3839  001E6E  6E02               	movwf	servoRotate0@servo+1,c
   3840  001E70  0E03               	movlw	3
   3841  001E72  6E01               	movwf	servoRotate0@servo,c
   3842  001E74  EC26  F00E         	call	_servoRotate0	;wreg free
   3843                           
-  3844                           ;main.c: 452:     servoRotate0(3);
+  3844                           ;main.c: 451:     servoRotate0(3);
   3845  001E78  0E00               	movlw	0
   3846  001E7A  6E02               	movwf	servoRotate0@servo+1,c
   3847  001E7C  0E03               	movlw	3
   3848  001E7E  6E01               	movwf	servoRotate0@servo,c
   3849  001E80  EC26  F00E         	call	_servoRotate0	;wreg free
   3850                           
-  3851                           ;main.c: 453:     servoRotate180(3);
+  3851                           ;main.c: 452:     servoRotate180(3);
   3852  001E84  0E00               	movlw	0
   3853  001E86  6E02               	movwf	servoRotate180@servo+1,c
   3854  001E88  0E03               	movlw	3
@@ -4043,7 +4043,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3860                           
   3861 ;; *************** function _servoRotate180 *****************
   3862 ;; Defined at:
-  3863 ;;		line 387 in file "main.c"
+  3863 ;;		line 386 in file "main.c"
   3864 ;; Parameters:    Size  Location     Type
   3865 ;;  servo           2    0[COMRAM] int 
   3866 ;; Auto vars:     Size  Location     Type
@@ -4081,8 +4081,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3893  001B70                     _servoRotate180:
   3894                           	opt callstack 29
   3895                           
-  3896                           ;main.c: 387: void servoRotate180(int servo);main.c: 388: {;main.c: 389:   unsigned int 
-      +                          i;;main.c: 390:     if (servo==1){
+  3896                           ;main.c: 386: void servoRotate180(int servo);main.c: 387: {;main.c: 388:   unsigned int 
+      +                          i;;main.c: 389:     if (servo==1){
   3897                           
   3898                           ;incstack = 0
   3899  001B70  0401               	decf	servoRotate180@servo,w,c
@@ -4090,30 +4090,30 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3901  001B74  A4D8               	btfss	status,2,c
   3902  001B76  D024               	goto	u1340
   3903                           
-  3904                           ;main.c: 391:     for(i=0;i<40;i++)
+  3904                           ;main.c: 390:     for(i=0;i<40;i++)
   3905  001B78  0E00               	movlw	0
   3906  001B7A  6E05               	movwf	servoRotate180@i+1,c
   3907  001B7C  0E00               	movlw	0
   3908  001B7E  6E04               	movwf	servoRotate180@i,c
   3909  001B80                     l93:
   3910                           
-  3911                           ;main.c: 392:         {;main.c: 393:           RC1 = 1;
+  3911                           ;main.c: 391:         {;main.c: 392:           RC1 = 1;
   3912  001B80  8282               	bsf	3970,1,c	;volatile
   3913                           
-  3914                           ;main.c: 394:             RC2 = 1;
+  3914                           ;main.c: 393:             RC2 = 1;
   3915  001B82  8482               	bsf	3970,2,c	;volatile
   3916                           
-  3917                           ;main.c: 395:           _delay((unsigned long)((450)*(10000000/4000000.0)));
+  3917                           ;main.c: 394:           _delay((unsigned long)((450)*(10000000/4000000.0)));
   3918  001B84  0EE1               	movlw	225
   3919  001B86                     u2017:
   3920  001B86  D000               	nop2	
   3921  001B88  2EE8               	decfsz	wreg,f,c
   3922  001B8A  D7FD               	bra	u2017
   3923                           
-  3924                           ;main.c: 397:           RC2 =0;
+  3924                           ;main.c: 396:           RC2 =0;
   3925  001B8C  9482               	bcf	3970,2,c	;volatile
   3926                           
-  3927                           ;main.c: 398:           _delay((unsigned long)((2100)*(10000000/4000000.0)));
+  3927                           ;main.c: 397:           _delay((unsigned long)((2100)*(10000000/4000000.0)));
   3928  001B8E  0E07               	movlw	7
   3929  001B90  6E03               	movwf	??_servoRotate180& (0+255),c
   3930  001B92  0ED0               	movlw	208
@@ -4124,10 +4124,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3935  001B9A  D7FC               	bra	u2027
   3936  001B9C  D000               	nop2	
   3937                           
-  3938                           ;main.c: 400:           RC1 = 0;
+  3938                           ;main.c: 399:           RC1 = 0;
   3939  001B9E  9282               	bcf	3970,1,c	;volatile
   3940                           
-  3941                           ;main.c: 401:           _delay((unsigned long)((13550)*(10000000/4000000.0)));
+  3941                           ;main.c: 400:           _delay((unsigned long)((13550)*(10000000/4000000.0)));
   3942  001BA0  0E2C               	movlw	44
   3943  001BA2  6E03               	movwf	??_servoRotate180& (0+255),c
   3944  001BA4  0EFD               	movlw	253
@@ -4138,7 +4138,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3949  001BAC  D7FC               	bra	u2037
   3950  001BAE  D000               	nop2	
   3951                           
-  3952                           ;main.c: 402:         }
+  3952                           ;main.c: 401:         }
   3953  001BB0  4A04               	infsnz	servoRotate180@i,f,c
   3954  001BB2  2A05               	incf	servoRotate180@i+1,f,c
   3955  001BB4  5005               	movf	servoRotate180@i+1,w,c
@@ -4149,24 +4149,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3960  001BBE  D7E0               	goto	l93
   3961  001BC0                     u1340:
   3962                           
-  3963                           ;main.c: 404:   if (servo==2){
+  3963                           ;main.c: 403:   if (servo==2){
   3964  001BC0  0E02               	movlw	2
   3965  001BC2  1801               	xorwf	servoRotate180@servo,w,c
   3966  001BC4  1002               	iorwf	servoRotate180@servo+1,w,c
   3967  001BC6  A4D8               	btfss	status,2,c
   3968  001BC8  D01D               	goto	u1360
   3969                           
-  3970                           ;main.c: 405:     for(i=0;i<40;i++)
+  3970                           ;main.c: 404:     for(i=0;i<40;i++)
   3971  001BCA  0E00               	movlw	0
   3972  001BCC  6E05               	movwf	servoRotate180@i+1,c
   3973  001BCE  0E00               	movlw	0
   3974  001BD0  6E04               	movwf	servoRotate180@i,c
   3975  001BD2                     l96:
   3976                           
-  3977                           ;main.c: 406:           {;main.c: 408:     RD1 = 1;
+  3977                           ;main.c: 405:           {;main.c: 407:     RD1 = 1;
   3978  001BD2  8283               	bsf	3971,1,c	;volatile
   3979                           
-  3980                           ;main.c: 411:     _delay((unsigned long)((550)*(10000000/4000000.0)));
+  3980                           ;main.c: 410:     _delay((unsigned long)((550)*(10000000/4000000.0)));
   3981  001BD4  0EC4               	movlw	196
   3982  001BD6                     u2047:
   3983  001BD6  D000               	nop2	
@@ -4176,10 +4176,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   3987  001BDE  D000               	nop2	
   3988  001BE0  F000               	nop	
   3989                           
-  3990                           ;main.c: 413:     RD1 = 0;
+  3990                           ;main.c: 412:     RD1 = 0;
   3991  001BE2  9283               	bcf	3971,1,c	;volatile
   3992                           
-  3993                           ;main.c: 416:     _delay((unsigned long)((27050)*(10000000/4000000.0)));
+  3993                           ;main.c: 415:     _delay((unsigned long)((27050)*(10000000/4000000.0)));
   3994  001BE4  0E58               	movlw	88
   3995  001BE6  6E03               	movwf	??_servoRotate180& (0+255),c
   3996  001BE8  0ED2               	movlw	210
@@ -4190,7 +4190,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4001  001BF0  D7FC               	bra	u2057
   4002  001BF2  F000               	nop	
   4003                           
-  4004                           ;main.c: 417:           }
+  4004                           ;main.c: 416:           }
   4005  001BF4  4A04               	infsnz	servoRotate180@i,f,c
   4006  001BF6  2A05               	incf	servoRotate180@i+1,f,c
   4007  001BF8  5005               	movf	servoRotate180@i+1,w,c
@@ -4201,24 +4201,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4012  001C02  D7E7               	goto	l96
   4013  001C04                     u1360:
   4014                           
-  4015                           ;main.c: 419:     if (servo==3){
+  4015                           ;main.c: 418:     if (servo==3){
   4016  001C04  0E03               	movlw	3
   4017  001C06  1801               	xorwf	servoRotate180@servo,w,c
   4018  001C08  1002               	iorwf	servoRotate180@servo+1,w,c
   4019  001C0A  A4D8               	btfss	status,2,c
   4020  001C0C  0012               	return	
   4021                           
-  4022                           ;main.c: 420:       for(i=0;i<40;i++)
+  4022                           ;main.c: 419:       for(i=0;i<40;i++)
   4023  001C0E  0E00               	movlw	0
   4024  001C10  6E05               	movwf	servoRotate180@i+1,c
   4025  001C12  0E00               	movlw	0
   4026  001C14  6E04               	movwf	servoRotate180@i,c
   4027  001C16                     l99:
   4028                           
-  4029                           ;main.c: 421:         {;main.c: 422:         RD0 = 1;
+  4029                           ;main.c: 420:         {;main.c: 421:         RD0 = 1;
   4030  001C16  8083               	bsf	3971,0,c	;volatile
   4031                           
-  4032                           ;main.c: 424:         _delay((unsigned long)((2500)*(10000000/4000000.0)));
+  4032                           ;main.c: 423:         _delay((unsigned long)((2500)*(10000000/4000000.0)));
   4033  001C18  0E09               	movlw	9
   4034  001C1A  6E03               	movwf	??_servoRotate180& (0+255),c
   4035  001C1C  0E1C               	movlw	28
@@ -4229,10 +4229,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4040  001C24  D7FC               	bra	u2067
   4041  001C26  D000               	nop2	
   4042                           
-  4043                           ;main.c: 427:             RD0 = 0;
+  4043                           ;main.c: 426:             RD0 = 0;
   4044  001C28  9083               	bcf	3971,0,c	;volatile
   4045                           
-  4046                           ;main.c: 429:         _delay((unsigned long)((10500)*(10000000/4000000.0)));
+  4046                           ;main.c: 428:         _delay((unsigned long)((10500)*(10000000/4000000.0)));
   4047  001C2A  0E23               	movlw	35
   4048  001C2C  6E03               	movwf	??_servoRotate180& (0+255),c
   4049  001C2E  0E16               	movlw	22
@@ -4242,7 +4242,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4053  001C34  2E03               	decfsz	??_servoRotate180& (0+255),f,c
   4054  001C36  D7FC               	bra	u2077
   4055                           
-  4056                           ;main.c: 430:         }
+  4056                           ;main.c: 429:         }
   4057  001C38  4A04               	infsnz	servoRotate180@i,f,c
   4058  001C3A  2A05               	incf	servoRotate180@i+1,f,c
   4059  001C3C  5005               	movf	servoRotate180@i+1,w,c
@@ -4259,7 +4259,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4070                           
   4071 ;; *************** function _servoRotate0 *****************
   4072 ;; Defined at:
-  4073 ;;		line 343 in file "main.c"
+  4073 ;;		line 342 in file "main.c"
   4074 ;; Parameters:    Size  Location     Type
   4075 ;;  servo           2    0[COMRAM] int 
   4076 ;; Auto vars:     Size  Location     Type
@@ -4297,7 +4297,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4103  001C4C                     _servoRotate0:
   4104                           	opt callstack 29
   4105                           
-  4106                           ;main.c: 344:     unsigned int i;;main.c: 345:     if (servo==1){
+  4106                           ;main.c: 343:     unsigned int i;;main.c: 344:     if (servo==1){
   4107                           
   4108                           ;incstack = 0
   4109  001C4C  0401               	decf	servoRotate0@servo,w,c
@@ -4305,20 +4305,20 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4111  001C50  A4D8               	btfss	status,2,c
   4112  001C52  D023               	goto	u1280
   4113                           
-  4114                           ;main.c: 346:       for(i=0;i<40;i++)
+  4114                           ;main.c: 345:       for(i=0;i<40;i++)
   4115  001C54  0E00               	movlw	0
   4116  001C56  6E05               	movwf	servoRotate0@i+1,c
   4117  001C58  0E00               	movlw	0
   4118  001C5A  6E04               	movwf	servoRotate0@i,c
   4119  001C5C                     l81:
   4120                           
-  4121                           ;main.c: 347:           {;main.c: 348:             RC1 = 1;
+  4121                           ;main.c: 346:           {;main.c: 347:             RC1 = 1;
   4122  001C5C  8282               	bsf	3970,1,c	;volatile
   4123                           
-  4124                           ;main.c: 349:             RC2 = 1;
+  4124                           ;main.c: 348:             RC2 = 1;
   4125  001C5E  8482               	bsf	3970,2,c	;volatile
   4126                           
-  4127                           ;main.c: 350:             _delay((unsigned long)((1100)*(10000000/4000000.0)));
+  4127                           ;main.c: 349:             _delay((unsigned long)((1100)*(10000000/4000000.0)));
   4128  001C60  0E04               	movlw	4
   4129  001C62  6E03               	movwf	??_servoRotate0& (0+255),c
   4130  001C64  0E91               	movlw	145
@@ -4329,19 +4329,19 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4135  001C6C  D7FC               	bra	u2087
   4136  001C6E  F000               	nop	
   4137                           
-  4138                           ;main.c: 351:             RC2 = 0;
+  4138                           ;main.c: 350:             RC2 = 0;
   4139  001C70  9482               	bcf	3970,2,c	;volatile
   4140                           
-  4141                           ;main.c: 352:             _delay((unsigned long)((300)*(10000000/4000000.0)));
+  4141                           ;main.c: 351:             _delay((unsigned long)((300)*(10000000/4000000.0)));
   4142  001C72  0EFA               	movlw	250
   4143  001C74                     u2097:
   4144  001C74  2EE8               	decfsz	wreg,f,c
   4145  001C76  D7FE               	bra	u2097
   4146                           
-  4147                           ;main.c: 353:             RC1 = 0;
+  4147                           ;main.c: 352:             RC1 = 0;
   4148  001C78  9282               	bcf	3970,1,c	;volatile
   4149                           
-  4150                           ;main.c: 357:             _delay((unsigned long)((18600)*(10000000/4000000.0)));
+  4150                           ;main.c: 356:             _delay((unsigned long)((18600)*(10000000/4000000.0)));
   4151  001C7A  0E3D               	movlw	61
   4152  001C7C  6E03               	movwf	??_servoRotate0& (0+255),c
   4153  001C7E  0E62               	movlw	98
@@ -4352,7 +4352,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4158  001C86  D7FC               	bra	u2107
   4159  001C88  D000               	nop2	
   4160                           
-  4161                           ;main.c: 358:           }
+  4161                           ;main.c: 357:           }
   4162  001C8A  4A04               	infsnz	servoRotate0@i,f,c
   4163  001C8C  2A05               	incf	servoRotate0@i+1,f,c
   4164  001C8E  5005               	movf	servoRotate0@i+1,w,c
@@ -4363,24 +4363,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4169  001C98  D7E1               	goto	l81
   4170  001C9A                     u1280:
   4171                           
-  4172                           ;main.c: 360:     if (servo==2){
+  4172                           ;main.c: 359:     if (servo==2){
   4173  001C9A  0E02               	movlw	2
   4174  001C9C  1801               	xorwf	servoRotate0@servo,w,c
   4175  001C9E  1002               	iorwf	servoRotate0@servo+1,w,c
   4176  001CA0  A4D8               	btfss	status,2,c
   4177  001CA2  D01D               	goto	u1300
   4178                           
-  4179                           ;main.c: 361:       for(i=0;i<40;i++)
+  4179                           ;main.c: 360:       for(i=0;i<40;i++)
   4180  001CA4  0E00               	movlw	0
   4181  001CA6  6E05               	movwf	servoRotate0@i+1,c
   4182  001CA8  0E00               	movlw	0
   4183  001CAA  6E04               	movwf	servoRotate0@i,c
   4184  001CAC                     l84:
   4185                           
-  4186                           ;main.c: 362:         {;main.c: 364:         RD1 = 1;
+  4186                           ;main.c: 361:         {;main.c: 363:         RD1 = 1;
   4187  001CAC  8283               	bsf	3971,1,c	;volatile
   4188                           
-  4189                           ;main.c: 367:           _delay((unsigned long)((1000)*(10000000/4000000.0)));
+  4189                           ;main.c: 366:           _delay((unsigned long)((1000)*(10000000/4000000.0)));
   4190  001CAE  0E04               	movlw	4
   4191  001CB0  6E03               	movwf	??_servoRotate0& (0+255),c
   4192  001CB2  0E3E               	movlw	62
@@ -4390,10 +4390,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4196  001CB8  2E03               	decfsz	??_servoRotate0& (0+255),f,c
   4197  001CBA  D7FC               	bra	u2117
   4198                           
-  4199                           ;main.c: 369:         RD1 = 0;
+  4199                           ;main.c: 368:         RD1 = 0;
   4200  001CBC  9283               	bcf	3971,1,c	;volatile
   4201                           
-  4202                           ;main.c: 372:           _delay((unsigned long)((19000)*(10000000/4000000.0)));
+  4202                           ;main.c: 371:           _delay((unsigned long)((19000)*(10000000/4000000.0)));
   4203  001CBE  0E3E               	movlw	62
   4204  001CC0  6E03               	movwf	??_servoRotate0& (0+255),c
   4205  001CC2  0EAF               	movlw	175
@@ -4404,7 +4404,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4210  001CCA  D7FC               	bra	u2127
   4211  001CCC  F000               	nop	
   4212                           
-  4213                           ;main.c: 373:         }
+  4213                           ;main.c: 372:         }
   4214  001CCE  4A04               	infsnz	servoRotate0@i,f,c
   4215  001CD0  2A05               	incf	servoRotate0@i+1,f,c
   4216  001CD2  5005               	movf	servoRotate0@i+1,w,c
@@ -4415,24 +4415,24 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4221  001CDC  D7E7               	goto	l84
   4222  001CDE                     u1300:
   4223                           
-  4224                           ;main.c: 375:     if (servo==3){
+  4224                           ;main.c: 374:     if (servo==3){
   4225  001CDE  0E03               	movlw	3
   4226  001CE0  1801               	xorwf	servoRotate0@servo,w,c
   4227  001CE2  1002               	iorwf	servoRotate0@servo+1,w,c
   4228  001CE4  A4D8               	btfss	status,2,c
   4229  001CE6  0012               	return	
   4230                           
-  4231                           ;main.c: 376:       for(i=0;i<40;i++)
+  4231                           ;main.c: 375:       for(i=0;i<40;i++)
   4232  001CE8  0E00               	movlw	0
   4233  001CEA  6E05               	movwf	servoRotate0@i+1,c
   4234  001CEC  0E00               	movlw	0
   4235  001CEE  6E04               	movwf	servoRotate0@i,c
   4236  001CF0                     l87:
   4237                           
-  4238                           ;main.c: 377:         {;main.c: 378:         RD0 = 1;
+  4238                           ;main.c: 376:         {;main.c: 377:         RD0 = 1;
   4239  001CF0  8083               	bsf	3971,0,c	;volatile
   4240                           
-  4241                           ;main.c: 379:         _delay((unsigned long)((2000)*(10000000/4000000.0)));
+  4241                           ;main.c: 378:         _delay((unsigned long)((2000)*(10000000/4000000.0)));
   4242  001CF2  0E07               	movlw	7
   4243  001CF4  6E03               	movwf	??_servoRotate0& (0+255),c
   4244  001CF6  0E7D               	movlw	125
@@ -4443,10 +4443,10 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4249  001CFE  D7FC               	bra	u2137
   4250  001D00  F000               	nop	
   4251                           
-  4252                           ;main.c: 382:         RD0 = 0;
+  4252                           ;main.c: 381:         RD0 = 0;
   4253  001D02  9083               	bcf	3971,0,c	;volatile
   4254                           
-  4255                           ;main.c: 383:         _delay((unsigned long)((11000)*(10000000/4000000.0)));
+  4255                           ;main.c: 382:         _delay((unsigned long)((11000)*(10000000/4000000.0)));
   4256  001D04  0E24               	movlw	36
   4257  001D06  6E03               	movwf	??_servoRotate0& (0+255),c
   4258  001D08  0EB6               	movlw	182
@@ -4456,7 +4456,7 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   4262  001D0E  2E03               	decfsz	??_servoRotate0& (0+255),f,c
   4263  001D10  D7FC               	bra	u2147
   4264                           
-  4265                           ;main.c: 384:         }
+  4265                           ;main.c: 383:         }
   4266  001D12  4A04               	infsnz	servoRotate0@i,f,c
   4267  001D14  2A05               	incf	servoRotate0@i+1,f,c
   4268  001D16  5005               	movf	servoRotate0@i+1,w,c
@@ -5398,7 +5398,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Mon Apr 08 05:51:06 2019
+Symbol Table                                                                                   Tue Apr 09 06:40:11 2019
 
                         l81 1C5C                          l84 1CAC                          l93 1B80  
                         l87 1CF0                          l96 1BD2                          l99 1C16  

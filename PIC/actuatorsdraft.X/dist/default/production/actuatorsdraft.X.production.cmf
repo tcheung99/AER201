@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\trudi\AppData\Local\Temp\si5o.o
+$C:\Users\trudi\AppData\Local\Temp\s9hg.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -131,203 +131,203 @@ $dist/default/production\actuatorsdraft.X.production.o
 207A text21 CODE >84:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\lcd.c
 2080 text21 CODE >87:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\lcd.c
 2086 text21 CODE >88:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\lcd.c
-1C4C text20 CODE >343:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C4C text20 CODE >345:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C54 text20 CODE >346:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C5C text20 CODE >348:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C5E text20 CODE >349:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C60 text20 CODE >350:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C70 text20 CODE >351:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C72 text20 CODE >352:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C78 text20 CODE >353:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C7A text20 CODE >357:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C8A text20 CODE >358:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C9A text20 CODE >360:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CA4 text20 CODE >361:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CAC text20 CODE >364:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CAE text20 CODE >367:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CBC text20 CODE >369:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CBE text20 CODE >372:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CCE text20 CODE >373:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CDE text20 CODE >375:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CE8 text20 CODE >376:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CF0 text20 CODE >378:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1CF2 text20 CODE >379:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D02 text20 CODE >382:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D04 text20 CODE >383:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D12 text20 CODE >384:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D24 text20 CODE >386:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B70 text19 CODE >387:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B70 text19 CODE >390:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B78 text19 CODE >391:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B80 text19 CODE >393:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B82 text19 CODE >394:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B84 text19 CODE >395:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B8C text19 CODE >397:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B8E text19 CODE >398:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B9E text19 CODE >400:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BA0 text19 CODE >401:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BB0 text19 CODE >402:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BC0 text19 CODE >404:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BCA text19 CODE >405:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BD2 text19 CODE >408:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BD4 text19 CODE >411:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BE2 text19 CODE >413:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BE4 text19 CODE >416:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1BF4 text19 CODE >417:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C04 text19 CODE >419:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C0E text19 CODE >420:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C16 text19 CODE >422:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C18 text19 CODE >424:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C28 text19 CODE >427:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C2A text19 CODE >429:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C38 text19 CODE >430:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1C4A text19 CODE >432:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DFA text18 CODE >433:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DFA text18 CODE >435:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DFE text18 CODE >438:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E0A text18 CODE >442:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E16 text18 CODE >443:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E2C text18 CODE >444:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E38 text18 CODE >446:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E44 text18 CODE >447:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E50 text18 CODE >448:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E5C text18 CODE >450:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E6C text18 CODE >451:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E78 text18 CODE >452:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E84 text18 CODE >453:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1E90 text18 CODE >457:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1058 text17 CODE >593:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-105A text17 CODE >594:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1062 text17 CODE >595:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1068 text17 CODE >596:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-106C text17 CODE >597:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-107C text17 CODE >598:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1080 text17 CODE >599:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1090 text17 CODE >600:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1094 text17 CODE >601:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10A4 text17 CODE >602:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10A8 text17 CODE >603:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10B8 text17 CODE >604:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10BC text17 CODE >605:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10CC text17 CODE >607:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10D2 text17 CODE >608:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10D6 text17 CODE >609:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10E6 text17 CODE >610:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10EA text17 CODE >611:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10FA text17 CODE >612:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-10FE text17 CODE >613:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-110E text17 CODE >614:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1112 text17 CODE >615:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1122 text17 CODE >616:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1126 text17 CODE >617:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1136 text17 CODE >620:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1140 text17 CODE >621:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1146 text17 CODE >622:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1148 text17 CODE >623:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-114A text17 CODE >624:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-114C text17 CODE >625:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-114E text17 CODE >626:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-115C text17 CODE >627:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-115E text17 CODE >628:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1160 text17 CODE >629:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1162 text17 CODE >630:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1164 text17 CODE >631:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1172 text17 CODE >632:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1174 text17 CODE >633:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1176 text17 CODE >634:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1178 text17 CODE >635:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-117A text17 CODE >636:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1188 text17 CODE >637:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-118A text17 CODE >638:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-118C text17 CODE >639:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-118E text17 CODE >640:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1190 text17 CODE >641:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-119E text17 CODE >642:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11A0 text17 CODE >643:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11A2 text17 CODE >644:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11A4 text17 CODE >645:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11A6 text17 CODE >646:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11B4 text17 CODE >648:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11BA text17 CODE >649:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11BC text17 CODE >650:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11BE text17 CODE >651:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11C0 text17 CODE >652:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11C2 text17 CODE >653:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11D0 text17 CODE >654:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11D2 text17 CODE >655:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11D4 text17 CODE >656:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11D6 text17 CODE >657:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11D8 text17 CODE >658:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11E6 text17 CODE >659:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11E8 text17 CODE >660:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11EA text17 CODE >661:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11EC text17 CODE >662:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11EE text17 CODE >663:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11FC text17 CODE >664:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-11FE text17 CODE >665:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1200 text17 CODE >666:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1202 text17 CODE >667:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1204 text17 CODE >668:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1212 text17 CODE >669:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1214 text17 CODE >670:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1216 text17 CODE >671:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1218 text17 CODE >672:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-121A text17 CODE >673:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1228 text17 CODE >676:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1232 text17 CODE >677:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1238 text17 CODE >678:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-123A text17 CODE >679:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-123C text17 CODE >680:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-123E text17 CODE >681:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1240 text17 CODE >682:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1250 text17 CODE >683:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1252 text17 CODE >684:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1254 text17 CODE >685:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1256 text17 CODE >686:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1258 text17 CODE >687:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1268 text17 CODE >688:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-126A text17 CODE >689:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-126C text17 CODE >690:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-126E text17 CODE >691:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1270 text17 CODE >692:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1280 text17 CODE >693:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1282 text17 CODE >694:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1284 text17 CODE >695:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1286 text17 CODE >696:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1288 text17 CODE >697:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1298 text17 CODE >698:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-129A text17 CODE >699:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-129C text17 CODE >700:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-129E text17 CODE >701:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12A0 text17 CODE >702:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12B0 text17 CODE >704:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12B6 text17 CODE >705:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12B8 text17 CODE >706:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12BA text17 CODE >707:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12BC text17 CODE >708:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12BE text17 CODE >709:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12CE text17 CODE >710:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12D0 text17 CODE >711:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12D2 text17 CODE >712:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12D4 text17 CODE >713:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12D6 text17 CODE >714:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12E6 text17 CODE >715:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12E8 text17 CODE >716:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12EA text17 CODE >717:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12EC text17 CODE >718:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12EE text17 CODE >719:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-12FE text17 CODE >720:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1300 text17 CODE >721:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1302 text17 CODE >722:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1304 text17 CODE >723:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1306 text17 CODE >724:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1316 text17 CODE >725:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1318 text17 CODE >726:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-131A text17 CODE >727:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-131C text17 CODE >728:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-131E text17 CODE >729:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-132E text17 CODE >732:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C4C text20 CODE >342:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C4C text20 CODE >344:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C54 text20 CODE >345:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C5C text20 CODE >347:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C5E text20 CODE >348:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C60 text20 CODE >349:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C70 text20 CODE >350:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C72 text20 CODE >351:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C78 text20 CODE >352:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C7A text20 CODE >356:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C8A text20 CODE >357:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C9A text20 CODE >359:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CA4 text20 CODE >360:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CAC text20 CODE >363:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CAE text20 CODE >366:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CBC text20 CODE >368:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CBE text20 CODE >371:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CCE text20 CODE >372:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CDE text20 CODE >374:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CE8 text20 CODE >375:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CF0 text20 CODE >377:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1CF2 text20 CODE >378:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D02 text20 CODE >381:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D04 text20 CODE >382:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D12 text20 CODE >383:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D24 text20 CODE >385:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B70 text19 CODE >386:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B70 text19 CODE >389:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B78 text19 CODE >390:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B80 text19 CODE >392:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B82 text19 CODE >393:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B84 text19 CODE >394:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B8C text19 CODE >396:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B8E text19 CODE >397:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B9E text19 CODE >399:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BA0 text19 CODE >400:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BB0 text19 CODE >401:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BC0 text19 CODE >403:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BCA text19 CODE >404:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BD2 text19 CODE >407:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BD4 text19 CODE >410:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BE2 text19 CODE >412:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BE4 text19 CODE >415:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1BF4 text19 CODE >416:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C04 text19 CODE >418:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C0E text19 CODE >419:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C16 text19 CODE >421:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C18 text19 CODE >423:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C28 text19 CODE >426:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C2A text19 CODE >428:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C38 text19 CODE >429:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1C4A text19 CODE >431:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DFA text18 CODE >432:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DFA text18 CODE >434:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DFE text18 CODE >437:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E0A text18 CODE >441:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E16 text18 CODE >442:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E2C text18 CODE >443:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E38 text18 CODE >445:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E44 text18 CODE >446:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E50 text18 CODE >447:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E5C text18 CODE >449:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E6C text18 CODE >450:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E78 text18 CODE >451:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E84 text18 CODE >452:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1E90 text18 CODE >456:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1058 text17 CODE >592:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+105A text17 CODE >593:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1062 text17 CODE >594:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1068 text17 CODE >595:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+106C text17 CODE >596:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+107C text17 CODE >597:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1080 text17 CODE >598:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1090 text17 CODE >599:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1094 text17 CODE >600:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10A4 text17 CODE >601:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10A8 text17 CODE >602:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10B8 text17 CODE >603:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10BC text17 CODE >604:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10CC text17 CODE >606:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10D2 text17 CODE >607:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10D6 text17 CODE >608:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10E6 text17 CODE >609:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10EA text17 CODE >610:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10FA text17 CODE >611:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+10FE text17 CODE >612:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+110E text17 CODE >613:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1112 text17 CODE >614:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1122 text17 CODE >615:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1126 text17 CODE >616:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1136 text17 CODE >619:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1140 text17 CODE >620:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1146 text17 CODE >621:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1148 text17 CODE >622:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+114A text17 CODE >623:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+114C text17 CODE >624:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+114E text17 CODE >625:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+115C text17 CODE >626:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+115E text17 CODE >627:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1160 text17 CODE >628:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1162 text17 CODE >629:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1164 text17 CODE >630:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1172 text17 CODE >631:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1174 text17 CODE >632:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1176 text17 CODE >633:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1178 text17 CODE >634:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+117A text17 CODE >635:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1188 text17 CODE >636:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+118A text17 CODE >637:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+118C text17 CODE >638:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+118E text17 CODE >639:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1190 text17 CODE >640:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+119E text17 CODE >641:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11A0 text17 CODE >642:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11A2 text17 CODE >643:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11A4 text17 CODE >644:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11A6 text17 CODE >645:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11B4 text17 CODE >647:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11BA text17 CODE >648:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11BC text17 CODE >649:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11BE text17 CODE >650:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11C0 text17 CODE >651:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11C2 text17 CODE >652:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11D0 text17 CODE >653:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11D2 text17 CODE >654:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11D4 text17 CODE >655:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11D6 text17 CODE >656:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11D8 text17 CODE >657:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11E6 text17 CODE >658:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11E8 text17 CODE >659:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11EA text17 CODE >660:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11EC text17 CODE >661:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11EE text17 CODE >662:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11FC text17 CODE >663:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+11FE text17 CODE >664:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1200 text17 CODE >665:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1202 text17 CODE >666:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1204 text17 CODE >667:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1212 text17 CODE >668:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1214 text17 CODE >669:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1216 text17 CODE >670:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1218 text17 CODE >671:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+121A text17 CODE >672:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1228 text17 CODE >675:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1232 text17 CODE >676:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1238 text17 CODE >677:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+123A text17 CODE >678:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+123C text17 CODE >679:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+123E text17 CODE >680:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1240 text17 CODE >681:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1250 text17 CODE >682:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1252 text17 CODE >683:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1254 text17 CODE >684:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1256 text17 CODE >685:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1258 text17 CODE >686:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1268 text17 CODE >687:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+126A text17 CODE >688:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+126C text17 CODE >689:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+126E text17 CODE >690:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1270 text17 CODE >691:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1280 text17 CODE >692:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1282 text17 CODE >693:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1284 text17 CODE >694:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1286 text17 CODE >695:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1288 text17 CODE >696:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1298 text17 CODE >697:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+129A text17 CODE >698:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+129C text17 CODE >699:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+129E text17 CODE >700:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12A0 text17 CODE >701:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12B0 text17 CODE >703:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12B6 text17 CODE >704:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12B8 text17 CODE >705:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12BA text17 CODE >706:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12BC text17 CODE >707:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12BE text17 CODE >708:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12CE text17 CODE >709:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12D0 text17 CODE >710:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12D2 text17 CODE >711:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12D4 text17 CODE >712:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12D6 text17 CODE >713:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12E6 text17 CODE >714:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12E8 text17 CODE >715:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12EA text17 CODE >716:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12EC text17 CODE >717:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12EE text17 CODE >718:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+12FE text17 CODE >719:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1300 text17 CODE >720:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1302 text17 CODE >721:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1304 text17 CODE >722:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1306 text17 CODE >723:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1316 text17 CODE >724:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1318 text17 CODE >725:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+131A text17 CODE >726:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+131C text17 CODE >727:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+131E text17 CODE >728:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+132E text17 CODE >731:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 16F2 text16 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
 16F2 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
 16F6 text16 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
@@ -468,112 +468,112 @@ $dist/default/production\actuatorsdraft.X.production.o
 21EC text5 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
 21F4 text5 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
 2210 text5 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
+1D26 text4 CODE >458:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 1D26 text4 CODE >459:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D26 text4 CODE >460:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D2E text4 CODE >463:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D3C text4 CODE >464:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D52 text4 CODE >465:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D5E text4 CODE >466:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D64 text4 CODE >467:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D78 text4 CODE >469:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D80 text4 CODE >471:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1D8E text4 CODE >473:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DA2 text4 CODE >474:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DB6 text4 CODE >475:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DBA text4 CODE >476:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DBC text4 CODE >488:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DD2 text4 CODE >489:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DDE text4 CODE >490:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DE4 text4 CODE >491:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1DF8 text4 CODE >495:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-195E text3 CODE >497:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1960 text3 CODE >498:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1968 text3 CODE >500:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1976 text3 CODE >501:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-198C text3 CODE >502:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1998 text3 CODE >503:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-199E text3 CODE >504:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-19B2 text3 CODE >505:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-19B8 text3 CODE >506:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-19C2 text3 CODE >508:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-19D0 text3 CODE >510:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-19E8 text3 CODE >511:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-19FC text3 CODE >512:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A00 text3 CODE >514:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A06 text3 CODE >515:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A10 text3 CODE >517:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A1E text3 CODE >519:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A4E text3 CODE >520:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A62 text3 CODE >521:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F28 text2 CODE >544:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F2A text2 CODE >562:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F32 text2 CODE >565:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F48 text2 CODE >566:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F54 text2 CODE >567:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F5A text2 CODE >568:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F6E text2 CODE >569:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F76 text2 CODE >571:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F84 text2 CODE >573:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1F98 text2 CODE >574:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1FAC text2 CODE >575:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1FB0 text2 CODE >579:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D2E text4 CODE >462:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D3C text4 CODE >463:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D52 text4 CODE >464:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D5E text4 CODE >465:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D64 text4 CODE >466:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D78 text4 CODE >468:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D80 text4 CODE >470:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1D8E text4 CODE >472:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DA2 text4 CODE >473:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DB6 text4 CODE >474:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DBA text4 CODE >475:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DBC text4 CODE >487:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DD2 text4 CODE >488:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DDE text4 CODE >489:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DE4 text4 CODE >490:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1DF8 text4 CODE >494:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+195E text3 CODE >496:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1960 text3 CODE >497:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1968 text3 CODE >499:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1976 text3 CODE >500:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+198C text3 CODE >501:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1998 text3 CODE >502:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+199E text3 CODE >503:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+19B2 text3 CODE >504:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+19B8 text3 CODE >505:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+19C2 text3 CODE >507:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+19D0 text3 CODE >509:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+19E8 text3 CODE >510:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+19FC text3 CODE >511:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A00 text3 CODE >513:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A06 text3 CODE >514:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A10 text3 CODE >516:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A1E text3 CODE >518:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A4E text3 CODE >519:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A62 text3 CODE >520:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F28 text2 CODE >543:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F2A text2 CODE >561:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F32 text2 CODE >564:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F48 text2 CODE >565:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F54 text2 CODE >566:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F5A text2 CODE >567:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F6E text2 CODE >568:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F76 text2 CODE >570:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F84 text2 CODE >572:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1F98 text2 CODE >573:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1FAC text2 CODE >574:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1FB0 text2 CODE >578:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2144 text1 CODE >132:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 2144 text1 CODE >133:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2144 text1 CODE >134:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2148 text1 CODE >136:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-214C text1 CODE >137:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2150 text1 CODE >138:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2154 text1 CODE >141:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2158 text1 CODE >142:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-215C text1 CODE >144:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2160 text1 CODE >146:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2164 text1 CODE >147:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2168 text1 CODE >148:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-216C text1 CODE >149:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-2170 text1 CODE >151:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2148 text1 CODE >135:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+214C text1 CODE >136:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2150 text1 CODE >137:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2154 text1 CODE >140:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2158 text1 CODE >141:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+215C text1 CODE >143:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2160 text1 CODE >145:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2164 text1 CODE >146:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2168 text1 CODE >147:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+216C text1 CODE >148:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+2170 text1 CODE >150:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A68 text0 CODE >91:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 1A68 text0 CODE >92:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A68 text0 CODE >93:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A6C text0 CODE >94:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A70 text0 CODE >98:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A86 text0 CODE >99:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1A9A text0 CODE >100:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1AB0 text0 CODE >102:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1ABA text0 CODE >103:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1AD0 text0 CODE >104:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1ADC text0 CODE >106:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1AE0 text0 CODE >107:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1AE8 text0 CODE >108:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1AF6 text0 CODE >109:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1AFC text0 CODE >111:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B12 text0 CODE >112:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B1E text0 CODE >114:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B22 text0 CODE >116:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B38 text0 CODE >117:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B44 text0 CODE >121:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B5A text0 CODE >123:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B68 text0 CODE >124:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-1B6C text0 CODE >131:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
-21C6 cinit CODE >1537:C:\Users\trudi\AppData\Local\Temp\si5o.
-21C6 cinit CODE >1539:C:\Users\trudi\AppData\Local\Temp\si5o.
-21C6 cinit CODE >1542:C:\Users\trudi\AppData\Local\Temp\si5o.
-21C6 cinit CODE >1581:C:\Users\trudi\AppData\Local\Temp\si5o.
-21CA cinit CODE >1582:C:\Users\trudi\AppData\Local\Temp\si5o.
-21CC cinit CODE >1583:C:\Users\trudi\AppData\Local\Temp\si5o.
-21CC cinit CODE >1584:C:\Users\trudi\AppData\Local\Temp\si5o.
-21CE cinit CODE >1585:C:\Users\trudi\AppData\Local\Temp\si5o.
-21D0 cinit CODE >1586:C:\Users\trudi\AppData\Local\Temp\si5o.
-21D2 cinit CODE >1589:C:\Users\trudi\AppData\Local\Temp\si5o.
-21D6 cinit CODE >1590:C:\Users\trudi\AppData\Local\Temp\si5o.
-21D8 cinit CODE >1591:C:\Users\trudi\AppData\Local\Temp\si5o.
-21D8 cinit CODE >1592:C:\Users\trudi\AppData\Local\Temp\si5o.
-21DA cinit CODE >1593:C:\Users\trudi\AppData\Local\Temp\si5o.
-21DC cinit CODE >1594:C:\Users\trudi\AppData\Local\Temp\si5o.
-21DE cinit CODE >1600:C:\Users\trudi\AppData\Local\Temp\si5o.
-21DE cinit CODE >1603:C:\Users\trudi\AppData\Local\Temp\si5o.
-21E0 cinit CODE >1604:C:\Users\trudi\AppData\Local\Temp\si5o.
-21E2 cinit CODE >1605:C:\Users\trudi\AppData\Local\Temp\si5o.
-21E4 cinit CODE >1606:C:\Users\trudi\AppData\Local\Temp\si5o.
-21E6 cinit CODE >1607:C:\Users\trudi\AppData\Local\Temp\si5o.
-21E8 cinit CODE >1608:C:\Users\trudi\AppData\Local\Temp\si5o.
+1A6C text0 CODE >93:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A70 text0 CODE >97:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A86 text0 CODE >98:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1A9A text0 CODE >99:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1AB0 text0 CODE >101:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1ABA text0 CODE >102:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1AD0 text0 CODE >103:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1ADC text0 CODE >105:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1AE0 text0 CODE >106:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1AE8 text0 CODE >107:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1AF6 text0 CODE >108:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1AFC text0 CODE >110:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B12 text0 CODE >111:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B1E text0 CODE >113:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B22 text0 CODE >115:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B38 text0 CODE >116:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B44 text0 CODE >120:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B5A text0 CODE >122:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B68 text0 CODE >123:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+1B6C text0 CODE >130:C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+21C6 cinit CODE >1537:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21C6 cinit CODE >1539:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21C6 cinit CODE >1542:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21C6 cinit CODE >1581:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21CA cinit CODE >1582:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21CC cinit CODE >1583:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21CC cinit CODE >1584:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21CE cinit CODE >1585:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21D0 cinit CODE >1586:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21D2 cinit CODE >1589:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21D6 cinit CODE >1590:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21D8 cinit CODE >1591:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21D8 cinit CODE >1592:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21DA cinit CODE >1593:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21DC cinit CODE >1594:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21DE cinit CODE >1600:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21DE cinit CODE >1603:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21E0 cinit CODE >1604:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21E2 cinit CODE >1605:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21E4 cinit CODE >1606:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21E6 cinit CODE >1607:C:\Users\trudi\AppData\Local\Temp\s9hg.
+21E8 cinit CODE >1608:C:\Users\trudi\AppData\Local\Temp\s9hg.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -594,7 +594,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __size_of_lcdInst 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __size_of_stepper2 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\actuatorsdraft.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\trudi\AppData\Local\Temp\si5o.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\trudi\AppData\Local\Temp\s9hg.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\actuatorsdraft.X.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 ?_abs 13 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
@@ -606,7 +606,7 @@ _LATB F8A 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 _LATC F8B 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 _LATE F8D 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\si5o.o
+___sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s9hg.o
 _dbuf 8B 0 BANK0 1 bssBANK0 dist/default/production\actuatorsdraft.X.production.o
 _dtoa 1330 0 CODE 0 text8 dist/default/production\actuatorsdraft.X.production.o
 _main 1A68 0 CODE 0 text0 dist/default/production\actuatorsdraft.X.production.o
@@ -617,7 +617,7 @@ abs@a 13 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.produc
 pad@i 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
 pad@p 19 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
 pad@w 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
-start 0 0 CODE 0 init C:\Users\trudi\AppData\Local\Temp\si5o.o
+start 0 0 CODE 0 init C:\Users\trudi\AppData\Local\Temp\s9hg.o
 ___aomod@counter 11 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
 __size_of___aodiv 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __size_of___aomod 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
@@ -633,11 +633,11 @@ _servoRotate0 1C4C 0 CODE 0 text20 dist/default/production\actuatorsdraft.X.prod
 _T0CONbits FD5 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 stepper2_back@direction 65 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\si5o.o
-intlevel0 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\si5o.o
-intlevel1 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\si5o.o
-intlevel2 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\si5o.o
-intlevel3 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\si5o.o
+__accesstop 80 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s9hg.o
+intlevel0 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9hg.o
+intlevel1 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9hg.o
+intlevel2 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9hg.o
+intlevel3 0 0 CODE 0 text C:\Users\trudi\AppData\Local\Temp\s9hg.o
 _stepper2 195E 0 CODE 0 text3 dist/default/production\actuatorsdraft.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\actuatorsdraft.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\actuatorsdraft.X.production.o
@@ -656,8 +656,8 @@ _LCD_SIZE_VERT 1004 0 SMALLCONST 0 smallconst dist/default/production\actuatorsd
 _stepper2_back 1F28 0 CODE 0 text2 dist/default/production\actuatorsdraft.X.production.o
 _ADCON1 FC1 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __end_of_lcdInst 2252 0 CODE 0 text22 dist/default/production\actuatorsdraft.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\si5o.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\si5o.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s9hg.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\trudi\AppData\Local\Temp\s9hg.o
 __end_of_send_byte 223A 0 CODE 0 text23 dist/default/production\actuatorsdraft.X.production.o
 __size_of_initLCD 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
 __size_of_servoRotate0 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
@@ -741,7 +741,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\actuatorsdraft.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\actuatorsdraft.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\actuatorsdraft.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\actuatorsdraft.X.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\trudi\AppData\Local\Temp\si5o.o
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\trudi\AppData\Local\Temp\s9hg.o
 servoRotate180@i 4 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\actuatorsdraft.X.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\actuatorsdraft.X.production.o
@@ -896,8 +896,8 @@ _strlen 2172 0 CODE 0 text10 dist/default/production\actuatorsdraft.X.production
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\actuatorsdraft.X.production.o
 _LCD_LINE1_ADDR 1003 0 SMALLCONST 0 smallconst dist/default/production\actuatorsdraft.X.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\actuatorsdraft.X.production.o
-stackhi F7F 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\si5o.o
-stacklo AB 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\si5o.o
+stackhi F7F 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s9hg.o
+stacklo AB 0 ABS 0 - C:\Users\trudi\AppData\Local\Temp\s9hg.o
 send_nibble@data 2 0 COMRAM 1 cstackCOMRAM dist/default/production\actuatorsdraft.X.production.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\actuatorsdraft.X.production.o
 _LCD_LINE3_ADDR 1002 0 SMALLCONST 0 smallconst dist/default/production\actuatorsdraft.X.production.o
@@ -978,7 +978,7 @@ __Ltext23 0 0 ABS 0 text23 dist/default/production\actuatorsdraft.X.production.o
 __Ltext24 0 0 ABS 0 text24 dist/default/production\actuatorsdraft.X.production.o
 __Ltext25 0 0 ABS 0 text25 dist/default/production\actuatorsdraft.X.production.o
 __end_of_LCD_LINE1_ADDR 1004 0 SMALLCONST 0 smallconst dist/default/production\actuatorsdraft.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\trudi\AppData\Local\Temp\si5o.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\trudi\AppData\Local\Temp\s9hg.o
 __end_of_LCD_LINE2_ADDR 1007 0 SMALLCONST 0 smallconst dist/default/production\actuatorsdraft.X.production.o
 _vfprintf 2088 0 CODE 0 text6 dist/default/production\actuatorsdraft.X.production.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\actuatorsdraft.X.production.o

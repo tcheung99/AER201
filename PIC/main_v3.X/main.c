@@ -45,6 +45,8 @@ bool send = true; //PIC is sending
 int tires_deployed; 
 int poles_detected; 
 
+int opTime=0;
+
 volatile long avg_dist; 
 //void start_dc();
 void start();
@@ -317,8 +319,11 @@ int ultrasonic_main(){
         if (min_us_dist<14){
             step2_offset = 0;
         }
-        if (min_us_dist>=14){
+        if ((min_us_dist>=14)&&(min_us_dist<=26)){
         step2_offset = abs(min_us_dist - 14);
+        }
+        if (min_us_dist>26){
+            step2_offset = 10;
         }
         steps2_adj = steps2 + step2_offset;
         sensed++;
@@ -574,7 +579,7 @@ void UI_main(int t_dep, int poles_detected){
                         lcd_clear();
                         printf("Op Time:");
                         lcd_set_ddram_addr(LCD_LINE2_ADDR);
-                        printf("%d", cnt);
+                        printf("%d", opTime);
                         lcd_set_ddram_addr(LCD_LINE4_ADDR);
                         printf("    0-Menu   #>");
                     }
@@ -729,14 +734,15 @@ void main(){
     int poles_detected=0;
     int read=0;
     volatile long prev_avg_dist=0; 
-    volatile int data[3]; // Holds the data to be sent/received
+    volatile int data[4]; // Holds the data to be sent/received
     unsigned int data_g; // Holds the data to be sent/received
     TRISAbits.RA4 = 0;    
     PORTAbits.RA4 = LATAbits.LATA4;
 
     bool act_done = false; 
     bool arduino_stopped = false; 
-    
+    volatile int t_det = 0; 
+
     Poles Pole[10];
 //    int Pole[10];
 //    for (i=0; i<10; i++){
@@ -786,13 +792,16 @@ void main(){
                         I2C_Master_Write(0b00010001); // 7-bit Arduino slave address + Read
                         data[0] = I2C_Master_Read(ACK); // Read one char only
                         data[1] = I2C_Master_Read(ACK); // Read one char only
-                        data[2] = I2C_Master_Read(NACK); // Read one char only
+                        data[2] = I2C_Master_Read(ACK); // Read one char only
+                        data[3] = I2C_Master_Read(NACK); // Read one char only
                         //            data[2] = I2C_Master_Read(NACK); // Read one char only
                         data_g = data[0]; 
                         data_g = (data_g<<8)||(data[1]); 
                         data_g = (data_g<<8)||(data[2]); 
+                        data_g = (data_g<<8)||(data[3]); 
                         I2C_Master_Stop();                       
-                        int t_det = data[1]; 
+                        t_det = data[1]; 
+                        opTime = data[3];
                         if (data[2]==1){
                             brake();
                             break;
@@ -844,12 +853,23 @@ void main(){
             if (act_done){
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
+//            Pole[poles_detected].tires_deployed = t_dep;
+//            Pole[poles_detected].tires_deployed = t_count; 
+            
             //implement EEPROM 
             lcd_clear();
             printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
             lcd_set_ddram_addr(LCD_LINE2_ADDR);
             printf("p[%d] fs : %d",poles_detected, Pole[poles_detected].dist_from_start);
-            __delay_ms(3000);
+            lcd_set_ddram_addr(LCD_LINE3_ADDR);
+            printf("p[%d],tdep : %d",poles_detected, Pole[poles_detected].tires_deployed);
+            lcd_set_ddram_addr(LCD_LINE4_ADDR);
+            printf("p[%d] tcnt : %d",poles_detected, Pole[poles_detected].tires_final);
+            
+            
+            __delay_ms(2000);
+//
+            
             
             prev_avg_dist = avg_dist ; 
             poles_detected++;

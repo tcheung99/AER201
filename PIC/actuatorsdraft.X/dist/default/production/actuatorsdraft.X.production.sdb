@@ -70,23 +70,23 @@ LCD_SHIFT_RIGHT 1
 [v _initLCD initLCD `(v  1 e 1 0 ]
 "102
 [v _putch putch `(v  1 e 1 0 ]
-"92 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+"91 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"133
+"132
 [v _system_init system_init `(v  1 e 1 0 ]
-"343
+"342
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
-"387
+"386
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"433
+"432
 [v _servo servo `(v  1 e 1 0 ]
-"459
+"458
 [v _stepper stepper `(v  1 e 1 0 ]
-"497
+"496
 [v _stepper2 stepper2 `(v  1 e 1 0 ]
-"544
+"543
 [v _stepper2_back stepper2_back `(v  1 e 1 0 ]
-"593
+"592
 [v _full_drive full_drive `(v  1 e 1 0 ]
 "11 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\timer_main.c
 [v _TIMER_INIT TIMER_INIT `(v  1 e 1 0 ]
@@ -304,60 +304,60 @@ LCD_SHIFT_RIGHT 1
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"53 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+"52 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 [v _act_cnt act_cnt `i  1 e 2 0 ]
-"56
+"55
 [v _steps2_adj steps2_adj `i  1 e 2 0 ]
 "3 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\timer_main.c
 [v _timer_count timer_count `i  1 e 2 0 ]
-"92 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+"91 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"131
+"130
 } 0
-"133
+"132
 [v _system_init system_init `(v  1 e 1 0 ]
 {
-"151
+"150
 } 0
-"544
+"543
 [v _stepper2_back stepper2_back `(v  1 e 1 0 ]
 {
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
-"569
+"568
 [v stepper2_back@i i `i  1 a 2 103 ]
-"562
+"561
 [v stepper2_back@count_stepper count_stepper `i  1 a 2 101 ]
-"544
+"543
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
-"562
+"561
 [v stepper2_back@direction direction `uc  1 a 1 100 ]
-"579
+"578
 } 0
-"497
+"496
 [v _stepper2 stepper2 `(v  1 e 1 0 ]
 {
 [v stepper2@direction direction `uc  1 a 1 wreg ]
-"515
+"514
 [v stepper2@i_229 i `i  1 a 2 108 ]
-"506
+"505
 [v stepper2@i i `i  1 a 2 106 ]
-"498
-[v stepper2@count_stepper count_stepper `i  1 a 2 110 ]
 "497
+[v stepper2@count_stepper count_stepper `i  1 a 2 110 ]
+"496
 [v stepper2@direction direction `uc  1 a 1 wreg ]
 [v stepper2@steps2_adj steps2_adj `i  1 p 2 99 ]
 [v stepper2@direction direction `uc  1 a 1 112 ]
-"529
+"528
 } 0
-"459
+"458
 [v _stepper stepper `(v  1 e 1 0 ]
 {
-"469
+"468
 [v stepper@i i `i  1 a 2 100 ]
-"460
+"459
 [v stepper@count_stepper count_stepper `i  1 a 2 102 ]
-"495
+"494
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -489,37 +489,37 @@ LCD_SHIFT_RIGHT 1
 [v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"593 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
+"592 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\main.c
 [v _full_drive full_drive `(v  1 e 1 0 ]
 {
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@stepper_no stepper_no `i  1 p 2 0 ]
 [v full_drive@direction direction `uc  1 a 1 3 ]
-"732
+"731
 } 0
-"433
+"432
 [v _servo servo `(v  1 e 1 0 ]
 {
-"457
+"456
 } 0
-"387
+"386
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
-"389
+"388
 [v servoRotate180@i i `ui  1 a 2 3 ]
-"387
+"386
 [v servoRotate180@servo servo `i  1 p 2 0 ]
-"432
+"431
 } 0
-"343
+"342
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
 {
-"344
-[v servoRotate0@i i `ui  1 a 2 3 ]
 "343
+[v servoRotate0@i i `ui  1 a 2 3 ]
+"342
 [v servoRotate0@servo servo `i  1 p 2 0 ]
-"386
+"385
 } 0
 "69 C:\Users\trudi\Desktop\GitHub\AER201\PIC\actuatorsdraft.X\lcd.c
 [v _initLCD initLCD `(v  1 e 1 0 ]
