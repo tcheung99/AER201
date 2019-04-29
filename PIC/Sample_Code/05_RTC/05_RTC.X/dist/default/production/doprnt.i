@@ -1061,16 +1061,6 @@ static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
                 ++*fmt;
             }
         }
-# 1249 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\common\\doprnt.c"
-        if (!strncmp(*fmt, "hhx", ((sizeof("hhx")/sizeof("hhx"[0]))-1)) || !strncmp(*fmt, "hhX", ((sizeof("hhX")/sizeof("hhX"[0]))-1))) {
-
-
-            c = (*fmt)[2];
-            *fmt += ((sizeof("hhx")/sizeof("hhx"[0]))-1);
-            llu = (unsigned long long)(unsigned char)(*(int *)__va_arg(*(int **)ap, (int)0));
-
-            return xtoa(fp, llu, c);
-        }
 # 1274 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\sources\\c99\\common\\doprnt.c"
         if ((*fmt[0] == 'x') || (*fmt[0] == 'X')) {
 

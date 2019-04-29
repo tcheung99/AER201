@@ -27,12 +27,12 @@ void servoRotate0(int servo){ //0 Degree
         RD1 = 1;
 //        RD0 = 1;
 
-          __delay_us(1250);
+          __delay_us(1350);
 //        RB7 = 0;
         RD1 = 0;
 //        RD0 = 0;
 
-          __delay_us(16950);
+          __delay_us(16850);
         }
     }
     if (servo==3){

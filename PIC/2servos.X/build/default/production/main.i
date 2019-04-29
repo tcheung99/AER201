@@ -4465,12 +4465,12 @@ void servoRotate0(int servo){
         RD1 = 1;
 
 
-          _delay((unsigned long)((1250)*(10000000/4000000.0)));
+          _delay((unsigned long)((1350)*(10000000/4000000.0)));
 
         RD1 = 0;
 
 
-          _delay((unsigned long)((16950)*(10000000/4000000.0)));
+          _delay((unsigned long)((16850)*(10000000/4000000.0)));
         }
     }
     if (servo==3){

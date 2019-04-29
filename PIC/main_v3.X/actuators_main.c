@@ -118,13 +118,14 @@ void servoRotate0(int servo){ //0 Degree
 //        RB7 = 1;
         RD1 = 1;
 //        RD0 = 1;
+          __delay_us(1350);
 
-          __delay_us(1250);
+//          __delay_us(1250);
 //        RB7 = 0;
         RD1 = 0;
 //        RD0 = 0;
-
-          __delay_us(16950);
+          __delay_us(16850);
+//          __delay_us(16950);
         }
     }
     if (servo==3){
@@ -205,9 +206,9 @@ void servo()
     __delay_ms(400);        
     servoRotate0(1); //0 Degree
     
-//    servoRotate180(2); //180 Degree
-//    servoRotate0(2); //0 Degree
-//    servoRotate180(2); //180 Degree
+    servoRotate180(2); //180 Degree
+    servoRotate0(2); //0 Degree
+    servoRotate180(2); //180 Degree
     
     __delay_ms(50);
     servoRotate180(3); //180 Degree

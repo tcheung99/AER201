@@ -4,4 +4,5 @@ configBits.h  \
 RTC.h  \
 I2C.h  \
 lcd.h  \
-actuators.h 
+actuators.h  \
+EEPROM.h 

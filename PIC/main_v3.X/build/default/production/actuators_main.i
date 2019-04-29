@@ -5419,13 +5419,14 @@ void servoRotate0(int servo){
 
         RD1 = 1;
 
+          _delay((unsigned long)((1350)*(10000000/4000000.0)));
 
-          _delay((unsigned long)((1250)*(10000000/4000000.0)));
+
 
         RD1 = 0;
 
+          _delay((unsigned long)((16850)*(10000000/4000000.0)));
 
-          _delay((unsigned long)((16950)*(10000000/4000000.0)));
         }
     }
     if (servo==3){
@@ -5506,9 +5507,9 @@ void servo()
     _delay((unsigned long)((400)*(10000000/4000.0)));
     servoRotate0(1);
 
-
-
-
+    servoRotate180(2);
+    servoRotate0(2);
+    servoRotate180(2);
 
     _delay((unsigned long)((50)*(10000000/4000.0)));
     servoRotate180(3);
@@ -5518,7 +5519,7 @@ void servo()
 
   }
 }
-# 426 "actuators_main.c"
+# 427 "actuators_main.c"
 void stepper(int stack, int t_dep){
     int count_stepper = 0;
 
@@ -5564,7 +5565,7 @@ void stepper(int stack, int t_dep){
 
             count_stepper++;
         }
-# 481 "actuators_main.c"
+# 482 "actuators_main.c"
         else{
 
 
@@ -5576,7 +5577,7 @@ void stepper(int stack, int t_dep){
 
 }
 void stepper2(char direction, int steps2_adj){
-# 509 "actuators_main.c"
+# 510 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5607,9 +5608,9 @@ void stepper2(char direction, int steps2_adj){
 
     }
 }
-# 576 "actuators_main.c"
+# 577 "actuators_main.c"
 void stepper2_back(char direction, int steps2_adj){
-# 594 "actuators_main.c"
+# 595 "actuators_main.c"
     int count_stepper = 0;
 
         if (count_stepper<1){
@@ -5628,7 +5629,7 @@ void stepper2_back(char direction, int steps2_adj){
 
 
 }
-# 625 "actuators_main.c"
+# 626 "actuators_main.c"
 void full_drive (char direction, int stepper_no){
     if (stepper_no == 1){
         if (direction == 1){

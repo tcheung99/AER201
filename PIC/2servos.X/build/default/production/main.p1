@@ -611,14 +611,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 27:         RD1 = 1;
 [e = _RD1 -> -> 1 `i `b ]
 "30
-[; ;main.c: 30:           _delay((unsigned long)((1250)*(10000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 1250 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 30:           _delay((unsigned long)((1350)*(10000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1350 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
 "32
 [; ;main.c: 32:         RD1 = 0;
 [e = _RD1 -> -> 0 `i `b ]
 "35
-[; ;main.c: 35:           _delay((unsigned long)((16950)*(10000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 16950 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 35:           _delay((unsigned long)((16850)*(10000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 16850 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
 "36
 [; ;main.c: 36:         }
 }

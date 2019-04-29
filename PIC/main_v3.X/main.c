@@ -6,6 +6,7 @@
 #include "I2C.h"
 #include "lcd.h"
 #include "actuators.h"
+#include "EEPROM.h"
 //#include "timer.h"
 //#include "ultrasonic.h"
 
@@ -426,11 +427,11 @@ int number_deploy(int avg_dist, int poles_detected, int tires_detected){
 //	while (DC motors off){
     while (t_count<3){
 		if (poles_detected != 0){				
-			if ((avg_dist/1000)<30){
+			if ((avg_dist)<30){
 				//Total number of tires tires_t
 				tires_t = 1; 
 			}
-			if ((avg_dist/1000)>30){
+			if ((avg_dist)>30){
 				tires_t = 2; 
 			}
 		}
@@ -460,7 +461,7 @@ int number_deploy(int avg_dist, int poles_detected, int tires_detected){
         Pole[poles_detected].tires_final = tires_t;
         lcd_clear();
         printf("det,%d, tcnt %d",tires_detected,t_count);
-        __delay_ms(1000);
+//        __delay_ms(1000);
 
         if (t_count<=2){
         //            lcd_clear();
@@ -537,8 +538,8 @@ void UI_main(int t_dep, int poles_detected){
 //            }
         if (send){
         if(key_was_pressed){
-//            lcd_clear();           
-//            printf("bubb");
+            lcd_clear();           
+            printf("bubb");
             pressed = 1;
             key_was_pressed = false; // Clear the flag
             unsigned char keypress = (PORTB & 0xF0) >> 4; //right shift
@@ -742,7 +743,7 @@ void main(){
     bool act_done = false; 
     bool arduino_stopped = false; 
     volatile int t_det = 0; 
-
+    volatile int dist_tot = 0;
     Poles Pole[10];
 //    int Pole[10];
 //    for (i=0; i<10; i++){
@@ -752,10 +753,15 @@ void main(){
 //            actuators_main(1);
     
     if (~sens){
+//                    lcd_clear();
+//            printf("help mee");
+//            __delay_ms(1000);
         TRISBbits.RB0 = 0;
-        LATBbits.LATB0 = 0; //ENABLES KPD	//THIS DOESN'T WORK. WTF
+        LATBbits.LATB0 = 0; //ENABLES KPD	
 //        UI_main(t_dep, poles_detected);
+        GIE = 1;
         TRISB = 0b11111111;                 //RB5,6,7 as Input PIN (ECHO)
+        send = true;
         UI_main( t_dep, poles_detected);
     }
     while (1){
@@ -766,7 +772,8 @@ void main(){
 //        lcd_clear();
 //        printf("happen");
 //        __delay_ms(1000);
-        if ((poles_detected <2)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
+//        if ((poles_detected <2)&&((Pole[poles_detected].dist_from_start )<4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
+        if ((poles_detected <10)&&(dist_tot <4000)){ //while there are less than 10 poles detected and the robot has travelled less than 4m 
 //            lcd_clear();
 //            printf("help");
 //            __delay_ms(1000);
@@ -811,8 +818,8 @@ void main(){
                         arduino_stopped = true; 
                     }
                     if (arduino_stopped){
-                        lcd_clear(); 
-                        printf("dun break");
+//                        lcd_clear(); 
+//                        printf("dun break");
                         steps2_adj=ultrasonic_main();
                         lcd_clear(); 
                         printf("stepsadj %d", steps2_adj);
@@ -851,12 +858,15 @@ void main(){
                 act_done = true; 
             }
             if (act_done){
+                
+            dist_tot = dist_tot + avg_dist; 
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
 //            Pole[poles_detected].tires_deployed = t_dep;
 //            Pole[poles_detected].tires_deployed = t_count; 
+            Pole[poles_detected].tires_deployed = t_count; 
+            Pole[poles_detected].tires_final = t_det + t_dep;  
             
-            //implement EEPROM 
             lcd_clear();
             printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
             lcd_set_ddram_addr(LCD_LINE2_ADDR);
@@ -866,10 +876,8 @@ void main(){
             lcd_set_ddram_addr(LCD_LINE4_ADDR);
             printf("p[%d] tcnt : %d",poles_detected, Pole[poles_detected].tires_final);
             
-            
             __delay_ms(2000);
-//
-            
+
             
             prev_avg_dist = avg_dist ; 
             poles_detected++;
@@ -896,6 +904,27 @@ void main(){
             lcd_clear();
             printf("poles done");
             __delay_ms(1000);
+            
+            unsigned char addr = 0x01;
+            char from_eeprom;
+
+            for (int i=0; i<poles_detected; i++){ 
+                ee_write_byte(addr, &(Pole[poles_detected].tires_deployed));
+                addr++;
+            }
+            for (int i=0; i<poles_detected; i++){ 
+                ee_write_byte(addr, &(Pole[poles_detected].tires_final));
+                addr++;
+            }
+            for (int i=0; i<poles_detected; i++){ 
+                ee_write_byte(addr, &(Pole[poles_detected].dist_from_start));
+                addr++;
+            }
+            for (int i=0; i<poles_detected; i++){ 
+                ee_write_byte(addr, &(Pole[poles_detected].dist_from_cl));
+                addr++;
+            }
+            
 //            TRISBbits.RB0 = 0;
 //            LATBbits.LATB0 = 0; //ENABLES KPD	            
 //            TRISB = 0b11111111;                 //RB5,6,7 as Input PIN (ECHO)
@@ -907,6 +936,9 @@ void main(){
             __delay_ms(1000);
             sens = false;
             send = true;
+            addr = 0x00;
+            ee_write_byte(addr, &(opTime));
+            addr++;
             break;
         }
         t_count = 5;

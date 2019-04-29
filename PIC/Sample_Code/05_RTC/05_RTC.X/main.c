@@ -24,11 +24,11 @@
 
 const char keys[] = "123A456B789C*0#D";
 const char happynewyear[7] = {
-    0x35, // 45 Seconds 
-    0x05, // 59 Minutes
-    0x23, // 24 hour mode, set to 23:00
+    0x20, // 45 Seconds 
+    0x38, // 59 Minutes
+    0x13, // 24 hour mode, set to 23:00
     0x00, // Sunday
-    0x05, // 31st
+    0x09, // 31st
     0x04, // December
     0x19  // 2018
 };

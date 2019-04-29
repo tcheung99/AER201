@@ -4657,13 +4657,13 @@ void putch(char data);
 
 const char keys[] = "123A456B789C*0#D";
 const char happynewyear[7] = {
-    0x1E,
-    0x1A,
-    0x15,
+    0x20,
+    0x38,
+    0x13,
     0x00,
-    0x06,
+    0x09,
     0x04,
-    0x13
+    0x19
 };
 
 void rtc_set_time(void);
@@ -4704,9 +4704,9 @@ void main(void) {
 
 
         { lcdInst(0x80); _delay((unsigned long)((2)*(10000000/4000.0)));};
-        printf("%02hhx/%02hhx/%02hhx", time[6]&0xff,time[5]&0xff,time[4]&0xff);
+        printf("%02x/%02x/%02x", time[6],time[5],time[4]);
         { lcdInst(0x80 | LCD_LINE2_ADDR);};
-        printf("%02x:%02x:%02x", time[2]&0xff,time[1]&0xff,time[0]&0xff);
+        printf("%02x:%02x:%02x", time[2],time[1],time[0]);
 
 
 

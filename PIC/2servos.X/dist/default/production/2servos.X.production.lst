@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Tue Apr 09 07:37:35 2019
+                                                                                               Tue Apr 09 11:17:42 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	18F4620
@@ -606,29 +606,29 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
    576                           ;main.c: 25:         {;main.c: 27:         RD1 = 1;
    577  00FEA8  8283               	bsf	3971,1,c	;volatile
    578                           
-   579                           ;main.c: 30:           _delay((unsigned long)((1250)*(10000000/4000000.0)));
+   579                           ;main.c: 30:           _delay((unsigned long)((1350)*(10000000/4000000.0)));
    580  00FEAA  0E05               	movlw	5
    581  00FEAC  6E03               	movwf	??_servoRotate0& (0+255),c
-   582  00FEAE  0E0D               	movlw	13
+   582  00FEAE  0E61               	movlw	97
    583  00FEB0                     u377:
    584  00FEB0  2EE8               	decfsz	wreg,f,c
    585  00FEB2  D7FE               	bra	u377
    586  00FEB4  2E03               	decfsz	??_servoRotate0& (0+255),f,c
    587  00FEB6  D7FC               	bra	u377
-   588  00FEB8  D000               	nop2	
-   589                           
-   590                           ;main.c: 32:         RD1 = 0;
-   591  00FEBA  9283               	bcf	3971,1,c	;volatile
-   592                           
-   593                           ;main.c: 35:           _delay((unsigned long)((16950)*(10000000/4000000.0)));
-   594  00FEBC  0E38               	movlw	56
-   595  00FEBE  6E03               	movwf	??_servoRotate0& (0+255),c
-   596  00FEC0  0E07               	movlw	7
-   597  00FEC2                     u387:
-   598  00FEC2  2EE8               	decfsz	wreg,f,c
-   599  00FEC4  D7FE               	bra	u387
-   600  00FEC6  2E03               	decfsz	??_servoRotate0& (0+255),f,c
-   601  00FEC8  D7FC               	bra	u387
+   588                           
+   589                           ;main.c: 32:         RD1 = 0;
+   590  00FEB8  9283               	bcf	3971,1,c	;volatile
+   591                           
+   592                           ;main.c: 35:           _delay((unsigned long)((16850)*(10000000/4000000.0)));
+   593  00FEBA  0E37               	movlw	55
+   594  00FEBC  6E03               	movwf	??_servoRotate0& (0+255),c
+   595  00FEBE  0EB4               	movlw	180
+   596  00FEC0                     u387:
+   597  00FEC0  2EE8               	decfsz	wreg,f,c
+   598  00FEC2  D7FE               	bra	u387
+   599  00FEC4  2E03               	decfsz	??_servoRotate0& (0+255),f,c
+   600  00FEC6  D7FC               	bra	u387
+   601  00FEC8  F000               	nop	
    602                           
    603                           ;main.c: 36:         }
    604  00FECA  4A04               	infsnz	servoRotate0@i,f,c
@@ -911,7 +911,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Tue Apr 09 07:37:35 2019
+Symbol Table                                                                                   Tue Apr 09 11:17:42 2019
 
                      l30 FEEC                       l24 FE58                       l42 FFCA  
                      l27 FEA8                       l36 FF32                       l39 FF84  
@@ -926,7 +926,7 @@ Symbol Table                                                                    
                     u337 FFE4                      u257 FDD4                      u347 FE62  
                     u267 FE16                      u357 FE70                      u277 FF38  
                     u367 FE7C                      u287 FF46                      u377 FEB0  
-                    u297 FF58                      u387 FEC2                      u397 FEF4  
+                    u297 FF58                      u387 FEC0                      u397 FEF4  
                     wreg 000FE8             __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000  
                    _main FDA2                     start 0000            __CFG_IESO$OFF 000000  
         servoRotate180@i 0004            __CFG_MCLRE$ON 000000             ___param_bank 000000  

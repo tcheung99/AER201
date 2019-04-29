@@ -14,17 +14,17 @@ LCD_SHIFT_RIGHT 1
 [v _system_init system_init `(v  1 e 1 0 ]
 "98
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
-"142
+"143
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
-"190
+"191
 [v _servo servo `(v  1 e 1 0 ]
-"426
+"427
 [v _stepper stepper `(v  1 e 1 0 ]
-"491
+"492
 [v _stepper2 stepper2 `(v  1 e 1 0 ]
-"576
+"577
 [v _stepper2_back stepper2_back `(v  1 e 1 0 ]
-"625
+"626
 [v _full_drive full_drive `(v  1 e 1 0 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
@@ -38,7 +38,6 @@ LCD_SHIFT_RIGHT 1
 [v _atoi atoi `(i  1 e 2 0 ]
 "7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-[v i2___awdiv __awdiv `(i  1 e 2 0 ]
 "72 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 "274
@@ -101,6 +100,8 @@ LCD_SHIFT_RIGHT 1
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"18 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\EEPROM.c
+[v _ee_write_byte ee_write_byte `(v  1 e 1 0 ]
 "21 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\I2C.c
 [v _I2C_Master_Wait I2C_Master_Wait `T(v  1 s 1 I2C_Master_Wait ]
 "32
@@ -127,29 +128,29 @@ LCD_SHIFT_RIGHT 1
 [v _initLCD initLCD `(v  1 e 1 0 ]
 "102
 [v _putch putch `(v  1 e 1 0 ]
-"73 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+"74 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"101
+"102
 [v _echo echo `(v  1 e 1 0 ]
-"192
+"193
 [v _trig trig `(v  1 e 1 0 ]
-"235
+"236
 [v _print_echo print_echo `(v  1 e 1 0 ]
-"269
+"270
 [v _min min `(i  1 e 2 0 ]
-"293
+"294
 [v _ultrasonic_main ultrasonic_main `(i  1 e 2 0 ]
-"421
+"422
 [v _number_deploy number_deploy `(i  1 e 2 0 ]
-"487
+"488
 [v _UI_main UI_main `(v  1 e 1 0 ]
-"673
+"674
 [v _brake brake `(v  1 e 1 0 ]
-"704
+"705
 [v _start start `(v  1 e 1 0 ]
-"715
+"716
 [v _backwards backwards `(v  1 e 1 0 ]
-"722
+"723
 [v _main main `(v  1 e 1 0 ]
 "18 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X/RTC.h
 [v _time time `[7]uc  1 e 7 0 ]
@@ -359,7 +360,7 @@ LCD_SHIFT_RIGHT 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2268
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-[s S1099 . 1 `uc 1 RD 1 0 :1:0 
+[s S1112 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -369,11 +370,11 @@ LCD_SHIFT_RIGHT 1
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "2947
-[s S1108 . 1 `uc 1 . 1 0 :6:0 
+[s S1121 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S1111 . 1 `S1099 1 . 1 0 `S1108 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1111  1 e 1 @4006 ]
+[u S1124 . 1 `S1112 1 . 1 0 `S1121 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1124  1 e 1 @4006 ]
 "2992
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "2999
@@ -489,159 +490,167 @@ LCD_SHIFT_RIGHT 1
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"19 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+"20 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _a a `[4]i  1 e 8 0 ]
-"21
+"22
 [v _b b `i  1 e 2 0 ]
-"23
+"24
 [v _sens sens `VEi  1 e 2 0 ]
-"28
+"29
 [v _keys keys `C[17]uc  1 e 17 0 ]
-"30
-[v _temp temp `uc  1 e 1 0 ]
 "31
-[v _temp_int temp_int `s  1 e 2 0 ]
+[v _temp temp `uc  1 e 1 0 ]
 "32
-[v _key_was_pressed key_was_pressed `VEa  1 e 1 0 ]
+[v _temp_int temp_int `s  1 e 2 0 ]
 "33
-[v _state state `i  1 e 2 0 ]
+[v _key_was_pressed key_was_pressed `VEa  1 e 1 0 ]
 "34
-[v _disp disp `i  1 e 2 0 ]
+[v _state state `i  1 e 2 0 ]
 "35
-[v _i i `i  1 e 2 0 ]
+[v _disp disp `i  1 e 2 0 ]
 "36
+[v _i i `i  1 e 2 0 ]
+"37
 [v _pressed pressed `i  1 e 2 0 ]
-"43
+"44
 [v _send send `a  1 e 1 0 ]
-"48
+"49
 [v _opTime opTime `i  1 e 2 0 ]
-"50
+"51
 [v _avg_dist avg_dist `VEl  1 e 4 0 ]
 [s S642 Poles 8 `i 1 tires_deployed 2 0 `i 1 tires_final 2 2 `i 1 dist_from_start 2 4 `i 1 dist_from_cl 2 6 ]
-"61
+"62
 [v _Pole Pole `[10]S642  1 e 80 0 ]
-"63
+"64
 [v _dist_final dist_final `[4][6]i  1 e 48 0 ]
-"69
-[v _sum sum `[4]i  1 e 8 0 ]
 "70
-[v _sumf sumf `[4]a  1 e 4 0 ]
+[v _sum sum `[4]i  1 e 8 0 ]
 "71
+[v _sumf sumf `[4]a  1 e 4 0 ]
+"72
 [v _meas meas `VEi  1 e 2 0 ]
-"722
+"723
 [v _main main `(v  1 e 1 0 ]
 {
-"886
-[v main@k k `i  1 a 2 191 ]
-"845
-[v main@i_1084 i `i  1 a 2 180 ]
-"837
-[v main@i i `i  1 a 2 178 ]
-"882
-[v main@i_1092 i `i  1 a 2 199 ]
-"823
-[v main@pole_cl_dist pole_cl_dist `i  1 a 2 96 ]
-"746
-[v main@Pole Pole `[10]S642  1 a 80 98 ]
-"737
-[v main@data data `VE[4]i  1 a 8 209 ]
-"736
-[v main@prev_avg_dist prev_avg_dist `VEl  1 a 4 203 ]
-"734
-[v main@poles_detected poles_detected `i  1 a 2 207 ]
-"724
-[v main@t_dep t_dep `i  1 a 2 197 ]
-"738
-[v main@data_g data_g `ui  1 a 2 195 ]
-"725
-[v main@t_count t_count `i  1 a 2 193 ]
-"728
-[v main@steps2_adj steps2_adj `i  1 a 2 189 ]
-"723
-[v main@stack stack `i  1 a 2 187 ]
-"744
-[v main@t_det t_det `VEi  1 a 2 201 ]
-"743
-[v main@arduino_stopped arduino_stopped `a  1 a 1 186 ]
-"742
-[v main@act_done act_done `a  1 a 1 185 ]
+"894
+[v main@k k `i  1 a 2 105 ]
+"852
+[v main@i_1087 i `i  1 a 2 86 ]
+"844
+[v main@i i `i  1 a 2 84 ]
+"890
+[v main@i_1099 i `i  1 a 2 112 ]
+"923
+[v main@i_1107 i `i  1 a 2 94 ]
+"919
+[v main@i_1106 i `i  1 a 2 92 ]
 "915
+[v main@i_1105 i `i  1 a 2 90 ]
+"911
+[v main@i_1104 i `i  1 a 2 88 ]
+"908
+[v main@addr addr `uc  1 a 1 111 ]
+"830
+[v main@pole_cl_dist pole_cl_dist `i  1 a 2 2 ]
+"747
+[v main@Pole Pole `[10]S642  1 a 80 4 ]
+"738
+[v main@data data `VE[4]i  1 a 8 124 ]
+"737
+[v main@prev_avg_dist prev_avg_dist `VEl  1 a 4 116 ]
+"735
+[v main@poles_detected poles_detected `i  1 a 2 132 ]
+"725
+[v main@t_dep t_dep `i  1 a 2 114 ]
+"726
+[v main@t_count t_count `i  1 a 2 109 ]
+"739
+[v main@data_g data_g `ui  1 a 2 107 ]
+"729
+[v main@steps2_adj steps2_adj `i  1 a 2 103 ]
+"724
+[v main@stack stack `i  1 a 2 101 ]
+"746
+[v main@dist_tot dist_tot `VEi  1 a 2 122 ]
+"745
+[v main@t_det t_det `VEi  1 a 2 120 ]
+"744
+[v main@arduino_stopped arduino_stopped `a  1 a 1 100 ]
+"743
+[v main@act_done act_done `a  1 a 1 99 ]
+"944
 } 0
-"293
+"294
 [v _ultrasonic_main ultrasonic_main `(i  1 e 2 0 ]
 {
-"315
-[v ultrasonic_main@min_us_dist_969 min_us_dist `i  1 a 2 10 ]
-"307
-[v ultrasonic_main@steps2_adj steps2_adj `i  1 a 2 8 ]
+"316
+[v ultrasonic_main@min_us_dist_975 min_us_dist `i  1 a 2 10 ]
 "308
+[v ultrasonic_main@steps2_adj steps2_adj `i  1 a 2 8 ]
+"309
 [v ultrasonic_main@step2_offset step2_offset `i  1 a 2 6 ]
-"305
+"306
 [v ultrasonic_main@sensed sensed `i  1 a 2 4 ]
-"384
+"385
 } 0
-"192
+"193
 [v _trig trig `(v  1 e 1 0 ]
 {
-"233
+"234
 } 0
-"235
+"236
 [v _print_echo print_echo `(v  1 e 1 0 ]
 {
-"268
-} 0
 "269
+} 0
+"270
 [v _min min `(i  1 e 2 0 ]
 {
-"276
+"277
 [v min@i i `i  1 a 2 9 ]
-"270
+"271
 [v min@minimum minimum `i  1 a 2 7 ]
-"269
+"270
 [v min@array array `*.39i  1 p 2 0 ]
 [v min@size size `i  1 p 2 2 ]
-"291
+"292
 } 0
-"704
+"705
 [v _start start `(v  1 e 1 0 ]
 {
-"714
+"715
 } 0
-"421
+"422
 [v _number_deploy number_deploy `(i  1 e 2 0 ]
 {
-"424
+"425
 [v number_deploy@t_count t_count `i  1 a 2 8 ]
-"422
+"423
 [v number_deploy@tires_t tires_t `i  1 a 2 6 ]
-"421
+"422
 [v number_deploy@avg_dist avg_dist `i  1 p 2 0 ]
 [v number_deploy@poles_detected poles_detected `i  1 p 2 2 ]
 [v number_deploy@tires_detected tires_detected `i  1 p 2 4 ]
-"474
+"475
 } 0
-"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"18 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\EEPROM.c
+[v _ee_write_byte ee_write_byte `(v  1 e 1 0 ]
 {
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
+[v ee_write_byte@address address `uc  1 a 1 wreg ]
+[v ee_write_byte@address address `uc  1 a 1 wreg ]
+[v ee_write_byte@_data _data `*.39uc  1 p 2 0 ]
+[v ee_write_byte@address address `uc  1 a 1 2 ]
+"44
 } 0
-"673 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+"674 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _brake brake `(v  1 e 1 0 ]
 {
-"702
+"703
 } 0
-"715
+"716
 [v _backwards backwards `(v  1 e 1 0 ]
 {
-"720
+"721
 } 0
 "3 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\actuators_main.c
 [v _actuators_main actuators_main `(v  1 e 1 0 ]
@@ -659,78 +668,78 @@ LCD_SHIFT_RIGHT 1
 {
 "97
 } 0
-"576
+"577
 [v _stepper2_back stepper2_back `(v  1 e 1 0 ]
 {
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
-"601
+"602
 [v stepper2_back@i i `i  1 a 2 6 ]
-"594
+"595
 [v stepper2_back@count_stepper count_stepper `i  1 a 2 4 ]
-"576
+"577
 [v stepper2_back@direction direction `uc  1 a 1 wreg ]
 [v stepper2_back@steps2_adj steps2_adj `i  1 p 2 0 ]
-"594
+"595
 [v stepper2_back@direction direction `uc  1 a 1 3 ]
-"611
+"612
 } 0
-"491
+"492
 [v _stepper2 stepper2 `(v  1 e 1 0 ]
 {
 [v stepper2@direction direction `uc  1 a 1 wreg ]
-"529
+"530
 [v stepper2@i_489 i `i  1 a 2 9 ]
-"517
+"518
 [v stepper2@i i `i  1 a 2 7 ]
-"509
+"510
 [v stepper2@count_stepper count_stepper `i  1 a 2 11 ]
-"491
+"492
 [v stepper2@direction direction `uc  1 a 1 wreg ]
 [v stepper2@steps2_adj steps2_adj `i  1 p 2 0 ]
-"509
+"510
 [v stepper2@direction direction `uc  1 a 1 13 ]
-"538
+"539
 } 0
-"426
+"427
 [v _stepper stepper `(v  1 e 1 0 ]
 {
-"461
+"462
 [v stepper@i_481 i `i  1 a 2 16 ]
-"454
+"455
 [v stepper@i_480 i `i  1 a 2 14 ]
-"445
+"446
 [v stepper@i_479 i `i  1 a 2 12 ]
-"438
+"439
 [v stepper@i i `i  1 a 2 10 ]
-"427
+"428
 [v stepper@count_stepper count_stepper `i  1 a 2 8 ]
-"426
+"427
 [v stepper@stack stack `i  1 p 2 0 ]
 [v stepper@t_dep t_dep `i  1 p 2 2 ]
-"490
+"491
 } 0
-"625
+"626
 [v _full_drive full_drive `(v  1 e 1 0 ]
 {
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@direction direction `uc  1 a 1 wreg ]
 [v full_drive@stepper_no stepper_no `i  1 p 2 123 ]
 [v full_drive@direction direction `uc  1 a 1 126 ]
-"774
+"775
 } 0
-"190
+"191
 [v _servo servo `(v  1 e 1 0 ]
 {
-"219
+"220
 } 0
-"142
+"143
 [v _servoRotate180 servoRotate180 `(v  1 e 1 0 ]
 {
-"144
+"145
 [v servoRotate180@i i `ui  1 a 2 3 ]
-"142
+"143
 [v servoRotate180@servo servo `i  1 p 2 0 ]
-"189
+"190
 } 0
 "98
 [v _servoRotate0 servoRotate0 `(v  1 e 1 0 ]
@@ -739,24 +748,24 @@ LCD_SHIFT_RIGHT 1
 [v servoRotate0@i i `ui  1 a 2 3 ]
 "98
 [v servoRotate0@servo servo `i  1 p 2 0 ]
-"141
+"142
 } 0
-"487 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+"488 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _UI_main UI_main `(v  1 e 1 0 ]
 {
-"648
+"649
 [v UI_main@i i `uc  1 a 1 89 ]
-"544
+"545
 [v UI_main@keypress keypress `uc  1 a 1 84 ]
 [s S642 Poles 8 `i 1 tires_deployed 2 0 `i 1 tires_final 2 2 `i 1 dist_from_start 2 4 `i 1 dist_from_cl 2 6 ]
-"514
+"515
 [v UI_main@Pole Pole `[10]S642  1 a 80 4 ]
-"520
+"521
 [v UI_main@tick tick `ul  1 a 4 85 ]
-"487
+"488
 [v UI_main@t_dep t_dep `i  1 p 2 123 ]
 [v UI_main@poles_detected poles_detected `i  1 p 2 125 ]
-"671
+"672
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -772,9 +781,9 @@ LCD_SHIFT_RIGHT 1
 {
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 107 ]
-[s S1169 _IO_FILE 0 ]
+[s S1182 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S1169  1 p 2 101 ]
+[v vfprintf@fp fp `*.2S1182  1 p 2 101 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 103 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 105 ]
 "1382
@@ -790,9 +799,9 @@ LCD_SHIFT_RIGHT 1
 [v vfpfcnvrt@done done `i  1 a 2 97 ]
 "672
 [v vfpfcnvrt@c c `uc  1 a 1 96 ]
-[s S1169 _IO_FILE 0 ]
+[s S1182 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S1169  1 p 2 70 ]
+[v vfpfcnvrt@fp fp `*.2S1182  1 p 2 70 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 72 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 74 ]
 "1365
@@ -807,9 +816,9 @@ LCD_SHIFT_RIGHT 1
 [v xtoa@i i `i  1 a 2 66 ]
 [v xtoa@w w `i  1 a 2 56 ]
 [v xtoa@p p `i  1 a 2 54 ]
-[s S1169 _IO_FILE 0 ]
+[s S1182 _IO_FILE 0 ]
 "623
-[v xtoa@fp fp `*.2S1169  1 p 2 31 ]
+[v xtoa@fp fp `*.2S1182  1 p 2 31 ]
 [v xtoa@d d `uo  1 p 8 33 ]
 [v xtoa@x x `uc  1 p 1 41 ]
 "665
@@ -848,9 +857,9 @@ LCD_SHIFT_RIGHT 1
 [v dtoa@s s `i  1 a 2 55 ]
 [v dtoa@w w `i  1 a 2 53 ]
 [v dtoa@p p `i  1 a 2 51 ]
-[s S1169 _IO_FILE 0 ]
+[s S1182 _IO_FILE 0 ]
 "274
-[v dtoa@fp fp `*.2S1169  1 p 2 31 ]
+[v dtoa@fp fp `*.2S1182  1 p 2 31 ]
 [v dtoa@d d `o  1 p 8 33 ]
 "315
 } 0
@@ -860,9 +869,9 @@ LCD_SHIFT_RIGHT 1
 "74
 [v pad@w w `i  1 a 2 29 ]
 [v pad@i i `i  1 a 2 27 ]
-[s S1169 _IO_FILE 0 ]
+[s S1182 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1169  1 p 2 20 ]
+[v pad@fp fp `*.2S1182  1 p 2 20 ]
 [v pad@buf buf `*.39uc  1 p 2 22 ]
 [v pad@p p `i  1 p 2 24 ]
 "95
@@ -885,16 +894,16 @@ LCD_SHIFT_RIGHT 1
 [v fputs@c c `uc  1 a 1 17 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 13 ]
-[s S1761 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1761  1 p 2 15 ]
+[s S1774 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1774  1 p 2 15 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[s S1761 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1761  1 p 2 6 ]
+[s S1774 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1774  1 p 2 6 ]
 "21
 } 0
 "102 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\lcd.c
@@ -1070,25 +1079,15 @@ LCD_SHIFT_RIGHT 1
 {
 "29
 } 0
-"73 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
+"74 C:\Users\trudi\Desktop\GitHub\AER201\PIC\main_v3.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"99
+"100
 } 0
-"101
+"102
 [v _echo echo `(v  1 e 1 0 ]
 {
-"190
-} 0
-"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-[v i2___awdiv __awdiv `(i  1 e 2 0 ]
-{
-[v i2___awdiv@quotient __awdiv `i  1 a 2 6 ]
-[v i2___awdiv@sign __awdiv `uc  1 a 1 5 ]
-[v i2___awdiv@counter __awdiv `uc  1 a 1 4 ]
-[v i2___awdiv@dividend dividend `i  1 p 2 0 ]
-[v i2___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
+"191
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -1134,4 +1133,17 @@ LCD_SHIFT_RIGHT 1
 [v ___fldiv@b b `d  1 p 4 14 ]
 [v ___fldiv@a a `d  1 p 4 18 ]
 "185
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
 } 0

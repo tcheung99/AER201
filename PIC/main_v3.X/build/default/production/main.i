@@ -5298,6 +5298,14 @@ void actuators_main (int stack, int step2_offset, int t_dep);
 void stepper2_back(char direction, int steps2_adj);
 # 8 "main.c" 2
 
+# 1 "./EEPROM.h" 1
+# 40 "./EEPROM.h"
+#pragma stack 0x300 0xff
+
+void ee_write_byte(unsigned char address, unsigned char *_data);
+void ee_read_byte(unsigned char address, unsigned char *_data);
+# 9 "main.c" 2
+
 
 
 
@@ -5375,7 +5383,7 @@ void __attribute__((picinterrupt(("")))) ISR(){
             INT1IF = 0;
         }
     }
-# 99 "main.c"
+# 100 "main.c"
 }
 
 void echo(){
@@ -5614,9 +5622,9 @@ int ultrasonic_main(){
             break;
             send = 0;
         }
-# 345 "main.c"
+# 346 "main.c"
     }
-# 380 "main.c"
+# 381 "main.c"
          { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
     printf("stepsadj %d", steps2_adj);
     _delay((unsigned long)((1000)*(10000000/4000.0)));
@@ -5639,7 +5647,7 @@ void sense_tires(int sensed){
 
                 }
             }
-# 419 "main.c"
+# 420 "main.c"
 }
 
 int number_deploy(int avg_dist, int poles_detected, int tires_detected){
@@ -5650,11 +5658,11 @@ int number_deploy(int avg_dist, int poles_detected, int tires_detected){
 
     while (t_count<3){
   if (poles_detected != 0){
-   if ((avg_dist/1000)<30){
+   if ((avg_dist)<30){
 
     tires_t = 1;
    }
-   if ((avg_dist/1000)>30){
+   if ((avg_dist)>30){
     tires_t = 2;
    }
   }
@@ -5662,13 +5670,13 @@ int number_deploy(int avg_dist, int poles_detected, int tires_detected){
   if (poles_detected == 0){
    tires_t = 2;
   }
-# 458 "main.c"
+# 459 "main.c"
         t_count = tires_t - tires_detected;
         Pole[poles_detected].tires_deployed = t_count;
         Pole[poles_detected].tires_final = tires_t;
         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
         printf("det,%d, tcnt %d",tires_detected,t_count);
-        _delay((unsigned long)((1000)*(10000000/4000.0)));
+
 
         if (t_count<=2){
 
@@ -5680,7 +5688,7 @@ int number_deploy(int avg_dist, int poles_detected, int tires_detected){
     }
     return (int) t_count;
 }
-# 487 "main.c"
+# 488 "main.c"
 void UI_main(int t_dep, int poles_detected){
     sens = 0;
 
@@ -5724,11 +5732,11 @@ void UI_main(int t_dep, int poles_detected){
         printf("3 - Date&Time ");
         }
     while(sens==0){
-# 538 "main.c"
+# 539 "main.c"
         if (send){
         if(key_was_pressed){
-
-
+            { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
+            printf("bubb");
             pressed = 1;
             key_was_pressed = 0;
             unsigned char keypress = (PORTB & 0xF0) >> 4;
@@ -5932,7 +5940,7 @@ void main(){
     _Bool act_done = 0;
     _Bool arduino_stopped = 0;
     volatile int t_det = 0;
-
+    volatile int dist_tot = 0;
     Poles Pole[10];
 
 
@@ -5942,10 +5950,15 @@ void main(){
 
 
     if (~sens){
+
+
+
         TRISBbits.RB0 = 0;
         LATBbits.LATB0 = 0;
 
+        GIE = 1;
         TRISB = 0b11111111;
+        send = 1;
         UI_main( t_dep, poles_detected);
     }
     while (1){
@@ -5956,7 +5969,8 @@ void main(){
 
 
 
-        if ((poles_detected <2)&&((Pole[poles_detected].dist_from_start )<4000)){
+
+        if ((poles_detected <10)&&(dist_tot <4000)){
 
 
 
@@ -6001,8 +6015,8 @@ void main(){
                         arduino_stopped = 1;
                     }
                     if (arduino_stopped){
-                        { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
-                        printf("dun break");
+
+
                         steps2_adj=ultrasonic_main();
                         { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
                         printf("stepsadj %d", steps2_adj);
@@ -6041,11 +6055,14 @@ void main(){
                 act_done = 1;
             }
             if (act_done){
+
+            dist_tot = dist_tot + avg_dist;
             Pole[poles_detected].dist_from_cl = avg_dist;
             Pole[poles_detected].dist_from_start = avg_dist+prev_avg_dist;
 
 
-
+            Pole[poles_detected].tires_deployed = t_count;
+            Pole[poles_detected].tires_final = t_det + t_dep;
 
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("dist p[%d]:%d,%d", poles_detected,Pole[poles_detected].dist_from_cl, avg_dist);
@@ -6056,9 +6073,7 @@ void main(){
             { lcdInst(0x80 | LCD_LINE4_ADDR);};
             printf("p[%d] tcnt : %d",poles_detected, Pole[poles_detected].tires_final);
 
-
             _delay((unsigned long)((2000)*(10000000/4000.0)));
-
 
 
             prev_avg_dist = avg_dist ;
@@ -6086,6 +6101,27 @@ void main(){
             { lcdInst(0x01); _delay((unsigned long)((5)*(10000000/4000.0)));};
             printf("poles done");
             _delay((unsigned long)((1000)*(10000000/4000.0)));
+
+            unsigned char addr = 0x00;
+            char from_eeprom;
+
+            for (int i=0; i<poles_detected; i++){
+                ee_write_byte(addr, &(Pole[poles_detected].tires_deployed));
+                addr++;
+            }
+            for (int i=0; i<poles_detected; i++){
+                ee_write_byte(addr, &(Pole[poles_detected].tires_final));
+                addr++;
+            }
+            for (int i=0; i<poles_detected; i++){
+                ee_write_byte(addr, &(Pole[poles_detected].dist_from_start));
+                addr++;
+            }
+            for (int i=0; i<poles_detected; i++){
+                ee_write_byte(addr, &(Pole[poles_detected].dist_from_cl));
+                addr++;
+            }
+
 
 
 
